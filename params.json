@@ -1,0 +1,6 @@
+{
+  "name": "COMP152",
+  "tagline": "Course materials for COMP152 and COMP156 at Camosun College",
+  "body": "Resources here:\r\n\r\n* HTML lab template\r\n* example of index.html being used by default\r\n* standard lab CSS file\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
