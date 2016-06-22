@@ -1,0 +1,136 @@
+@import url(https://fonts.googleapis.com/css?family=Handlee);
+/*colors*/
+	/*background: rgb(255,250,236)*/
+	/*text: rgba(0,0,0,0.7)*/
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html {
+	font: 1em 'Handlee', sans-serif;
+	font-weight: lighter;
+	line-height: 1.5rem;
+	color: rgba(0,0,0,0.7);
+	background-color: #fffaec;
+}
+
+body {
+}
+body>* {
+	display: block;
+	max-width: 36rem;
+	padding: 0 1.5rem;
+	margin: auto;
+	box-sizing: border-box;
+}
+
+section {
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 98%,rgba(0,0,0,0.15) 100%,rgba(0,0,0,0) 100%);
+	background-size: 100% 1.5rem;
+}
+
+figure img {
+	display: block;
+	max-width: 100%;
+}
+
+figcaption {
+	font-style: italic;
+	font-weight: lighter;
+}
+
+p,section,nav,h1,h2,h3,figure,ol,ul,li {
+	margin-bottom: 1.5rem;
+}
+
+h1, h2, h3 {
+	font-weight: inherit;
+}
+
+h1 {
+	margin-top: 1.5rem;
+	font-size: 3rem;
+	line-height: 3rem;
+}
+h2 {
+	font-size: 2rem;
+	line-height: 3rem; /* two lines */
+	/* adjust baseline down */
+	padding-top: .4rem;
+	margin-bottom: 1.1rem; /* line height - padding-top */
+}
+nav {
+	background-color: #fffaec;
+	z-index: 2;
+	position: sticky;
+	top: -3em;
+}
+nav h2 {
+	margin-bottom: 0rem;
+}
+nav ol {
+	list-style: none;
+	margin-bottom: 0;
+	padding: .75rem 0;
+}
+nav li {
+	font-size: 1.2em;
+	line-height: 1.5rem;
+	margin-bottom: 0;
+}
+nav a {
+	margin-left: 0;
+	box-shadow: none;
+}
+nav a::before {
+	left: -1rem;
+}
+nav li:last-child {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+#hixie p:first-of-type {
+	color: rgba(0,0,0,0.5);
+	margin-top: -1.5rem;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+	position: relative;
+	margin-left: .8em;
+	display: inline-block;
+	box-shadow: inset 0 -1px 0 0 rgba(0,128,255,0.2);
+}
+a::before {
+	content: '>';
+	color: rgba(0,128,255,0.3);
+	position: absolute;
+	left: -.6em;
+	transition: left .1s;
+}
+a:hover::before {
+	left: -.5em;
+}
+@media (min-width: 600px) {
+	nav li {
+		display: inline-block;
+		padding-right: 1em;
+		margin-right: 1.2em;
+	}
+}
+@media (min-width: 700px) {
+	html {
+		font-size: 1.125rem;
+		line-height: 1.5em;
+	}
+}
+@media (min-width: 900px) {
+	html {
+		font-size: 1.25rem;
+		line-height: 1.5em;
+	}
+}

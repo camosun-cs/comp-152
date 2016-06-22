@@ -1,0 +1,127 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Courgette");
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+figcaption {
+	text-align: center;
+}
+img {
+	max-width: 100%;
+}
+p {
+	margin: 0 0 1em;
+}
+
+body {
+	margin: 0 1em 1em;
+	/* flex layout like nav */
+	display: flex;
+	flex-flow: row wrap; /* allow wrapping so h1 and nav are on their own lines */
+	justify-content: space-between;
+	align-items: flex-start;
+	align-content: flex-start;
+	position: relative;
+}
+body > h1:first-child {
+	/* take out of flow */
+	position: fixed;
+}
+body > nav:nth-child(2) {
+	margin-top: .5em;
+	/* Use a full line.
+	   Overshoot, then shrink down as necessary to avoid a rounding bug
+	 */
+	flex: 0 1 110%;
+}
+body > *:nth-child(n+3) { /* all content sections */
+	flex: 1 1 5em;
+	margin-left: -5%;
+	margin-right: -5%;
+}
+body > *:nth-child(3) { /* the first section */
+	margin-left: 0;
+}
+body > *:last-child {  /* the last section */
+	margin-right: 0;
+}
+
+
+body > section,
+body > figure {
+	transform: translateZ(0);
+	margin: 2em 0 0 0;
+	padding: 1em;
+	-webkit-filter: blur(2px) grayscale(80%) opacity(90%);
+	filter: blur(2px) grayscale(80%) opacity(90%);
+	transition:
+	  -webkit-filter .3s ease,
+	  filter .3s ease,
+	  padding-top .3s ease,
+	  margin-top .3s ease
+	;
+	border-radius: 1em 1em 1em 1em;
+	box-shadow: 1px 1px 4px rgba(0,0,0,.4);
+	box-sizing: border-box;
+	max-height: calc(100vh - 5em);
+	overflow: auto;
+	min-width: 5em;
+	color: white;
+}
+html :target {
+	z-index: 2;
+	-webkit-filter: blur(0px) grayscale(0%) opacity(100%);
+	filter: blur(0em) grayscale(0%) opacity(100%);
+	padding-top: 3em;
+	margin-top: -1.9em;
+}
+
+body > section { background-color: #E65100; }
+body > figure { background-color: #2196F3; }
+
+body > nav {
+	border-bottom: 1px solid black;
+	z-index: 3;
+	background-color: #FFEB3B;
+}
+body > nav h2 {
+	display: none;
+}
+body > nav ol, body > nav ul {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+body > nav li {
+	min-width: 2em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	flex: 1 1 5em;
+	text-align: center;
+	margin: 0;
+	padding: .2em 1em;
+	font-weight: bold;
+}
+
+
+body > h1 {
+	z-index: 3;
+	bottom: 0;
+	right: 0;
+	margin: .4em;
+	font-family: "Courgette", cursive;
+	font-size: 2em;
+	opacity: .4;
+	padding: .2em .5em;
+	border-radius: .5em;
+}
+body > h1:hover {
+	opacity: 1;
+	background-color: black;
+	color: white;
+}
