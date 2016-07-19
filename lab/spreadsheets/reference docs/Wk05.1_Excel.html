@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Civl 122 Week 5</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Trebuchet MS;
+	font-size: medium;
+}
+h1 {
+	font-size: x-large;
+}
+h2 {
+	font-size: large;
+}
+h3 {
+	font-size: medium;
+}
+.lettering {font-family: "Arial Rounded MT Bold"}
+.style1 {font-size: large}
+body {
+	margin-left: 40px;
+	margin-top: 40px;
+	margin-right: 40px;
+	margin-bottom: 40px;
+}
+.blue {	color: #00F;
+}
+.green {	color: #0F0;
+}
+.red {	color: #F00;
+}
+.style11 {font-size: x-large}
+.eq {	font-family: Verdana, Geneva, sans-serif;
+}
+.eq {	font-family: Georgia, Times New Roman, Times, serif;
+}
+-->
+</style>
+<script src="Scripts/AC_ActiveX.js" type="text/javascript"></script>
+<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+</head>
+
+<body>
+<h1>Civl 122 - Graphics and Computing - Week 5</h1>
+<p>Last update: 
+  <!-- #BeginDate format:Am1a -->February 3, 2010 10:18 AM<!-- #EndDate -->
+</p>
+<h1>Graphing in Excel</h1>
+<h2>Today</h2>
+<ul>
+  <li>Another calculation example</li>
+  <li>Formatting Conventions</li>
+  <li>Choosing graph type</li>
+  <li>Creating Graphs</li>
+</ul>
+<p>Open <a href="samples/122_Excel_demo03.xlsx">this file</a>.</p>
+<h1>Another Calculation Example</h1>
+<p>an accerating car </p>
+<h1>Formatting  Conventions for Graphs</h1>
+<ul>
+  <li>All  graphs should have the title of the graph at the top</li>
+  <li> X  and y axes should be labeled with a description of the variable with the units  after in brackets</li>
+  <li> Graphs  with more than one set of variables should include a legend</li>
+  <li> Graphs  should be readable when printed in black and white; they should not rely on  colour to tell the lines apart</li>
+</ul>
+<h1>Choosing  the Correct Graph Type for Your Data</h1>
+<p>The type  of graph you choose depends on the nature of the data.&nbsp; We will cover 4 types of graphs:&nbsp; pie, bar, line and x-y.</p>
+<p>&nbsp;</p>
+<h1>Creating  Graphs In Excel 2007</h1>
+<p><img src="images/Excel/Chart_Group.png" width="528" height="142" /></p>
+<h2>Pie, Bar or Line  Graphs</h2>
+<p>These graphs use only 1 column of data (effectively the y-value). If you wish to add in the % for a pie or the city for the bar then these are treated as data labels (as opposed to data values). </p>
+<p>We are going to recreate each of the graphs in the Excel file. We will start with the pie graph</p>
+<blockquote>
+  <h2>Pie</h2>
+  <ol>
+    <li>Go to the Insert tab.</li>
+    <li>Select the values - in this case it will be a horizontal range of % values, but not the 100% total.</li>
+    <li>Click the Pie button on the ribbon.</li>
+    <li>choose the first pie type - it is the plainest.</li>
+    <li>The graph will appear in your table and now we will add the other features we want.</li>
+    <li>Click the pie graph once so that the little circular grips for every wedge of the pie are shown. Note that how the graphing menus behaviour will depend on what you click - this is somewhat irritating. It should look like this:<br />
+      <img src="images/Excel/pie01.png" width="506" height="313" /></li>
+    <li>Right click and choose 'Add data labels' from the pop-up menu. The percentages should now appear in each wedge.</li>
+    <li>Next change the legend from being 1,2,3,4,5,6, to naming each type of drink. Right-click the graph and select 'Select Data' from the pop-up menu.</li>
+    <li>Click the Edit button under 'Horizontal (Category) Axis Labels.'<br />
+      <img src="images/Excel/pie02.png" width="470" height="320" /><br />
+    </li>
+    <li> Select the range from Red Wine to Other and click OK.</li>
+    <li>Alternately, you may not want a legend but to have the category labels appear in the wedges of the pie. Right-click one of the percentages in the pie and select 'Format Data Labels' from the pop-up menu.</li>
+    <li>Check the box to show 'Category Name'. Experiment with the other settings in this menu.<br />
+      <img src="images/Excel/pie03.png" width="395" height="544" /></li>
+    <li>Add a title to the graph.</li>
+    <li>Select the perimeter of the graph. Note that, with a graph selected, 3 more tabs appear in the ribbon: Design, Layout and Format. All of the tools we have been accessing by right-clicking are also on these tabs.</li>
+    <li>Choose the 'Layout' tab</li>
+    <li>Click the button for 'Chart Title' and choose 'Above Chart'</li>
+    <li>A generic title appears above your pie. Click this title to edit it.</li>
+    <li>It is often advantageous for the chart to take its title from a cell in the table. Right-click the graph and choose 'Select Data'.</li>
+    <li>Click the Edit button as shown below<br />
+      <img src="images/Excel/pie04.png" width="470" height="320" /></li>
+    <li>Another window appears. One box indicates the data range and another is a pointer to the chart title.  Click on the cell containing the chart title and its cell address will appear in the Edit Series window.<br />
+      <img src="images/Excel/pie05.png" width="582" height="238" /></li>
+    <li>Click OK twice.</li>
+    <li>We are done with Pies but many of the tools are very similar with Bar and Line graphs.<br />
+    </li>
+  </ol>
+  <h2>Bar</h2>
+  <ol>
+    <li>Go to the worksheet called Bar</li>
+    <li>Select the values from $425,000 to $155,000</li>
+    <li>Click the Column button on the ribbon.</li>
+    <li>choose the first pie type - it is the plainest.</li>
+    <li>The graph will appear in your table. It will automatically have the $ values formatted to be $ - by default, Excel copies the formatting of the original data.</li>
+    <li>Excel puts a legend on every graph. In this case the name of the series is not identified so Excel labels it 'Series 1'. A legend is not needed on a graph with only 1 data set. Click the legend and hit the Delete key.</li>
+    <li>Adding City Labels
+      <ol>
+        <li>Right-click the graph and select 'Select Data' from the pop-up menu.</li>
+        <li>Click the Edit button under 'Horizontal (Category) Axis Labels.'<br />
+        </li>
+        <li> Select the range from Victoria to Fredericton and click OK.</li>
+      </ol>
+    </li>
+    <li>To add a title, right-click the graph and choose 'Select Data' one more time.
+      <ol>
+        <li>Click the Edit button as shown below<br />
+          <img src="images/Excel/bar01.png" width="470" height="320" /><br />
+        </li>
+        <li>Another window appears. One box indicates the data range and another is a pointer to the chart title.  Click on the cell containing the chart title and its cell address will appear in the Edit Series window.</li>
+        <li>Click OK twice</li>
+      </ol>
+    </li>
+    <li>Now we are going to optionally reformat the Y-values (the house prices) so the prices read $100, $200 etc instead of $100,000; $200,000 and the y-axis label will say 'Cost (thousands)
+      <ol>
+        <li>Add a y-axis title: select the graph and go to the Layout tab.</li>
+        <li>Click the 'Axis Title' button<br />
+          <img src="images/Excel/bar03.png" width="546" height="196" /></li>
+        <li>Choose Primary Vertical Axis + Rotated Title</li>
+        <li>Now double-click the title and change it to say 'Cost ($1000s)'</li>
+        <li>Right-click any of the y-axis values in the graph and choose 'Format axis' from the pop-up menu.</li>
+        <li>Choose Thousands for the 'Display unit'. If 'Show display units label on chart' is checked, remove the check.<br />
+          <img src="images/Excel/bar02.png" width="427" height="544" /></li>
+        <li>This menu allows you to change many formatting and display features of the x- or y-axis values. You can change the number format ($, %, # decimals) the max and min values to display and the font and colour of the text. You can also make the axis a log scale or have the values start with 0 at the top instead of the bottom.<br />
+        </li>
+      </ol>
+    </li>
+  </ol>
+  <h2>Line (Optional)</h2>
+  <ol>
+    <li>Take the skills you have learned with the Pie and Bar graphs and recreate the line graph.</li>
+    <li>Remember that we don't generally ever want to create Line graphs so we will skip this if we are running behind.</li>
+  </ol>
+</blockquote>
+<h2>X-Y Graphs</h2>
+<p>X-Y Graphs are the most common type of graph you will make. They are also the easiest. however, they do have more options.</p>
+<p>It  is generally best to have the data you want to graph in vertical columns   with the first column as the x and the second column as the y.&nbsp; If there are several y columns to graph they  can follow after the first y.</p>
+<ol>
+  <li>Go to the 'X-Y houses' tab</li>
+  <li>Select the range that includes all of the years as well as the cost data (A9 to B39)</li>
+  <li>On the Insert tab click 'Scatter'<br />
+    '<img src="images/Excel/XY01.png" width="528" height="142" /></li>
+  <li>There are 5 choices presented. I always choose the 4th one (Scatter with straight lines and markers) and change it later if I decide I don't like it.</li>
+  <li>Delete the legend</li>
+  <li>Add a Title</li>
+  <li>Add the axes titles as they appear in the sample graph.</li>
+</ol>
+<p>The data on the 'Stress-Strain' tab is similar to that required in your Strengths class.</p>
+<ol>
+  <li>Select the data in the range D11:E22</li>
+  <li>On the Insert tab click 'Scatter' and select the option that includes markers only</li>
+  <li>Format the axes so they include appropriate titles and the numbers do not show unnecessary decimal places.</li>
+  <li>Now we want to have Excel fit a straight line to the data:</li>
+  <li>Single click one of the data points and all the points should show as being selected like this:<br />
+    <img src="images/Excel/XY02.png" width="500" height="309" /></li>
+  <li>Right click and choose Add Trendline from the pop-up menu</li>
+  <li>Choose 'Linear' (should be the default) and near the bottom, 'Set Intercept = 0'<br />
+    <img src="images/Excel/XY03.png" width="420" height="566" /></li>
+  <li>The line gives the wrong answer. We want to fit a line to only the straight portion of the data. This requires another series.
+    <ol>
+      <li>Delete that Trendline</li>
+      <li>Put your mouse over the last point on the graph in the straight portion of the data. A tool tip will show the x and y values for that data point. Note that it has a y-value of 1361.7</li>
+      <li>Right-click the graph and choose 'Select Data'</li>
+      <li>Select Series 1 and click 'Edit.'<br />
+        <img src="images/Excel/XY04.png" width="470" height="320" /><br />
+      </li>
+      <li>In the empty box type 'all.' Click OK</li>
+      <li>Click 'Add' to add another series. This series will duplicate 9 of the 12 data points in the 'all' series<br />
+        <img src="images/Excel/XY05.png" width="470" height="320" /></li>
+      <li>Fill in the appropriate boxes to look like this:<br />
+        <img src="images/Excel/XY06.png" width="327" height="192" /></li>
+      <li>Excel should add another data series of the same format (markers only) as the other but in a different colour.</li>
+      <li>Select this new data series. When selected it should look like this:<br />
+        <img src="images/Excel/XY07.png" width="737" height="367" /></li>
+      <li>Right click and choose 'Add Trendline'</li>
+      <li>Choose 'Linear'; 'Set Intercept = 0', 'Display Equation on Chart' and 'Display R-squared value on chart'</li>
+      <li>The equation shown reads y = 3E+06x which means y = 3x10<sup>6</sup>x but I think it needs a few more sig figs than that.  Right-click the equation and choose 'Format Trendline Label' and adjust the number of decimals shown on the scientific notation.</li>
+      <li>Right-click the markers and choose 'Format Data Series'. This window allows us to edit line and marker style, colour and width. Under 'Marker Options' choose 'None'<br />
+        <img src="images/Excel/XY09.png" width="413" height="544" /></li>
+      <li>Note that we now have a data series with no line or markers. Selecting it to modify these settings later could be difficult. However, as the equation is associated with this series we can right-click it and choose 'Format Data Series.' Without an equation there I do not recommend eliminating both the line and the marker on a data series.</li>
+      <li>The final graph should look like this:<br />
+        <img src="images/Excel/XY10.png" width="489" height="295" /></li>
+      <li>If you are creating the graph as part of a lab report you can use Control+C and Control+V to paste the graph into Word. Excel and Word maintain a dynamic link between the two files so that any changes made to the graph in Excel will be automatically updated in Word. I am not totally sure how it does this and in what cases that link is broken so be careful.<br />
+      </li>
+    </ol>
+  </li>
+</ol>
+<p>&nbsp; </p>
+<p>&nbsp;</p>
+<p></p>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Spreadsheets and Excel - COMP 156</title>
+	<meta name="viewport" content="width=device-width"/>
+	<link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/prism.css"/>
+	<link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/basic.css"/>
+	<!-- include additional styles inline here if necessary
+		<style>...</style>
+	-->
+</head>
+<body>
+	<header>
+		<h1>COMP 156 - <!-- TITLE -->Spreadsheets and Excel<!-- / --></h1>
+		<nav><ol>
+			<!-- every lab should start with this -->
+			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+			<!-- repeat one for each task, adjusting @href for each -->
+			<li><a href="#task1"><strong>Task <!-- TASK_NUM -->1<!-- / --></strong>: <!-- TASK_TITLE -->Manipulating Data in Excel<!-- / --></a></li>
+			<li><a href="#task2"><strong>Task <!-- TASK_NUM -->2<!-- / --></strong>: <!-- TASK_TITLE -->Creating a Table<!-- / --></a></li>
+			<!-- every lab should end with this -->
+			<li><a href="#submission">Submission</a></li>
+		</ol></nav>
+	</header>
+
+	<section id="outcomes">
+		<h2>Learning Outcomes and Introduction</h2>
+		<p>In this lab assignment you will learn about:</p>
+		<ul>
+			<!-- list learning outcomes here -->
+			<li><!-- OUTCOME_ITEM -->Spreadsheets and their uses<!-- / --></li>
+			<li><!-- OUTCOME_ITEM -->Using Microsoft Excel<!-- / --></li>
+			<li><!-- OUTCOME_ITEM -->Cell References<!-- / --></li>
+			<li><!-- OUTCOME_ITEM -->Formulas and Functions<!-- / --></li>
+		</ul>
+		<!-- optional additional contextual introduction -->
+		<h3>What is a Spreadsheet?</h3>
+
+		<p>Spreadsheets could be called number processing software as opposed to
+		Word, which is word processing software.  All spreadsheet software 
+		(including Excel, 
+		Lotus and QuattroPro) is based on a table format – numbers (and text) 
+		are entered into cells, which are organized into rows and columns.  
+		A spreadsheet can be used to:</p>
+		<ul>
+			<li>Format data or calculations into an attractive table;</li>
+			<li>Perform complicated or repetitive calculations;</li>
+			<li>Analyze empirical (laboratory) data and determine the equation 
+				that best fits the data;</li>
+			<li>Graph data in many types of graphs;and</li>
+			<li>Store data in a database (although Excel is not as versatile 
+				or powerful as the Microsoft Access database program).</li>
+		</ul>
+		<h3>Examples:</h3>
+
+		<p>A spreadsheet would be suitable for the following applications:</p>
+
+		<ul>
+			<li>Calculating your tax return;</li>
+			<li>Preparing a cost estimate for a construction project;</li>
+			<li>Recording and calculating your marks on tests and assignments 
+				and then calculating each students final grade;</li>
+			<li>Estimating the flow rates in a drainage or sewerage analysis and 
+				calculating what pipe diameter would be required to pass the 
+				flow;</li>
+			<li>Calculating mortgage payments given the principal, interest rate 
+				and number of payments, calculating the balance owing after each 
+				payment;</li>
+			<li>To count the number of days / minutes / seconds until the year 
+				2010 (or any other date)</li>
+			<li>Calculating the amount in an investment account each month for 
+				20 years;</li>
+			<li>Calculating and graphing stress and strain and graphing the 
+				results in a lab; and</li>
+			<li>Performing statistical analysis (such as calculating the 
+				standard deviation) of a large number of data points.</li>
+		</ul>
+	</section>
+
+	<!-- create one section per task, adjusting @id for each -->
+	<section id="task1">
+		<h2>Task <!-- TASK_NUM -->1<!-- / -->: <!-- TASK_TITLE -->Manipulating Data in Excel<!-- / --></h2>
+		<!-- optional header graphic showing relevant tools for this task -->
+		<figure><img src="img/excel1.png" alt="excel overview" /></figure>
+		<!-- optional pre-amble of any kind -->
+		<details>
+			<summary>Spreadsheet Glossary</summary>
+			<dl class="inline">
+				<dt>Worksheet</dt>
+				<dd>A single table of cells.</dd>
+			</dl>
+			<dl class="inline">
+				<dt>Workbook</dt>
+				<dd>A collection of 1 or more worksheets. Usually stored in a single file.</dd>
+			</dl>
+			<dl class="inline">
+				<dt>Chart</dt>
+				<dd>Also known as a graph. A representation of data. Can appear either as an <samp>Embedded Chart</samp> on an existing table, or in its own Sheet.</dd>
+			</dl>
+			<dl class="inline">
+				<dt>Cell</dt>
+				<dd>A field on a table that can contain data. Represented by the intersection of a row and column. Eg: <code>C3</code></dd>
+			</dl>
+			<dl class="inline">
+				<dt>Range</dt>
+				<dd>A collection of cells. Represented by the address of two cells in diagonally opposite corners. Eg: <code>B5:D1</code></dd>
+			</dl>
+			<dl class="inline">
+				<dt>Formula</dt>
+				<dd>A mathematical operation performed in a cell. Often reference other cells for input data. Eg: <code>=(A1+A2)*B3</code></dd>
+			</dl>
+			<dl class="inline">
+				<dt>Reference</dt>
+				<dd>A way to fetch the data from one or more cells. Used by supplying the cell or range address in a formula. Eg: <code>C3</code>, <code>A1:D4</code></dd>
+			</dl>
+			<dl class="inline">
+				<dt>Function</dt>
+				<dd>A predefined and reusable set of operations. Translates input into output. Often performed on a referenced cell or range. Can be part of a formula or embedded in other functions. Eg: <code>=SUM(C3:C6)</code></dd>
+			</dl>
+			<dl class="inline">
+				<dt>Auto Fill</dt>
+				<dd>An action performed in Excel to intelligently fill cells with new data based on the data in other selected cells. Accessed using the handle in the bottom-right corner of a cell.</dd>
+			</dl>
+		</details>
+		<details>
+			<summary>Spreadsheet Structure</summary>
+			<p>A Worksheet is a single table within a Workbook. Using several Worksheets makes it easier to organize different types of data. A Workbook is saved as a single .xlsx (.xls in older versions) file and all Worksheets within the Workbook are opened when you open the file.</p>
+	 		<p>Worksheets are separated by Tabs visible at the bottom of the screen. Tabs are initially called Sheet1, Sheet2, Sheet3 but you can rename them by double clicking on the Tab. You can add more sheets by clicking the plus to the right of the existing tabs, or remove them by right-clicking a tab and selecting Delete.</p>
+	 		<p>Columns are labeled with letters; Rows are labeled with numbers; Cells are identified by their column and row, for example:  <code class="language-excel">A1</code>, <code class="language-excel">B265</code>, <code class="language-excel">G4</code>, <code class="language-excel">AA123</code> all the way to <code class="language-excel">XFD1048576</code>. These notations are called the cell’s <strong>address</strong>. This address can be extended further by including the name of the worksheet the cell resides in. For example: <code class="language-excel">worksheet_name!A1</code>.</p>
+ 		</details>
+ 		<details>
+ 			<summary>Cell References</summary>
+ 			<p>It is very common in Excel to perform an operation using the data of other cells. To do this, you must provide a <strong>reference</strong> to the cell or cell range. This is done simply by typing the address of the cell(s) directly into the formula where the data is needed.</p>
+ 		</details>
+ 		<details>
+ 			<summary>Formulas</summary>
+ 		</details>
+ 		<details>
+ 			<summary>Functions</summary>
+ 		</details>
+ 		<details>
+ 			<summary>Cell Number Formatting</summary>
+ 		</details>
+		<!-- every task should have at least one ol.instructions -->
+		<ol class="instructions">
+			<!-- each step should be a short, concrete action -->
+			<li>
+				Write an example task step.
+				<!-- Use aside to create pull-out warnings, notes, etc -->
+				<aside>
+					<strong>Warning:</strong> Always make links use
+					<code>target="_blank"</code>, otherwise they will behave
+					badly when used inside of D2L.
+					Eg. <a href="https://telic.github.io/comp152/" target="_blank">COMP 152 materials</a>
+				</aside>
+				<!-- Use details for additional contextual help or further reading -->
+				<details>
+					<!-- always include a short summary of what this is about -->
+					<summary>Other special markup</summary>
+					<!-- provide enough information to understand the current step,
+						 but try not to explicitly give the solution. -->
+					<figure>
+						<img src="http://dummyimage.com/100&amp;text=Figure" alt="an example figure" height="100" width="100"/>
+						<figCaption>figures will be floated right</figCaption>
+					</figure>
+					<ul>
+						<li>
+							<code>abbr</code> titles will be automatically exapnded,
+							eg. <abbr title="Hyper Text Markup Language">HTML</abbr>.
+						</li>
+						<li>
+							Use <code>samp</code> when mentioning items on screen
+							(eg. the <samp>File</samp> menu) and filenames (eg.
+							<samp>example.txt</samp>).
+						</li>
+						<li>
+							Use <code>code</code> to markup example computer code or
+							variables mentioned within running prose, eg. the word
+							"code" at the beginning of this point.
+						</li>
+						<li>
+							Add a language class to code elements to enable syntax
+							highlighting, eg. <code>language-markup</code>
+							or <code>language-javascript</code>.
+						</li>
+						<li>
+							Use <code>code</code> wrapped in <code>pre</code> to markup
+							code blocks, eg.
+							<pre><code class="language-markup">&lt;pre>&lt;code class="language-java">int example = 1;&lt;/code>&lt;/pre></code></pre>
+						</li>
+						<li>
+							Use <code>dl</code> with class <code>inline</code> to
+							create definition lists with terms and definitions
+							on the same line, eg.
+							<dl class="inline">
+								<dt>Term</dt>
+								<dd>Definition.</dd>
+							</dl>
+						</li>
+					</ul>
+				</details>
+			</li>
+		</ol>
+	</section>
+
+	<!-- additional task sections here as required -->
+
+	<!-- this section should always be last -->
+	<section id="submission">
+		<h2>Submission</h2>
+		<!-- optional paragraph about adding a "what you've learned" blurb -->
+		<p>
+		   ZIP your lab folder, rename it as <samp>ExampleLab-FirstnameLastname.zip</samp>,
+		   <!-- Update to match current lab name   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+		   and submit it to the dropbox on D2L.
+		</p>
+		<p>
+		   <b>NOTE</b>: This assignment is to be done <em>individually</em>.
+		   You can help one another with problems and questions, but in the end
+		   everyone must do their own assignment.
+		</p>
+		<table class="marks">
+			<thead>
+				<tr><th>Criteria</th><th>Marks</th></tr>
+			</thead>
+			<tbody>
+				<!-- optionally break down into groups:
+					<tr><th colspan="2">Group</th></tr>
+				-->
+				<!-- itemize marking deliverables -->
+				<tr>
+					<td>Deliverable</td>
+					<td>10</td>
+				</tr>
+				<tr>
+					<td>Deliverable</td>
+					<td>10</td>
+				</tr>
+				<!-- Total marks at end -->
+				<tr>
+					<th>Total</th>
+					<td>20</td> <!-- UPDATE THIS! -->
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<script src="https://telic.github.io/comp152/lab/template/prism.js"></script>
+	<script src="https://telic.github.io/comp152/lab/template/modernizr-details.min.js"></script>
+	<script src="https://telic.github.io/comp152/lab/template/details-polyfill.min.js"></script>
+	<!-- additional scripts can be added here if necessary -->
+</body>
+</html>

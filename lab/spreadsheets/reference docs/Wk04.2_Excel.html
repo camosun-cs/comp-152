@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Civl 122 Week 4</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Trebuchet MS;
+	font-size: medium;
+}
+h1 {
+	font-size: x-large;
+}
+h2 {
+	font-size: large;
+}
+h3 {
+	font-size: medium;
+}
+.lettering {font-family: "Arial Rounded MT Bold"}
+.style1 {font-size: large}
+body {
+	margin-left: 40px;
+	margin-top: 40px;
+	margin-right: 40px;
+	margin-bottom: 40px;
+}
+.blue {	color: #00F;
+}
+.green {	color: #0F0;
+}
+.red {	color: #F00;
+}
+.style11 {font-size: x-large}
+.eq {	font-family: Verdana, Geneva, sans-serif;
+}
+.eq {	font-family: Georgia, Times New Roman, Times, serif;
+}
+-->
+</style>
+<script src="Scripts/AC_ActiveX.js" type="text/javascript"></script>
+<script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+</head>
+
+<body>
+<h1>Civl 122 - Graphics and Computing - Week 4</h1>
+<p>Last update: 
+  <!-- #BeginDate format:Am1a -->January 26, 2011 3:46 PM<!-- #EndDate -->
+</p>
+<h1>Excel Introduction</h1>
+<ul>
+  <li>What is a Spreadsheet?</li>
+  <li>Spreadsheet lingo</li>
+  <li>Entities within Excel</li>
+  <li>Copying, Moving, other tools</li>
+  <li>Format</li>
+</ul>
+<p>Excel is a Spreadsheet software. See <a href="http://en.wikipedia.org/wiki/Spreadsheet" target="_blank">Wikipedia</a></p>
+<h1>What is a Spreadsheet?</h1>
+<p>Open Excel and open <a href="samples/122_Excel_demo01.xlsx" target="_blank">this file</a></p>
+<p>Spreadsheets could be called <em>number  processing software</em> as opposed to Word, which is <em>word processing  software</em>.&nbsp; All spreadsheet software  (including Excel, Lotus and QuattroPro) is based on a table format &ndash; numbers  (and text) are entered into cells, which are organized into rows and  columns.&nbsp; A spreadsheet can be used  to:</p>
+<ul>
+  <li>Format data or calculations into an attractive table;</li>
+  <li>Perform complicated or  repetitive calculations;</li>
+  <li> Analyze empirical (laboratory)  data and determine the equation that best fits the data;</li>
+  <li> Graph data in many types of  graphs;and</li>
+  <li> Store data in a database  (although Excel is not as versatile or powerful as the Microsoft Access database program). </li>
+</ul>
+<h2>Examples:</h2>
+<p>A spreadsheet would be suitable for the  following applications:</p>
+<ul>
+  <li> Calculating your tax return;</li>
+  <li> Preparing a cost estimate for a  construction project;</li>
+  <li> Recording and calculating your  marks on tests and assignments and then calculating each students final grade;</li>
+  <li> Estimating the flow rates in a  drainage or sewerage analysis and calculating what pipe diameter would be  required to pass the flow;</li>
+  <li> Calculating mortgage payments  given the principal, interest rate and number of payments, calculating the  balance owing after each payment;</li>
+  <li> To count the number of days /  minutes / seconds until the year 2010 (or any other date)</li>
+  <li> Calculating the amount in an  investment account each month for 20 years;</li>
+  <li> Calculating and graphing stress  and strain and graphing the results in a lab; and</li>
+  <li> Performing statistical analysis  (such as calculating the standard deviation) of a large number of data points.</li>
+</ul>
+<p>Hold your mouse over portions of the image below to see their names. </p>
+<h2><img src="images/Excel/demo01.png" width="791" height="516" border="0" usemap="#Map" />
+  <map name="Map" id="Map">
+    <area shape="rect" coords="342,268,546,335" href="#" alt="comment" />
+    <area shape="rect" coords="454,189,605,250" href="#" alt="every table you ever make should have a title and course, name and date!" />
+    <area shape="rect" coords="9,56,792,145" href="#" alt="ribbon, new with Office 2007.  Each block of commands is called a Group" />
+    <area shape="rect" coords="50,26,597,56" href="#" alt="tabs" />
+    <area shape="rect" coords="226,188,291,216" href="#" alt="Current Cell" />
+    <area shape="rect" coords="59,149,93,167" href="#" alt="address of current cell" />
+    <area shape="rect" coords="253,148,614,166" href="#" alt="formula bar" />
+    <area shape="rect" coords="37,170,775,187" href="#" alt="column names" />
+    <area shape="rect" coords="4,189,34,517" href="#" alt="row names" />
+    <area shape="rect" coords="69,265,297,349" href="#" alt="cells with just numbers entered" />
+    <area shape="rect" coords="97,365,164,382" href="#" alt="cell with text" />
+    <area shape="rect" coords="357,416,464,515" href="#" alt="cells with equations that read the numbers in other cells" />
+  </map>
+</h2>
+<h2>&nbsp;</h2>
+<h1>Spreadsheet Lingo</h1>
+<p>At the end of this section in the course  you should understand the following words:</p>
+<table border="3" cellpadding="12" cellspacing="1" bordercolor="#666666">
+  <tr>
+    <td width="96" valign="top"><p>Worksheet, Workbook, Tabs</p></td>
+    <td width="628" valign="top"><p>A Worksheet is a single table within a    Workbook; using several Worksheets makes it easier to organize different    types of data; A Workbook is saved as a single .xlsx (.xls in older versions) file and all Worksheets    within the Workbook are opened when you open the file.<br />
+      &nbsp;Worksheets are separated by Tabs visible at    the bottom of the screen; Tabs are initially called Sheet1, Sheet2, Sheet3    but you can rename them by double clicking on the Tab.&nbsp; You can also add more sheets (up to 256) if    you need them by clicking the blank tab to the right of the existing tabs.</p></td>
+  </tr>
+  <tr>
+    <td width="96" valign="top"><p>Chart</p></td>
+    <td width="628" valign="top"><p>A Chart is a graph, a Chart can appear    right on your table, called an Embedded Chart or it can have its own Tab    which Excel will call Chart1, Chart2 but these can also be changed.</p></td>
+  </tr>
+  <tr>
+    <td width="96" valign="top"><p>Column, Row, Cell</p></td>
+    <td width="628" valign="top"><p>Columns are labeled with letters; Rows    are labeled with numbers; Cells are identified by their column and row, for    example:&nbsp; A1, B265, G4, AA123 all the way to XFD1048576; these    notations are called the cell&rsquo;s address. There are in the neigbourhood of 17 billion cells.</p></td>
+  </tr>
+  <tr>
+    <td width="96" valign="top"><p>Range</p></td>
+    <td width="628" valign="top"><p>A Range is the name given to a    collection of cells.&nbsp; Ranges are    identified by the address of two cells in diagonally opposite corners.&nbsp; A colon separates the 2 addresses.&nbsp; D5:A1, D1:A5 and A5:D1 are considered to be    identical ranges.<br />
+      Ranges can be typed or swiped with the    mouse.<br />
+      A range is used when we are    using a formula as in the question &ldquo;what is the maximum number found in the range    B10:B40?&rdquo; this is written in Excel as =MAX(B10:B40)</p></td>
+  </tr>
+  <tr>
+    <td width="96" valign="top"><p>Formula and Formula Bar</p></td>
+    <td width="628" valign="top"><p>When you want to do any sort of math or any operation, you write a formula in the cell where you want the answer to be. Formulae often point to other cells for their input data. For example, you might want to add the contents of a list of numbers and place the answer at the bottom. The formula would go at the bottom and would refer to all the cells above. For example:</p>
+      <p>=(A1+A2)*B3</p>
+    <p>A Formula is a mathematical operation;    a cell can contain a formula that adds, subtracts, multiplies,  divides    and raises to a power numbers in any combinations of other cells.&nbsp;    The formula for the current cell  will appear in the formula bar at the top of the    screen.&nbsp; The result of the formula will    appear in the cell containing the formula.</p></td>
+  </tr>
+  <tr>
+    <td width="96" valign="top"><p>Function</p></td>
+    <td width="628" valign="top"><p>A Function is a tool provided by Excel    to perform more complicated math functions than + - *  / and ^.&nbsp; There are hundreds of functions and many    perform more than just math.&nbsp; Functions    also appear in the formula bar.<br />
+      Examples of functions are:<br />
+      =SUM(C3:C6) &ndash; totals the    numbers in range C3:C6, if any text appears in those cells the text is    ignored<br />
+      =SUM(C3,C6) &ndash; totals the    numbers in cells C3 and C6, note the slight difference in syntax<br />
+      =AVERAGE(C3:C6) &ndash; calculates    the average of the numbers in range C3:C6<br />
+      =MAX(C3:C6) &ndash; gives the value    of the largest number in the range C3:C6<br />
+      =RAND()    &ndash; creates a random number between 0 and 1.<br />
+      =RAND()*100 - 
+      creates a random number between 0 and 100.<br />
+        =TODAY() &ndash; gives the present    date<br />
+        =NOW() &ndash; gives the present    date and time<br />
+        =PI() - gives the value of pi to 10 significant figures</p>
+      <p>Functions can be part of a formula or    embedded in other functions:<br />
+        =TODAY()+7 &ndash; gives the date    for 1 week from today.<br />
+        =ABS(C8)+D1*3 &ndash; adds the    absolute value of cell C8 to 3 times cell D1<br />
+        =MAX(SUM(C1:C5),SUM(D1:D5)) &ndash;    gives the value of whichever is greater of the two sums</p>
+      <p> The Function Wizard is very helpful for    creating functions.&nbsp; We will learn many    more functions and their applications later.</p></td>
+  </tr>
+  <tr>
+    <td width="96" valign="top"><p>Cell number formatting</p></td>
+    <td width="628" valign="top"><p>Excel can understand the value of a    number but display it in many different ways:&nbsp;    percent, commas, currency, any number of decimal places, fractions,    dates (explained below), and scientific.&nbsp;    For Example the number 15.75 can be entered and formatted to appear as<br />
+1575%<br />
+$15.75<br />
+16<br />
+15.8<br />
+15.75<br />
+15.750<br />
+15 3/4<br />
+January 15, 1900 (ignoring the fact that it is 6:00pm on that day)<br />
+6:00 PM (ignoring the date)<br />
+January 15, 1900 6:00 PM (using the info for both date and time)<br />
+    or 1.555E +1 (that is how a    computer indicates 1.555x10<sup>1</sup>)</p></td>
+  </tr>
+  <tr>
+    <td width="96" valign="top"><p>Date Codes</p>
+    <p>&nbsp;</p></td>
+    <td width="628" valign="top"><p>In general, computers cannot understand dates and times unless they are converted to a strictly numerical value. Some systems count time as the # of seconds elapsed since January 1,1970; Windows counts the # of 1/10th of a milliseconds elapsed since January 1, 1601.</p>
+      <p>In Excel, the value is the elapsed time in days since    midnight, January 1, 1900.&nbsp; January 19, 2009 is    date code 39832.&nbsp; The time of day is in    decimal days (0.5 is noon, 0.75 is 6:00 p.m.).</p>
+      <p>These numbers are formatted to appear    on the screen as a date such as October 3, 2008 or 10/3/2008.&nbsp; There are many options for how the date is    displayed but they remain as numerical values.</p>
+      <p> Note that you can type a day as text    and Excel will translate it to a date code and format it as a date so you may    never even notice that is doing this.</p>
+      <p>&nbsp;</p></td>
+  </tr>
+</table>
+<h1>Now try this</h1>
+<p>Start at cell H25, and  enter the following formulae, one below the other.&nbsp; You may need the use the Function Wizard to  assist you; the Function Wizard is the first button on the 'Formulas' tab.</p>
+<ol>
+  <li>Find the total of all the numbers in column B</li>
+  <li>Find 3 times the average of all the numbers in the whole range.</li>
+  <li>Find the date for 100 days from now and display it in the format  14-Mar-2008</li>
+  <li>Create a random number between 0 and 100</li>
+  <li>Create a random number between 100 and 150</li>
+  <li>Add the numbers you created in steps 4) and 5)</li>
+  <li>Find the maximum of the numbers in column A</li>
+  <li>Find the minimum of the numbers in row 4</li>
+  <li>Divide B6 by B8 and show it as  a percent.</li>
+  <li>Subtract C5 from C7 and show it as $ </li>
+</ol>
+<h1>Entities within Excel</h1>
+<h3>A cell can contain:</h3>
+<ul>
+  <li>Nothing (empty)</li>
+  <li> Text &ndash; will be either ignored,  given a value of zero or give a error if you refer to a cell with text in a  formula</li>
+  <li> Comment &ndash; these are like little  Post-its assigned to a cell, a paragraph will pop up if you mouse over the cell</li>
+  <li> Number &ndash; numbers can be used in  formulae, Excel will only perform math operations on numbers (remember dates are  numbers)
+    <ul>
+      <li> Single number &ndash; a cell  containing just a value</li>
+      <li> Formula or Function with a numerical value as output &ndash; discussed  above</li>
+    </ul>
+  </li>
+</ul>
+<h3>These items can appear on the Worksheet but are not assigned to a  single cell:</h3>
+<ul>
+  <li>Graphs&nbsp; - Excel calls them Charts, graphs can either  be on their own tab or next to your table on the same Worksheet &ndash; this is  called and Embedded Chart.</li>
+  <li> Graphics &ndash; you can insert  photos and clip art just like in Word</li>
+  <li> Equations &ndash; the Equation Editor  is the same as that in Word</li>
+</ul>
+<h1>Copying and Moving</h1>
+<p>&nbsp;</p>
+<h2>Standard Methods</h2>
+<p>The usual ways of copying and moving in Windows programs apply to Excel:</p>
+<ul>
+  <li>on the Ribbon<br />
+    <img src="images/Excel/copy_paste01.png" width="188" height="113" /><br />
+  </li>
+  <li>right-click with the mouse:<br />
+    <img src="images/Excel/copy_paste02.png" width="379" height="151" /></li>
+  <li>or with the keyboard:
+    <ul>
+      <li>Copy - Control-C</li>
+      <li>Paste - Control-V</li>
+      <li>Cut - Control-X (Move = Cut followed by Paste)</li>
+    </ul>
+  </li>
+</ul>
+<h2>However, with Excel we can also drag to Move or Copy:</h2>
+<h3>Moving:</h3>
+<ul>
+  <li>click the cell F3 with the date; the cell will now have a bold outline indicating that it is the current cell</li>
+  <li>move your mouse to be on the bold outline (but not the bottom right corner of the outline)</li>
+  <li>your mouse will change from a big white plus-sign to a set of 4 arrows pointing outward (not possible to create a screen shot, sorry)</li>
+  <li>stay away from the small dark square at the bottom right corner; drag the bold outline of the cell so the date moves to another cell
+    <ul>
+      <li><strong>Side Comment:</strong> If you have moved the date to a column narrower than column F then the column is not wide enough to display the date and will show ######. Do not worry. Widen the column by moving your mouse to the top where the columns are labeled A-Z. As you move to the right edge of a column your mouse will change to a vertical line with arrows pointing side to side. Drag the column wider or double-click at this point and the column will expand to fit the widest thing in that column.</li>
+    </ul>
+  </li>
+</ul>
+<h3>Copying</h3>
+<p>If we want to copy a cell downward or sideways we can do this:</p>
+<ul>
+  <li>move your mouse to be on the bold outline at the bottom right corner of the outline there is a small dark square</li>
+  <li>your mouse will change to a small dark plus sign</li>
+  <li>drag that square downward or sideways - you cannot to both at the same time</li>
+</ul>
+<h2>Using Copy to Count</h2>
+<ul>
+  <li>Put your mouse in the middle of cell A9 and drag to select the range A9:A10. The contents of those cells are a 2 and a 3.</li>
+  <li>We want to continue the counting to be 4,5,6,...</li>
+  <li>With 2 cells selected, if we drag the small dark square at the bottom right corner of the range, Excel will continue the count using the 2 selected numbers as the starting point.</li>
+  <li>Comments:
+    <ul>
+      <li>Excel doesn't necessarily have to count by 1s. If the cells contained 5 and 10, Excel would continue with 15, 20, 25, 30 etc.</li>
+      <li>If we did the same steps but selected only the 3 in cell A10 then Excel would not count; it would copy to create 3,3,3,3,3...</li>
+      <li>Excel responds differently when we copy down a cell where the contents of the cell starts with letters but ends with a number - such as if the cell contained 'trial #1.' Try it, type that in just one cell and copy it down. If we don't want to cell to change to read 'trial #2' we can use regular old Copy and Paste rather than dragging to copy.</li>
+    </ul>
+  </li>
+</ul>
+<h2>What happens to cell references when you Move or Copy</h2>
+<h3>Copying</h3>
+<ul>
+  <li>Go to cell B9 and note the contents of the cell: '=A8/$C$5'</li>
+  <li>copy the $1.07 to the cell below</li>
+  <li>now look at the contents and note the changes</li>
+  <li>Comments:
+    <ul>
+      <li>cell references in Excel are either <em>relative</em> references or <em>absolute</em> references. The formula in cell B9 could be stated as &quot;the cell to the left divided by cell C5.&quot; A8 is a relative reference; $C$5 is an absolute reference. The $ signs in front of the letter and the number lock the reference to that particular cell.</li>
+      <li>The copied formula is now '=A9/$C$5'; only the row  of the relative reference has changed.</li>
+      <li>When we copy a formula one cell downward the relative references change to refer to the cell one lower.</li>
+      <li>When we copy a formula  the absolute references do not change.</li>
+      <li>To add in the $ signs, either type them or hit the F4 key while editing the formula.</li>
+      <li>Also, it is possible to lock only the letter or the number. When copying only downward, only the number (row reference) needs locking. Similarly, with sideways copying, only the letter (column reference) needs locking. It generally doesn't matter if you lock both.</li>
+    </ul>
+  </li>
+  <li>return to cell B9 and edit the formula to remove the $ signs. Copy it down a few rows and see how it's wrong.</li>
+</ul>
+<h3>Moving</h3>
+<ul>
+  <li>When you Move a formula the cell references don't change.</li>
+</ul>
+<h1>Required format for all tables</h1>
+<h2>On Each Printed Page and Each Tab in Excel:</h2>
+<p>All of your Excel tables should contain, at minimum, the following information at the top:</p>
+<ul>
+  <li>Title of Table</li>
+  <li>Your Name</li>
+  <li>The course number</li>
+  <li>The current date (use either the =TODAY() or =NOW() formulae to always display the current date or the =DATE(yyyy,mm,dd) formula to fix the date to a specified day)</li>
+</ul>
+<p>Additional information you may want to include in other tables, perhaps in a print footer, are:</p>
+<ul>
+  <li>Camosun College and/or Civil Engineering Technology if there is a chance anyone other than you and your instructor may be viewing the table </li>
+  <li>page number, for multi page tables, and the total number of pages </li>
+  <li>the xlsx file name, so you can find it later; Excel can automatically generate file name and path</li>
+  <li>the current time, if you may be printing many in a day (use the =NOW() formula and format for time)</li>
+</ul>
+<h2>For Each Value / Column of values:</h2>
+<p>It should always be absolutely clear, on the computer and in a printed copy, what each number on a table represents, what its units are and how it relates to the other numbers on the table. To help this follow these rules:</p>
+<ul>
+  <li>if there are  parameters that do not require a whole column, put them at the top of the table and give their units. Examples of these are:</li>
+  <ul>
+    <li>initial settings (initial velocity, start height);</li>
+    <li>settings that will not change (mass of object, g, etc); or </li>
+    <li>settings that may change but will apply to the whole table (interest rate)</li>
+  </ul>
+  <li>always put a title at the top of each column of numbers</li>
+  <li>always put the units below each title; convention requires us to put the unit in brackets and center it </li>
+</ul>
+<h3>Example</h3>
+<p>Go to the 'Tank' tab on the spreadsheet you have open.</p>
+<p><img src="images/Excel/table_formatting.png" width="630" height="479" /></p>
+<h2>If your table requires multiple pages to print</h2>
+<p>Since every printed page should contain the minimum information as specified above (title, name, date course) etc. it is necessary to set the print settings to duplicate this information at the top of each page if your tables are big and cannot fit to one page.</p>
+<p>I will explain at another time how to do this but for now compare these 2 pdfs (<a href="images/Excel/table_formatting_01.pdf" target="_blank">this one</a> and <a href="images/Excel/table_formatting_02.pdf" target="_blank">this one</a>) and note the differences.</p>
+<h1>Creating a Table</h1>
+<p>&nbsp;</p>
+<p><img src="images/Excel/demo02.png" width="663" height="446" /></p>
+<p>How I created the superscripts:</p>
+<ul>
+  <li>type m3 in  cell C4</li>
+  <li>in the formula bar select just the 3 with your mouse</li>
+  <li>on the Ribbon, expand the Font Group by clicking on the tiny arrow at the bottom right corner of the group</li>
+  <li>check the Superscript box on the lower left of the window that pops up </li>
+</ul>
+<h1>Adding your Data</h1>
+<p>I have entered 3 values for the 'Initial Volume', 'Fill Rate' and 'Bottom Area of Tank.' It doesn't matter if I leave them blank, enter only 1s or make up random numbers. Any values can be changed later although it is sometimes nice to have some numbers initially so I have some feedback to know I have entered my formula correctly.</p>
+<h2>Enter the times:</h2>
+<ul>
+  <li>enter a 0 in cell A10</li>
+  <li>enter a 1 in cell A11</li>
+  <li>drag down to  show times up to 30</li>
+</ul>
+<h2>Calculate the Volume in the tank</h2>
+<ul>
+  <li>We know the volume in the tank for time 0, it's in  cell B4 above. But lets create a formula that will determine the volume for all the times. That equation is:</li>
+</ul>
+<blockquote>
+  <p class="eq">Volume = Initial Volume + Time * Fill Rate</p>
+</blockquote>
+<ul>
+  <li>At Time = 0 this equation will just give Volume = Initial Volume.</li>
+  <li>Enter the equation to calculate the volume in cell B10; remember to start with = and then click on the cells to add their cell addresses to you formula</li>
+  <li>The equation should look like this: =B4+B5*A10</li>
+  <li>Note that Excel follows the <a href="http://en.wikipedia.org/wiki/Order_of_operations" target="_blank">BODMAS</a> rules so you don't need to put brackets around B5*A10</li>
+  <li>Copy this formula down just one row</li>
+  <li>Does it give the right answer? Why not?</li>
+  <li>While in cell B11, click on the formula bar above. Excel will colour-code all the cells that the formula is reading. Note that is it reading the wrong ones because it changed them as you copied the formula down.
+    <ul>
+      <li>We want the formula in every row to read the time in the current row  but to always read the settings in cells B4 (the Initial Volume) and B5 (the Fill Rate)</li>
+      <li>We must tell Excel not to change these as we copy the formula down.</li>
+      <li>To do this go back to the formula in cell B10 as it is correct, click on the formula bar above to edit this formula (or double-click cell B10)</li>
+      <li>Place a $ before the 4 and another before the    5 so the formula will read =B$4+B$5*A10</li>
+      <li>Hit Enter (to accept the changes; Escape cancels the changes) and copy this formula down a few rows</li>
+    </ul>
+  </li>
+</ul>
+<h2>Calculate the Height of the water in the tank</h2>
+<p>Try it on your own, following the same principles as above.</p>
+</body>
+</html>
