@@ -77,13 +77,8 @@
 				standard deviation) of a large number of data points.</li>
 		</ul>
 	</section>
-
-	<!-- create one section per task, adjusting @id for each -->
-	<section id="task1">
-		<h2>Task <!-- TASK_NUM -->1<!-- / -->: <!-- TASK_TITLE -->Manipulating Data in Excel<!-- / --></h2>
-		<!-- optional header graphic showing relevant tools for this task -->
-		<figure><img src="img/excel1.png" alt="excel overview" /></figure>
-		<!-- optional pre-amble of any kind -->
+	<section>
+		<!-- What do with this? -->
 		<details>
 			<summary>Spreadsheet Glossary</summary>
 			<dl class="inline">
@@ -141,7 +136,49 @@
  		</details>
  		<details>
  			<summary>Cell Number Formatting</summary>
+ 			<!-- more options in cell formatting -->
+ 			<!-- can apply to partial text selection -->
  		</details>
+	</section>
+
+	<section id="task1">
+		<h2>Task 1: Manipulating Data in Excel</h2>
+		<figure><img src="img/excel1.png" alt="excel overview" /></figure>
+
+		<ol class="instructions">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ol>
+	</section>
+	<section id="task2">
+		<h2>Task 2: Creating a Table</h2>
+		<figure><img src="img/tank-template.png" alt="tank table example"></figure>
+		<ol>
+			<li>
+				Create a new <strong>worksheet</strong> titled <samp>Tank Volume</samp> and replicate the above table.
+				<details>
+					<summary>Superscripts</summary>
+					<figure><img src="img/format-cells.png"></figure>
+					<ul>
+						<li>Type the full desired text including the characters to be superscripted. ex: <code>m3/sec</code></li>
+						<li>Select the characters you want to modify, either directly in the cell or in the formula bar.</li>
+						<li>The superscript option is in the <samp>Format Cells</samp> window, accesible in the cell's Right-Click context menu, or in the <samp>Font</samp> section's expanded options in the Home ribbon.</li>
+					</ul>
+				</details>
+			</li>
+			<li>Using autofill, enter the numbers 0 to 30 under the <samp>Time</samp> column, starting in cell A10.</li>
+			<li>We know that, for time 0, the volume is still equal to the initial volume found in cell B4. However, we need a formula to calculate the volume at any point in time. The formula to determine the volume for all the times is: <pre><code>Volume = Initial Volume + Elapsed Time * Fill Rate</code></pre>At Time = 0, this equation will correctly return <code>Volume = Initial Volume</code>.</li>
+			<li>Enter this equation into cell B10, the Volume column, substituting the correct cell references in place of the placeholder values.</li>
+			<li>Using the principles above, calculate the height of the water vs time and auto fill the appropriate column.</li>
+		</ol>
+	</section>
+	<!-- create one section per task, adjusting @id for each -->
+	<section id="taskex">
+		<h2>Task <!-- TASK_NUM -->n<!-- / -->: <!-- TASK_TITLE --><!-- / --></h2>
+		<!-- optional header graphic showing relevant tools for this task -->
+		<!-- optional pre-amble of any kind -->
+
 		<!-- every task should have at least one ol.instructions -->
 		<ol class="instructions">
 			<!-- each step should be a short, concrete action -->
