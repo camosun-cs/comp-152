@@ -1,0 +1,192 @@
+html { line-height: 1.2; font-size: 16px; }
+h1, h2, h3, h4 { color: #3366ff; }
+h2 { text-indent: .25em; }
+h3 { text-indent: 1.5em; }
+
+p {
+    text-indent: 1em;
+}
+sup {
+    font-size: 60%;
+}
+samp, kbd {
+    font-weight: bold;
+    font-size: .8em;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+    margin: 0 auto;
+}
+td, th {
+    border: 1px solid #555;
+    padding: 2px 4px;
+    text-align: left;
+}
+thead th {
+    background-color: #ccf;
+    text-align: center;
+}
+th {
+    background-color: #eef;
+}
+
+dl { margin: 1.2em; }
+dt {
+    margin: 0;
+    font-weight: bold;
+}
+dd {
+    margin: 0 0 0 1.2em;
+}
+
+abbr[title]::after {
+    content: " ("attr(title)")";
+    opacity: .5;
+}
+
+section {
+    border-top: 1px solid black;
+    margin-top: 2em;
+}
+.instructions > li {
+    margin-bottom: .6em;
+}
+.instructions > li > ul {
+    list-style: disc;
+}
+
+/* call-outs */
+aside {
+    float: right;
+    max-width: 30%;
+    margin: 1em;
+    margin-top: 0;
+    padding: 10px;
+    border: 2px solid #d08;
+    border-radius: 5px;
+    background-color: white;
+    overflow: auto;
+}
+
+/* disclosures */
+details {
+    margin: .6em 2em;
+    padding: 20px;
+    background-color: #eef;
+    border-radius: 5px;
+    display: block;
+    overflow: auto;
+}
+details:not([open]) > * {
+    display: none;
+}
+summary {
+    cursor: pointer;
+    display: block;
+    margin: -20px;
+    padding: 20px;
+}
+details[open] > summary {
+    margin-bottom: .6em;
+    padding-bottom: .6em;
+}
+details:not([open]) > summary {
+    display: block;
+}
+summary:hover {
+    background: rgba(255,255,255,.5);
+}
+.details-marker {
+    display: inline-block;
+    margin-right: .5em;
+    font-size: smaller;
+}
+.details-marker::before {
+    content: "▶";
+}
+details[open] > summary > .details-marker {
+    transform: rotate(90deg);
+}
+details > p:last-child {
+    margin-bottom: 0;
+}
+details > ul {
+    list-style: disc;
+}
+
+/* figures */
+figure {
+    text-align: center;
+    margin: 1em;
+}
+summary + figure {
+    float: right;
+    margin-top: -1.2rem;
+}
+figure > img {
+    max-width: 100%;
+}
+
+/* inline definition lists */
+dl.inline dt {
+    float: left;
+    margin-right: .5em;
+    clear: left;
+}
+dl.inline dt::after {
+    content: ":";
+}
+
+/* code */
+code,
+code[class*="language-"] {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: .8em;
+    background: #f6f6f6;
+    padding: 2px 5px;
+}
+pre[class*="language-"] {
+    background: transparent;
+}
+pre > code {
+    display: block;
+    max-width: 80ch;
+    width: 80%;
+    overflow: auto;
+    margin: .5em auto;
+    border: 1px solid #aaa;
+    padding: 5px;
+}
+
+/* assessment table */
+.marks {
+    width: 450px;
+    table-layout: fixed;
+    margin: 0 2em;
+}
+@media (max-width: 650px) {
+    .marks {
+        width: 100%;
+        width: calc(100% - 2em);
+        margin: 0 auto;
+    }
+}
+.marks th {
+    text-align: left;
+}
+.marks td:last-child,
+.marks thead th:last-child,
+.marks tbody tr:last-child th:last-child  {
+    width:50px;
+    text-align: center;
+}
+.marks tbody th {
+    text-indent: 1em;
+}
+.marks tr:last-child td:last-child { /* total grade */
+    background-color: #ccf;
+    font-weight: bold;
+}
