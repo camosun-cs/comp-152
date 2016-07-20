@@ -1,3 +1,4 @@
+@charset "utf-8";
 //colors
 $black: #444;
 $alert: rgba(226,75,33,.2);
@@ -161,8 +162,7 @@ summary:hover {
 }
 .details-marker {
     display: inline-block;
-    margin-right: $magic/2;
-    width: 0;
+    margin-right: $magic/4;
     font-size: smaller;
 }
 .details-marker::before {
@@ -188,7 +188,7 @@ section>figure {
 summary + figure {
 	width: $column * 3;
     float: right;
-    margin-top: -$magic;
+    // margin-top: -$magic;
     margin-left: $magic/2;
 }
 figure > img {
