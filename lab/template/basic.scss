@@ -1,8 +1,10 @@
 @charset "utf-8";
 //colors
 $black: #444;
+$title: #000080;
 $alert: rgba(226,75,33,.2);
 $code: rgba(0,0,0,0.05);
+$link: #0080ff;
 // $details: rgba()
 //dimensions
 $column: 100% / 8;
@@ -15,13 +17,16 @@ $magic: 1.5rem;
     border: 0;
 }
 html {
-	font-family: "Georgia";
+	font-family: serif;
 	color: $black;
     font-size: 1em;
     line-height: 1.5;
     font-size: #{16/$em}rem;
 }
-
+a {
+    color: $link;
+    text-decoration: none;
+}
 h1,h2,h3,h4,h5,h6,hgroup,
 ul,ol,li,dd,
 p,figure,aside,
@@ -31,17 +36,15 @@ pre,table,fieldset,hr{
 header,section {
 	display: block;
 	max-width: 36rem;
-	padding: $magic $magic 0 $magic;
+	padding: 0 $magic;
 	margin: auto;
-	margin-bottom: 0;
+	margin-bottom: 2*$magic;
 	box-sizing: border-box;
-	// overflow: auto;
 }
 section {
 	margin-top: -1px;
 	border-top: 1px solid;
 	border-color: inherit;
-
 }
 section::after {
 	content: " ";
@@ -53,21 +56,25 @@ nav li {
 	margin: 0;
 }
 h1,h2,h3,h4,h5,h6 {
-	font-size: 1rem;
 	line-height: 1.5;
-	font-weight: normal;
-	font-family: sans-serif;
+    font-weight: lighter;
+    font-family: sans-serif;
+    // color: $title;
 }
 h1 {
-	font-size: 2rem;	
+	font-weight: normal;
+    font-size: #{32/$em}rem;
+    padding-top: $magic;
+    line-height: 2*$magic;
 }
 h2 {
-	font-size: 1.5rem;
-	line-height: 1.5rem;
+    font-size: #{24/$em}rem;
+    line-height: $magic;
+    padding-top: $magic;
 }
 h3 {
 	font-size: #{18/$em}rem;
-	line-height: 1.5rem;
+	line-height: $magic;
 }
 samp, kbd {
 	font-size: .75em;
@@ -114,27 +121,21 @@ abbr[title]::after {
 /* call-outs */
 aside {
     float: right;
-    text-align:justify;
     max-width: $column * 4;
     margin-left: $magic/2;
     margin-right: -$magic;
     padding: $magic/2;
-    // border: 2px solid #d08;
-    // border-radius: 5px;
     background-color: $alert;
     overflow: auto;
-    // box-sizing: border-box;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 /* disclosures */
 details {
-    // margin: .6em 2em;
     padding: 0 $magic;
     width: 100%;
     margin-left: -$magic;
     background-color: #eef;
-    // border-radius: 5px;
     display: block;
     overflow: auto;
 }
@@ -144,15 +145,14 @@ details:not([open]) > * {
 summary {
     cursor: pointer;
     display: block;
-    padding: $magic/2 $magic/3;
+    padding: $magic $magic/3;
     padding-right: $magic * 5/3;
     margin-left: -$magic;
     box-sizing: content-box;
     width: 100%;
-    // padding: 20px;
 }
 details[open] > summary {
-    margin-bottom: $magic/2;
+    // margin-bottom: $magic/2;
 }
 details:not([open]) > summary {
     display: block;
@@ -228,6 +228,7 @@ pre > code , pre > code[class*="language-"] {
     max-width: 80ch;
     width: 100%;
     overflow: auto;
+    line-height: 1.5rem;
 }
 /* assessment table */
 .marks {
@@ -242,19 +243,23 @@ pre > code , pre > code[class*="language-"] {
 .marks tbody tr:last-child th:last-child  {
     width:4em;
     text-align: center;
-}
-.marks tbody th {
-    text-indent: 1em;
+    text-indent: 0;
 }
 .marks tr:last-child td:last-child { /* total grade */
     background-color: #ccf;
     font-weight: bold;
+}
+.marks td,.marks th {
+    text-indent: 1em;
 }
 
 @media (min-width: 700px) {
 	html {
 		font-size: 1.125rem;
 	}
+    summary {
+        padding: $magic/2 $magic/3;
+    }
 }
 @media (min-width: 900px) {
 	html {
