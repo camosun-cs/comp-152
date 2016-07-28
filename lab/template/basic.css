@@ -1,192 +1,296 @@
-html { line-height: 1.2; font-size: 16px; }
-h1, h2, h3, h4 { color: #3366ff; }
-h2 { text-indent: .25em; }
-h3 { text-indent: 1.5em; }
-
-p {
-    text-indent: 1em;
-}
-sup {
-    font-size: 60%;
-}
-samp, kbd {
-    font-weight: bold;
-    font-size: .8em;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+@charset "UTF-8";
+/*reset*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-table {
-    border-collapse: collapse;
-    border: 2px solid black;
-    margin: 0 auto;
-}
-td, th {
-    border: 1px solid #555;
-    padding: 2px 4px;
-    text-align: left;
-}
-thead th {
-    background-color: #ccf;
-    text-align: center;
-}
-th {
-    background-color: #eef;
+html {
+  font-family: serif;
+  color: #444;
+  font-size: 1em;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
-dl { margin: 1.2em; }
-dt {
-    margin: 0;
-    font-weight: bold;
-}
-dd {
-    margin: 0 0 0 1.2em;
+/*section layout */
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, .instructions > li, details > ul > li, details > ol > li, dd,
+p, figure, aside,
+pre, table, fieldset, hr {
+  margin-bottom: 1.5rem;
 }
 
-abbr[title]::after {
-    content: " ("attr(title)")";
-    opacity: .5;
+header, section {
+  display: block;
+  max-width: 36rem;
+  padding: 0 1.5rem;
+  margin: auto;
+  margin-bottom: 3rem;
+  box-sizing: border-box;
 }
 
 section {
-    border-top: 1px solid black;
-    margin-top: 2em;
+  margin-top: -1px;
+  border-top: 1px solid;
+  border-color: inherit;
 }
-.instructions > li {
-    margin-bottom: .6em;
+
+section::after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  clear: both;
 }
+
+section > ul, ul ul {
+  padding-left: 1.5rem;
+}
+
 .instructions > li > ul {
-    list-style: disc;
+  list-style: disc;
+}
+
+/*text*/
+a {
+  color: #0080ff;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.5;
+  font-weight: lighter;
+  font-family: sans-serif;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 2rem;
+  padding-top: 1.5rem;
+  line-height: 3rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+samp, kbd {
+  font-size: .75em;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+/*tables*/
+table {
+  border-collapse: collapse;
+  border: 2px solid;
+  border-color: inherit;
+  margin: 0 auto;
+}
+
+td, th {
+  border: 1px solid;
+  border-color: inherit;
+  padding: 2px 4px;
+  text-align: left;
+}
+
+thead th {
+  background-color: #ccf;
+  text-align: center;
+}
+
+th {
+  background-color: #eef;
+}
+
+dt {
+  margin: 0;
+  font-weight: bold;
+}
+
+dd {
+  margin-left: 1.5rem;
+}
+
+abbr[title]::after {
+  content: " (" attr(title) ")";
+  opacity: .5;
 }
 
 /* call-outs */
 aside {
-    float: right;
-    max-width: 30%;
-    margin: 1em;
-    margin-top: 0;
-    padding: 10px;
-    border: 2px solid #d08;
-    border-radius: 5px;
-    background-color: white;
-    overflow: auto;
+  float: right;
+  max-width: 50%;
+  margin-left: 0.75rem;
+  margin-right: -1.5rem;
+  padding: 0.75rem;
+  background-color: rgba(226, 75, 33, 0.2);
+  overflow: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 /* disclosures */
 details {
-    margin: .6em 2em;
-    padding: 20px;
-    background-color: #eef;
-    border-radius: 5px;
-    display: block;
-    overflow: auto;
+  padding: 0 1.5rem;
+  width: 100%;
+  margin-left: -1.5rem;
+  background-color: #eef;
+  display: block;
+  overflow: auto;
 }
+
 details:not([open]) > * {
-    display: none;
+  display: none;
 }
+
 summary {
-    cursor: pointer;
-    display: block;
-    margin: -20px;
-    padding: 20px;
+  cursor: pointer;
+  display: block;
+  padding: 1.5rem 0.5rem;
+  padding-right: 2.5rem;
+  margin-left: -1.5rem;
+  box-sizing: content-box;
+  width: 100%;
 }
-details[open] > summary {
-    margin-bottom: .6em;
-    padding-bottom: .6em;
-}
+
 details:not([open]) > summary {
-    display: block;
+  display: block;
 }
+
 summary:hover {
-    background: rgba(255,255,255,.5);
+  background: rgba(255, 255, 255, 0.5);
 }
-.details-marker {
-    display: inline-block;
-    margin-right: .5em;
-    font-size: smaller;
+
+summary::-webkit-details-marker {
+  display: none;
 }
-.details-marker::before {
-    content: "▶";
+
+summary::before {
+  content: "▶";
+  display: inline-block;
+  margin-right: 0.375rem;
+  font-size: smaller;
 }
-details[open] > summary > .details-marker {
-    transform: rotate(90deg);
+
+details[open] > summary::before {
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
-details > p:last-child {
-    margin-bottom: 0;
-}
+
 details > ul {
-    list-style: disc;
+  list-style: disc;
 }
 
 /* figures */
 figure {
-    text-align: center;
-    margin: 1em;
+  text-align: center;
 }
+
+section > figure {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+}
+
 summary + figure {
-    float: right;
-    margin-top: -1.2rem;
+  width: 37.5%;
+  float: right;
+  margin-left: 0.75rem;
 }
+
 figure > img {
-    max-width: 100%;
+  display: block;
+  margin: auto;
+  max-width: 100%;
 }
 
 /* inline definition lists */
 dl.inline dt {
-    float: left;
-    margin-right: .5em;
-    clear: left;
+  float: left;
+  margin-right: 0.75rem;
+  clear: left;
 }
+
 dl.inline dt::after {
-    content: ":";
+  content: ":";
 }
 
 /* code */
 code,
 code[class*="language-"] {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: .8em;
-    background: #f6f6f6;
-    padding: 2px 5px;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: .8em;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 2px 5px;
 }
+
 pre[class*="language-"] {
-    background: transparent;
+  background: transparent;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  overflow: initial;
 }
-pre > code {
-    display: block;
-    max-width: 80ch;
-    width: 80%;
-    overflow: auto;
-    margin: .5em auto;
-    border: 1px solid #aaa;
-    padding: 5px;
+
+pre > code, pre > code[class*="language-"] {
+  padding: 0.75rem 1.5rem;
+  margin: 0.75rem 0;
+  margin-left: -1.5rem;
+  display: block;
+  max-width: 80ch;
+  width: 100%;
+  overflow: auto;
+  line-height: 1.5rem;
 }
 
 /* assessment table */
 .marks {
-    width: 450px;
-    table-layout: fixed;
-    margin: 0 2em;
+  width: 100%;
+  table-layout: fixed;
 }
-@media (max-width: 650px) {
-    .marks {
-        width: 100%;
-        width: calc(100% - 2em);
-        margin: 0 auto;
-    }
-}
+
 .marks th {
-    text-align: left;
+  text-align: left;
 }
+
 .marks td:last-child,
 .marks thead th:last-child,
-.marks tbody tr:last-child th:last-child  {
-    width:50px;
-    text-align: center;
+.marks tbody tr:last-child th:last-child {
+  width: 4em;
+  text-align: center;
+  text-indent: 0;
 }
-.marks tbody th {
-    text-indent: 1em;
+
+.marks tr:last-child td:last-child {
+  /* total grade */
+  background-color: #ccf;
+  font-weight: bold;
 }
-.marks tr:last-child td:last-child { /* total grade */
-    background-color: #ccf;
-    font-weight: bold;
+
+.marks td, .marks th {
+  text-indent: 1em;
+}
+
+@media (min-width: 700px) {
+  html {
+    font-size: 1.125rem;
+  }
+
+  summary {
+    padding: 0.75rem 0.5rem;
+    padding-right: 2.5rem;
+  }
+}
+@media (min-width: 900px) {
+  html {
+    font-size: 1.25rem;
+  }
 }
