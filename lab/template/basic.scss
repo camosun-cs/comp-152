@@ -17,8 +17,8 @@ $magic: 1.5rem;
     border: 0;
 }
 html {
-	font-family: serif;
-	color: $black;
+    font-family: serif;
+    color: $black;
     font-size: 1em;
     line-height: 1.5;
     font-size: #{16/$em}rem;
@@ -28,41 +28,42 @@ a {
     text-decoration: none;
 }
 h1,h2,h3,h4,h5,h6,hgroup,
-ul,ol,li,dd,
+ul,ol,.instructions>li,details>ul>li,details>ol>li,dd,
 p,figure,aside,
 pre,table,fieldset,hr{
     margin-bottom:1.5rem;
 }
 header,section {
-	display: block;
-	max-width: 36rem;
-	padding: 0 $magic;
-	margin: auto;
-	margin-bottom: 2*$magic;
-	box-sizing: border-box;
+    display: block;
+    max-width: 36rem;
+    padding: 0 $magic;
+    margin: auto;
+    margin-bottom: 2*$magic;
+    box-sizing: border-box;
 }
 section {
-	margin-top: -1px;
-	border-top: 1px solid;
-	border-color: inherit;
+    margin-top: -1px;
+    border-top: 1px solid;
+    border-color: inherit;
 }
 section::after {
-	content: " ";
-	display: block;
-	font-size: 0;
-	clear: both;
+    content: " ";
+    display: block;
+    font-size: 0;
+    clear: both;
 }
-nav li {
-	margin: 0;
+
+section>ul,ul ul {
+    padding-left: $magic;
 }
 h1,h2,h3,h4,h5,h6 {
-	line-height: 1.5;
+    line-height: 1.5;
     font-weight: lighter;
     font-family: sans-serif;
     // color: $title;
 }
 h1 {
-	font-weight: normal;
+    font-weight: normal;
     font-size: #{32/$em}rem;
     padding-top: $magic;
     line-height: 2*$magic;
@@ -73,22 +74,22 @@ h2 {
     padding-top: $magic;
 }
 h3 {
-	font-size: #{18/$em}rem;
-	line-height: $magic;
+    font-size: #{18/$em}rem;
+    line-height: $magic;
 }
 samp, kbd {
-	font-size: .75em;
+    font-size: .75em;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 table {
     border-collapse: collapse;
     border: 2px solid;
-	border-color: inherit;
+    border-color: inherit;
     margin: 0 auto;
 }
 td, th {
     border: 1px solid;
-	border-color: inherit;
+    border-color: inherit;
     padding: 2px 4px;
     text-align: left;
 }
@@ -104,7 +105,7 @@ dt {
     font-weight: bold;
 }
 dd {
-	margin-left: $magic;
+    margin-left: $magic;
 }
 abbr[title]::after {
     content: " ("attr(title)")";
@@ -171,9 +172,6 @@ summary:hover {
 details[open] > summary > .details-marker {
     transform: rotate(90deg);
 }
-details > p:last-child {
-    margin-bottom: 0;
-}
 details > ul {
     list-style: disc;
 }
@@ -182,18 +180,18 @@ figure {
     text-align: center;
 }
 section>figure {
-	margin-left: -$magic;
-	margin-right: -$magic;
+    margin-left: -$magic;
+    margin-right: -$magic;
 }
 summary + figure {
-	width: $column * 3;
+    width: $column * 3;
     float: right;
     // margin-top: -$magic;
     margin-left: $magic/2;
 }
 figure > img {
-	display: block;
-	margin: auto;
+    display: block;
+    margin: auto;
     max-width: 100%;
 }
 
@@ -217,12 +215,13 @@ code[class*="language-"] {
 pre[class*="language-"] {
     background: transparent;
     margin: 0;
+    margin-bottom: $magic;
     padding: 0;
     overflow: initial;
 }
 pre > code , pre > code[class*="language-"] {
-	padding: $magic/2 $magic;
-	margin: $magic/2 0;
+    padding: $magic/2 $magic;
+    margin: $magic/2 0;
     margin-left: -$magic;
     display: block;
     max-width: 80ch;
@@ -254,15 +253,16 @@ pre > code , pre > code[class*="language-"] {
 }
 
 @media (min-width: 700px) {
-	html {
-		font-size: 1.125rem;
-	}
+    html {
+        font-size: 1.125rem;
+    }
     summary {
         padding: $magic/2 $magic/3;
+        padding-right: 5/3 * $magic;
     }
 }
 @media (min-width: 900px) {
-	html {
-		font-size: 1.25rem;
-	}
+    html {
+        font-size: 1.25rem;
+    }
 }

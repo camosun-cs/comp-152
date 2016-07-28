@@ -20,7 +20,7 @@ a {
 }
 
 h1, h2, h3, h4, h5, h6, hgroup,
-ul, ol, li, dd,
+ul, ol, .instructions > li, details > ul > li, details > ol > li, dd,
 p, figure, aside,
 pre, table, fieldset, hr {
   margin-bottom: 1.5rem;
@@ -48,8 +48,8 @@ section::after {
   clear: both;
 }
 
-nav li {
-  margin: 0;
+section > ul, ul ul {
+  padding-left: 1.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -182,10 +182,6 @@ details[open] > summary > .details-marker {
           transform: rotate(90deg);
 }
 
-details > p:last-child {
-  margin-bottom: 0;
-}
-
 details > ul {
   list-style: disc;
 }
@@ -235,6 +231,7 @@ code[class*="language-"] {
 pre[class*="language-"] {
   background: transparent;
   margin: 0;
+  margin-bottom: 1.5rem;
   padding: 0;
   overflow: initial;
 }
@@ -285,6 +282,7 @@ pre > code, pre > code[class*="language-"] {
 
   summary {
     padding: 0.75rem 0.5rem;
+    padding-right: 2.5rem;
   }
 }
 @media (min-width: 900px) {
