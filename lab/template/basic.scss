@@ -5,263 +5,257 @@ $title: #000080;
 $alert: rgba(226,75,33,.2);
 $code: rgba(0,0,0,0.05);
 $link: #0080ff;
-// $details: rgba()
+
 //dimensions
 $column: 100% / 8;
 $em: 16;
 $magic: 1.5rem;
+
 /*reset*/
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-html {
-    font-family: serif;
-    color: $black;
-    font-size: 1em;
-    line-height: 1.5;
-    font-size: #{16/$em}rem;
-}
-a {
-    color: $link;
-    text-decoration: none;
-}
-h1,h2,h3,h4,h5,h6,hgroup,
-ul,ol,.instructions>li,details>ul>li,details>ol>li,dd,
-p,figure,aside,
-pre,table,fieldset,hr{
-    margin-bottom:1.5rem;
-}
-header,section {
-    display: block;
-    max-width: 36rem;
-    padding: 0 $magic;
-    margin: auto;
-    margin-bottom: 2*$magic;
-    box-sizing: border-box;
-}
-section {
-    margin-top: -1px;
-    border-top: 1px solid;
-    border-color: inherit;
-}
-section::after {
-    content: " ";
-    display: block;
-    font-size: 0;
-    clear: both;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    html {
+        font-family: serif;
+        color: $black;
+        font-size: 1em;
+        line-height: 1.5;
+        font-size: #{16/$em}rem;
+    }
 
-section>ul,ul ul {
-    padding-left: $magic;
-}
-h1,h2,h3,h4,h5,h6 {
-    line-height: 1.5;
-    font-weight: lighter;
-    font-family: sans-serif;
-    // color: $title;
-}
-h1 {
-    font-weight: normal;
-    font-size: #{32/$em}rem;
-    padding-top: $magic;
-    line-height: 2*$magic;
-}
-h2 {
-    font-size: #{24/$em}rem;
-    line-height: $magic;
-    padding-top: $magic;
-}
-h3 {
-    font-size: #{18/$em}rem;
-    line-height: $magic;
-}
-samp, kbd {
-    font-size: .75em;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-}
-table {
-    border-collapse: collapse;
-    border: 2px solid;
-    border-color: inherit;
-    margin: 0 auto;
-}
-td, th {
-    border: 1px solid;
-    border-color: inherit;
-    padding: 2px 4px;
-    text-align: left;
-}
-thead th {
-    background-color: #ccf;
-    text-align: center;
-}
-th {
-    background-color: #eef;
-}
-dt {
-    margin: 0;
-    font-weight: bold;
-}
-dd {
-    margin-left: $magic;
-}
-abbr[title]::after {
-    content: " ("attr(title)")";
-    opacity: .5;
-}
+/*section layout */
+    h1,h2,h3,h4,h5,h6,hgroup,
+    ul,ol,.instructions>li,details>ul>li,details>ol>li,dd,
+    p,figure,aside,
+    pre,table,fieldset,hr{
+        margin-bottom:1.5rem;
+    }
+    header,section {
+        display: block;
+        max-width: 36rem;
+        padding: 0 $magic;
+        margin: auto;
+        margin-bottom: 2*$magic;
+        box-sizing: border-box;
+    }
+    section {
+        margin-top: -1px;
+        border-top: 1px solid;
+        border-color: inherit;
+    }
+    section::after {
+        content: " ";
+        display: block;
+        font-size: 0;
+        clear: both;
+    }
 
-.instructions > li {
-    // margin-bottom: .6em;
-}
-.instructions > li > ul {
-    list-style: disc;
-}
+    section>ul,ul ul {
+        padding-left: $magic;
+    }
+    .instructions > li > ul {
+        list-style: disc;
+    }
+
+ /*text*/
+    a {
+        color: $link;
+        text-decoration: none;
+    }
+    h1,h2,h3,h4,h5,h6 {
+        line-height: 1.5;
+        font-weight: lighter;
+        font-family: sans-serif;
+    }
+    h1 {
+        font-weight: normal;
+        font-size: #{32/$em}rem;
+        padding-top: $magic;
+        line-height: 2*$magic;
+    }
+    h2 {
+        font-size: #{24/$em}rem;
+        line-height: $magic;
+        padding-top: $magic;
+    }
+    h3 {
+        font-size: #{18/$em}rem;
+        line-height: $magic;
+    }
+    samp, kbd {
+        font-size: .75em;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    }
+
+/*tables*/
+    table {
+        border-collapse: collapse;
+        border: 2px solid;
+        border-color: inherit;
+        margin: 0 auto;
+    }
+    td, th {
+        border: 1px solid;
+        border-color: inherit;
+        padding: 2px 4px;
+        text-align: left;
+    }
+    thead th {
+        background-color: #ccf;
+        text-align: center;
+    }
+    th {
+        background-color: #eef;
+    }
+    dt {
+        margin: 0;
+        font-weight: bold;
+    }
+    dd {
+        margin-left: $magic;
+    }
+    abbr[title]::after {
+        content: " ("attr(title)")";
+        opacity: .5;
+    }
 
 /* call-outs */
-aside {
-    float: right;
-    max-width: $column * 4;
-    margin-left: $magic/2;
-    margin-right: -$magic;
-    padding: $magic/2;
-    background-color: $alert;
-    overflow: auto;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
+    aside {
+        float: right;
+        max-width: $column * 4;
+        margin-left: $magic/2;
+        margin-right: -$magic;
+        padding: $magic/2;
+        background-color: $alert;
+        overflow: auto;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
 
 /* disclosures */
-details {
-    padding: 0 $magic;
-    width: 100%;
-    margin-left: -$magic;
-    background-color: #eef;
-    display: block;
-    overflow: auto;
-}
-details:not([open]) > * {
-    display: none;
-}
-summary {
-    cursor: pointer;
-    display: block;
-    padding: $magic $magic/3;
-    padding-right: $magic * 5/3;
-    margin-left: -$magic;
-    box-sizing: content-box;
-    width: 100%;
-}
-details[open] > summary {
-    // margin-bottom: $magic/2;
-}
-details:not([open]) > summary {
-    display: block;
-}
-summary:hover {
-    background: rgba(255,255,255,.5);
-}
-// .details-marker {
-//     display: inline-block;
-//     margin-right: $magic/4;
-//     font-size: smaller;
-// }
-// .details-marker::before {
-//     content: "▶";
-// }
+    details {
+        padding: 0 $magic;
+        width: 100%;
+        margin-left: -$magic;
+        background-color: #eef;
+        display: block;
+        overflow: auto;
+    }
+    details:not([open]) > * {
+        display: none;
+    }
+    summary {
+        cursor: pointer;
+        display: block;
+        padding: $magic $magic/3;
+        padding-right: $magic * 5/3;
+        margin-left: -$magic;
+        box-sizing: content-box;
+        width: 100%;
+    }
+    details:not([open]) > summary {
+        display: block;
+    }
+    summary:hover {
+        background: rgba(255,255,255,.5);
+    }
+    //remove chrome's non-spec implementation
+    summary::-webkit-details-marker {
+        display: none;
+    }
+    summary::before {
+        content: "▶";
+        display: inline-block;
+        margin-right: $magic/4;
+        font-size: smaller;
+    }
+    details[open] > summary::before {
+        transform: rotate(90deg);
+    }
+    details > ul {
+        list-style: disc;
+    }
 
-//remove chrome's non-spec implementation
-summary::-webkit-details-marker {
-    display: none;
-}
-summary::before {
-    content: "▶";
-    display: inline-block;
-    margin-right: $magic/4;
-    font-size: smaller;
-}
-details[open] > summary::before {
-    transform: rotate(90deg);
-}
-details > ul {
-    list-style: disc;
-}
 /* figures */
-figure {
-    text-align: center;
-}
-section>figure {
-    margin-left: -$magic;
-    margin-right: -$magic;
-}
-summary + figure {
-    width: $column * 3;
-    float: right;
-    // margin-top: -$magic;
-    margin-left: $magic/2;
-}
-figure > img {
-    display: block;
-    margin: auto;
-    max-width: 100%;
-}
+    figure {
+        text-align: center;
+    }
+    section>figure {
+        margin-left: -$magic;
+        margin-right: -$magic;
+    }
+    summary + figure {
+        width: $column * 3;
+        float: right;
+        // margin-top: -$magic;
+        margin-left: $magic/2;
+    }
+    figure > img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+    }
 
 /* inline definition lists */
-dl.inline dt {
-    float: left;
-    margin-right: $magic/2;
-    clear: left;
-}
-dl.inline dt::after {
-    content: ":";
-}
+    dl.inline dt {
+        float: left;
+        margin-right: $magic/2;
+        clear: left;
+    }
+    dl.inline dt::after {
+        content: ":";
+    }
+
 /* code */
-code,
-code[class*="language-"] {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    font-size: .8em;
-    background: $code;
-    padding: 2px 5px;
-}
-pre[class*="language-"] {
-    background: transparent;
-    margin: 0;
-    margin-bottom: $magic;
-    padding: 0;
-    overflow: initial;
-}
-pre > code , pre > code[class*="language-"] {
-    padding: $magic/2 $magic;
-    margin: $magic/2 0;
-    margin-left: -$magic;
-    display: block;
-    max-width: 80ch;
-    width: 100%;
-    overflow: auto;
-    line-height: 1.5rem;
-}
+    code,
+    code[class*="language-"] {
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+        font-size: .8em;
+        background: $code;
+        padding: 2px 5px;
+    }
+    pre[class*="language-"] {
+        background: transparent;
+        margin: 0;
+        margin-bottom: $magic;
+        padding: 0;
+        overflow: initial;
+    }
+    pre > code , pre > code[class*="language-"] {
+        padding: $magic/2 $magic;
+        margin: $magic/2 0;
+        margin-left: -$magic;
+        display: block;
+        max-width: 80ch;
+        width: 100%;
+        overflow: auto;
+        line-height: 1.5rem;
+    }
+
 /* assessment table */
-.marks {
-    width: 100%;
-    table-layout: fixed;
-}
-.marks th {
-    text-align: left;
-}
-.marks td:last-child,
-.marks thead th:last-child,
-.marks tbody tr:last-child th:last-child  {
-    width:4em;
-    text-align: center;
-    text-indent: 0;
-}
-.marks tr:last-child td:last-child { /* total grade */
-    background-color: #ccf;
-    font-weight: bold;
-}
-.marks td,.marks th {
-    text-indent: 1em;
-}
+    .marks {
+        width: 100%;
+        table-layout: fixed;
+    }
+    .marks th {
+        text-align: left;
+    }
+    .marks td:last-child,
+    .marks thead th:last-child,
+    .marks tbody tr:last-child th:last-child  {
+        width:4em;
+        text-align: center;
+        text-indent: 0;
+    }
+    .marks tr:last-child td:last-child { /* total grade */
+        background-color: #ccf;
+        font-weight: bold;
+    }
+    .marks td,.marks th {
+        text-indent: 1em;
+    }
+
 
 @media (min-width: 700px) {
     html {

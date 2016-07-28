@@ -14,11 +14,7 @@ html {
   font-size: 1rem;
 }
 
-a {
-  color: #0080ff;
-  text-decoration: none;
-}
-
+/*section layout */
 h1, h2, h3, h4, h5, h6, hgroup,
 ul, ol, .instructions > li, details > ul > li, details > ol > li, dd,
 p, figure, aside,
@@ -52,6 +48,16 @@ section > ul, ul ul {
   padding-left: 1.5rem;
 }
 
+.instructions > li > ul {
+  list-style: disc;
+}
+
+/*text*/
+a {
+  color: #0080ff;
+  text-decoration: none;
+}
+
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.5;
   font-weight: lighter;
@@ -81,6 +87,7 @@ samp, kbd {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
+/*tables*/
 table {
   border-collapse: collapse;
   border: 2px solid;
@@ -116,10 +123,6 @@ dd {
 abbr[title]::after {
   content: " (" attr(title) ")";
   opacity: .5;
-}
-
-.instructions > li > ul {
-  list-style: disc;
 }
 
 /* call-outs */
