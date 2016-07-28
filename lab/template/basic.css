@@ -166,17 +166,18 @@ summary:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 
-.details-marker {
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "▶";
   display: inline-block;
   margin-right: 0.375rem;
   font-size: smaller;
 }
 
-.details-marker::before {
-  content: "▶";
-}
-
-details[open] > summary > .details-marker {
+details[open] > summary::before {
   -webkit-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
           transform: rotate(90deg);

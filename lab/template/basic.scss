@@ -161,15 +161,26 @@ details:not([open]) > summary {
 summary:hover {
     background: rgba(255,255,255,.5);
 }
-.details-marker {
+// .details-marker {
+//     display: inline-block;
+//     margin-right: $magic/4;
+//     font-size: smaller;
+// }
+// .details-marker::before {
+//     content: "▶";
+// }
+
+//remove chrome's non-spec implementation
+summary::-webkit-details-marker {
+    display: none;
+}
+summary::before {
+    content: "▶";
     display: inline-block;
     margin-right: $magic/4;
     font-size: smaller;
 }
-.details-marker::before {
-    content: "▶";
-}
-details[open] > summary > .details-marker {
+details[open] > summary::before {
     transform: rotate(90deg);
 }
 details > ul {
