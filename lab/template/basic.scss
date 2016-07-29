@@ -148,11 +148,9 @@ $magic: 1.5rem;
     summary {
         cursor: pointer;
         display: block;
-        padding: $magic $magic/3;
-        padding-right: $magic * 5/3;
-        margin-left: -$magic;
+        padding: $magic;
         box-sizing: content-box;
-        width: 100%;
+        margin: 0 #{-$magic};
     }
     details:not([open]) > summary {
         display: block;
@@ -166,9 +164,12 @@ $magic: 1.5rem;
     }
     summary::before {
         content: "▶";
-        display: inline-block;
-        margin-right: $magic/4;
-        font-size: smaller;
+        position: absolute;
+        line-height: $magic;
+        margin-left: -$magic;
+        width: $magic;
+        font-family: monospace;
+        text-align: center;
     }
     details[open] > summary::before {
         transform: rotate(90deg);
@@ -262,8 +263,7 @@ $magic: 1.5rem;
         font-size: 1.125rem;
     }
     summary {
-        padding: $magic/2 $magic/3;
-        padding-right: 5/3 * $magic;
+        padding: $magic/2 $magic;
     }
 }
 @media (min-width: 900px) {
