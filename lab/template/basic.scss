@@ -28,8 +28,7 @@ $magic: 1.5rem;
 /*section layout */
     h1,h2,h3,h4,h5,h6,hgroup,
     ul,ol,.instructions>li,details>ul>li,details>ol>li,dd,
-    p,figure,aside,
-    pre,table,fieldset,hr{
+    p,figure,aside,table,fieldset,hr{
         margin-bottom:1.5rem;
     }
     header,section {
@@ -137,6 +136,7 @@ $magic: 1.5rem;
     details {
         padding: 0 $magic;
         width: 100%;
+        margin: $magic/2 0;
         margin-left: -$magic;
         background-color: #eef;
         display: block;
@@ -216,14 +216,7 @@ $magic: 1.5rem;
         background: $code;
         padding: 2px 5px;
     }
-    pre[class*="language-"] {
-        background: transparent;
-        margin: 0;
-        margin-bottom: $magic;
-        padding: 0;
-        overflow: initial;
-    }
-    pre > code , pre > code[class*="language-"] {
+    pre > code {
         padding: $magic/2 $magic;
         margin: $magic/2 0;
         margin-left: -$magic;
