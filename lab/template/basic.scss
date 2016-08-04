@@ -216,7 +216,13 @@ $magic: 1.5rem;
         background: $code;
         padding: 2px 5px;
     }
-    pre > code {
+    pre[class*="language-"] {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+        overflow: initial;
+    }
+    pre > code , pre > code[class*="language-"] {
         padding: $magic/2 $magic;
         margin: $magic/2 0;
         margin-left: -$magic;
