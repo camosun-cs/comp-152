@@ -238,7 +238,7 @@
     <section id="task2">
         <h2>Task 2: Creating a Table</h2>
         <figure><img src="img/tank-template.png" alt="tank table example"></figure>
-        <ol>
+        <ol class="instructions">
             <li>
                 Create a new <strong>worksheet</strong> titled <samp>Tank Volume</samp> and replicate the above table.
                 <details>
@@ -253,10 +253,10 @@
             </li>
             <li>Using autofill, enter the numbers 0 to 30 under the <samp>Time</samp> column, starting in cell A10.</li>
             <li>We know that, for time 0, the volume is still equal to the initial volume found in cell B4. The formula to calculate the volume at any point in time is: <pre><code>Initial Volume + Elapsed Time * Fill Rate</code></pre> Enter this formula into cell B10, the Volume column, substituting the cell references <code>B4</code> and <code>B5</code> in place of <samp>Initial Volume</samp> and <samp>Fill Rate</samp>, and the adjacent cell <code>A10</code> for the <samp>Elapsed Time</samp>. At Time = 0, this equation should return 20, the value of Initial Volume.</li>
-            <li>Autofill the formula in B10 down for all the time intervals. Unless you've been keeping one step ahead, you'll very likely see that the results are not as expected, with most of the cells failing to evaluate. Checking the formula on one of the broken cells should show an idea of what went wrong. Like the previous task, the interval part of the formula is updating correctly for each cell, but the other two references are not. In fact, they shouldn't be updating at all. To make a reference that doesn't change during autofill, an <samp>absolute reference</samp> must be used.
+            <li>Autofill the formula in B10 down for all the time intervals. Unless you've been keeping one step ahead, you'll very likely see that the results are not as expected, with most of the cells failing to evaluate. Checking the formula on one of the broken cells should show an idea of what went wrong. Like the previous task, the interval part of the formula is updating correctly for each cell, but the other two references are not. In fact, they shouldn't be updating at all. To make a reference that doesn't change during autofill, an <strong>absolute reference</strong> must be used.
             <details>
                 <summary>Absolute References</summary>
-                <p></p>
+                <p>As mentioned earlier, using a plain cell address in a formula creates a relative reference, which is dynamically updated when using autofill. If, instead, the reference needs to always target the same cell, as is the case when referencing a single constant number, make it an absolute reference by prefixing the row <strong>and/or</strong> column character in the address with a <code>$</code>, for example, <code>$B$5</code>. If either the row or column address is left un-prefixed, the reference will still be relative in that direction only.</p>
                 <figure>
                     <img src="relative_vs_absolute.png" alt="relative vs absolute references">
                     <figcaption>The formulas <kbd><samp>=C2, =H$2, =$M$2</samp></kbd> were applied to each of the blue cells, then filled to the grey cells. Take note that the first two examples are still able to reference the negative columns, whereas the third always references M2.</figcaption>
@@ -265,73 +265,6 @@
             </li>
             <li>Correct the formula in cell B10 to use absolute references for B4 and B5, then autofill it down again. It's OK to fill over previously filled cells; they will just be replaced with the new formula.</li>
             <li>Using the principles above, calculate the height of the water vs time and auto fill the appropriate column.</li>
-        </ol>
-    </section>
-    <!-- create one section per task, adjusting @id for each -->
-    <section id="taskex">
-        <h2>Task <!-- TASK_NUM -->n<!-- / -->: <!-- TASK_TITLE --><!-- / --></h2>
-        <!-- optional header graphic showing relevant tools for this task -->
-        <!-- optional pre-amble of any kind -->
-
-        <!-- every task should have at least one ol.instructions -->
-        <ol class="instructions">
-            <!-- each step should be a short, concrete action -->
-            <li>
-                Write an example task step.
-                <!-- Use aside to create pull-out warnings, notes, etc -->
-                <aside>
-                    <strong>Warning:</strong> Always make links use
-                    <code>target="_blank"</code>, otherwise they will behave
-                    badly when used inside of D2L.
-                    Eg. <a href="https://telic.github.io/comp152/" target="_blank">COMP 152 materials</a>
-                </aside>
-                <!-- Use details for additional contextual help or further reading -->
-                <details>
-                    <!-- always include a short summary of what this is about -->
-                    <summary>Other special markup</summary>
-                    <!-- provide enough information to understand the current step,
-                         but try not to explicitly give the solution. -->
-                    <figure>
-                        <img src="http://dummyimage.com/100&amp;text=Figure" alt="an example figure" height="100" width="100"/>
-                        <figCaption>figures will be floated right</figCaption>
-                    </figure>
-                    <ul>
-                        <li>
-                            <code>abbr</code> titles will be automatically exapnded,
-                            eg. <abbr title="Hyper Text Markup Language">HTML</abbr>.
-                        </li>
-                        <li>
-                            Use <code>samp</code> when mentioning items on screen
-                            (eg. the <samp>File</samp> menu) and filenames (eg.
-                            <samp>example.txt</samp>).
-                        </li>
-                        <li>
-                            Use <code>code</code> to markup example computer code or
-                            variables mentioned within running prose, eg. the word
-                            "code" at the beginning of this point.
-                        </li>
-                        <li>
-                            Add a language class to code elements to enable syntax
-                            highlighting, eg. <code>language-markup</code>
-                            or <code>language-javascript</code>.
-                        </li>
-                        <li>
-                            Use <code>code</code> wrapped in <code>pre</code> to markup
-                            code blocks, eg.
-                            <pre><code class="language-markup">&lt;pre>&lt;code class="language-java">int example = 1;&lt;/code>&lt;/pre></code></pre>
-                        </li>
-                        <li>
-                            Use <code>dl</code> with class <code>inline</code> to
-                            create definition lists with terms and definitions
-                            on the same line, eg.
-                            <dl class="inline">
-                                <dt>Term</dt>
-                                <dd>Definition.</dd>
-                            </dl>
-                        </li>
-                    </ul>
-                </details>
-            </li>
         </ol>
     </section>
 
