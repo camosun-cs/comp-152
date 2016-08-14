@@ -79,7 +79,7 @@
 	</section>
 	<section>
 		<!-- What do with this? -->
-		<details>
+		<!-- <details>
 			<summary>Spreadsheet Glossary</summary>
 			<dl class="inline">
 				<dt>Worksheet</dt>
@@ -117,17 +117,8 @@
 				<dt>Auto Fill</dt>
 				<dd>An action performed in Excel to intelligently fill cells with new data based on the data in other selected cells. Accessed using the handle in the bottom-right corner of a cell.</dd>
 			</dl>
-		</details>
-		<details>
-			<summary>Spreadsheet Structure</summary>
-			<p>A Worksheet is a single table within a Workbook. Using several Worksheets makes it easier to organize different types of data. A Workbook is saved as a single .xlsx (.xls in older versions) file and all Worksheets within the Workbook are opened when you open the file.</p>
-	 		<p>Worksheets are separated by Tabs visible at the bottom of the screen. Tabs are initially called Sheet1, Sheet2, Sheet3 but you can rename them by double clicking on the Tab. You can add more sheets by clicking the plus to the right of the existing tabs, or remove them by right-clicking a tab and selecting Delete.</p>
-	 		<p>Columns are labeled with letters; Rows are labeled with numbers; Cells are identified by their column and row, for example:  <code class="language-excel">A1</code>, <code class="language-excel">B265</code>, <code class="language-excel">G4</code>, <code class="language-excel">AA123</code> all the way to <code class="language-excel">XFD1048576</code>. These notations are called the cell’s <strong>address</strong>. This address can be extended further by including the name of the worksheet the cell resides in. For example: <code class="language-excel">worksheet_name!A1</code>.</p>
- 		</details>
- 		<details>
- 			<summary>Cell References</summary>
- 			<p>It is very common in Excel to perform an operation using the data of other cells. To do this, you must provide a <strong>reference</strong> to the cell or cell range. This is done simply by typing the address of the cell(s) directly into the formula where the data is needed.</p>
- 		</details>
+		</details> -->
+ 		
  		<details>
  			<summary>Formulas</summary>
  		</details>
@@ -146,9 +137,15 @@
 		<figure><img src="img/excel1.png" alt="excel overview" /></figure>
 
 		<ol class="instructions">
-			<li></li>
-			<li></li>
-			<li></li>
+			<li>
+				
+				<details>
+					<summary>Spreadsheet Structure</summary>
+					<p>A Worksheet is a single table within a Workbook. Using several Worksheets makes it easier to organize different types of data. A Workbook is saved as a single .xlsx (.xls in older versions) file and all Worksheets within the Workbook are opened when you open the file.</p>
+			 		<p>Worksheets are separated by Tabs visible at the bottom of the screen. Tabs are initially called Sheet1, Sheet2, Sheet3 but you can rename them by double clicking on the Tab. You can add more sheets by clicking the plus to the right of the existing tabs, or remove them by right-clicking a tab and selecting Delete.</p>
+			 		<p>Columns are labeled with letters; Rows are labeled with numbers; Cells are identified by their column and row, for example:  <code class="language-excel">A1</code>, <code class="language-excel">B265</code>, <code class="language-excel">G4</code>, <code class="language-excel">AA123</code> all the way to <code class="language-excel">XFD1048576</code>. These notations are called the cell’s <strong>address</strong>. This address can be extended further by including the name of the worksheet the cell resides in. For example: <code class="language-excel">worksheet_name!A1</code>.</p>
+		 		</details>
+			</li>
 		</ol>
 	</section>
 	<section id="task2">
@@ -168,8 +165,15 @@
 				</details>
 			</li>
 			<li>Using autofill, enter the numbers 0 to 30 under the <samp>Time</samp> column, starting in cell A10.</li>
-			<li>We know that, for time 0, the volume is still equal to the initial volume found in cell B4. However, we need a formula to calculate the volume at any point in time. The formula to determine the volume for all the times is: <pre><code>Volume = Initial Volume + Elapsed Time * Fill Rate</code></pre>At Time = 0, this equation will correctly return <code>Volume = Initial Volume</code>.</li>
-			<li>Enter this equation into cell B10, the Volume column, substituting the correct cell references in place of the placeholder values.</li>
+			<li>We know that, for time 0, the volume is still equal to the initial volume found in cell B4. However, we need a formula to calculate the volume at any point in time. The formula to determine the volume for all the times is: <pre><code>Volume = Initial Volume + Elapsed Time * Fill Rate</code></pre> Enter this forumla into cell B10, the Volume column, substituting the correct cell references in place of the placeholder values. At Time = 0, this equation should return 20, the value of Initial Volume.
+			<details>
+	 			<summary>Cell References</summary>
+	 			<p>It is very common in Excel to perform an operation using the data of other cells. To do this, you must provide a <strong>reference</strong> to the cell or cell range. This is done simply by typing the address of the cell(s) directly into the formula where the data is needed.</p>
+	 			<p>For example, the formula <code>=C3 * D4</code> will multipy the values found in the two cells, and display the result.
+	 			<!-- <code>=SUM(A1:D4)</code> will select the values in the range of cells between A1 and D4 and feed them into the <samp>SUM</samp> function.-->
+	 			</p>
+	 		</details></li>
+	 		<li>Autofill </li>
 			<li>Using the principles above, calculate the height of the water vs time and auto fill the appropriate column.</li>
 		</ol>
 	</section>
