@@ -17,7 +17,7 @@ html {
 /*section layout */
 h1, h2, h3, h4, h5, h6, hgroup,
 ul, ol, .instructions > li, details > ul > li, details > ol > li, dd,
-p, figure, aside, table, fieldset, hr {
+p, figure, table, fieldset, hr {
   margin-bottom: 1.5rem;
 }
 
@@ -126,14 +126,12 @@ abbr[title]::after {
 
 /* call-outs */
 aside {
-  float: right;
-  max-width: 50%;
-  margin-left: 0.75rem;
-  margin-right: -1.5rem;
-  padding: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  width: 100%;
+  margin: 0.75rem 0;
+  margin-left: -1.5rem;
   background-color: rgba(226, 75, 33, 0.2);
   overflow: auto;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 /* disclosures */
@@ -194,17 +192,12 @@ details > ul {
 /* figures */
 figure {
   text-align: center;
+  overflow: auto;
 }
 
-section > figure {
+section > figure, details > figure {
   margin-left: -1.5rem;
   margin-right: -1.5rem;
-}
-
-summary + figure {
-  width: 37.5%;
-  float: right;
-  margin-left: 0.75rem;
 }
 
 figure > img {
@@ -279,7 +272,31 @@ pre > code, pre > code[class*="language-"] {
   text-indent: 1em;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 400px) {
+  aside {
+    box-sizing: border-box;
+    float: right;
+    max-width: calc(1.5rem + 50%);
+    margin-left: 1.5rem;
+    margin-right: -1.5rem;
+    margin-top: -0.75rem;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  p > figure, figure.right {
+    max-width: 50%;
+    float: right;
+    margin-left: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+@media (min-width: 39rem) {
+  details > figure {
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+
   html {
     font-size: 1.125rem;
   }

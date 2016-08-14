@@ -28,12 +28,12 @@ $magic: 1.5rem;
 /*section layout */
     h1,h2,h3,h4,h5,h6,hgroup,
     ul,ol,.instructions>li,details>ul>li,details>ol>li,dd,
-    p,figure,aside,table,fieldset,hr{
+    p,figure,table,fieldset,hr{
         margin-bottom:1.5rem;
     }
     header,section {
         display: block;
-        max-width: 36rem;
+        max-width: 24 * $magic;
         padding: 0 $magic;
         margin: auto;
         margin-bottom: 2*$magic;
@@ -122,14 +122,12 @@ $magic: 1.5rem;
 
 /* call-outs */
     aside {
-        float: right;
-        max-width: $column * 4;
-        margin-left: $magic/2;
-        margin-right: -$magic;
-        padding: $magic/2;
+        padding: $magic/2 $magic;
+        width: 100%;
+        margin: $magic/2 0;
+        margin-left: -$magic;
         background-color: $alert;
         overflow: auto;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     }
 
 /* disclosures */
@@ -181,17 +179,13 @@ $magic: 1.5rem;
 /* figures */
     figure {
         text-align: center;
+        overflow: auto;
     }
-    section>figure {
+    section>figure, details>figure {
         margin-left: -$magic;
         margin-right: -$magic;
     }
-    summary + figure {
-        width: $column * 3;
-        float: right;
-        // margin-top: -$magic;
-        margin-left: $magic/2;
-    }
+
     figure > img {
         display: block;
         margin: auto;
@@ -256,13 +250,36 @@ $magic: 1.5rem;
         text-indent: 1em;
     }
 
-
-@media (min-width: 700px) {
+@media (min-width: 400px) {
+    aside {
+        box-sizing: border-box;
+        float: right;
+        max-width: calc(#{$magic} + #{$column * 4});
+        margin-left: $magic;
+        margin-right: -$magic;
+        margin-top: -$magic/2;
+        margin-bottom: $magic/2;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    p > figure, figure.right {
+        max-width: $column * 4;
+        float: right;
+        margin-left: $magic;
+        margin-bottom: $magic/2;
+    }
+}
+@media (min-width: 26 * $magic) {
+    details>figure {
+        margin: 0;
+        margin-bottom: $magic;
+    }
     html {
         font-size: 1.125rem;
     }
     summary {
         padding: $magic/2 $magic;
+    }
+    aside {
     }
 }
 @media (min-width: 900px) {
