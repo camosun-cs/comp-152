@@ -2,85 +2,39 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Spreadsheets and Excel - COMP 156</title>
+    <title>Spreadsheets: Generating and Charting Information</title>
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/prism.css"/>
     <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/basic.css"/>
-    <!-- include additional styles inline here if necessary
-        <style>...</style>
-    -->
 </head>
 <body>
-    <header>
-        <h1>COMP 156 - <!-- TITLE -->Spreadsheets and Excel<!-- / --></h1>
-        <nav><ol>
-            <!-- every lab should start with this -->
+
+<header>
+    <h1>Spreadsheets: Generating and Charting Information</h1>
+    <nav>
+        <ol>
             <li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
-            <!-- repeat one for each task, adjusting @href for each -->
-            <li><a href="#task1"><strong>Task <!-- TASK_NUM -->1<!-- / --></strong>: <!-- TASK_TITLE -->Manipulating Data in Excel<!-- / --></a></li>
-            <li><a href="#task2"><strong>Task <!-- TASK_NUM -->2<!-- / --></strong>: <!-- TASK_TITLE -->Creating a Table<!-- / --></a></li>
-            <!-- every lab should end with this -->
+            <li><a href="#task1"><strong>Task 1</strong>: Powers of 2, Powers of 10</a></li>
+            <li><a href="#task2"><strong>Task 2</strong>: Importing and Sorting Data</a></li>
+            <li><a href="#review">Review</a></li>
             <li><a href="#submission">Submission</a></li>
-        </ol></nav>
-    </header>
+        </ol>
+    </nav>
+</header>
 
-    <section id="outcomes">
-        <h2>Learning Outcomes and Introduction</h2>
-        <p>In this lab assignment you will learn about:</p>
-        <ul>
-            <!-- list learning outcomes here -->
-            <li><!-- OUTCOME_ITEM -->Spreadsheets and their uses<!-- / --></li>
-            <li><!-- OUTCOME_ITEM -->Using Microsoft Excel<!-- / --></li>
-            <li><!-- OUTCOME_ITEM -->Saving time with Autofill<!-- / --></li>
-            <li><!-- OUTCOME_ITEM -->Absolute and relative cell references<!-- / --></li>
-        </ul>
-        <!-- optional additional contextual introduction -->
-        <h3>What is a Spreadsheet?</h3>
+<section id="outcomes">
+    <h2>Learning Outcomes and Introduction</h2>
+    <p>In this lab you will learn the basics of using a computer spreadsheet program, specifically Microsoft Excel. You will learn:</p>
+    <ul>
+        <li>how to layout and format a spreadsheet</li>
+        <li>when and how to use relative or absolute references</li>
+        <li>how to get the software to do calculations for you</li>
+        <li>how to generate charts to visualize your data</li>
+    </ul>
+</section>
 
-        <p>Spreadsheets could be called number processing software as opposed to
-        Word, which is word processing software.  All spreadsheet software 
-        (including Excel, 
-        Lotus and QuattroPro) is based on a table format – numbers (and text) 
-        are entered into cells, which are organized into rows and columns.  
-        A spreadsheet can be used to:</p>
-        <ul>
-            <li>Format data or calculations into an attractive table;</li>
-            <li>Perform complicated or repetitive calculations;</li>
-            <li>Analyze empirical (laboratory) data and determine the equation 
-                that best fits the data;</li>
-            <li>Graph data in many types of graphs;and</li>
-            <li>Store data in a database (although Excel is not as versatile 
-                or powerful as the Microsoft Access database program).</li>
-        </ul>
-        <h3>Examples:</h3>
-
-        <p>A spreadsheet would be suitable for the following applications:</p>
-
-        <ul>
-            <li>Calculating your tax return;</li>
-            <li>Preparing a cost estimate for a construction project;</li>
-            <li>Recording and calculating your marks on tests and assignments 
-                and then calculating each students final grade;</li>
-            <li>Estimating the flow rates in a drainage or sewerage analysis and 
-                calculating what pipe diameter would be required to pass the 
-                flow;</li>
-            <li>Calculating mortgage payments given the principal, interest rate 
-                and number of payments, calculating the balance owing after each 
-                payment;</li>
-            <li>To count the number of days / minutes / seconds until the year 
-                2010 (or any other date)</li>
-            <li>Calculating the amount in an investment account each month for 
-                20 years;</li>
-            <li>Calculating and graphing stress and strain and graphing the 
-                results in a lab; and</li>
-            <li>Performing statistical analysis (such as calculating the 
-                standard deviation) of a large number of data points.</li>
-        </ul>
-    </section>
-    <section>
 <section id="tasks">
     <h2 id="task1">Task 1: Powers of 2, Powers of 10</h2>
-    <figure><img src="img/excel1.png" alt="excel overview" /></figure>
     <h3>Introduction</h3>
 
     <p>Computer memory is measured in <b>bytes</b>, which is the amount of memory
@@ -161,48 +115,33 @@
     <p>In this task, you will be using Excel to compute powers of 2 and 10 up
     to the 40<sup>th</sup> prefix value and create a graph of their divergence.</p>
     <ol class="instructions">
-        <aside>Do not forget to save early and often as you complete this assignment!</aside>
-        <li>Start a new Workbook in Microsoft Excel and save it as <samp>Lab3_First_Lastname.xlsx</samp>. Name the first worksheet <samp>Power2</samp>
-            <details>
-                <summary>Worksheets</summary>
-                <figure>
-                    <img src="worksheets.png" alt="worksheet tabs">
-                </figure>
-                <p>A Worksheet is a single table within a Workbook. Using several Worksheets makes it easier to organize different types of data. A Workbook is saved as a single .xlsx file and all Worksheets within the Workbook are opened when you open the file.</p>
-                <p>Worksheets are separated by tabs visible at the bottom of the screen. A new Workbook may already have three sheets called Sheet1, Sheet2, and Sheet3, but you can rename them by double clicking on the tab. You can add more sheets by clicking the plus to the right of the existing tabs, or remove them by right-clicking a tab and selecting Delete.</p>
-            </details>
-        </li>
+        <li>Start a new document in Microsoft Excel and save it as Lab3_First_Lastname.xlsx. Do not forget to save early and often as you complete this assignment.</li>
         <li>
-            Enter a title into cell <code>A1</code>, then your name and lab section into cells <code>F1</code> and <code>F2</code>.
-            <details>
-                <summary>Cell Addresses</summary>
-                <p>Columns are labeled with letters; Rows are labeled with numbers; Cells are identified by their column and row, for example: <code class="language-excel">A1</code>, <code class="language-excel">B265</code>, <code class="language-excel">G4</code>, <code class="language-excel">AB12</code>, all the way to <code class="language-excel">XFD1048576</code>. These notations are called the cell’s <strong>address</strong>. This address can be extended further by including the name of the worksheet the cell resides in. For example: <code class="language-excel">worksheet_name!A1</code>.</p>
-            </details>
-            
-        </li>
-        <li>
-            <!-- <aside>When using a computer, if at any time you feel like you're doing something repetitive, that's a good sign that there is a better and faster way.</aside> -->
-            Fill column <samp>A</samp> starting at <code>A3</code> with the numbers <samp>0</samp> to <samp>40</samp>. 
+            Fill column <samp>A</samp> with the numbers <samp>0</samp> to <samp>40</samp>. 
             <details class="info">
-                <summary>Using Autofill</summary>
+                <summary>Using the Fill Handle</summary>
                 <figure class="right">
                     <img src="fillhandle.png" alt="fill handle">
                 </figure>
-                <p>Autofill is an action performed in Excel to intelligently fill cells with new data based on the data in other selected cells.  For example, if the selected cells contain the first few numbers of a simple pattern (such as three cells with 0, 1, and 2), Excel will generate more numbers that follow the sequence.</p>
-                <p>To use autofill, select the cell or cells from which to you want to generate generate the patter. A small box will appear in the bottom-right corner of the selection. Click and drag from this box into one or more adjacent cells to fill into them.</p>
+                <p>Selected cells will have a small box in the bottom-right corner of the selection area. If you click and drag this into adjacent cells, Excel will intelligently generate data based on the selected content into the new cells.</p>
+                <p>For example, if the selected cells contain the first few numbers of a simple pattern (such as three cells with 0, 1, and 2), Excel will generate more numbers that follow the sequence.</p>
                 <p>If the selected cell contains a formula, that formula will be filled into the new cells, and any relative references will be automatically updated (more on references below).</p>
             </details>
         </li>
         <li>
-            Insert a formula into <code>B3</code> that computes 2 raised to the power of 10 times the adjacent value in column <samp>A</samp> (<samp>2<sup>10A</sup></samp>), then fill it down to the remaining 39 rows.
+            Insert a formula into the first row of column <samp>B</samp> that computes 2 raised to the power of 10 times the adjacent value in column <samp>A</samp> (<samp>2<sup>10A</sup></samp>), then fill it down to the remaining 39 rows.
             <details class="info">
                 <summary>References</summary>
                 <figure>
                     <img src="references.png" alt="references">
                 </figure>
                 <p>To use the value of a cell inside another cells formula, you must use a <strong>reference</strong>. To create one, type the cell's index into the formula (ex: A1), or just click on the cell to automatically insert it.</p>
-                <p>By default, this will be a <strong>relative reference</strong>. This means that when autofilling this formula down into other cells using the fill handle, the references will automatically change themselves <strong>relative</strong> to each cell being filled. For example, if a formula in cell A1 is referencing cell C1, filling that formula down the column will update each cell's reference to target the cell in its own row, A2 will reference C2, and A3 will reference C3.</p>
-                
+                <p>By default, this will be a <strong>relative reference</strong>. This means that when filling this formula down into other cells using the fill handle, the references will automatically change themselves <strong>relative</strong> to each cell being filled. For example, if a formula in cell A1 is referencing cell C1, filling that formula down the column will update each cell's reference to target the cell in its own row, A2 will reference C2, and A3 will reference C3.</p>
+                <p>If this behaviour is undesired, an <strong>absolute reference</strong> is required. In the previous example, if the reference in the formula was changed to C$1, each newly filled cell (A2,A3,etc) will still reference cell C1. The <samp>$</samp> symbol before the row index tells Excel to always reference a cell in row 1. It can also be added before the column index ($C1) to only reference that column, or added to both ($C$1) to only ever reference that specific cell.</p>
+                <figure>
+                    <img src="relative_vs_absolute.png" alt="relative vs absolute references">
+                    <figcaption>The formulas <kbd><samp>=C2, =H$2, =$M$2</samp></kbd> were applied to each of the blue cells, then filled to the grey cells. Take note that the first two examples are still able to reference the negative columns, whereas the third always references M2.</figcaption>
+                </figure>
             </details>
         </li>
         <li>
@@ -212,7 +151,7 @@
             Insert a formula in column <samp>D</samp> that computes the ratio of each value in column <samp>B</samp> to the value in column <samp>C</samp> (<samp>2<sup>10A</sup><strong>:</strong>10<sup>3A</sup></samp>).
         </li>
         <li>
-            Create a bar chart that shows the growth of the ratio (column <samp>D</samp>). Title it.
+            Create a bar chart that shows the growth of the ratio (column <samp>D</samp>). Title it .
             <details class="info">
                 <summary>Generating Charts</summary>
                 <figure>
@@ -228,91 +167,148 @@
             Rename this sheet <kbd>Power2</kbd>
             <details class="info">
                 <summary>Worksheets</summary>
-                
+                <figure>
+                    <img src="worksheets.png" alt="worksheet tabs">
+                </figure>
                 <p>Each Excel file, known as a <strong>Workbook</strong>, can contain multiple <strong>Worksheets</strong>. A worksheet is simply an organization tool for separating your data into different sections. Worksheets are accessed using the tabs at the very bottom of the Excel window. Click the plus button to create a new sheet, and right-click the sheet's name to rename or delete it.</p>
             </details>
         </li>
     </ol>
-    </section>
-
-    <section id="task2">
-        <h2>Task 2: Creating a Table</h2>
-        <figure><img src="img/tank-template.png" alt="tank table example"></figure>
-        <ol class="instructions">
-            <li>
-                Create a new <strong>worksheet</strong> titled <samp>Tank Volume</samp> and replicate the above table.
-                <details>
-                    <summary>Superscripts</summary>
-                    <figure><img src="img/format-cells.png"></figure>
-                    <ul>
-                        <li>Type the full desired text including the characters to be superscripted. ex: <code>m3/sec</code></li>
-                        <li>Select the characters you want to modify, either directly in the cell or in the formula bar.</li>
-                        <li>The superscript option is in the <samp>Format Cells</samp> window, accesible in the cell's Right-Click context menu, or in the <samp>Font</samp> section's expanded options in the Home ribbon.</li>
-                    </ul>
-                </details>
-            </li>
-            <li>Using autofill, enter the numbers 0 to 30 under the <samp>Time</samp> column, starting in cell A10.</li>
-            <li>We know that, for time 0, the volume is still equal to the initial volume found in cell B4. The formula to calculate the volume at any point in time is: <pre><code>Initial Volume + Elapsed Time * Fill Rate</code></pre> Enter this formula into cell B10, the Volume column, substituting the cell references <code>B4</code> and <code>B5</code> in place of <samp>Initial Volume</samp> and <samp>Fill Rate</samp>, and the adjacent cell <code>A10</code> for the <samp>Elapsed Time</samp>. At Time = 0, this equation should return 20, the value of Initial Volume.</li>
-            <li>Autofill the formula in B10 down for all the time intervals. Unless you've been keeping one step ahead, you'll very likely see that the results are not as expected, with most of the cells failing to evaluate. Checking the formula on one of the broken cells should show an idea of what went wrong. Like the previous task, the interval part of the formula is updating correctly for each cell, but the other two references are not. In fact, they shouldn't be updating at all. To make a reference that doesn't change during autofill, an <strong>absolute reference</strong> must be used.
-            <details>
-                <summary>Absolute References</summary>
-                <p>As mentioned earlier, using a plain cell address in a formula creates a relative reference, which is dynamically updated when using autofill. If, instead, the reference needs to always target the same cell, as is the case when referencing a single constant number, make it an absolute reference by prefixing the row <strong>and/or</strong> column character in the address with a <code>$</code>, for example, <code>$B$5</code>. If either the row or column address is left un-prefixed, the reference will still be relative in that direction only.</p>
-                <figure>
-                    <img src="relative_vs_absolute.png" alt="relative vs absolute references">
-                    <figcaption>The formulas <kbd><samp>=C2, =H$2, =$M$2</samp></kbd> were applied to each of the blue cells, then filled to the grey cells. Take note that the first two examples are still able to reference the negative columns, whereas the third always references M2.</figcaption>
-                </figure>
+    <h2 id="task2">Task 2: Importing and Sorting Data</h2>
+    <h3>Introduction</h3>
+    <p>It's all well and good to create synthetic data to play with, but in the
+    real world, one usually works with real numbers. In this section, you will
+    experiment with data from <a  href="http://finance.yahoo.com/">Yahoo Finance</a>,
+    which provides a wealth of financial information in convenient formats.</p>
+    <p>Your task is to generate a table that displays prices and
+    relative performance for two stocks for the past two or three months.
+    You can choose any two stocks you like; interesting pairs might be selected
+    from among Amazon, EBay, Google, Yahoo, IBM, Oracle, Ford, GM, etc.</p>
+    <ol class="instructions">
+        <li>Go <a href ="http://finance.yahoo.com/">http://finance.yahoo.com</a></li>
+        <li>Search for a stock by entering a company name in the large text field
+        at the top of the page and choosing the result you want from the
+        results drop-down.</li>
+        <li>Select <samp>Historical prices</samp> in the left-hand navigation bar.</li>
+        <li>Choose a range of dates that you want, covering 2 to 3 months, and click the <samp>Get Prices</samp> button to regenerate the data table.</li>
+        <li>Go to the bottom of the page and select <samp>Download To Spreadsheet</samp>.</li>
+        <li>Repeat steps 2-5 for a second stock, using the same range of dates.</li>
+        <li>Open both downloaded files in new Excel files.</li>
+        <li>In each downloaded stock file, delete all columns except <samp>Date</samp> and <samp>Adj. Close</samp></li>
+        <li>Create a new a worksheet in your Excel file from <a href="#task1">Task 1</a>
+            and rename it <kbd>Stock prices</kbd>.</li>
+        <li>
+            Copy and paste the two stock data sequences side-by-side into the <samp>Stock prices</samp> worksheet.
+            <aside class="note">
+                Make sure you do not paste the two sets of data into the same two columns. In order
+                to compare them, data from the same date in each data set should be on the same row.
+            </aside>
+        </li>
+        <li>Remove the extra date column (which should have duplicate information). Your worksheet should now have three columns. The left column should contain a date, and the following two columns should contain the stock prices on each day for each company.</li>
+        <li>Change the headings of the <samp>Adj. Close</samp> columns to the corresponding names of your stock companies.</li>
+        <li>
+            Change the date format to something more readable (e.g. <samp>December 31, 1999</samp>)
+            <details class="info">
+                <summary>Cell Formatting</summary>
+                <p>Right-clicking one or more cells and selecting <samp>Format Cells</samp> opens the Format Cells window. This window contains various options for changing the look of the cell and its contents. The <samp>Number</samp> tab allows you to choose what type of data the cell contains and how it should be displayed. For example, selecting <samp>Currency</samp> will preface numbers with a $ symbol, add commas and limit decimal places.
             </details>
+        </li>
+        <li>Format the numbers in columns <samp>B</samp> and <samp>C</samp> to use comma separators.</li>
+        <li>Resize columns if needed so that all the information is visible.</li>
+        <li>Double-check that all rows in your stocks worksheet contain prices for both companies,
+        fill in any missing values with the price from the following day.</li>
+        <li>
+            Sort the data by date from oldest to newest.
+            <details class="info">
+                <summary>Sorting spreadsheets</summary>
+                <figure>
+                    <img src="sort_ribbon.png" alt="sort ribbon">
+                </figure>
+                <ol>
+                    <li>Select all columns in your dataset, including any headers. You can do this quickly by dragging over the column index letters.</li>
+                    <li>Click <samp>Sort</samp> in the <samp>Data</samp> ribbon.</li>
+                    <li>A window will appear with dropdowns populated from your data.</li>
+                    <li>Select the column to <samp>Sort by</samp>, then the <samp>Order</samp> (ignore <samp>Sort On</samp>).</li>
+                </ol>
+            </details>
+        </li>
+        <li>
+            For each stock, create a column with a formula that divides each day's value by the starting value (<samp>B<sub>current</sub> &divide; B<sub>first</sub></samp>). This column shows change in value for each stock.</li>
+            <details class="info">
+                <summary>Reminder: Absolute References</summary>
+                <p>Absolute references are made by adding a <kbd><samp>$</samp></kbd> symbol in front of the letter and/or number. For example, to absolutely reference the first row in column A, use $A$1 as your reference key.</p>
+            </details>    
+        </li>
+        <li>
+            Use the chart wizard to create a graph comparing the two stock's change in value over time (the two new columns you generated in the last step). Make it look approximately like the one below but with a meaningful title and proper labels.
+            <figure>
+                <img src="foobarchart.jpg"/>
+                <figcaption>Example chart</figcaption>
+            </figure>
+        </li>
+    </ol>
+</section>
+<section id="review">
+    <h2>Review</h2>
+    <p>Create a new worksheet called Review and write some notes describing what new things you have learned in this lab. Also mention any steps or concepts you are still finding difficult to understand and would like to receive feedback on.</p>
+</section>
+<section id="submission">
+    <h2>Deliverables</h2>
+        <ul>
+            <li>A single Excel document containing three worksheets (<kbd>Power2</kbd>, <kbd>Stock prices</kbd> and <kbd>Review</kbd>).</li>
+            <li>
+                Power2 Worksheet:
+                <ul>
+                    <li>powers of 2 from 20 to 2400, in steps of 10</li>
+                    <li>powers of 10 from 100 to 10120, in steps of 3</li>
+                    <li>the ratio of each "equivalent" power of 2 and 10</li>
+                    <li>a chart of the ratios</li>
+                </ul>
             </li>
-            <li>Correct the formula in cell B10 to use absolute references for B4 and B5, then autofill it down again. It's OK to fill over previously filled cells; they will just be replaced with the new formula.</li>
-            <li>Using the principles above, calculate the height of the water vs time and auto fill the appropriate column.</li>
-        </ol>
-    </section>
+            <li>
+                Stock prices Worksheet:
+                <ul>
+                    <li>a date column</li>
+                    <li>two stock value columns</li>
+                    <li>two columns computing the ratio of each row's stock value to the initial value for that stock</li>
+                    <li>a graph comparing the change in stock for both companies.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>Here are some extra steps to consider to help your <kbd>Overall Assessment</kbd></p>
+        <ul>
+            <li>Use an Excel function to calculate the formulas in task 1.</li>
+            <li>Customize the style of your graphs.</li>
+            <li>Use fill colors, borders, and font sizes to pretty up your tables of data.</li>
+        </ul>
+    <p>Save your document as Lab3_First_Lastname.xlsx and submit it to the Lab 3 dropbox on D2L.</p>   
+    <p>
+        <b>NOTE</b>: This assignment is to be done <em>individually</em>. You can
+        help one another with problems and questions, but in the end everyone must
+        do their own assignment.
+    </p>
 
-    <!-- additional task sections here as required -->
+    <table class="marks">
+        <thead>
+            <tr><th>Criteria</th><th>Marks</th></tr>
+        </thead>
+        <tbody>
+            <tr><th colspan="2">Overall Assessment</th></tr>
+            <tr><td>Assignment Completion</td><td>5</td></tr>
+            <tr><td>Wow Factor</td><td>5</td></tr>
+            <tr><th colspan="2">Power2 Worksheet</th></tr>
+            <tr><td>Data</td><td>15</td></tr>
+            <tr><td>Chart</td><td>5</td></tr>
+            <tr><th colspan="2">Stock Prices Worksheet</th></tr>
+            <tr><td>Data</td><td>20</td></tr>
+            <tr><td>Chart</td><td>10</td></tr>
+            <tr><th>Total</th><td>60</td></tr>
+        </tbody>
+    </table>        
+</section>
 
-    <!-- this section should always be last -->
-    <section id="submission">
-        <h2>Submission</h2>
-        <!-- optional paragraph about adding a "what you've learned" blurb -->
-        <p>
-             ZIP your lab folder, rename it as <samp>ExampleLab-FirstnameLastname.zip</samp>,
-             <!-- Update to match current lab name   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-             and submit it to the dropbox on D2L.
-        </p>
-        <p>
-             <b>NOTE</b>: This assignment is to be done <em>individually</em>.
-             You can help one another with problems and questions, but in the end
-             everyone must do their own assignment.
-        </p>
-        <table class="marks">
-            <thead>
-                <tr><th>Criteria</th><th>Marks</th></tr>
-            </thead>
-            <tbody>
-                <!-- optionally break down into groups:
-                    <tr><th colspan="2">Group</th></tr>
-                -->
-                <!-- itemize marking deliverables -->
-                <tr>
-                    <td>Deliverable</td>
-                    <td>10</td>
-                </tr>
-                <tr>
-                    <td>Deliverable</td>
-                    <td>10</td>
-                </tr>
-                <!-- Total marks at end -->
-                <tr>
-                    <th>Total</th>
-                    <td>20</td> <!-- UPDATE THIS! -->
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <script src="https://telic.github.io/comp152/lab/template/prism.js"></script>
-    <script src="https://telic.github.io/comp152/lab/template/modernizr-details.min.js"></script>
-    <script src="https://telic.github.io/comp152/lab/template/details-polyfill.min.js"></script>
-    <!-- additional scripts can be added here if necessary -->
+<script src="https://telic.github.io/comp152/lab/template/prism.js"></script>
+<script src="https://telic.github.io/comp152/lab/template/modernizr-details.min.js"></script>
+<script src="https://telic.github.io/comp152/lab/template/details-polyfill.min.js"></script>
 </body>
 </html>
