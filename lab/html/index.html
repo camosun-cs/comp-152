@@ -4,8 +4,9 @@
 	<meta charset="utf-8">
 	<title>HTML &amp; CSS - COMP 156</title>
 	<meta name="viewport" content="width=device-width"/>
-	<link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/prism.css"/>
-	<link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/basic.css"/>
+	<base href="https://telic.github.io/comp152/lab/"/>
+	<link rel="stylesheet" href="template/prism.css"/>
+	<link rel="stylesheet" href="template/basic.css"/>
 </head>
 <body>
 	<header>
@@ -33,17 +34,17 @@
 
 	<section id="task1">
 		<h2>Task 1: The Basics</h2>
-		<figure><img src="browser.png" alt="Browser refresh and location controls" /></figure>
+		<figure><img src="html/browser.png" alt="Browser refresh and location controls" /></figure>
 		<ol class="instructions">
 			<li>Create a new folder for this lab in your "COMP156" directory</li>
 			<li>
-				Download the <a href="https://telic.github.io/comp152/lab/html/template.zip" target="_blank" download="">starter template kit</a>, un-zip it, and move the contents to your lab folder.
+				Download the <a href="html/template.zip" target="_blank" download="">starter template kit</a>, un-zip it, and move the contents to your lab folder.
 				<details>
 					<summary>About the "index.html" file</summary>
 					<p>"index.html" is a basic <abbr title="Hyper Text Markup Language">HTML</abbr> file. All web pages that you access with a web browser are made with HTML just like this one (although real sites are usually much more complicated!).</p>
 					<p>HTML is a "plain-text" format; this means that the file is encoded in text and you can view and edit the file by hand in a text editor. HTML is also an example of a <dfn>markup language</dfn>: it is a mix of regular readable text and special <em>markup</em> commands that give the text meaning. All the words caught between <em>&lt;</em> and <em>&gt;</em> characters are markup, and everything else is just regular text.</p>
 					<p>Because of time constraints, we've provided you with this template file so that we can skip over the details of the format and get right into marking up some content. If you'd like to learn more, there are <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">many</a> <a href="https://html.spec.whatwg.org/multipage/" target="_blank">resources</a> <a href="http://www.w3schools.com/html/default.asp" target="_blank">online</a> that can teach you all about the nitty-gritties!</p>
-					<p>The name "index.html" is a little special. Most web servers will display this file by default if a particular file is not specified. So, for example, <a href="https://telic.github.io/comp152/" target="_blank">https://telic.github.io/comp152/</a> and <a href="https://telic.github.io/comp152/index.html" target="_blank">https://telic.github.io/comp152/index.html</a> are actually the exact same resource!</p>
+					<p>The name "index.html" is a little special. Most web servers will display this file by default if a particular file is not specified. So, for example, <a href="../" target="_blank">https://telic.github.io/comp152/</a> and <a href="../index.html" target="_blank">https://telic.github.io/comp152/index.html</a> are actually the exact same resource!</p>
 				</details>
 			</li>
 			<li>
@@ -169,7 +170,7 @@
 		<p>CSS and HTML are <em>completely separate languages</em>, although in practice they are almost always used together. HTML provides structured <b>content</b> and <b>semantics</b>, while CSS controls the <b>presentation</b> of structured content. We won't dive into how to craft your own CSS in this course, but we encourage you to look at the code for the stylesheets we've provided and try to make some small changes! CSS is a plain-text format which can be opened and edited in Notepad++ alongside your HTML.</p>
 		<ol class="instructions">
 			<li>
-				<strong>Add a reference</strong> to the CSS file at <a href="https://telic.github.io/comp152/lab/template/basic.css" target="_blank">https://telic.github.io/comp152/lab/template/basic.css</a> in the <code>head</code> section of the html document using the <code>link</code> element.
+				<strong>Add a reference</strong> to the CSS file at <a href="template/basic.css" target="_blank">https://telic.github.io/comp152/lab/template/basic.css</a> in the <code>head</code> section of the html document using the <code>link</code> element.
 				<details>
 					<summary>Linking Style sheets</summary>
 					<p>The <code>link</code> element is a self-closing tag used to reference external resources to the html document. It must be placed inside the <code>head</code> section of the document (near the top).</p>
@@ -195,7 +196,7 @@
 
 	<section id="task4">
 		<h2>Task 4: Uploading</h2>
-		<figure><img src="filezilla.png" alt="Filezilla interface" /></figure>
+		<figure><img src="html/filezilla.png" alt="Filezilla interface" /></figure>
 		<p>So far you've been viewing your web page from the filesystem on your own computer. No one but you has access to it here; you need to <em>publish</em> it to a web server for others to be able to view it over the Internet.</p>
 		<p>You will be uploading your web page to a server using <abbr title="Secure File Transfer Protocol">sFTP</abbr>. There are many different programs that use this protocol, and any will do the job. The lab computers have a program called FileZilla for this purpose.</p>
 		<ol class="instructions">
@@ -268,8 +269,8 @@
 		</table>
 	</section>
 
-	<script src="https://telic.github.io/comp152/lab/template/prism.js"></script>
-	<script src="https://telic.github.io/comp152/lab/template/modernizr-details.min.js"></script>
-	<script src="https://telic.github.io/comp152/lab/template/details-polyfill.min.js"></script>
+	<script src="template/prism.js"></script>
+	<script src="template/modernizr-details.min.js"></script>
+	<script src="template/details-polyfill.min.js"></script>
 </body>
 </html>
