@@ -1,0 +1,31 @@
+goals:
+analysis of plain-text vs not
+analysis of bitmap
+using the base function in excel to to some quick conversions (mostly to give them a spreadsheet to use)
+linking the excel spreadsheet in a word doc
+embedding images in word doc
+compression
+
+
+explicit steps:
+create a folder called lab x
+create an excel file
+	base 10, 2, 16 columns
+	0 - 10
+save as .xlsx
+save as .csv
+create a word file
+put csv in to doc using copy/paste 'use destination styles'
+put xls into the doc using insert object
+save doc in lab x folder
+update xls to be 0-15
+describe what happened to linked and embedded charts in word document, and the difference between links and embeds
+
+open csv in hexed.it
+type in doc what the hex values represent
+connect to ftp
+download bmp into an images folder in lab x
+open bmp in hexed.it
+edit bytes to change pixels
+embed before and after images into word
+type in doc describing what bmp hex values represent

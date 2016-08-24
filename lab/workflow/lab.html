@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Filetypes and Workflow - COMP 152</title>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/prism.css"/>
+    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/basic.css"/>
+</head>
+<body>
+
+<header>
+    <h1>COMP 152 - Filetypes and Workflow</h1>
+    <nav>
+        <ol>
+            <li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+            <li><a href="#task1"><strong>Task 1</strong>: Automatic Binary Conversions</a></li>
+            <li><a href="#task2"><strong>Task 2</strong>: Inserting and Linking Objects</a></li>
+            <li><a href="#task3"><strong>Task 3</strong>: Inspecting Binary</a></li>
+            <li><a href="#task4"><strong>Task 4</strong>: Compression and Submission</a></li>
+        </ol>
+    </nav>
+</header>
+
+<section id="outcomes">
+    <h2>Learning Outcomes and Introduction</h2>
+    <p>In this lab assignment you will learn about:</p>
+    <ul>
+        <li>Managing multiple files and directories</li>
+        <li>Using multiple apps together to create a project</li>
+        <li>The difference between linking and embedding files</li>
+        <li>Various filetypes and their differences</li>
+        <li>How to interact with a file server using ftp</li>
+        <li>Compressing a directory of files for portable use</li>
+    </ul>
+</section>
+
+<section id="tasks">
+    <h2 id="task1">Task 1: Quick Binary Conversions</h2>
+    <ol class="instructions">
+        <figure>
+            <img src="formula-bar.png" alt="excel formula bar">
+        </figure>
+        <li>
+            If you haven't done so already, create a COMP152 folder in your computer's M:/ directory.
+            <details class="info">
+                <summary>File Management Basics</summary>
+                <img src="explorer.png" height="32" width="32" style="float:left;"/>
+                <p>
+                    You can organize the files on your computer and on connected network drives
+                    using the <samp>File Explorer</samp> program in Windows. You can open this
+                    application by double-clicking on any folder on your desktop (or the
+                    <samp>My Computer</samp> icon), or opening it from the Start menu or task bar.
+                </p>
+                <p>
+                    The left-hand sidebar of every Explorer window shows a collapsable list of
+                    common locations. The <samp>Computer</samp> section includes all attached
+                    drives and devices, and the <samp>Network</samp> section includes
+                    drives available over the network.  Your "M" drive (often written
+                    "M:\") is a network drive.
+                </p>
+                <p>
+                    The main content area of an Explorer window shows the contents of a
+                    single selected folder. If you've selected your M drive from the
+                    sidebar, the main area will show the files stored in your M drive. In
+                    general, you can drag and drop files into this area to store them in
+                    the selected folder, or drag files out to remove them. You can also use standard
+                    <em>cut &amp; paste</em> commands to move files in the same way. You can create copies
+                    by holding down the <kbd>Ctrl</kbd> key while dragging, or by using
+                    <em>copy</em> instead of cut commands. Because your M drive is a network
+                    drive, dragging files in and out of it will <em>copy</em> files instead
+                    of moving them by default; use <kbd>Shift</kbd> to reverse this.
+                </p>
+                <p>
+                    To create a new folder, click the <samp>New Folder</samp> button near the
+                    top of the Explorer window. Immediately after pressing the button, the
+                    folder name will be highlighted and can be changed simply by typing the
+                    name you want and pressing enter. If you'd like to change its name later,
+                    right-click on the folder and choose <samp>Rename</samp> from the
+                    contextual menu.
+                </p>
+            </details>
+        </li>
+        <li>
+            <aside class="note">You may also want to create applicable directories to organize all your other work done so far in this course.</aside>
+            Create a folder in the COMP152 directory called <strong>Lab 5</strong>. All further work in this assignment will be done in this folder.
+        </li>
+        <li>
+            Open Microsoft Excel, and create a new blank workbook.
+        </li>
+        <li>
+            Create these 3 headings: <strong>Base 10</strong>, <strong>Base 2</strong>, and <strong>Base 16</strong>.
+        </li>
+        <li>
+            Enter the numbers 0 through 9 in the <strong>Base 10</strong> column. Don't forget about the "fill-down" feature of excel to save some typing.
+        </li>
+        <li>
+            Use the <strong>BASE</strong> function to calculate the values of the other 2 rows.
+            <details class="info">
+                <summary>Excel Functions</summary>
+                <p>
+                    If a cell's content starts with an equals sign "=", it will be
+                    interpretted as a <em>function</em>. Functions compute a value to be
+                    displayed using math and logic. For example, "<samp><kbd>=2+2</kbd></samp>"
+                    would compute the result of 2+2 and display 4 as the content of the cell.
+                </p>
+                <p>
+                    The <b>BASE</b> function
+                    transforms a decimal number into a number in another base system (such
+                    as binary or hexadecimal). To use it, type <kbd>=BASE(</kbd>, followed
+                    by the number to convert, a comma, the number of the base system to
+                    convert to (eg. "2" for binary, or "16" for hexadecimal), and a closing
+                    <kbd>)</kbd>. For example, "<kbd>=BASE(10, 16)</kbd>" would result in
+                    "<samp>A</samp>" (10 in hexadecimal).  Instead of entering the number
+                    to convert explicitly, you can specify a cell that contains the number
+                    you want: for example, "<kbd>=BASE(A1,2)</kbd>" would
+                    convert the number found in cell A1 into base-2.
+                </p>
+                <p>
+                    Cells containing functions can be "filled-down" in the same way as
+                    regular values, and cell references will be automatically adjusted.
+                    For example, if column A contains numbers to convert and you enter
+                    <kbd>=BASE(A1,16)</kbd> in the first cell in column B and then
+                    fill-down, the A1 reference will be adjusted to target the cell in the
+                    same row as each filled cell (eg A2, A3, etc.).
+                </p>
+                <p>
+                    We'll learn more about functions in Excel in a later lab.
+                </p>
+            </details>
+        </li>
+        <li>
+            Apply some light formatting to your spreadsheet. For example, add some distinguishing features to the headings and align all the numbers the same way.
+        </li>
+        <li>
+            Save the document as BaseConversions.xlsx.
+        </li>
+        <li>
+            Use <strong>Save As</strong> to save it again as a CSV (comma delimited). Select 'Yes' in the dialog window that pops up asking if you want to keep using this format, since we will come back to this soon. You will now have 2 copies of this spreadsheet: the original .xlsx that preserves the formatting and formulas, and a .csv, which contains only the raw information.
+            <details class="info">
+                <summary>What is CSV</summary>
+                <p>
+                    <abbr title="Comma-separated values">CSV</abbr>
+                    ("<em>C</em>omma-<em>s</em>eparated <em>v</em>alues") is a <strong>plain-text</strong>
+                    format for storing tabular data. Each row of the table is stored
+                    on a single line in the file, and each column within a row is
+                    delimited using commas. Because of this file type's simple structure,
+                    individual cells may not contain multiple lines of text and may not
+                    contain commas.
+                </p>
+                <p>
+                    A closely-related format, <abbr title="Tab-separated values">TSV</abbr>,
+                    uses tabs instead of commas to delimit columns. This allows cells to
+                    contain commas, intead prohibiting them from containing tabs.
+                </p>
+            </details>
+            <details class="info">
+                <summary>More about file names and extensions</summary>
+                <p>
+                    Two files in one folder may never have the same name. Windows will warn you
+                    that it will overwrite an existing file if you attempt to save a file with
+                    a name that is already in use.  However, the names of files usually
+                    also include a "file extension" that specifies the file's type, and so
+                    two files <em>may</em> have the same name if their types (and extensions)
+                    are different!
+                </p>
+                <p>
+                    Windows normally hides file extensions by default, since they are
+                    important for distinguishing the file's type and should not normally be
+                    changed by hand. However, it is sometimes useful to be able to see these
+                    type extensions in order to differentiate files with similar names.
+                </p>
+                <p>To show file extensions in Windows 7,</p>
+                <ol>
+                    <li>Click the <samp>Organize</samp> button in any Explorer window</li>
+                    <li>Choose <samp>Folder and Search Options</samp> from the pop-up menu</li>
+                    <li>Switch to the <samp>View</samp> tab in the settings window that opens</li>
+                    <li>Scroll down to the <samp>Hide extensions for known file types</samp>
+                        option and un-check it.</li>
+                </ol>
+                <p>To show file extensions in Windows 8 and up,</p>
+                <ol>
+                    <li>Click on the <samp>View</samp> ribbon</li>
+                    <li>Check the <samp>File name extensions</samp> box.</li>
+                </ol>
+            </details>
+        </li>
+    </ol>
+    <h2 id="task2">Task 2: Inserting and Linking Objects</h2>
+    <figure>
+        <img src="insert-ribbon.png" alt="word insert ribbon">
+    </figure>
+    <ol>
+        <li>
+            <aside class="note">Remember to use appropriate and consistent document structure and styles while working in this document.</aside>
+            Open Microsoft Word, and create a new document. Add a relevant title and your name at the top.
+        </li>
+        <li>
+            Copy the cells from the currently open BaseConversions.<strong>csv</strong>, and use the Paste options in Word to put it in a correctly styled table. Close BaseConversions.csv.
+            <details class="info">
+                <summary>Paste Options</summary>
+                <figure>
+                    <img class="" src="paste-options2.png">
+                </figure>
+                <img class="right" src="paste-options1.png">
+                <p>
+                    Word provides multiple options when pasting in text or other content. These can be accessed either before pasting using the <samp>Paste</samp> dropdown in the <samp>Home</samp> ribbon, or after pasting using the <samp>(Ctrl)</samp> pop-up that appears underneath the pasted text.
+                </p>
+                <p>
+                    These options differ depending on the content being pasted. Some of the options are:
+                    <dl>
+                        <dt>Keep Source Formatting</dt>
+                        <dd>Use the same styles and formats applied in the Excel document</dd>
+                        <dt>Use Destination Styles</dt>
+                        <dd>Restyle the text to follow the current theme. This may include creating a table when applicable</dd>
+                        <dt>Link</dt>
+                        <dd>Create a link to the original source. When the original source is modified, the linked object in Word will update to reflect the changes.</dd>
+                    </dl>
+                </p>
+            </details>
+        </li>
+        <li>
+            Insert an object with a live link to BaseConversions.<strong>xlsx</strong>.
+            <details class="info">
+                <summary>Live Objects</summary>
+                <img src="object-window.png" class="right">
+                <p>As mentioned in the Paste Options above, linked objects will keep a reference to the original file they're based on, and update if there are changes.</p>
+                <p>In addition to using Paste Options to link to a piece of a file, whole files can be linked to. The advantage to doing this is that data added outside the initial area later will be shown.</p>
+                <p>To do this:</p>
+                <ol>
+                    <li>Click the <samp>Object</samp> button in the <samp>Insert</samp> ribbon. This button tends to collapse its text if the Word window gets narrow, so keep an eye out for its icon (shown at the head of this task).</li>
+                    <li>In the <samp>Object</samp> window that appears, click the <samp>Create from File</samp> tab.</li>
+                    <li>Click <samp>browse</samp> to pick the file you want to link to.</li>
+                    <li>Check <samp>Link to file</samp> to enable automatic updating.</li>
+                </ol>
+                <p>Because links rely on another file, care must be given to always package all relevant files together when moving documents containing links.</p>
+            </details>
+        </li>
+        <li>
+            Save the Word document as Lab6.docx.
+        </li>
+        <li>
+            Open BaseConversions.<strong>xlsx</strong> by double-clicking the newly inserted object in the Word document.
+        </li>
+        <li>
+            Add 6 new rows to the table, bringing the number conversions up to 15<sub>10</sub>. Save your changes.
+        </li>
+        <li>
+            <aside class="note">
+                <strong>Hint:</strong> Remember that the first table was simply copy-pasted, while the second was created using a <strong>link</strong>.
+            </aside>
+            Switch back to your Word document and write some notes describing what happened to the second version of the spreadsheet and why.
+        </li>
+    </ol>
+    <h2 id="task3">Task 3: Inspecting Binary</h2>
+    <figure>
+        <img src="hexedit.png" alt="hexed.it overview image">
+    </figure>
+    <p>This task will be using a web tool located at <a href="https://hexed.it/">https://hexed.it</a>. This tool is known as a <strong>Hex Editor</strong>. If a file is opened by dragging it into the window or by clicking the <strong>Open file</strong> button at the top, it will display its raw binary data represented in base 16 (hexadecimal). Don't worry about grasping the specifics and underlying functionality of this tool, you probably will never use it again, just understand that the middle column shows the hex, and to the right of that is what each byte of hex (2 digits) translates to in ASCII. You can also click on a byte to change its value, and export and download the modified file using the <strong>Export</strong> button at the top.</p>
+    <ol>
+        <li>Open BaseConversions.<strong>csv</strong> in <a href="https://hexed.it">hexed.it</a>.</li>
+        <li>Look at the hex values of this file. What standard is .csv using to encode this data? How do programs understand it? Write the answer in your word document.
+        <aside class="note">These files that use a text encoding standard like this are called <strong>plain-text</strong>. Their simplicity makes it very easy for apps to understand them, and makes them required for tasks such as programming. It does however mean they cannot support the more advanced formatting features Microsoft Office can achieve. Try opening BaseConversions.<strong>xlsx</strong> in hexed.it, and you will see that it is basically gibberish.</aside></li>
+        <li>
+            Create a new folder named <samp>images</samp> in your Lab 5 directory. Use Filezilla to transfer <samp>logo.bmp</samp> to this new folder.
+            <details class="info">
+                <summary>FTP</summary>
+                Go <a href="ftp-access.html" target="_blank">here</a> for directions on accessing the file server.
+            </details>
+        </li>
+        <li>Open image.bmp in hexed.it.
+            <details class="info">
+                <summary>Bitmap encoding</summary>
+                <p>
+                    The <samp>logo.bmp</samp> image is encoded in an uncompressed format
+                    which is simple enough to be partially read and manipulated by hand. The file starts
+                    with some metadata that describes the format of the image (and which is
+                    not easily understandable), but the majority of the file is composed of
+                    sequences of color values ranging from 00 to FF as you've seen in
+                    lab assignment 5.
+                </p>
+                <p>
+                    Images in general are made up of a series of dots called
+                    "pixels" (short for "pixel elements"). In a "24-bit bitmap" image like
+                    this one, each pixel is recorded one after the other in the file,
+                    with each pixel's colour described by three 8-bit numbers (2 hex digits
+                    each) for the amount of red, green, and blue.
+                </p>
+                <p>
+                    Most image formats you may be familiar with (such as GIF or JPEG)
+                    do not encode their colour values quite so simply, and so would not
+                    be at all understandable in a hex-viewer. These image formats make
+                    use of <em>compression</em> to reduce the size of the file by removing
+                    redundant information.
+                </p>
+            </details>
+        </li>
+        <li>
+            <aside class="note">
+                The first few rows or so contain descriptive information for the file. If you were to modify any of these bytes, it could make the image un-readable.
+            </aside>
+            Starting anywhere from the 5th row onward, replace a several bytes with new values. You can just click on a byte and then hold down the 0 key for a bit, or you could try scattering different hex values throughout the file.</li>
+        <li>Use the Export button to save your modified file as a new bitmap. Name this bitmap Logo2.bmp and move it into the images folder.</li>
+        <li>
+            Insert both logo images side-by-side into your document and provide a brief explanation of what changed and why.
+            <details class="info">
+                <summary>Inserting images</summary>
+                <p>To add an image to Word, simply drag it from File Explorer into the Word application. Another option is to select the <samp>Pictures</samp> button in the <samp>Insert</samp> ribbon.</p>
+                <ol>
+                    <li>An image can be moved around by dragging it.</li>
+                    <li>To resize an image, click it once to select it, then drag the handles that appear on the edges. Using the corner handles will scale it while preserving its proportions.</li>
+                    <li>Additional formatting options such as text-wrap, crop, and effects can be found in the <samp>Format</samp> ribbon after selecting an image.</li>
+                </ol>
+            </details>
+        </li>            
+    </ol>
+    <h2 id="task4">Task 4: Compression and Submission</h2>
+    <figure>
+        <img src="compression.png" alt="compression context menu">
+    </figure>
+    <p>Your final deliverable for this lab is a Word document containing a table, a linked spreadsheet, two images, and three written answers.</p>
+    <ol>
+        <li>Before submitting, go over your document to make sure it's presentable. Check:
+            <ol>
+                <li>All objects are displaying correctly and positioned as desired.</li>
+                <li>That the document headings and sections are logically structured (use the navigation pane)</li>
+                <li>The visual style of the document is consistent</li>
+            </ol>
+        </li>
+        <li>
+            Select the 4 entries in your Lab 5 folder: BaseConversions.csv, BaseConversions.xlsx, Lab5.docx, and the Images directory (containing 2 images).
+            <details class="info">
+                <summary>Selecting multiple files</summary>
+                <p>
+                    You can select multiple files in Explorer in order to move them
+                    or apply an action to them all at once. Hold down the <kbd>Ctrl</kbd>
+                    key while clicking to add items to the selection, or to deselect
+                    items that are already selected.  Alternately, click and drag in a
+                    blank area near the items you wish to select: Windows will show a
+                    semi-transparent selection rectangle while the mouse button is held
+                    down and will select any items that this rectangle overlaps.
+                </p>
+            </details>
+        </li>
+        <li>
+            Right-click one of the selected files and pick <samp>Send to -&gt; Compressed (zip) folder</samp>. Your documents will be copied into a new compressed folder which, along with having a reduced filesize, can be moved and shared as a single file.
+        </li>
+        <li>
+            Rename the compressed folder <samp>Lab6_Firstname_Lastname.zip</samp>, and then submit your assigment to the Lab 5 dropbox on D2L.
+        </li>
+    </ol>
+    <p>
+        <b>NOTE</b>: This assignment is to be done <em>individually</em>. You can
+        help one another with problems and questions, but in the end everyone must
+        do their own assignment.
+    </p>
+
+    <table class="marks">
+        <thead>
+            <tr><th>Criteria</th><th>Marks</th></tr>
+        </thead>
+        <tbody>
+            <tr><th colspan="2">Text Content</th></tr>
+            <tr><td>Base Conversion Spreadsheet</td><td>5</td></tr>
+            <tr><td>Question Answers</td><td>10</td></tr>
+            <tr><th colspan="2">Embedded Files</th></tr>
+            <tr><td>Spreadsheets</td><td>10</td></tr>
+            <tr><td>Images</td><td>10</td></tr>
+            <tr><th colspan="2">Presentation</th></tr>
+            <tr><td>Compression and File Organization</td><td>10</td></tr>
+            <tr><td>Document Formatting</td><td>5</td></tr>
+            <tr><th>Total</th><td>50</td></tr>
+        </tbody>
+    </table>        
+</section>
+<script src="https://telic.github.io/comp152/lab/template/prism.js"></script>
+<script src="https://telic.github.io/comp152/lab/template/modernizr-details.min.js"></script>
+<script src="https://telic.github.io/comp152/lab/template/details-polyfill.min.js"></script>
+</body>
+</html>
