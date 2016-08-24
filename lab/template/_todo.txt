@@ -1,3 +1,7 @@
-create full-width aside
-<ul> inside a <p> should be single line
+<ul> inside a <p> should be single line and indent
 <ol> and <ul> inside instruction <li> should indent
+or perhaps, to cover above, ul/ol directly inside anything that isn't section or details should be single line and indented
+
+create full-width aside
+asides still need more alignment work
+	maybe use an outline instead of padding to reduce its flow footprint
