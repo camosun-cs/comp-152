@@ -1,0 +1,1 @@
+alert("There are currently " + document.querySelectorAll("*").length + " elements on the page");

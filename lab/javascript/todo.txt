@@ -1,0 +1,8 @@
+sub-lists need style to remove bottom margin
+asides need to be moved to the top of the elements to be positioned correctly
+"element counter" disclosure needs work (made before these were a thing)
+GameOfLife library link needs to be moved to github
+Detail disclosures need to be added everywhere
+Algorithm puzzle needs a lot of style work.
+	should probably bring it out of the section completely and make it its own thing
+This lab in general is way too long. We should cut task 1 completely and have the puzzle automatically run the algorithm in the page. The lab should be entirely about creating the algorithm and nothing else.

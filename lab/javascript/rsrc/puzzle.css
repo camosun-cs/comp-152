@@ -1,0 +1,60 @@
+.puzzle,
+.puzzle .ui-sortable-handle {
+	background-color: white;
+	border-top: 4px solid #90ABFF;
+	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+	margin: 0 0 0.5em;
+    padding-bottom: .5em;
+}
+.puzzle:not(.raw) dd {
+    background-color: #f6f6f6;
+    margin: 0 .5em 0 40px;
+}
+.puzzle:not(.raw) .sort-area {
+    padding: .5em 2em;
+    min-height: 3em;
+}
+.puzzle:not(.raw) .ui-sortable-handle {
+	cursor: move;
+}
+
+.puzzle dt {
+	font-size: larger;
+	margin: .5em 1em;
+}
+.puzzle .language-javascript {
+    display: block;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: normal;
+    border-radius: 0;
+}
+
+.puzzle .codeonly { display: none; }
+
+/* raw code */
+.puzzle.raw {
+    padding: 20px;
+}
+.puzzle.raw .codeonly {
+    display: inline;
+}
+.puzzle.raw dt {
+    color: slategray;
+    font-size: .7em;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+    white-space: pre-wrap;
+    tab-size: 4;
+    background-color: #f6f6f6;
+}
+.puzzle.raw dt,
+.puzzle.raw dd {
+    margin: 0;
+}
+.puzzle.raw .ui-sortable-handle {
+	background: none;
+	border: none;
+	box-shadow: none;
+	margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,77 @@
+SETUP
+=====
+The files in external/ are expected to be hosted somewhere on the internet so
+that the students can link to them easily without having to download copies.
+I've hosted them on my server at comp152.dynu.com for this session.
+
+The lab instructions themselves (lab.html) make use of the files in rsrc/.
+
+The demos are self-contained (except for requiring the external/ hosted files).
+
+
+PRE-LAB DEMOS
+=============
+The lab should start with two demonstrations.
+
+
+Demo 1 = demo/element-counter.html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(this is the demo referred to in Task 1 step 4)
+
+The goals of this demo are to:
+ - show the <script> syntax to link JS to HTML
+ - demonstrate that scripts are executed in the order that they appear in the HTML
+ - show that a single script can be embedded multiple times
+ - suggest that scripts should be embedded at the _bottom_ of the page, rather
+   than in the head
+
+To run the demo:
+ - open demo/element-counter.html in an editor
+ - show the <script> tag, and show the script that its @src references
+   -- note that closing tag is REQUIRED
+ - open the page in a browser
+ - move the <script> to a different part of the document and refresh
+ - create a copy of the <script> in a different part of the document and refresh
+ - point of the effects of document order
+
+
+Demo 2 = demo/game-of-life.html
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The goals of this demo are to:
+ - show what the Game Of Life is
+ - describe the life/death rules
+ - clarify the boundary of what the students will be writing vs. what has been
+   writen for them in the library
+ - refresh the student's memory re:
+   -- functions and parameters
+   -- arrays (esp. 2D arrays)
+
+To run the demo:
+ - open demo/game-of-life.html in a browser
+ - In "It's really a simulation" disclosure
+   - first example shows
+    -- interesting things can happen that aren't easy to predict
+    -- may eventually reach a stable state
+   - second example shows
+    -- may reach a stable oscillation instead
+ - In "There are very simple rules" disclosure
+   - review the rules as given on Wikipedia
+   - use the "step" button on each example to show the next frame
+ - In "Our implementation..." disclosure
+   - show the structure of the game grid, and point out
+    -- array containing arrays, square (for this implementation)
+    -- 0==dead, 1==alive
+    -- can access a single cell like data[2][5]
+ - In the last disclosure
+   - discuss code structure, what calls what
+
+
+
+DURING THE LAB
+==============
+
+Task 1, step 4 is *optional*: it is a recap of demo 1.
+
+I expect writing the answers to the questions in step 8 of Task 1 may take too
+long, so discuss the answers and encourage the students to skip, if necessary.

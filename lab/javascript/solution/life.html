@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Lab 8: Example Solution</title>
+</head>
+<body>
+    <header>
+        <h1>Lab 8: The Game Of Life – Example Solution</h1>
+        <p>Written by Maxwell Terpstra, Lab Section X</p>
+    </header>
+    <img src="http://www.ppdictionary.com/parasites/gondii_smear.jpg" alt="Toxoplasma gondii"/>
+
+    <script src="../external/GameOfLife.js"></script>
+    <script src="life.js"></script>
+
+    <section>
+        <h2>Task 1 Questions</h2>
+        <dl>
+        <dt>Why does the "element counter" script show a different number when added in different places in your document?</dt>
+        <dd>
+            Scripts are executed as soon as the parser finds them on the page, and
+            building of the remainder of the document is paused until the script
+            completes. Scripts only have access to the browser's parsed version of
+            the document, not the raw text. Therefore, a script added near the top
+            of the page will only see the elements that were defined before it.
+        </dd>
+
+        <dt>Why does your script need to be added after the library script?</dt>
+        <dd>
+            Because scripts are loaded and executed in document order. If the
+            life.js script was added before the library script, the library code
+            would not yet be loaded and the GameOfLife function would not yet
+            be defined at the time life.js was run.
+        </dd>
+        </dl>
+    </section>
+
+    <section>
+        <h2>Task 3 Questions</h2>
+        <dl>
+        <dt>Why do cells on the outer edge of the grid always die?</dt>
+        <dd>
+            The alive/dead state of the outer edge of cells is never set
+            explicitly, since doing so would require different logic to determine
+            the number of alive neighbours. The GameOfLife.createGrid function
+            initializes all cells as dead, so they are still dead once
+            the update function is finished.
+        </dd>
+        <dt>Why does this function create a new grid instead of reusing oldCells?</dt>
+        <dd>
+            In order to follow the rules correctly, each cell needs to know
+            what the state of its neighbour cells was <em>before</em> the update.
+            If we updated oldCells directly, we would "forget" parts of the previous
+            state as we processed the grid. As a result, all but the first cell
+            processed would have incomplete information about the prior state
+            of its neighbours.
+        </dd>
+        <dt>Does the order of the if statements matter? Why or why not?</dt>
+        <dd>
+            No, as written the order does not matter because the conditions are
+            non-overlapping. It is only ever possible for one of the three
+            conditions to be true for a particular cell, and so only one of the
+            blocks will ever get run.  However, if this weren't the case, the
+            order <em>would</em> matter, since the effects of one block may
+            influence the test condition of the next.
+        </dd>
+        <dt>What would happen if the inner and outer for loops were reversed?</dt>
+        <dd>
+            As long as the upper limit on the loop variables were set correctly
+            (eg. <samp>row &lt; oldCells.length-1</samp> changed to
+            <samp>row &lt; oldCells[col].length-1</samp>), it would make no
+            difference at all!
+        </dd>
+        <dt>How do different life and death conditions affect the simulation? For example, what happens if 5 or more live neighbours are required for death by over-crowding?</dt>
+        <dd>
+            Answer varies depending on specific conditions adjustments. A greater
+            over-crowding threshold would result in denser groups of alive cells
+            and a lower likelihood of the culture dying out quickly.
+        </dd>
+        </dl>
+    </section>
+</body>
+</html>
