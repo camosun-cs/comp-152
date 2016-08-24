@@ -1,0 +1,14 @@
+links need to be updated
+might want to redo ribbon images to be narrower
+bullets inside details need single-line option (when inside <p>?)
+image in section breaks details isn't in figure
+asides need to be moved above text to be properly vertically aligned
+definition list isn't working well to display sources
+a lot of details are missing <samp> around needed items. eg: Source Manager
+'navigation_pane' image should be outside the <li> so it is full-width
+'navigation_pane' has an error in section 'E. Governmental Restrictions' > a)
+table of figures and captions need more explanation
+
+consider cutting 'cross-references' bit
+we really need to get a shorter and better base document, along with some in-line annotations to show where to bullet and stuff
+mention draft view as a way to see section breaks

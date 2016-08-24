@@ -1,0 +1,24 @@
+REFERENCES 
+[1] Nice, Karim, “How Car Computers Work”, April 2011. HTTP: http://auto.howstuffworks.com/under-the-hood/trends-innovations/car-computer.htm 
+
+[2] Lavacot, Ken, “Computer PCM”, August 2009. HTTP: http://www.2carpros.com/articles/how-a-car-computer-works-pcm-ecm-bcm 
+
+[3] I. Studnia, V. Nicomette, “Survey on Security Threats and Protection Mechanisms in Embedded Automotive Networks”. Dependable Systems and Networks Workshop (DSN-W), 2013 43rd Annual IEEE/IFIP Conference. Budapest, Hungary, 2013 
+
+[4] Z. Fellow, “Defending Connected Vehicles against Malware: Challenges and a Solution Framework”, Internet of Things Journal IEEE. Issue 99, Fort Lee NJ USA, 2014 
+
+[5] M. Lee, “User-Level Network Protocol Stacks for Automotive Infotainment Systems". International Conference on Embedded and Ubiquitous Computing, Hong Kong, 2010 
+
+[6] J.A. Cottle, “Exploiting the Synergetic Relationship between Automobiles and Wireless Communications”. Automotive Electronics, 2007 3rd Institution of Engineering and Technology Conference, U.K, 2007 
+
+[7] R. Nusser and R Pelz, “Bluetooth-based Wireless Connectivity in an Automotive Environment”, Vehicular Technology Conference, 2000. IEEE-VTS Fall VTC 2000. 52nd, Boston, USA, 2000 
+
+[8] S. Masud and S. Shanker, “In-Vehicle Secure Wireless Personal Area Network (SWPAN)”, IEEE TRANSACTIONS ON VEHICULAR TECHNOLOGY, VOL. 55, Detroit, USA 2006 
+
+[9] T. Yang, “Resisting Relay Attacks on Vehicular Passive Keyless Entry and Start Systems”, Fuzzy Systems and Knowledge Discovery (FSKD), 2012 9th International Conference, Sichuan, China 2012 
+
+[10] I. Rouf, R. Miller, H. Mustafa, T. Taylor, S. Oh, W. Xu, M. Gruteser, W. Trappe, and I. Seskar, “Security and Privacy Vulnerabilities of In-Car Wireless Networks: A Tire Pressure Monitoring System Case Study”, the 19th USENIX Security Symposium, 2010 
+
+[11] http://www.dot.gov/research, U.S. DEPARTMENT OF TRANSPORTATION, 1200 New Jersey Avenue, Washington, DC. 
+
+[12]  IEEE standard 1609.3 
