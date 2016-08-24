@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Databases - COMP 152</title>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/prism.css"/>
+    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/basic.css"/>
+    <style type="text/css">
+        .db-table{
+            display: inline-table;
+        }
+        .db-table th{
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>COMP 152 - Databases</h1>
+    <nav>
+        <ol>
+            <li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+            <li><a href="#task1"><strong>Task 1</strong>: Creating the Database</a></li>
+            <li><a href="#task2"><strong>Task 2</strong>: Data Entry</a></li>
+            <li><a href="#task3"><strong>Task 3</strong>: Retrieving and Presenting Data</a></li>
+            <li><a href="#submission">Submission</a></li>
+        </ol>
+    </nav>
+</header>
+
+<section id="outcomes">
+    <h2>Learning Outcomes and Introduction</h2>
+    <p>In this lab assignment you will learn about:</p>
+    <ul>
+        <li>Create a simple relational database using a Database Management System</li>
+        <li>Design and create data tables based on an ER diagram</li>
+        <li>Create one-to-many relationships between the tables</li>
+        <li>Design and create data input forms for your tables</li>
+        <li>Input data into the tables</li>
+        <li>Write SQL queries to gain information from a database</li>
+    </ul>
+</section>
+
+<section id="tasks">
+    <h2 id="task1">Task 1: Creating the Database</h2>
+    <details class="info" id="spacing">
+        <figure>
+            <img src="access-overview.png" alt="Access overview"/>
+        </figure>
+        <summary>Microsoft Access Overview</summary>
+        <p>The Navigation Pane shows all objects used in the database file. By the end of this assignment, this will include Tables, Queries, Forms, and Reports.</p>
+        <p>Right-click an object in the pane to view a context menu of options for it, including Open, Rename, and Delete. Selecting Open will open it in the main view. You can also simply double-click it.</p>
+        <p>All objects you currently have open are shown as tabs in the main view. Closing a tab (using the x to the far right) <strong>does not</strong> remove the object from the database. To delete an object, you must select <samp>Delete</samp> in its context menu.</p>
+    </details>
+    <ol class="instructions">
+        <p>In this task, you will be adding 3 tables to your database. They will follow the structure shown below:</p>
+        <figure>
+            <table class="db-table">
+                <tr>
+                    <th colspan="2">Albums</th>
+                </tr>
+                <tr>
+                    <th><strong>Album_ID</strong></th><td>AutoNumber</td>
+                </tr>
+                <tr>
+                    <th>Title</th><td>Text</td>
+                </tr>
+                <tr>
+                    <th>Release_Year</th><td>Number</td>
+                </tr>
+                <tr>
+                    <th>Format</th><td>Text</td>
+                </tr>
+                <tr>
+                    <th>Rating</th><td>Number</td>
+                </tr>
+                <tr>
+                    <th>Artist_ID</th><td>Number</td>
+                </tr>
+            </table>
+            <table class="db-table">
+                <tr>
+                    <th colspan="2">Artists</th>
+                </tr>
+                <tr>
+                    <th><strong>Artist_ID</strong></th><td>AutoNumber</td>
+                </tr>
+                <tr>
+                    <th>Artist</th><td>Text</td>
+                </tr>
+                <tr>
+                    <th>Genre</th><td>Text</td>
+                </tr>
+                <tr>
+                    <th>Rating</th><td>Number</td>
+                </tr>
+            </table>
+            <table class="db-table">
+                <tr>
+                    <th colspan="2">Songs</th>
+                </tr>
+                <tr>
+                    <th><strong>Song_ID</strong></th><td>AutoNumber</td>
+                </tr>
+                <tr>
+                    <th>Title</th><td>Text</td>
+                </tr>
+                <tr>
+                    <th>Featuring</th><td>Text</td>
+                </tr>
+                <tr>
+                    <th>Length</th><td>Number</td>
+                </tr>
+                <tr>
+                    <th>Rating</th><td>Number</td>
+                </tr>
+                <tr>
+                    <th>Album_ID</th><td>Number</td>
+                </tr>
+            </table>
+            <figcaption>The field in <strong>bold</strong> is the Primary Key. Also, in newer versions of Access, Short Text may be used instead of Text.</figcaption>
+        </figure>
+        <li>
+            Create a new <samp>Blank desktop database</samp> and save it in a Lab 6 folder in your COMP152 directory.
+        </li>
+        <li>
+            Ensure that Table1 (the default table created in new database files) is currently open and in view. If it does not exist, create it using the Table button found in the Create tab.
+        </li>
+        <li>
+            Switch to the Design View. The dropdown for this is found in the <samp>Home</samp> tab.
+            <details class="info">
+                <summary>Information on Views</summary>
+                <figure>
+                    <img class="right" src="an image.png" alt="a right-aligned image"/>
+                </figure>
+                <p>Views are a big part of Microsoft Access. Every object has multiple views which will always be accessible in the Home tab, or with the icons in the bottom-right corner of the screen.</p>
+                <h3>Tables</h3>
+                <ul>
+                    <li><strong>Datasheet View:</strong> Shows a list of all records in the table. This list can be sorted and filtered, and new records can be added but filling in the empty fields at the bottom.</li>
+                    <li><strong>Design View:</strong> Use this view to edit the structure of the table.</li>
+                </ul>
+                <h3>Queries</h3>
+                <ul>
+                    <li><strong>Datasheet View:</strong></li>
+                    <li><strong>SQL View:</strong></li>
+                    <li><strong>Design View:</strong></li>
+                </ul>
+                <h3>Forms</h3>
+                <ul>
+                    <li><strong>Form View:</strong></li>
+                    <li><strong>Layout View:</strong></li>
+                    <li><strong>Design View:</strong></li>
+                </ul>
+                <h3>Reports</h3>
+                <ul>
+                    <li><strong>Report View:</strong></li>
+                    <li><strong>Print View:</strong></li>
+                    <li><strong>Layout View:</strong></li>
+                    <li><strong>Design View:</strong></li>
+                </ul>
+            </details>
+        </li>
+        <li>Enter the table's name into the window that pops up.</li>
+        <li>
+            Rename the <samp>ID</samp> field to <samp>Album_ID</samp>. This should already be set as the primary key.
+            <details class="info">
+                <summary>Primary Keys</summary>
+                <p>A Primary Key is a unique, automatically incremented number for the entry. This makes it possible for multiple records to have the same name but still be uniquely identifiable.</p>
+            </details>
+        </li>
+        <li>
+            Input the field names and data types into the cells. Set the Field Size of Rating to Integer
+            <details class="info">
+                <summary>Creating Fields</summary>
+                <p>In the table's Design View, each row represents a field in the table.</p>
+                <p>Each field must have a <samp>Data Type</samp> specified. You can either choose it with the dropdown, or simply start typing it, and Access will autocomplete the type for you.</p>
+                <p>When a Data Type is chosen, <samp>Field Properties</samp> will appear at the bottom of the screen. Here you can change the size of the </p>
+            </details>
+        </li>
+        <li>
+            <aside class="note">
+                You can also save the table anytime by pressing the save button or <samp>CTRL+S</samp>
+            </aside>
+            Switch back to Datasheet view. This will prompt you to save the changes made to the table.
+        </li>
+        <li>
+            Create the Artist and Song tables. Set their Rating fields to Integer as well.
+            <details class="info">
+                <summary>Creating New Tables</summary>
+                <p>The Create tab has two options for creating new tables.</p>
+                <p>The 'Table' button will create a complete table with a single 'ID' field, similar to the default one included in new files.</p>
+                <p>The 'Table Design' button will open the Design view of an empty table, and only create the table after being saved.</p>
+                <ul>
+                    <li>Use the 'Table Design' option.</li>
+                    <li>Like the first table, the first field in the second and third tables are Primary keys.</li>
+                    <li>After filling in the Field and setting its data type to 'AutoNumber', right click the field and select 'Primary Key' to mark it as the Primary Key. A button that does this can also be found in the Design tab.</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            Create the following validation rules:
+            <ul>
+                <li>The Rating fields in all 3 tables: Only allow values from 0 to 5</li>
+                <li>Format field in Albums table: Only allow "CD", "LP", "Digital"</li>
+            </ul>
+            <details class="info">
+                <summary>Validation Rules</summary>
+                <p>Validation rules add limits to the sort of data that will be accepted by the field. It uses conditional statements which are run against the submitted value, and only accepts it if the statement evaluates to true.</p>
+                <p>You can use equality symbols such as <strong>&gt;</strong>, <strong>&lt;</strong>, and <strong>=</strong>, as well as logical operators such as <strong>AND</strong> and <strong>OR</strong>, or a combination of the two. For example, the somewhat nonsensical validation rule <strong>&gt;=10 OR =0</strong> would only accept inputs that are either <strong>Greater than/equal to 10</strong>, OR <strong>Equal to zero</strong>.</p>
+                <p>You can add validation rules in the Field Properties section of the Design View.</p>
+            </details>
+        </li>
+        <li>
+            Create the Table Relationships to reflect the diagram shown below. Save it when you are done.
+            <details class="info">
+                <summary>Table Relationships</summary>
+                <p>It is often necessary to link data from one table to another. For example, each album in your database will need an artist. This is done using a <strong>Foreign Key</strong>. Each record in the Albums table has an <samp>Artist_ID</samp> field. If the value in this field matches the Unique ID of an entry in the Artists table (the Artist_ID Primary Key), we want it to mean that the artist made that album. We will be using the Relationships Manager to build these connections.</p>
+                <ol>
+                	<li>Open the <samp>Table Relationships</samp> view by click <samp>Relationships</samp> under the <samp>Database Tools</samp> tab.</li>
+                	<li>The <samp>Show Table</samp> window should show by default. If it doesn't, or if you've closed it, click the <samp>Show Table</samp> button in the <samp>Relationship Tools</samp> tab.</li>
+                	<li>Add all 3 tables to the view (click it's name and click Add), then close the Show Table window.</li>
+                	<li>To create a relationship, click and drag a Primary Key of one table to a Foreign Key of another (or an FK to a PK). An <samp>Edit Relationships</samp> window will appear, but the default values should be fine, so just click <strong>Create</strong>.</li>
+                	<li>In this assignment, the Albums table has an Artist_ID foreign key, and the Songs table has an Album_ID foreign key. This will require two relationships.</li>
+                </ol>
+            </details>
+        </li>
+    </ol>
+    <h2 id="task2">Task 2: Data Entry</h2>
+    <figure>
+        <!-- <img src="an image.png" alt="a task heading screenshot showing things used in the task"> -->
+    </figure>
+    <ol class="instructions">
+        <li>
+            Create a form for the Artists table.
+            <details class="info">
+                <summary>Creating forms</summary>
+                <figure>
+                    <!-- <img src="form-wizard.png" alt="Form Wizard Location"> -->
+                </figure>
+                <ul>
+                    <li>Make sure all tables are in Datasheet view. Access will not let you use the forms later if you don't.</li>
+                    <li>Open the <samp>Form Wizard</samp>, found in the <samp>Create</samp> tab.</li>
+                    <li>Select the table in the dropdown, then add the fields you want by using the Arrow buttons to move them to the <samp>Selected Fields</samp> window. You can move all fields over at once using the <samp>&lt;&lt;</samp> button.</li>
+                    <li>Leave all options as default for now, except the title, then click finish.</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            <aside class="note">Notice the Dot notation used in the Selected Fields box for Fields that have the same name but are in different tables.</aside>
+            Create a form for the Albums table with the Songs table as a subform.
+            <details class="info">
+                <summary>Subforms</summary>
+                <ol>
+                    <li>Open the form wizard again
+                    <li>Add all the editable fields of the Albums table
+                    <li>Switch to the Songs table using the dropdown and add all those fields as well
+                    <li>Select <samp>Form with subforms</samp> option, viewing the data by Albums
+                    <li>Select <samp>Datasheet</samp>
+                    <li>Switch to the Layout View and increase the width of the Songs subform to have it display all the fields without needing to horizontally scroll.
+                </ol>
+            </details>
+        </li>
+        <li>
+            Enter some artists, albums, and songs into the database using the new forms you created. Enter at least 3 of each, preferably with more albums than artists and multiple songs per album.
+            <details class="info">
+                <summary>Entering Data</summary>
+                <ol>
+                    <li>Open the form in <samp>Form View</samp>
+                    <li>Click New in the Home tab to create a new entry
+                    <li>Fill in the fields
+                    <li>To see all your newly entered records, you will need to refresh your open tables using the <samp>Refresh All</samp> button in the Home tab.
+                </ol>
+            </details>
+        </li>
+    </ol>
+    <h2 id="task3">Task 3: Retrieving and Presenting Data</h2>
+    <ol class="instructions">
+        <li>
+            Create a query called <strong>Best Artists</strong> that lists the name and genre of all artists who have a rating of 4 or more.
+            <details class="info">
+                <summary>Creating Queries</summary>
+                <p>Microsoft Access provides visual tools for building queries, but we will be writing the SQL code ourselves.</p>
+                <ol>
+                    <li>Close the 'Show Table' dialog box if it's open.
+                    <li>Change to the SQL View (found in the Home or Query Tools tabs)
+                    <li>Type your query, save it with an appropriate name.
+                </ol>
+                <h3>Writing SQL</h3>
+                    <p>SQL queries are a set of text statements separated by keywords that describe an action to perform on a Database. The keywords you will be using here are SELECT, FROM, WHERE, and ORDER BY.</p>
+                    <ul>
+                        <li><strong>SELECT:</strong> Performs a 'Select' query, which searches one or more tables for entries that match specific criteria. The comma-separated values immediately following tells the query which fields to display in the result. An asterisk (*) can be used to select every field in the table(s)</li>
+                        <li><strong>FROM:</strong> From which table or tables to make the query on, separated by commas.</li>
+                        <li><strong>WHERE:</strong> A conditional statement to apply to each entry in the selected table(s). Only entries that match this condition will be considered in the final query.</li>
+                        <li><strong>ORDER BY:</strong> Affects the order the query results will be displayed. If given a field name, the query will be sorted by that field (in alphabetical or numerical order). The DESC or ASC keywords can be added to the end to choose Ascending or Descending order.</li>
+                    </ul>
+                    <p>Consider the following statement:</p>
+                    <pre><code>SELECT Title, Release_Year FROM Albums WHERE Format = "Digital" ORDER BY Title;</code></pre>
+                    <p>This query will search the Albums table for all entries that have the Format field set to "Digital" (The quotes mean the value is text), and display the Title and Rating of the results, sorted by the title (in alphabetical order). Also note the semicolon (;), which signifies the end of the query.</p>
+                    <p>To run the query, click Run in the Query Tools tab.</p>
+            </details>
+        </li>
+        <li>
+            Create two more queries called <strong>Best Albums</strong> and <strong>Best Songs</strong> that select entries rated 4 or higher.
+        </li>
+        <li>Sort the <strong>Best Songs</strong> query by the song title.</li>
+        <li>
+            Open your <strong>Best Albums</strong> query in SQL view and change it to include the artist's name. This will require a Multi-table query.
+            <details class="info">
+                <summary>Multi-Table Queries</summary>
+                <p>Each entry in your Albums table includes an Artist_ID field. This is a unique identifier for the Artist of the Album. However, on its own, this does not give you the name of the artist. The Artists table must be searched for the same ID to retrieve the rest of the information.</p>
+                <p>To do this, both tables need to be included in the query and joined using the common Artist_ID field. The keywords for this are INNER JOIN and ON.</p>
+                <ul>
+                    <li><strong>INNER JOIN:</strong> Joins the following table to the table specified in the WHERE statement. There are several types of joins, but their effects on the results are outside the scope of this assignment. Feel free to search Google for "SQL joins" if you are interested.</li>
+                    <li><strong>ON:</strong> Specifies which fields to use to determine two entries are linked.</li>
+                </ul>
+                <p>Here is an example:</p>
+                <pre><code>SELECT Songs.Title, Albums.Title<br>FROM Songs INNER JOIN Albums ON Songs.Album_ID = Albums.Album_ID<br>ORDER BY Albums.Title;</code></pre>
+                <p>This query joins the relevant album information in the Album table to each entry in the Songs table using the shared Album_ID, then, since each song entry effectively has all of Albums fields, it sorts all the songs by its album's title. If you wanted to show all the songs on one album, you could replace the ORDER BY statement with something like WHERE Albums.Title = "My Album Title".</p>
+                <p>As shown in the example, when joining multiple tables, it's common for fields in different tables to share the same name. The Tablename.Fieldname notation must be used in these situations to prevent the ambiguity. This notation can be used even if the Field name is unique, so use it for every field name if there is any doubt.</p>
+            </details>
+        </li>
+        <li>
+            Create a report of the Best Songs query.
+            <details class="info">
+                <summary>Creating Reports</summary>
+                <ul>
+                    <li>Open and view the relevant query.</li>
+                    <li>Click Report in the Create tab.</li>
+                    <li>A new report will be created and opened in the Layout View.</li>
+                    <li>Switch to Report View when you're happy with the results.</li>
+                </ul>
+            </details>
+        </li>
+    </ol>
+    <h2 id="bonus">Presentation</h2>
+        <p>Here are some additional things to look into to improve your presentation and max out the Overall Assessment mark.</p>
+        <ol>
+            <li>Add new fields to the tables.</li>
+            <li>Add Validation Text to the fields with Validation rules to provide friendlier looking error messages.</li>
+            <li>Use the <samp>Layout View</samp> to stylize your forms and report and apply a new theme.</li>
+            <li>Use combo boxes in the forms to select the Artist by name and to restrict the Rating and Format choices to match the Validation.</li>
+        </ol>
+</section>
+
+<section id="submission">
+    <h2>Submission</h2>
+    <p>Submit your completed document to the Lab dropbox on D2L.</p>   
+    <p>
+        <b>NOTE</b>: This assignment is to be done <em>individually</em>. You can
+        help one another with problems and questions, but in the end everyone must
+        do their own assignment.
+    </p>
+
+    <table class="marks">
+        <thead>
+            <tr><th>Criteria</th><th>Marks</th></tr>
+        </thead>
+        <tbody>
+            <tr><th>Overall Assessment/Wow factor</th><td>10</td></tr>
+            <!-- <tr><td>Wow Factor</td><td>10</td></tr> -->
+            <tr><th>Task 1</th><td>20</td></tr>
+            <tr><th>Task 2</th><td>20</td></tr>
+            <tr><th>Task 3</th><td>20</td></tr>
+            <tr><th>Total</th><td>70</td></tr>
+        </tbody>
+    </table>        
+</section>
+
+</body>
+</html>
