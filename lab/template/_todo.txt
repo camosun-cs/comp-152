@@ -1,0 +1,2 @@
+create full-width aside
+<ul> inside a <p> should be single line
