@@ -144,7 +144,7 @@ $magic: 1.5rem;
         margin-left: -$magic;
         background-color: #eef;
         display: block;
-        overflow: auto;
+        @include containFloats;
     }
     details:not([open]) > * {
         display: none;
