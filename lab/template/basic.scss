@@ -42,7 +42,7 @@ $content: 24;
 //## section layout
     h1, h2, h3, h4, h5, h6, hgroup,
     ul, ol, .instructions > li, dl,
-    p, figure, table {
+    p, figure {
         margin-top: $magic;
         margin-bottom: $magic;
 
@@ -150,7 +150,13 @@ $content: 24;
         border-collapse: collapse;
         border: 2px solid;
         border-color: inherit;
-        margin: 0 auto;
+        display: table; // block level
+        // note: table margins don't collapse
+        margin: $magic auto;
+        &.inline {
+            display: inline-table;
+            margin: $magic/2;
+        }
     }
     td, th {
         border: 1px solid;
