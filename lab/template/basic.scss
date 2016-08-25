@@ -362,10 +362,26 @@ $content: 24;
             box-shadow: none;
         }
     }
-    .right, li > figure {
+    @mixin right() {
         max-width: 50%;
         float: right;
-        margin: $magic/2 0 $magic/2 $magic;
+        margin: $magic 0 $magic $magic;
+    }
+    .right {
+        @include right;
+    }
+    li > figure:not(.right) {
+        // note: overiding negative margins from base
+        @include right;
+        & > figcaption {
+            margin: 0;
+        }
+    }
+    h1, h2, h3, h4, h5, h6, hgroup,
+    ul, ol, dl, p {
+        summary + .right + & {
+            margin-top: .75em;
+        }
     }
 }
 @media (min-width: $content * 1.125 * $initialMagic) {
