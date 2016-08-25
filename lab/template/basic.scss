@@ -218,6 +218,14 @@ $magic: 1.5rem;
         }
         &:focus {
             outline: none;
+            &::after {
+                content: "●";
+                float: right;
+                color: #aad;
+            }
+            &:hover::after {
+                display: none;
+            }
         }
 
         &::before {
