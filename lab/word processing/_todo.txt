@@ -1,8 +1,5 @@
-links need to be updated
 might want to redo ribbon images to be narrower
 bullets inside details need single-line option (when inside <p>?)
-image in section breaks details isn't in figure
-asides need to be moved above text to be properly vertically aligned
 definition list isn't working well to display sources
 a lot of details are missing <samp> around needed items. eg: Source Manager
 'navigation_pane' image should be outside the <li> so it is full-width

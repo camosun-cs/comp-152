@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Advanced Word Processing - COMP 152</title>
     <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/prism.css"/>
-    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/basic.css"/>
+    <base href="https://telic.github.io/comp152/lab/word processing/" target="_blank"/>
+    <link rel="stylesheet" href="../template/bundle.css"/>
 </head>
 <body>
 
@@ -38,24 +38,27 @@
     </ul>
 </section>
 
-<section id="tasks">
+<section>
     <h2>Before you Begin</h2>
-    <ol>
-        <li><a href="base.docx">Download this unformatted document</a>, rename it file Lab2_First_Last.docx (using your first and last name), and open it in MS Word.</li>
-       <li> Once you finish formatting your document, it should look <a href= "solution/base-Final.pdf"> similar to this</a>.
+    <ol class="instructions">
+        <li><a href="base.docx" download="base.docx">Download this unformatted document</a>, rename it file Lab2_First_Last.docx (using your first and last name), and open it in MS Word.</li>
+       <li> Once you finish formatting your document, it should look <a href="solution/base-Final.pdf"> similar to this</a>.
         </li>
     </ol>
-    
-    <h2 id="task1">Task 1: Sections and Page Layout</h2>
+</section>
+<section id="task1">
+    <h2>Task 1: Sections and Page Layout</h2>
     <figure>
 	    <img src="page layout tab.png" />
     </figure>
-    <ol>
+    <ol class="instructions">
         <li>
-            Add a section break immediately before the heading "I.Introduction".
-            <details class="info">
+            <p>Add a section break immediately before the heading "I.Introduction".</p>
+            <details>
                 <summary>Section Breaks</summary>
-                <img src="break section.png" style="width:200px;float:right;"/>
+                <figure class="right">
+                    <img src="break section.png"/>
+                </figure>
                 <p>A document can be diveded into <strong>Sections</strong> using <strong>Section Breaks</strong>. Sections are used to create layout or format changes. For example, one section could contain a full page centered title, while another could span the body text across multiple columns.</p>
                 <p>Individual sections can have these formats changed:</p>
                 <ul>
@@ -73,11 +76,12 @@
                     <li>Place the text cursor where you would like the break to be inserted (text after the cursor will be placed into the new section).</li>
                     <li>Click the <samp>Breaks</samp> drop-down menu is in the <samp>Page Layout</samp> tab.</li>
                     <li>Select the desired section break. Be careful not to pick a <strong>Page Break</strong> (the top 3 selections), as this will not create a new section. For most cases, you will want to create the section on a new page.</li>
+                </ol>
             </details>
         </li>
         <li>
-            Change the page layout of the first section (the title page) to increase the size of the vertical margins and vertically center its content.
-            <details class="info">
+            <p>Change the page layout of the first section (the title page) to increase the size of the vertical margins and vertically center its content.</p>
+            <details>
                 <summary>Page Setup</summary>
                 <figure class="right">
 	                <img src="page window.png"/>
@@ -88,8 +92,8 @@
         </li>
         
         <li>
-            Add automatically-generated page numbers to the second (body) section.
-            <aside class="info">The <samp>Page Number</samp> option is in the <samp>Insert</samp> tab.</aside>
+            <p>Add automatically-generated page numbers to the second (body) section.</p>
+            <aside>The <samp>Page Number</samp> option is in the <samp>Insert</samp> tab.</aside>
         </li>
     </ol>
 
@@ -107,16 +111,17 @@
     
     
     
-    
-    <h2 id="task2">Task 2: Basic Document Structure and Styling</h2>
+</section>
+<section id="task2">
+    <h2>Task 2: Basic Document Structure and Styling</h2>
     <figure>
         <img src="home tab.png" />
     </figure>
     <ol class="instructions">
         
         <li>
-            Apply a first-line indent to all of the content in the document.  Do not apply to the first section.
-            <details class="info" id="spacing">
+            <p>Apply a first-line indent to all of the content in the document.  Do not apply to the first section.</p>
+            <details>
                 <summary>Indents and Line Spacing</summary>
                 <figure class="right">
                     <img src="paragraph window.png"/>
@@ -135,19 +140,19 @@
             Set the line spacing to 1.5 lines for the entire document.
         </li>
         <li>
-            Open the navigation pane (it is empty for now).
-            <details class="info">
+            <p>Open the navigation pane (it is empty for now).</p>
+            <details>
                 <summary>How?</summary>
                 <p>The navigation pane checkbox is found in the <samp>View</samp> tab. It provides an overview of the document.</p>
                 <figure><img src="view tab2.png"/></figure>
             </details>
         </li>
         <li>
-            Apply styles to the titles and headings to make them stand out from the body text and appear in the navigation pane.
-            <aside class="note">
+            <p>Apply styles to the titles and headings to make them stand out from the body text and appear in the navigation pane.</p>
+            <aside>
                 <strong>Hint:</strong> in this particular document, all level 1 headings start with roman numerals and a period, level 2 headings start with capital letters, level 3 headings start with numbers, and level 4 headings start with lowercase letters. Be careful not to confuse the many lists in the document for headers!
             </aside>
-            <details class="info">
+            <details>
                 <summary>Styles</summary>
                 <p>In MS - Word, a <strong>style </strong>is a collection of formats saved together and given a name.  Apply the same style to several paragraphs and they will all match. Once a style has been defined in a document, it can be used in several places to quickly ensure consistency of formatting. A style can later be re-defined to have a different appearance, so that all text with that style will automatically take the new appearance.</p>
                 <p>A style can include:</p>
@@ -171,7 +176,7 @@
                 </ul>
                 <p>For headings, sub-headings and minor headings, use the styles called Heading1, Heading2 and Heading3 respectively. When all headings are formatted using these styles, you can be sure that equivalent headings will match – for example, all Heading2 paragraphs will look the same.</p>
             </details>
-            When complete, your navigation pane should look like this:
+            <p>When complete, your navigation pane should look like this:</p>
             <figure>
                 <img src="navigation pane.png"/>
             </figure>
@@ -180,20 +185,24 @@
             There are several lists in the document that are currently formatted as indented paragraphs – convert them into actual numbered (or bulleted) lists.
         </li>
         <li>
-            Modify the three hyphenated lists to use round bullets.
-            <details class="info">
+            <p>Modify the three hyphenated lists to use round bullets.</p>
+            <details>
                 <summary>Bullets and Numbering</summary>
-                <img src="paragraph section.png" alt="style gallery" style="float: right;"/>
+                <figure class="right">
+                    <img src="paragraph section.png" alt="style gallery"/>
+                </figure>
                 <p>Highlight each list, then click the <samp>Bullets</samp> or <samp>Numbering</samp> buttons in the <samp>Paragraph</samp> section of the "Home" tab.  Word will usually do a pretty good job of detecting bullet types and sub-lists.</p>
                 <p>The bullet style can be modified by clicking the down arrow next to the applicable list button.</p>
                 <p>The <samp>Increase</samp> and <samp>Decrease Indent</samp> buttons move the selected list item up or down the list hierarchy, or indent the entire list left or right if the top item is selected.
             </details>
         </li>
         <li>
-            Create an attractive visual theme.
-            <details class="info">
+            <p>Create an attractive visual theme.</p>
+            <details>
                 <summary>The Design Tab</summary>
-                <img src="theme section.png" style="max-width:100%"/>
+                <figure>
+                    <img src="theme section.png"/>
+                </figure>
                 <p>The Design tab contains <strong>Themes</strong>, <strong>Style Sets</strong>, <strong>Colors</strong> and <strong>Fonts</strong></p>
                 <p>Notice how changing any of these options automatically changes the formatting of all the text in the document. This is because it is modifying the Styles you applied to that text.</p>
                 <p>Be careful not to go overboard with these!</p>
@@ -201,14 +210,15 @@
         </li>
     </ol>
 
-    
-    <h2 id="task3">Task 3: Generated Content</h2>
+</section>
+<section id="task3">    
+    <h2>Task 3: Generated Content</h2>
     <figure>
     	<img src="references tab.png" />
     </figure>
-    <ol>
+    <ol class="instructions">
         <li>
-            Add captions to the 6 figures in the document (1 table and 5 images). The captions, in order, should be:
+            <p>Add captions to the 6 figures in the document (1 table and 5 images). The captions, in order, should be:</p>
             <ol>
                 <li>Bluetooth Technical Details</li>
                 <li>PKES Key FOB Coverage</li>
@@ -217,27 +227,29 @@
                 <li>Explicit Certificate</li>
                 <li>Implicit Certificate</li>
             </ol>
-            <aside class="note">
+            <aside>
                 Make sure the Label is set to Figure (the first caption may default to table).
             </aside>
-            <details class="info">
+            <details>
                 <summary>Figure Captions</summary>
                 <!-- <img src="caption window.png" style="float:right;"/> -->
                 <p>With the figure selected (click on it), click the Insert Caption button in the Captions section under the References tab</p>
             </details>
         </li>
         <li>
-            Create a new section at the end of the document, and insert an automatically-generated Table of Figures into it.
-            <details class="info">
+            <p>Create a new section at the end of the document, and insert an automatically-generated Table of Figures into it.</p>
+            <details>
                 <summary>Table of Figures</summary>
-                <img src="figures window.png">
+                <figure>
+                    <img src="figures window.png">
+                </figure>
                 <p>The Table of Figures is a list of all captions you’ve created in the document, along with its page number and a link.</p>
                 <p>Make sure the <samp>Caption label</samp> is set to <strong>Figure.</strong>
             </details>
         </li>
         <li>
-            Use the <strong>Source Manager</strong> to add records for the following sources:
-            <dl>
+            <p>Use the <strong>Source Manager</strong> to add records for the following sources:</p>
+            <dl class="inline">
             <dt>Type</dt> <dd>Web site</dd>
             <dt>Author</dt> <dd>Nice, Karim</dd>
             <dt>Name of Web Page</dt> <dd>How Car Computers Work</dd>
@@ -245,7 +257,7 @@
             <dt>Month</dt> <dd>April</dd>
             <dt>URL</dt> <dd>http://auto.howstuffworks.com/under-the-hood/trends-innovations/car-computer.htm</dd>
             </dl>
-            <dl>
+            <dl class="inline">
             <dt>Type</dt> <dd>Conference Proceedings</dd>
             <dt>Author</dt> <dd>I. Studnia; V. Nicomette</dd>
             <dt>Title</dt> <dd>Survey on Security Threats and Protection Mechanisms in Embedded Automotive Networks</dd>
@@ -253,7 +265,7 @@
             <dt>City</dt> <dd>Budapest</dd>
             <dt>Publisher</dt> <dd>IEEE</dd>
             </dl>
-            <dl>
+            <dl class="inline">
             <dt>Type</dt> <dd>Journal Article</dd>
             <dt>Author</dt> <dd>Z. Fellow</dd>
             <dt>Title</dt> <dd>Defending Connected Vehicles against Malware: Challenges and a Solution Framework</dd>
@@ -261,7 +273,7 @@
             <dt>Issue</dt> <dd>99</dd>
             <dt>Year</dt> <dd>2014</dd>
             </dl>
-            <details class="info">
+            <details>
                 <summary>Source Manager</summary>
                 <ol>
                     <li>The References tab contains tools for automatically logging and citing your sources, and can even generate a fully formatted bibliography.</li>
@@ -282,33 +294,37 @@
             Add another section break immediately before the heading "I. Introduction", then insert an automatically-generated Table Of Contents into the new section (between the title page and the main body).
         </li>
     </ol>
-
-    <h2 id="task4">Task 4: Footnotes and Cross-references</h2>
+</section>
+<section id="task4">
+    <h2>Task 4: Footnotes and Cross-references</h2>
     <ol class="instructions">
         <li>
-            The acronym PKES is used in section II.B. but never defined.
-            <aside class="note">
+            <p>The acronym PKES is used in section II.B. but never defined.</p>
+            <aside>
                 Hint: you can use the navigation pane to jump quickly to a specific section
             </aside>
-            Add a footnote to its first use to give the expanded form of this acronym: &quot;Passive Keyless Entry and Start System&quot; and a link to the Wikipedia article that describes the technology (<a href="https://en.wikipedia.org/wiki/Smart_key">https://en.wikipedia.org/wiki/Smart_key</a>).
+            <p>Add a footnote to its first use to give the expanded form of this acronym: &quot;Passive Keyless Entry and Start System&quot; and a link to the Wikipedia article that describes the technology (<a href="https://en.wikipedia.org/wiki/Smart_key">https://en.wikipedia.org/wiki/Smart_key</a>).</p>
         </li>
         <li>
-            Find the three figure references (in section II.E) and replace them with live cross-references.
-            <details class="info">
+            <p>Find the three figure references (in section II.E) and replace them with live cross-references.</p>
+            <details>
                 <summary>Cross-References</summary>
                 <p><strong>Cross-references</strong> are in-line links pointing to a figure, similar to citations. EX: &quot;[...] using the architecture illustrated in <u>Figure 1</u>.&quot; They are found in the <samp>References</samp> tab.</p>
-                <img src="cross-reference window.png"/>
+                <figure>
+                    <img src="cross-reference window.png"/>
+                </figure>
             </details>  
         </li>
     </ol>
-
-    <h2 id="task5">Task 5: Finishing Touches and Review</h2>
+</section>
+<section id="task5">
+    <h2>Task 5: Finishing Touches and Review</h2>
     <ol class="instructions">
         <li>Give a run-through of your document and give it some polish. Here are some ideas you can consider:
         <ul>
             <li>
-                Apply text formatting to the Title Page.
-                <details class="info">
+                <p>Apply text formatting to the Title Page.</p>
+                <details>
                     <summary>Examples</summary>
                     <ol>
                         <li>Add <strong>paragraph spacing</strong> to the author entries to give them some breathing room.</li>
@@ -317,12 +333,12 @@
                 </details>
             </li>
             <li>
-                Make the &#39;A. Different Computers&#39; section (under the I. Introduction ) into a 2-column layout. Note:  &#39;The elements of an ECU&#39; should lead the second column. 
-                <aside class="info">The <samp>Columns</samp> option is in the <samp>Page Layout</samp> tab.</aside>
+                <p>Make the &#39;A. Different Computers&#39; section (under the I. Introduction ) into a 2-column layout. Note:  &#39;The elements of an ECU&#39; should lead the second column. </p>
+                <aside>The <samp>Columns</samp> option is in the <samp>Page Layout</samp> tab.</aside>
             </li>
             <li>
-                Apply special formatting to the <strong>abstract</strong> paragraph. 
-                <details class="info">
+                <p>Apply special formatting to the <strong>abstract</strong> paragraph. </p>
+                <details>
                     <summary>Examples</summary>
                     <ol>
                     <li>Add left and right indents to make it narrower.</li>
@@ -332,8 +348,8 @@
                 </details>
             </li>
             <li>
-                Modify the default styles or create your own.
-                <details class="info">
+                <p>Modify the default styles or create your own.</p>
+                <details>
                     <summary>Custom Styles</summary>
                     <p>To modify an existing style (thus affecting all text using that style):</p>
                     <ol>
@@ -389,5 +405,6 @@
     </table>        
 </section>
 
+    <script src="../template/bundle.js" async defer></script>
 </body>
 </html>

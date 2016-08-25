@@ -4,8 +4,8 @@
 	<meta charset="utf-8">
 	<title>HTML &amp; CSS - COMP 156</title>
 	<meta name="viewport" content="width=device-width"/>
-	<base href="https://telic.github.io/comp152/lab/"/>
-	<link rel="stylesheet" href="template/bundle.css"/>
+	<base href="https://telic.github.io/comp152/lab/html" target="_blank"/>
+	<link rel="stylesheet" href="../template/bundle.css"/>
 </head>
 <body>
 	<header>
@@ -33,21 +33,21 @@
 
 	<section id="task1">
 		<h2>Task 1: The Basics</h2>
-		<figure><img src="html/browser.png" alt="Browser refresh and location controls" /></figure>
+		<figure><img src="browser.png" alt="Browser refresh and location controls" /></figure>
 		<ol class="instructions">
 			<li>Create a new folder for this lab in your "COMP156" directory</li>
 			<li>
-				Download the <a href="html/template.zip" target="_blank" download="">starter template kit</a>, un-zip it, and move the contents to your lab folder.
+				<p>Download the <a href="template.zip" download="template.zip">starter template kit</a>, un-zip it, and move the contents to your lab folder.</p>
 				<details>
 					<summary>About the "index.html" file</summary>
 					<p>"index.html" is a basic <abbr title="Hyper Text Markup Language">HTML</abbr> file. All web pages that you access with a web browser are made with HTML just like this one (although real sites are usually much more complicated!).</p>
 					<p>HTML is a "plain-text" format; this means that the file is encoded in text and you can view and edit the file by hand in a text editor. HTML is also an example of a <dfn>markup language</dfn>: it is a mix of regular readable text and special <em>markup</em> commands that give the text meaning. All the words caught between <em>&lt;</em> and <em>&gt;</em> characters are markup, and everything else is just regular text.</p>
-					<p>Because of time constraints, we've provided you with this template file so that we can skip over the details of the format and get right into marking up some content. If you'd like to learn more, there are <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">many</a> <a href="https://html.spec.whatwg.org/multipage/" target="_blank">resources</a> <a href="http://www.w3schools.com/html/default.asp" target="_blank">online</a> that can teach you all about the nitty-gritties!</p>
-					<p>The name "index.html" is a little special. Most web servers will display this file by default if a particular file is not specified. So, for example, <a href="../" target="_blank">https://telic.github.io/comp152/</a> and <a href="../index.html" target="_blank">https://telic.github.io/comp152/index.html</a> are actually the exact same resource!</p>
+					<p>Because of time constraints, we've provided you with this template file so that we can skip over the details of the format and get right into marking up some content. If you'd like to learn more, there are <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">many</a> <a href="https://html.spec.whatwg.org/multipage/">resources</a> <a href="http://www.w3schools.com/html/default.asp">online</a> that can teach you all about the nitty-gritties!</p>
+					<p>The name "index.html" is a little special. Most web servers will display this file by default if a particular file is not specified. So, for example, <a href="../">https://telic.github.io/comp152/</a> and <a href="../index.html">https://telic.github.io/comp152/index.html</a> are actually the exact same resource!</p>
 				</details>
 			</li>
 			<li>
-				Open "index.html" in a web browser. Keep this window open while you work, using the "refresh" button to see the affect of your changes
+				<p>Open "index.html" in a web browser. Keep this window open while you work, using the "refresh" button to see the affect of your changes.</p>
 				<details>
 					<summary>About browsers</summary>
 					<p>Web browsers are "viewers" for HTML. Everything you see on the Internet is written in HTML. In fact, if you right-click in your browser on any web page, including this one, there is a "View Page Source" option that will show you the raw HTML that it is made of! There are many different web browsers available, but at their core they all just display HTML. If you code your HTML correctly, all browsers should show you the same result.</p>
@@ -56,7 +56,7 @@
 				</details>
 			</li>
 			<li>
-				Open "index.html" in a plain-text editor, like Notepad++
+				<p>Open "index.html" in a plain-text editor, like Notepad++</p>
 				<details>
 					<summary>Why Notepad++?</summary>
 					<p>The built-in plain-text editor in Windows (Notepad) will work for editing HTML, but a "code" editor like Notepad++ will give you a number of benefits, including:</p>
@@ -70,7 +70,7 @@
 				</details>
 			</li>
 			<li>
-				Add a title to the document using an <strong><code>h1</code> element</strong> at the top of the document body.
+				<p>Add a title to the document using an <strong><code>h1</code> element</strong> at the top of the document body.</p>
 				<details>
 					<summary>Tags, Elements, and Comments</summary>
 					<p>The markup commands in HTML are called <dfn>tags</dfn> and always start with a "&lt;" character and end with a "&gt;" character.</p>
@@ -87,7 +87,8 @@
 					<p>Your web browser has some built-in styles for headers that make them stand out from the surrounding text, but you can modify their look with CSS (discussed later).</p>
 				</details>
 			</li>
-				<li>Wrap Ian Hickson's article in a <strong><code>section</code> element</strong>. Give the section an <strong>"<code>id</code>" attribute</strong> with a value of "hixie". 
+			<li>
+				<p>Wrap Ian Hickson's article in a <strong><code>section</code> element</strong>. Give the section an <strong>"<code>id</code>" attribute</strong> with a value of "hixie".</p>
 				<details>
 					<summary>Structural elements</summary>
 					<p>There are many structural elements in HTML (such as <code>nav</code>, <code>header</code>, <code>section</code>, and <code>footer</code>) that have no immediate visible affect in the browser. These elements add explicit structural heirarchy to your document which can be useful when adding styles and help when processing your document with other tools (like screen readers, search engines, and mobile "reader" view).</p>
@@ -108,10 +109,10 @@
 			</li>
 			<li>Turn the title of Hickson's article into a <strong>second level header</strong>.</li>
 			<li>
+				<p>There is a list of numbered items in the article. Mark them up as an <strong>ordered list</strong> using <code>ol</code> (ordered list) and <code>li</code> (list item) elements.</p>
 				<aside>
 					<em>Note:</em> The browser will automatically add numbers to each list item in an ordered list. Because of this, the numbers written in the original document are no longer needed.
 				</aside>
-				There is a list of numbered items in the article. Mark them up as an <strong>ordered list</strong> using <code>ol</code> (ordered list) and <code>li</code> (list item) elements.
 				<details>
 					<summary>HTML Lists</summary>
 					<p>HTML lists are constructed using two elements in tandem. The list as a whole is wrapped in either a <code>ol</code> or <code>ul</code> element (for ordered or unordered lists respectively). Each item of the list is wrapped in a <code>li</code> (list-item) element.</p>
@@ -121,7 +122,7 @@
 			</li>
 			<li>The remaining text blocks in Hickson's article are all basic <strong>paragraphs</strong>. Wrap each block using <code>p</code> (paragraph) elements.</li>
 			<li>
-				Change the acronym "WHATWG" into a <strong>link</strong> to <a href="https://blog.whatwg.org/html-is-the-new-html5">https://blog.whatwg.org/html-is-the-new-html5</a> using an <code>a</code> element with an <code>href</code> attribute.
+				<p>Change the acronym "WHATWG" into a <strong>link</strong> to <a href="https://blog.whatwg.org/html-is-the-new-html5">https://blog.whatwg.org/html-is-the-new-html5</a> using an <code>a</code> element with an <code>href</code> attribute.</p>
 				<details>
 					<summary>Creating links</summary>
 					<p>The <code>a</code> element on its own creates an "anchor" which doesn't do a whole lot on its own. In order to link to another resource, you'll need to add an <code>href</code> attribute into the opening tag whose value is the <abbr title="Uniform Resource Locator">URL</abbr> to the linked resource. In this case, the href should have a value of "https://blog.whatwg.org/html-is-the-new-html5".</p>
@@ -140,7 +141,7 @@
 		<p>Since HTML is a plain-text format, you can't directly embed a binary image into it like you would in MS Word. Instead, you'll need to link the image into the document, similar to how you "live linked" an Excel sheet into your Word document.</p>
 		<ol class="instructions">
 			<li>
-				Find and <strong>download</strong> a reasonably large image off of the internet. Make sure you have the right to use this image in your work.
+				<p>Find and <strong>download</strong> a reasonably large image off of the internet. Make sure you have the right to use this image in your work.</p>
 				<details>
 					<summary>File size considerations on the web</summary>
 					<p>Large images and video can have very large file sizes. When working with these kinds of resources on your own computer this isn't a problem, but on the Internet, the size of your resources can greatly impact the experience of using your site. Larger files take more time for you browser to download, and cost your readers time and money! In general, its a good idea to keep your HTML under 100 KB in size, keep the size of included images and stylesheets to a minimum (1 MB is a good upper limit), and never load videos automatically.</p>
@@ -150,7 +151,7 @@
 			<li>Move this image into your lab folder, and give it a short and simple name.</li>
 			<li>Create an empty <strong><code>figure</code> element</strong> with an ID of "myfigure" between the closing tag of the "hixie" section and opening tag of the "review" section.</li>
 			<li>
-				<strong>Add an <code>img</code></strong> tag with <code>src</code> and <code>alt</code> attributes inside the <code>figure</code> to embed your image.
+				<p><strong>Add an <code>img</code></strong> tag with <code>src</code> and <code>alt</code> attributes inside the <code>figure</code> to embed your image.</p>
 				<details>
 					<summary>Images</summary>
 					<p><code>img</code> is a "self-closing" tag used for embedding images. It looks like this:</p>
@@ -169,7 +170,7 @@
 		<p>CSS and HTML are <em>completely separate languages</em>, although in practice they are almost always used together. HTML provides structured <b>content</b> and <b>semantics</b>, while CSS controls the <b>presentation</b> of structured content. We won't dive into how to craft your own CSS in this course, but we encourage you to look at the code for the stylesheets we've provided and try to make some small changes! CSS is a plain-text format which can be opened and edited in Notepad++ alongside your HTML.</p>
 		<ol class="instructions">
 			<li>
-				<strong>Add a reference</strong> to the CSS file at <a href="template/basic.css" target="_blank">https://telic.github.io/comp152/lab/template/basic.css</a> in the <code>head</code> section of the html document using the <code>link</code> element.
+				<p><strong>Add a reference</strong> to the CSS file at <a href="template/basic.css">https://telic.github.io/comp152/lab/template/basic.css</a> in the <code>head</code> section of the html document using the <code>link</code> element.</p>
 				<details>
 					<summary>Linking Style sheets</summary>
 					<p>The <code>link</code> element is a self-closing tag used to reference external resources to the html document. It must be placed inside the <code>head</code> section of the document (near the top).</p>
@@ -182,12 +183,12 @@
 			<li>Your lab folder should contain two other style sheets in the <samp>styles</samp> subdirectory. <strong>Change the <code>href</code> attribute</strong> of your new link to reference one of these, and <strong>observe the changes</strong> in your browser.</li>
 			<li>Choose your favorite of the two local style sheets and change the link to it.</li>
 			<li>
-				For extra WOW factor marks, make some small changes of your own to your chosen style sheet. Those color values should look pretty familiar&hellip;
+				<p>For extra WOW factor marks, make some small changes of your own to your chosen style sheet. Those color values should look pretty familiar&hellip;</p>
 				<details>
 					<summary>CSS Basics</summary>
 					<p>CSS works by "binding" a set of <em>style properties</em> to a set of <em>structural elements</em>. When a stylesheet is linked to an HTML document, any element in the HTML that matches a bound set in the CSS gets the associated style properties applied to it. For example, consider the following line of CSS code:</p>
 					<pre><code class="language-css">p { color: red; }</code></pre>
-					<p>This line creates a binding (also known as a <dfn>rule</dfn>) between the set of structural elements called <code>p</code> and the single <code>color</code> style property (which changes the color of the text). As such, text inside any <code>p</code> elements will be colored red. The text before the first <code>{</code> is called a <dfn>selector</dfn>: it "selects" what elements will be included in the binding. Between the <code>{</code> and <code>}</code> you may include any number of <code>property: value;</code> pairs to define the style properties that will be set.</p>
+					<p>This line creates a binding (also known as a <dfn>rule</dfn>) between the set of structural elements called <code>p</code> and the single <code>color</code> style property (which changes the color of the text). As such, text inside any <code>p</code> elements will be colored red. The text before the first <code class="language-css">{</code> is called a <dfn>selector</dfn>: it "selects" what elements will be included in the binding. Between the <code class="language-css">{</code> and <code class="language-css">}</code> you may include any number of <code class="language-css">property: value;</code> pairs to define the style properties that will be set.</p>
 				</details>
 			</li>
 		</ol>
@@ -195,13 +196,13 @@
 
 	<section id="task4">
 		<h2>Task 4: Uploading</h2>
-		<figure><img src="html/filezilla.png" alt="Filezilla interface" /></figure>
+		<figure><img src="filezilla.png" alt="Filezilla interface" /></figure>
 		<p>So far you've been viewing your web page from the filesystem on your own computer. No one but you has access to it here; you need to <em>publish</em> it to a web server for others to be able to view it over the Internet.</p>
 		<p>You will be uploading your web page to a server using <abbr title="Secure File Transfer Protocol">sFTP</abbr>. There are many different programs that use this protocol, and any will do the job. The lab computers have a program called FileZilla for this purpose.</p>
 		<ol class="instructions">
 			<li>Launch FileZilla (or any other program that supports sFTP)</li>
 			<li>
-				<strong>Connect</strong> to <a href="sftp://studentlabs.cs.camosun.bc.ca" target="_blank">studentlabs.cs.camosun.bc.ca</a> using your D2L account information.
+				<p><strong>Connect</strong> to <a href="sftp://studentlabs.cs.camosun.bc.ca">studentlabs.cs.camosun.bc.ca</a> using your D2L account information.</p>
 				<details>
 					<summary>Connecting to the server using FileZilla</summary>
 					<p>Near the top of the FileZilla window are fields used for connecting to a server.</p>
@@ -214,7 +215,7 @@
 				</details>
 			</li>
 			<li>
-				Create a new directory called <kbd>html-lab</kbd> inside of the <samp>public_html</samp> directory that appears in your home folder <em>on the server</em>
+				<p>Create a new directory called <kbd>html-lab</kbd> inside of the <samp>public_html</samp> directory that appears in your home folder <em>on the server</em></p>
 				<details>
 					<summary>Navigating FileZilla</summary>
 					<p>The main interface of FileZilla is divided into two columns. On the left, it shows the files on your local machine, with the folder hierarchy on top, and the contents of the selected folder below. On the right is the file structure on the server.</p>
@@ -224,10 +225,10 @@
 				</details>
 			</li>
 			<li>
+				<p>Navigate to the folder containing your lab files on your local machine and copy the contents to the new folder on the server.</p>
 				<aside>
 					<em>Note:</em> Make sure your index.html file is directly inside the lab7 folder and not in a subdirectory.
 				</aside>
-				Navigate to the folder containing your lab files on your local machine and copy the contents to the new folder on the server.
 			</li>
 			<li>
 				Double-check that the file permissions on the server are set properly to allow access to the public.
@@ -268,6 +269,6 @@
 		</table>
 	</section>
 
-	<script src="template/bundle.js"></script>
+	<script src="../template/bundle.js"></script>
 </body>
 </html>

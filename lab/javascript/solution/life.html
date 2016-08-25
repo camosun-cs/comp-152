@@ -2,17 +2,61 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Lab 8: Example Solution</title>
+    <title>Javascript lab: Example Solution</title>
+    <base href="https://telic.github.io/comp152/lab/javascript/solution/"/>
 </head>
 <body>
     <header>
-        <h1>Lab 8: The Game Of Life – Example Solution</h1>
+        <h1>Javascript: The Game Of Life – Example Solution</h1>
         <p>Written by Maxwell Terpstra, Lab Section X</p>
     </header>
     <img src="http://www.ppdictionary.com/parasites/gondii_smear.jpg" alt="Toxoplasma gondii"/>
 
-    <script src="../external/GameOfLife.js"></script>
+    <script src="https://telic.github.io/comp152/lab/javascript/GameOfLife.js"></script>
     <script src="life.js"></script>
+    <script>
+        // note: this script would normally be included life.js, but I've
+        //       pulled it out to make it life.js reusable for the demo
+        
+        // show the solution
+        GameOfLife(updateCells);
+
+        /* BONUS WORK BELOW */
+        document.body.appendChild(document.createTextNode(
+            "Bonus version:"
+        ));
+
+        GameOfLife(
+            updateCellsImproved,
+            [
+                [0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,0,0,1,1,0,1,0,0,1],
+                [0,0,0,0,0,0,1,1,1,1,1,0,0,0,0,0,0,1,0,1,1,0,0,1,0],
+                [1,1,0,0,0,0,0,0,1,0,1,0,0,1,1,0,0,1,1,0,1,0,1,0,1],
+                [1,1,0,1,0,0,0,1,0,1,1,1,0,1,1,0,0,1,0,0,1,1,0,0,1],
+                [0,1,1,0,1,0,1,1,0,1,1,0,0,1,1,1,0,1,0,1,0,0,1,0,1],
+                [1,0,1,1,1,1,0,1,1,1,1,1,0,0,0,0,0,0,0,1,0,0,1,1,1],
+                [1,0,0,0,0,1,0,1,0,0,1,1,0,0,0,0,0,1,0,1,0,0,1,1,0],
+                [0,0,0,0,1,0,0,1,0,1,1,0,0,1,1,1,1,1,1,0,0,1,0,1,1],
+                [1,1,1,0,1,0,1,0,0,1,0,1,1,0,0,1,0,1,0,1,1,1,0,1,1],
+                [0,1,1,0,1,0,1,1,0,0,1,1,1,0,1,1,1,1,1,0,0,1,1,0,0],
+                [0,1,1,1,0,0,0,1,1,1,0,1,0,0,1,1,0,0,0,1,0,1,0,1,1],
+                [1,0,1,0,0,0,1,1,0,1,0,1,0,0,0,0,0,1,0,0,0,1,1,1,0],
+                [1,0,1,0,0,0,0,1,0,1,1,0,1,0,0,1,1,1,1,0,0,0,0,1,1],
+                [1,1,1,0,0,1,1,0,1,1,1,1,0,0,0,0,1,1,1,0,0,1,1,1,1],
+                [0,0,1,0,0,0,1,1,1,1,0,0,1,1,0,1,0,0,0,1,1,0,1,1,1],
+                [0,1,0,1,1,0,0,0,0,0,1,0,0,0,0,1,1,0,1,0,0,0,0,1,0],
+                [0,0,0,0,0,0,1,0,0,0,0,1,1,1,1,0,0,0,1,1,0,0,1,1,1],
+                [0,1,0,1,1,0,0,1,1,0,0,0,0,1,0,1,0,0,0,1,0,1,1,0,0],
+                [0,1,0,1,1,1,1,1,1,0,0,1,0,1,1,0,1,1,1,0,0,0,0,0,0],
+                [1,0,0,1,0,1,0,0,0,1,1,1,1,0,0,1,1,1,0,1,0,1,1,1,0],
+                [0,1,1,0,1,1,1,0,0,0,1,0,0,1,1,0,0,1,1,0,1,0,1,0,1],
+                [0,0,0,1,1,0,0,1,0,0,0,0,0,1,1,0,1,1,1,1,0,0,1,1,1],
+                [0,0,1,0,0,0,0,1,0,0,1,0,1,1,1,0,0,1,0,1,1,1,0,1,1],
+                [0,0,1,0,1,0,1,0,0,0,1,1,1,0,0,1,0,1,0,0,1,0,1,1,1],
+                [0,0,0,0,1,1,1,0,0,0,0,0,0,0,1,0,1,0,1,1,0,0,1,0,1]
+            ]
+        ).play();
+    </script>
 
     <section>
         <h2>Task 1 Questions</h2>

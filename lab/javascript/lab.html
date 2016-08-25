@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Javascript - COMP 152</title>
     <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/prism.css"/>
-    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/basic.css"/>
-    <link rel="stylesheet" href="rsrc/puzzle.css">
+    <base href="https://telic.github.io/comp152/lab/javascript/" target="_blank"/>
+    <link rel="stylesheet" href="../template/bundle.css"/>
+    <link rel="stylesheet" href="puzzle.css">
 </head>
 <body>
 
@@ -51,42 +51,40 @@
     <h3>Instructions</h3>
     <ol class="instructions">
         <li>Create a <samp>Javascript</samp> folder to contain all of your work for this lab</li>
-        <li>Make a new text file named <kbd>index.html</kbd> and add the basic
-            structural elements required for HTML (eg. html, head, title, body).
-            <aside class="note">
+        <li><p>Make a new text file named <kbd>index.html</kbd> and add the basic
+            structural elements required for HTML (eg. html, head, title, body).</p>
+            <aside>
                 Hint: copy your index.html file from Lab 8 to get started
                 quickly!
             </aside>
         </li>
-        <li>Add a main heading, your name, lab section, and a picture of your
+        <li><p>Add a main heading, your name, lab section, and a picture of your
             favourite form of microbial life (I'm rather partial to
-            <a href="http://www.ppdictionary.com/parasites/gondii.htm">this one</a>).</li>
+            <a href="http://www.ppdictionary.com/parasites/gondii.htm">this one</a>).</p>
 
-        <li><details>
+            <details>
             <summary>If you haven't seen the "element counter" lab demo, try it yourself...</summary>
 
             <ol class="instructions optional">
-                <li>Add the following code in the <samp>head</samp> of your page:
-                    <!-- external/orderIsImportant.js -->
-                    <pre><code class="language-markup">&lt;script src="http://comp152.dynu.com/orderIsImportant.js">&lt;/script></code></pre>
-                    <aside class="info">
-                        <samp>script</samp> links a Javascript file to your document,
+                <li><p>Add the following code in the <samp>head</samp> of your page:</p>
+                    <pre><code class="language-markup">&lt;script src="https://telic.github.io/comp152/lab/javascript/orderIsImportant.js">&lt;/script></code></pre>
+                    <aside>
+                        <p><samp>script</samp> links a Javascript file to your document,
                         similarly to what <samp>link</samp> does for CSS.
                         When you open your web page in a browser, the linked script
                         will run immediately and show an alert
-                        box telling you how many elements are on your page.
-                    </aside>
-                    <aside class="info">
-                        While you're here, why not <a href="http://comp152.dynu.com/orderIsImportant.js">take
-                        a look at the code</a>? Can you figure out how it works?
+                        box telling you how many elements are on your page.</p>
+                        <p>
+                        While you're here, why not <a href="orderIsImportant.js">take
+                        a look at the code</a>? Can you figure out how it works?</p>
                     </aside>
                 </li>
-                <li>Remove the script from the <samp>head</samp> of your document and
+                <li><p>Remove the script from the <samp>head</samp> of your document and
                     put it somewhere in the middle of your <samp>body</samp> instead.
                     Save and refresh your browser and notice the differences. Try moving
                     the script element and creating duplicates in different places in your
-                    document, saving and refreshing each time you make a change.
-                    <aside class="info">
+                    document, saving and refreshing each time you make a change.</p>
+                    <aside class="dont-pull">
                         You should notice two differences depending on where you put the
                         script tags. The most obvious difference is that the reported
                         number of elements changes.
@@ -100,19 +98,18 @@
                     it doesn't interfere with the rest of the lab.</li>
             </ol></details>
         </li>
-        <!-- external/GameOfLife.js -->
-        <li>Add a script element to link <samp>http://comp152.dynu.com/GameOfLife.js</samp>
-            to your document.
-            <aside class="info">
+        <li><p>Add a script element to link <samp>https://telic.github.io/comp152/lab/javascript/GameOfLife.js</samp>
+            to your document.</p>
+            <aside>
                 Don't worry, nothing is supposed to happen! This script
                 is a <dfn>library</dfn>: it defines functions for you to use
                 in another script, but doesn't do anything directly on its own.
             </aside>
         </li>
-        <li>Create a a new text file called <samp><kbd>life.js</kbd></samp> with this
-            one small piece of Javascript code:
+        <li><p>Create a a new text file called <samp><kbd>life.js</kbd></samp> with this
+            one small piece of Javascript code:</p>
             <pre><code class="language-javascript">GameOfLife();</code></pre>
-            <aside class="info">
+            <aside>
                 This code runs the <samp>GameOfLife</samp> function which
                 was provided by the library you linked in step 5. You'll learn
                 more about this function in <a href="#task2">Task 2</a>.
@@ -124,7 +121,7 @@
             document</em> than the library script.  A blank Game of Life board
             will appear on your page if you've done everything correctly!</li>
         <li>
-            Write an answer to each of the following two questions on your webpage:
+            <p>Write an answer to each of the following two questions on your webpage:</p>
             <ul>
                 <li>Why does the "element counter" script show a different number
                     when added in different places in your document?</li>
@@ -136,13 +133,13 @@
 
     <h3>Deliverables</h3>
     <ul>
-        <li>An <samp>index.html</samp> document with
+        <li><p>An <samp>index.html</samp> document with</p>
             <ul>
                 <li>a heading</li>
                 <li>your name and lab section</li>
                 <li>an embedded graphic</li>
                 <li>two script elements, linking your <samp>life.js</samp>
-                    and the provided library (<a href="http://comp152.dynu.com/GameOfLife.js"><samp>http://comp152.dynu.com/GameOfLife.js</samp></a>)
+                    and the provided library (<a href="GameOfLife.js"><samp>https://telic.github.io/comp152/lab/javascript/GameOfLife.js</samp></a>)
                 <li>answers to the two questions in step 8 above</li>
                 <li>good HTML structure</li>
                 <li>appropriate indenting</li>
@@ -173,9 +170,9 @@
 
     <h3>Instructions</h3>
     <ol class="instructions">
-        <li>Solve the algorithm puzzle below by drag-and-dropping the puzzle
-            pieces into the correct order and nesting.
-            <aside class="info">
+        <li><p>Solve the algorithm puzzle below by drag-and-dropping the puzzle
+            pieces into the correct order and nesting.</p>
+            <aside>
                 Feel free to discuss with the other students in your lab, and
                 make sure you understand the solution! You won't find
                 out whether you've done it correctly until trying out your
@@ -183,22 +180,22 @@
             </aside>
         </li>
         <li>Click the "Show my solution as code" checkbox</li>
-        <li>Copy &amp; paste the resulting code into your <samp>life.js</samp>
-            script.
-            <aside class="info">
+        <li><p>Copy &amp; paste the resulting code into your <samp>life.js</samp>
+            script.</p>
+            <aside>
                 Make sure you copy all of it, including the closing braces
                 (<samp>}</samp>) at the end!
             </aside>
         </li>
-        <li>Provide your new <samp>updateCells</samp> function as a parameter to
-            the <samp>GameOfLife</samp> function, like this:
+        <li><p>Provide your new <samp>updateCells</samp> function as a parameter to
+            the <samp>GameOfLife</samp> function, like this:</p>
             <pre><code class="language-javascript">GameOfLife(updateCells);</code></pre>
         </li>
         <li>Save your files and refresh your browser.</li>
-        <li>Draw something on the Game Of Life board with your mouse and press
-            the <samp>Step</samp> or <samp>Play</samp> button to test it out!
-
-            <aside class="info">
+        <li>
+            <p>Draw something on the Game Of Life board with your mouse and press
+            the <samp>Step</samp> or <samp>Play</samp> button to test it out!</p>
+            <aside>
                 If nothing happens, you've probably made a mistake somewhere in your
                 <samp>life.js</samp> code. All modern browsers have a built-in
                 tool to help find errors in Javascript code called the "Console".
@@ -288,7 +285,8 @@
 
     <h3>Deliverables</h3>
     <ul>
-        <li>updated <samp>life.js</samp> script with
+        <li>
+            <p>updated <samp>life.js</samp> script with</p>
             <ul>
                 <li>a function named <samp>updateCells</samp> which takes an
                     existing grid of cells as a parameter, applies a single
@@ -307,8 +305,8 @@
     <h3>Instructions</h3>
     <ol class="instructions">
         <li>
-            Carefully examine your <samp>updateCells</samp> function and experiment
-            with minor changes in order to answer the following questions:
+            <p>Carefully examine your <samp>updateCells</samp> function and experiment
+            with minor changes in order to answer the following questions:</p>
             <ul>
                 <li>Why do cells on the outer edge of the grid always die?</li>
                 <li>Why does this function create a new grid instead
@@ -322,7 +320,7 @@
                     if 5 or more live neighbours are required for death by
                     over-crowding?</li>
             </ul>
-            Record your answers on your web page
+            <p>Record your answers on your web page</p>
         </li>
         <li><strong>(bonus)</strong> Using three separate <samp>if</samp>
             blocks to test neighbour conditions is messy and inefficient.
@@ -331,12 +329,13 @@
         <li><strong>(bonus)</strong> Rewrite your <samp>updateCells</samp> function
             so that cells on the edge of the grid are considered neighbours of
             cells on the opposite edge.</li>
-        <li><strong>(bonus)</strong> The <samp>GameOfLife</samp> function returns
+        <li>
+            <p><strong>(bonus)</strong> The <samp>GameOfLife</samp> function returns
             an object with methods for controlling the simulation. It also accepts
             a starting grid as a second parameter. Change your code so that the
             simulation starts automatically from an interesting starting condition
-            when your page loads.
-            <aside class="info">
+            when your page loads.</p>
+            <aside>
                 <em>Hint:</em> you can type bits of Javascript into your browser's
                 Console, and they will be run immediately. It will also show you
                 the return value of bit of code you run this way. Use the Console
@@ -386,11 +385,9 @@
     </table>        
 </section>
 
-<script src="rsrc/jquery-2.1.1.min.js"></script>
-<script src="rsrc/jquery-ui.min.js"></script>
-<script src="rsrc/puzzle.js"></script>
-<script src="https://telic.github.io/comp152/lab/template/prism.js"></script>
-<script src="https://telic.github.io/comp152/lab/template/modernizr-details.min.js"></script>
-<script src="https://telic.github.io/comp152/lab/template/details-polyfill.min.js"></script>
+<script src="../template/bundle.js" async defer></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+<script src="puzzle.js"></script>
 </body>
 </html>

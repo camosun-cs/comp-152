@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>PowerPoint - COMP 152</title>
     <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/prism.css"/>
-    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/basic.css"/>
+    <base href="https://telic.github.io/comp152/lab/"/>
+    <link rel="stylesheet" href="template/bundle.css"/>
 </head>
 <body>
 
@@ -35,15 +35,15 @@
     <section id="tasks">
         <h2 id="task1">Slide Master</h2>
         <figure>
-            <img src="ribbon-slidemaster.png" alt="slide master ribbon"/>
+            <img src="powerpoint/ribbon-slidemaster.png" alt="slide master ribbon"/>
         </figure>
         <ol class="instructions">
             <li>
-                Enter <strong>Slide Master</strong> view by clicking <samp>Slide Master</samp> in the <samp>View</samp> ribbon.
-                <details class="info">
+                <p>Enter <strong>Slide Master</strong> view by clicking <samp>Slide Master</samp> in the <samp>View</samp> ribbon.</p>
+                <details>
                     <summary>About Slide Masters</summary>
                     <figure>
-                        <img src="ribbon-view.png" alt="slide master ribbon"/>
+                        <img src="powerpoint/ribbon-view.png" alt="slide master ribbon"/>
                     </figure>
                     <p>The <strong>slide master</strong> is the template slide from which new slides get their layout and styles. Using slide masters properly will not only save you time, but also keep your presentation consistent.</p>
                     <p>Each slide master can contain several slide <strong>layouts</strong>. A layout defines a default set of elements and their position. When you begin creating your slide show, each layout will appear in the <samp>New Slide</samp> dropdown in the <samp>Home</samp> tab.</p>
@@ -51,8 +51,8 @@
                 </details>
             </li>
             <li>
-                Select the slide master if it isn't already and create a consistent style for your presentation.
-                <details class="info">
+                <p>Select the slide master if it isn't already and create a consistent style for your presentation.</p>
+                <details>
                     <summary>Themes</summary>
                     <p>PowerPoint comes with several themes, available in the <samp>Themes</samp> dropdown. These change the look of everything, including fonts, colors, and backgrounds.</p>
                     <p>After picking a theme, or sticking with the default plain and simple Office Theme, you can edit each aspect of the theme yourself. Just make sure you only edit in the slide master, so you won't have to repeat yourself on each new slide.</p>
@@ -72,31 +72,31 @@
         </ol>
         <h2 id="task2">Embedded Media</h2>
         <figure>
-            <img src="ribbon-insert.png" alt="insert ribbon"/>
+            <img src="powerpoint/ribbon-insert.png" alt="insert ribbon"/>
         </figure>
         <ol class="instructions">
             <li>The <samp>Insert</samp> ribbon contains buttons for embedding pictures, videos, and audio in your slide show.</li>
             <li>
-                <aside class="note">
+                <p>After an image or video has been inserted, it can be resized and positioned by first selecting it, then using the drag handles. Use the corner handles to keep the element's proportions correct</p>
+                <aside>
                     <strong>Tip:</strong> you can hold the <kbd>control</kbd> button down while resizing to keep the element centered.
                 </aside>
-                After an image or video has been inserted, it can be resized and positioned by first selecting it, then using the drag handles. Use the corner handles to keep the element's proportions correct
             </li>
             <li>The <samp>Format</samp> ribbon (available after selecting an element) contains options for styling the element, as well as precise positioning options, including a useful <samp>Align</samp> dropdown in the <samp>Arrange</samp> section.</li>
         </ol>
         <h2 id="task3">Presenting Your Slide show</h2>
         <figure>
-            <img src="ribbon-slideshow.png" alt="slideshow ribbon"/>
+            <img src="powerpoint/ribbon-slideshow.png" alt="slideshow ribbon"/>
         </figure>
         <ol class="instructions">
             <li>Notes can be added to each slide by using the <samp>Notes Pane</samp>, the button for which is found in the <samp>View</samp> ribbon or in the bottom status bar. Notes added here will be shown to you while presenting, allowing you to script out your commentary.</li>
             <li>To start a slide show for live presenting, use the options in the <samp>Start Slide Show</samp> section of the <samp>Slide Show</samp> ribbon.</li>
             <li>
-                A slide show can also be set up to play automatically along with recorded commentary using the <samp>Record Slide Show</samp> option.
-                <details class="info">
+                <p>A slide show can also be set up to play automatically along with recorded commentary using the <samp>Record Slide Show</samp> option.</p>
+                <details>
                     <summary>Recording Slide Shows</summary>
                     <figure>
-                        <img src="record-slideshow.png" alt="presenter view"/>
+                        <img src="powerpoint/record-slideshow.png" alt="presenter view"/>
                     </figure>
                     <p>The <samp>Record Slide Show</samp> option saves slide timings (how long each slide is displayed) and can also record your voice for fully automated presentations.</p>
                     <p>Upon starting a slide show recording, you can use the Presenter View window that pops up to give your presentation the same way you would in a live setting. However, you also have the option to re-record just the current slide if you make a mistake.</p>
@@ -104,8 +104,8 @@
                 </details>
             </li>
             <li>
-                <aside class="note">If you need to do a live presentation with manual slide control, un-check <samp>Play Narrations</samp> and <samp>Use Timings</samp>.</aside>
-                To play the recorded presentation, ensure the <samp>Play Narrations</samp> and <samp>Use Timings</samp> options are checked, then start the slide show normally. If you are unhappy with the results, recording again will overwrite the previous result.
+                <p>To play the recorded presentation, ensure the <samp>Play Narrations</samp> and <samp>Use Timings</samp> options are checked, then start the slide show normally. If you are unhappy with the results, recording again will overwrite the previous result.</p>
+                <aside>If you need to do a live presentation with manual slide control, un-check <samp>Play Narrations</samp> and <samp>Use Timings</samp>.</aside>
             </li>
             <li>
                 If you now save your project as a PowerPoint Show: <kbd>.ppsx</kbd> (as opposed to the default <kbd>.pptx</kbd>), the resulting file will contain everything it needs to run your presentation anywhere with PowerPoint installed. Double-clicking this file will immediately launch and start the presentation.
@@ -143,9 +143,6 @@
         </table>  -->       
     </section>
 
-    <script src="https://telic.github.io/comp152/lab/template/prism.js"></script>
-    <script src="https://telic.github.io/comp152/lab/template/modernizr-details.min.js"></script>
-    <script src="https://telic.github.io/comp152/lab/template/details-polyfill.min.js"></script>
-
+    <script src="template/bundle.js" async defer></script>
 </body>
 </html>

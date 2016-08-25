@@ -2,9 +2,7 @@ header images need to be narrower
 add right-click alt instructions for new folder
 CSV details <abbr> has redundant text
 references to other excel labs
-lists inside the name/extensions details shouldn't be double-spaced
 paste options details images need help
-live objects details has image not in figure
 being saved as 'lab6.docx'
 task 3 -> step 3 aside is hella long (use for that full-width aside?)
 FTP instructions are probably wrong

@@ -4,13 +4,10 @@
     <meta charset="utf-8">
     <title>Databases - COMP 152</title>
     <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/prism.css"/>
-    <link rel="stylesheet" href="https://telic.github.io/comp152/lab/template/basic.css"/>
+    <base href="https://telic.github.io/comp152/lab/databases/"/>
+    <link rel="stylesheet" href="../template/bundle.css"/>
     <style type="text/css">
-        .db-table{
-            display: inline-table;
-        }
-        .db-table th{
+        table.inline tbody th {
             font-weight: normal;
         }
     </style>
@@ -43,9 +40,9 @@
     </ul>
 </section>
 
-<section id="tasks">
-    <h2 id="task1">Task 1: Creating the Database</h2>
-    <details class="info" id="spacing">
+<section id="task1">
+    <h2>Task 1: Creating the Database</h2>
+    <details>
         <figure>
             <img src="access-overview.png" alt="Access overview"/>
         </figure>
@@ -57,68 +54,80 @@
     <ol class="instructions">
         <p>In this task, you will be adding 3 tables to your database. They will follow the structure shown below:</p>
         <figure>
-            <table class="db-table">
-                <tr>
-                    <th colspan="2">Albums</th>
-                </tr>
-                <tr>
-                    <th><strong>Album_ID</strong></th><td>AutoNumber</td>
-                </tr>
-                <tr>
-                    <th>Title</th><td>Text</td>
-                </tr>
-                <tr>
-                    <th>Release_Year</th><td>Number</td>
-                </tr>
-                <tr>
-                    <th>Format</th><td>Text</td>
-                </tr>
-                <tr>
-                    <th>Rating</th><td>Number</td>
-                </tr>
-                <tr>
-                    <th>Artist_ID</th><td>Number</td>
-                </tr>
+            <table class="inline">
+                <thead>
+                    <tr>
+                        <th colspan="2">Albums</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><strong>Album_ID</strong></th><td>AutoNumber</td>
+                    </tr>
+                    <tr>
+                        <th>Title</th><td>Text</td>
+                    </tr>
+                    <tr>
+                        <th>Release_Year</th><td>Number</td>
+                    </tr>
+                    <tr>
+                        <th>Format</th><td>Text</td>
+                    </tr>
+                    <tr>
+                        <th>Rating</th><td>Number</td>
+                    </tr>
+                    <tr>
+                        <th>Artist_ID</th><td>Number</td>
+                    </tr>
+                </tbody>
             </table>
-            <table class="db-table">
-                <tr>
-                    <th colspan="2">Artists</th>
-                </tr>
-                <tr>
-                    <th><strong>Artist_ID</strong></th><td>AutoNumber</td>
-                </tr>
-                <tr>
-                    <th>Artist</th><td>Text</td>
-                </tr>
-                <tr>
-                    <th>Genre</th><td>Text</td>
-                </tr>
-                <tr>
-                    <th>Rating</th><td>Number</td>
-                </tr>
+            <table class="inline">
+                <thead>
+                    <tr>
+                        <th colspan="2">Artists</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><strong>Artist_ID</strong></th><td>AutoNumber</td>
+                    </tr>
+                    <tr>
+                        <th>Artist</th><td>Text</td>
+                    </tr>
+                    <tr>
+                        <th>Genre</th><td>Text</td>
+                    </tr>
+                    <tr>
+                        <th>Rating</th><td>Number</td>
+                    </tr>
+                </tbody>
             </table>
-            <table class="db-table">
-                <tr>
-                    <th colspan="2">Songs</th>
-                </tr>
-                <tr>
-                    <th><strong>Song_ID</strong></th><td>AutoNumber</td>
-                </tr>
-                <tr>
-                    <th>Title</th><td>Text</td>
-                </tr>
-                <tr>
-                    <th>Featuring</th><td>Text</td>
-                </tr>
-                <tr>
-                    <th>Length</th><td>Number</td>
-                </tr>
-                <tr>
-                    <th>Rating</th><td>Number</td>
-                </tr>
-                <tr>
-                    <th>Album_ID</th><td>Number</td>
-                </tr>
+            <table class="inline">
+                <thead>
+                    <tr>
+                        <th colspan="2">Songs</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><strong>Song_ID</strong></th><td>AutoNumber</td>
+                    </tr>
+                    <tr>
+                        <th>Title</th><td>Text</td>
+                    </tr>
+                    <tr>
+                        <th>Featuring</th><td>Text</td>
+                    </tr>
+                    <tr>
+                        <th>Length</th><td>Number</td>
+                    </tr>
+                    <tr>
+                        <th>Rating</th><td>Number</td>
+                    </tr>
+                    <tr>
+                        <th>Album_ID</th><td>Number</td>
+                    </tr>
+                </tbody>
             </table>
             <figcaption>The field in <strong>bold</strong> is the Primary Key. Also, in newer versions of Access, Short Text may be used instead of Text.</figcaption>
         </figure>
@@ -129,12 +138,14 @@
             Ensure that Table1 (the default table created in new database files) is currently open and in view. If it does not exist, create it using the Table button found in the Create tab.
         </li>
         <li>
-            Switch to the Design View. The dropdown for this is found in the <samp>Home</samp> tab.
-            <details class="info">
+            <p>Switch to the Design View. The dropdown for this is found in the <samp>Home</samp> tab.</p>
+            <details>
                 <summary>Information on Views</summary>
-                <figure>
-                    <img class="right" src="an image.png" alt="a right-aligned image"/>
+                <!--
+                <figure class="right">
+                    <img src="" alt="a right-aligned image"/>
                 </figure>
+                -->
                 <p>Views are a big part of Microsoft Access. Every object has multiple views which will always be accessible in the Home tab, or with the icons in the bottom-right corner of the screen.</p>
                 <h3>Tables</h3>
                 <ul>
@@ -164,15 +175,15 @@
         </li>
         <li>Enter the table's name into the window that pops up.</li>
         <li>
-            Rename the <samp>ID</samp> field to <samp>Album_ID</samp>. This should already be set as the primary key.
-            <details class="info">
+            <p>Rename the <samp>ID</samp> field to <samp>Album_ID</samp>. This should already be set as the primary key.</p>
+            <details>
                 <summary>Primary Keys</summary>
                 <p>A Primary Key is a unique, automatically incremented number for the entry. This makes it possible for multiple records to have the same name but still be uniquely identifiable.</p>
             </details>
         </li>
         <li>
-            Input the field names and data types into the cells. Set the Field Size of Rating to Integer
-            <details class="info">
+            <p>Input the field names and data types into the cells. Set the Field Size of Rating to Integer</p>
+            <details>
                 <summary>Creating Fields</summary>
                 <p>In the table's Design View, each row represents a field in the table.</p>
                 <p>Each field must have a <samp>Data Type</samp> specified. You can either choose it with the dropdown, or simply start typing it, and Access will autocomplete the type for you.</p>
@@ -180,14 +191,14 @@
             </details>
         </li>
         <li>
-            <aside class="note">
+            <p>Switch back to Datasheet view. This will prompt you to save the changes made to the table.</p>
+            <aside>
                 You can also save the table anytime by pressing the save button or <samp>CTRL+S</samp>
             </aside>
-            Switch back to Datasheet view. This will prompt you to save the changes made to the table.
         </li>
         <li>
-            Create the Artist and Song tables. Set their Rating fields to Integer as well.
-            <details class="info">
+            <p>Create the Artist and Song tables. Set their Rating fields to Integer as well.</p>
+            <details>
                 <summary>Creating New Tables</summary>
                 <p>The Create tab has two options for creating new tables.</p>
                 <p>The 'Table' button will create a complete table with a single 'ID' field, similar to the default one included in new files.</p>
@@ -200,12 +211,12 @@
             </details>
         </li>
         <li>
-            Create the following validation rules:
+            <p>Create the following validation rules:</p>
             <ul>
                 <li>The Rating fields in all 3 tables: Only allow values from 0 to 5</li>
                 <li>Format field in Albums table: Only allow "CD", "LP", "Digital"</li>
             </ul>
-            <details class="info">
+            <details>
                 <summary>Validation Rules</summary>
                 <p>Validation rules add limits to the sort of data that will be accepted by the field. It uses conditional statements which are run against the submitted value, and only accepts it if the statement evaluates to true.</p>
                 <p>You can use equality symbols such as <strong>&gt;</strong>, <strong>&lt;</strong>, and <strong>=</strong>, as well as logical operators such as <strong>AND</strong> and <strong>OR</strong>, or a combination of the two. For example, the somewhat nonsensical validation rule <strong>&gt;=10 OR =0</strong> would only accept inputs that are either <strong>Greater than/equal to 10</strong>, OR <strong>Equal to zero</strong>.</p>
@@ -213,8 +224,8 @@
             </details>
         </li>
         <li>
-            Create the Table Relationships to reflect the diagram shown below. Save it when you are done.
-            <details class="info">
+            <p>Create the Table Relationships to reflect the diagram shown below. Save it when you are done.</p>
+            <details>
                 <summary>Table Relationships</summary>
                 <p>It is often necessary to link data from one table to another. For example, each album in your database will need an artist. This is done using a <strong>Foreign Key</strong>. Each record in the Albums table has an <samp>Artist_ID</samp> field. If the value in this field matches the Unique ID of an entry in the Artists table (the Artist_ID Primary Key), we want it to mean that the artist made that album. We will be using the Relationships Manager to build these connections.</p>
                 <ol>
@@ -227,18 +238,24 @@
             </details>
         </li>
     </ol>
-    <h2 id="task2">Task 2: Data Entry</h2>
+</section>
+<section id="task2">
+    <h2>Task 2: Data Entry</h2>
+    <!--
     <figure>
-        <!-- <img src="an image.png" alt="a task heading screenshot showing things used in the task"> -->
+        <img src="" alt="a task heading screenshot showing things used in the task">
     </figure>
+    -->
     <ol class="instructions">
         <li>
-            Create a form for the Artists table.
-            <details class="info">
+            <p>Create a form for the Artists table.</p>
+            <details>
                 <summary>Creating forms</summary>
+                <!--
                 <figure>
-                    <!-- <img src="form-wizard.png" alt="Form Wizard Location"> -->
+                    <img src="form-wizard.png" alt="Form Wizard Location">
                 </figure>
+                -->
                 <ul>
                     <li>Make sure all tables are in Datasheet view. Access will not let you use the forms later if you don't.</li>
                     <li>Open the <samp>Form Wizard</samp>, found in the <samp>Create</samp> tab.</li>
@@ -248,9 +265,9 @@
             </details>
         </li>
         <li>
-            <aside class="note">Notice the Dot notation used in the Selected Fields box for Fields that have the same name but are in different tables.</aside>
-            Create a form for the Albums table with the Songs table as a subform.
-            <details class="info">
+            <p>Create a form for the Albums table with the Songs table as a subform.</p>
+            <aside>Notice the Dot notation used in the Selected Fields box for Fields that have the same name but are in different tables.</aside>
+            <details>
                 <summary>Subforms</summary>
                 <ol>
                     <li>Open the form wizard again
@@ -263,8 +280,8 @@
             </details>
         </li>
         <li>
-            Enter some artists, albums, and songs into the database using the new forms you created. Enter at least 3 of each, preferably with more albums than artists and multiple songs per album.
-            <details class="info">
+            <p>Enter some artists, albums, and songs into the database using the new forms you created. Enter at least 3 of each, preferably with more albums than artists and multiple songs per album.</p>
+            <details>
                 <summary>Entering Data</summary>
                 <ol>
                     <li>Open the form in <samp>Form View</samp>
@@ -275,11 +292,13 @@
             </details>
         </li>
     </ol>
-    <h2 id="task3">Task 3: Retrieving and Presenting Data</h2>
+</section>
+<section id="task3">
+    <h2>Task 3: Retrieving and Presenting Data</h2>
     <ol class="instructions">
         <li>
-            Create a query called <strong>Best Artists</strong> that lists the name and genre of all artists who have a rating of 4 or more.
-            <details class="info">
+            <p>Create a query called <strong>Best Artists</strong> that lists the name and genre of all artists who have a rating of 4 or more.</p>
+            <details>
                 <summary>Creating Queries</summary>
                 <p>Microsoft Access provides visual tools for building queries, but we will be writing the SQL code ourselves.</p>
                 <ol>
@@ -306,8 +325,8 @@
         </li>
         <li>Sort the <strong>Best Songs</strong> query by the song title.</li>
         <li>
-            Open your <strong>Best Albums</strong> query in SQL view and change it to include the artist's name. This will require a Multi-table query.
-            <details class="info">
+            <p>Open your <strong>Best Albums</strong> query in SQL view and change it to include the artist's name. This will require a Multi-table query.</p>
+            <details>
                 <summary>Multi-Table Queries</summary>
                 <p>Each entry in your Albums table includes an Artist_ID field. This is a unique identifier for the Artist of the Album. However, on its own, this does not give you the name of the artist. The Artists table must be searched for the same ID to retrieve the rest of the information.</p>
                 <p>To do this, both tables need to be included in the query and joined using the common Artist_ID field. The keywords for this are INNER JOIN and ON.</p>
@@ -322,8 +341,8 @@
             </details>
         </li>
         <li>
-            Create a report of the Best Songs query.
-            <details class="info">
+            <p>Create a report of the Best Songs query.</p>
+            <details>
                 <summary>Creating Reports</summary>
                 <ul>
                     <li>Open and view the relevant query.</li>
@@ -334,7 +353,9 @@
             </details>
         </li>
     </ol>
-    <h2 id="bonus">Presentation</h2>
+</section>
+<section id="bonus">
+    <h2>Presentation</h2>
         <p>Here are some additional things to look into to improve your presentation and max out the Overall Assessment mark.</p>
         <ol>
             <li>Add new fields to the tables.</li>
@@ -368,5 +389,6 @@
     </table>        
 </section>
 
+    <script src="../template/bundle.js" async defer></script>
 </body>
 </html>
