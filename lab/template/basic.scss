@@ -241,7 +241,7 @@ $magic: 1.5rem;
             }
         }
 
-        // remove chrome's non-spec implementation
+        // remove webkit's non-spec implementation
         &::-webkit-details-marker {
             display: none;
         }
