@@ -103,9 +103,9 @@ $content: 24;
     }
     .instructions {
         padding-left: 0;
-    }
-    .instructions > li > ul {
-        list-style: disc;
+        & > li > ul {
+            list-style: disc;
+        }
     }
     dd {
         margin-left: $magic;
