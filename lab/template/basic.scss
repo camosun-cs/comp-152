@@ -12,6 +12,14 @@ $em: 16;
 $magic: 1.5rem;
 
 /*reset*/
+@mixin containFloats {
+    &::after {
+        content: " ";
+        display: block;
+        clear: both;
+        height: 0;
+    }
+}
     * {
         margin: 0;
         padding: 0;
@@ -38,17 +46,12 @@ $magic: 1.5rem;
         margin: auto;
         margin-bottom: 2*$magic;
         box-sizing: border-box;
+        @include containFloats;
     }
     section {
         margin-top: -1px;
         border-top: 1px solid;
         border-color: inherit;
-    }
-    section::after {
-        content: " ";
-        display: block;
-        font-size: 0;
-        clear: both;
     }
 
     ul {
