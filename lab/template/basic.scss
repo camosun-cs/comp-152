@@ -48,6 +48,7 @@ $content: 24;
 
         // fix interactions with half margins
         & + aside,
+        details & + aside,
         & + details,
         & + pre,
         & + pre[class*="language-"],
@@ -352,6 +353,14 @@ $content: 24;
         .instructions > li > &:first-child {
             margin-top: $magic/2;
         }
+        
+        // don't float when inside a details
+        details & {
+            float: none;
+            max-width: initial;
+            margin: $magic/2 0;
+            box-shadow: none;
+        }
     }
     .right, li > figure {
         max-width: 50%;
@@ -376,7 +385,7 @@ $content: 24;
         max-width: (1.5 * $content + 3) * $magic;
         margin: auto;
     }
-    aside {
+    aside:not(.dont-pull) {
         position: absolute;
         max-width: ($content/2 + 2) * $magic;
         margin-left: $content * $magic;

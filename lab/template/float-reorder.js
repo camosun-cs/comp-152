@@ -6,8 +6,18 @@
 (function() {
 	'use strict';
 
-	var BREAKPOINT = "(min-width: "+(/*$content*/24 * /*factor*/0.7 * /*$magic*/1.5)+"em)";
-	var AFFECTS = "aside, .right, li > figure";
+	var breakpoints = [
+		{
+			at: "(min-width: "+(/*$content*/24 * /*factor*/0.7 * /*$magic*/1.5)+"em)",
+			reorder: "aside",
+			except: "details aside, .dont-pull"
+		},
+		{
+			at: "(min-width: "+((1.5 * /*$content*/24 + /*padding-edges*/5) * /*factor*/1.25 * /*$magic*/1.5)+"em)",
+			reorder: "aside",
+			except: ".dont-pull"
+		}
+	];
 
 	// Element.matches polyfill
 	if (!Element.prototype.matches) {
@@ -26,42 +36,51 @@
 		);
 	}
 
-	// adjust ordering at CSS breakpoint
-	var toReorder = [];
-	enquire.register(BREAKPOINT, {
-		setup: function () {
-			var nodes = document.querySelectorAll(AFFECTS);
-			for (var i=0; i<nodes.length; i++) {
-				if (
-					nodes[i].previousElementSibling !== null &&
-					! nodes[i].previousElementSibling.matches(AFFECTS)
-				) {
-					toReorder.push(nodes[i]);
-				}
+	var placeholder = document.createElement('span');
+	placeholder.style.position = "fixed";
+	placeholder.style.right = "100%";
+	var rId = 0;
+
+	// real work happens here
+	function reorder(these, notThese, reverse) {
+		var nodes = document.querySelectorAll(these);
+		var target, back;
+		for (var i=nodes.length-1; i>=0; i--) {
+			target = nodes[i];
+			if (reverse && target.dataset.reordered) {
+				back = document.getElementById(target.dataset.reordered);
+				target.parentNode.replaceChild(target, back);
+				target.dataset.reordered = "";
 			}
-		},
-		deferSetup: true,
-		match: function () {
-			toReorder.forEach(function(float) {
-				if (!float.dataset.reordered) {
-					float.parentNode.insertBefore(
-						float,
-						float.previousElementSibling
-					);
-					float.dataset.reordered = "true";
-				}
-			});
-		},
-		unmatch: function() {
-			toReorder.forEach(function(float) {
-				if (float.dataset.reordered) {
-					float.parentNode.insertBefore(
-						float,
-						float.nextSibling.nextSibling
-					);
-					float.dataset.reordered = "";
-				}
-			});
+			else if (
+				!reverse &&
+				!target.dataset.reordered &&
+				 target.previousElementSibling !== null &&
+				!target.previousElementSibling.matches(these) &&
+				!target.matches(notThese)
+			) {
+				back = placeholder.cloneNode(false);
+				back.id = "reorder-placeholder-"+(rId++);
+				target.parentNode.insertBefore(back, target.nextSibling);
+				target.parentNode.insertBefore(
+					target,
+					target.previousElementSibling
+				);
+				target.dataset.reordered = back.id;
+			}
 		}
+	}
+
+	// wait for breakpoint changes
+	breakpoints.forEach(function(breakpt) {
+		enquire.register(breakpt.at, {
+			match: function() {
+				reorder(breakpt.reorder, breakpt.except);
+			},
+			unmatch: function() {
+				reorder(breakpt.reorder, breakpt.except, true);
+			}
+		});
 	});
+
 })();
