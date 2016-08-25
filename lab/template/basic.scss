@@ -27,7 +27,7 @@ $magic: 1.5rem;
 
 /*section layout */
     h1,h2,h3,h4,h5,h6,hgroup,
-    ul,ol,.instructions>li,details>ul>li,details>ol>li,dd,
+    ul,ol,.instructions>li,dd,
     p,figure,table,fieldset,hr{
         margin-bottom:1.5rem;
     }
@@ -51,8 +51,11 @@ $magic: 1.5rem;
         clear: both;
     }
 
-    section>ul,ul ul {
+    ul {
         padding-left: $magic;
+    }
+    .instructions {
+        padding-left: 0;
     }
     .instructions > li > ul {
         list-style: disc;
