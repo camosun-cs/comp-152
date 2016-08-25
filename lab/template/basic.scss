@@ -11,7 +11,6 @@ $column: 100% / 8;
 $em: 16;
 $magic: 1.5rem;
 
-/*reset*/
 @mixin containFloats {
     &::after {
         content: " ";
@@ -25,11 +24,13 @@ $magic: 1.5rem;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
+//## reset
     * {
         margin: 0;
         padding: 0;
         border: 0;
     }
+
     html {
         font-family: serif;
         color: $black;
@@ -38,12 +39,13 @@ $magic: 1.5rem;
         font-size: #{16/$em}rem;
     }
 
-/*section layout */
-    h1,h2,h3,h4,h5,h6,hgroup,
-    ul,ol,.instructions>li,dl,
-    p,figure,table{
+//## section layout 
+    h1, h2, h3, h4, h5, h6, hgroup,
+    ul, ol, .instructions > li, dl,
+    p, figure, table{
         margin-bottom:1.5rem;
     }
+
     header,section {
         display: block;
         max-width: 24 * $magic;
@@ -53,6 +55,7 @@ $magic: 1.5rem;
         box-sizing: border-box;
         @include containFloats;
     }
+
     section {
         margin-top: -1px;
         border-top: 1px solid;
@@ -68,13 +71,16 @@ $magic: 1.5rem;
     .instructions > li > ul {
         list-style: disc;
     }
+    dd {
+        margin-left: $magic;
+    }
 
- /*text*/
+ //## text
     a {
         color: $link;
         text-decoration: none;
     }
-    h1,h2,h3,h4,h5,h6 {
+    h1, h2, h3, h4, h5, h6 {
         line-height: 1.5;
         font-weight: lighter;
         font-family: sans-serif;
@@ -97,8 +103,15 @@ $magic: 1.5rem;
     samp, kbd {
         @include monospace;
     }
+    abbr[title]::after {
+        content: " ("attr(title)")";
+        opacity: .5;
+    }
+    dt {
+        font-weight: bold;
+    }
 
-/*tables*/
+//## tables
     table {
         border-collapse: collapse;
         border: 2px solid;
@@ -118,19 +131,8 @@ $magic: 1.5rem;
     th {
         background-color: #eef;
     }
-    dt {
-        margin: 0;
-        font-weight: bold;
-    }
-    dd {
-        margin-left: $magic;
-    }
-    abbr[title]::after {
-        content: " ("attr(title)")";
-        opacity: .5;
-    }
 
-/* call-outs */
+//## call-outs
     aside {
         padding: $magic/2 $magic;
         width: 100%;
@@ -140,7 +142,7 @@ $magic: 1.5rem;
         overflow: auto;
     }
 
-/* disclosures */
+//## disclosures 
     details {
         padding: 0 $magic;
         width: 100%;
@@ -148,74 +150,83 @@ $magic: 1.5rem;
         margin-left: -$magic;
         background-color: #eef;
         display: block;
+
         @include containFloats;
+
+        *:not([open]) > * {
+            display: none;
+        }
+        &:not([open]) > summary {
+            display: block;
+        }
+
+        & > ul {
+            list-style: disc;
+        }
     }
-    details:not([open]) > * {
-        display: none;
-    }
+
     summary {
         cursor: pointer;
         display: block;
         padding: $magic;
         box-sizing: content-box;
         margin: 0 #{-$magic};
-    }
-    details:not([open]) > summary {
-        display: block;
-    }
-    summary:hover {
-        background: rgba(255,255,255,.5);
-    }
-    summary:focus {
-        outline: none;
-    }
-    //remove chrome's non-spec implementation
-    summary::-webkit-details-marker {
-        display: none;
-    }
-    summary::before {
-        content: "▶";
-        position: absolute;
-        line-height: $magic;
-        margin-left: -$magic;
-        width: $magic;
-        font-family: monospace;
-        text-align: center;
-    }
-    details[open] > summary::before {
-        transform: rotate(90deg);
-    }
-    details > ul {
-        list-style: disc;
+
+        &:hover {
+            background: rgba(255,255,255,.5);
+        }
+        &:focus {
+            outline: none;
+        }
+
+        &::before {
+            content: "▶";
+            position: absolute;
+            line-height: $magic;
+            margin-left: -$magic;
+            width: $magic;
+            font-family: monospace;
+            text-align: center;
+            details[open] > & {
+                transform: rotate(90deg);
+            }
+        }
+
+        // remove chrome's non-spec implementation
+        &::-webkit-details-marker {
+            display: none;
+        }
     }
 
-/* figures */
+//## figures 
     figure {
         text-align: center;
         overflow: auto;
-    }
-    section>figure, details>figure {
-        margin-left: -$magic;
-        margin-right: -$magic;
+
+        img {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+        }
+
+        section > &,
+        details > & {
+            margin-left: -$magic;
+            margin-right: -$magic;
+        }
     }
 
-    figure > img {
-        display: block;
-        margin: auto;
-        max-width: 100%;
-    }
-
-/* inline definition lists */
+//## inline definition lists 
     dl.inline dt {
         float: left;
         margin-right: $magic/2;
         clear: left;
-    }
-    dl.inline dt::after {
-        content: ":";
+        &::after {
+            content: ":";
+        }
     }
 
-/* code */
+//## code 
     code,
     code[class*="language-"] {
         @include monospace;
@@ -239,29 +250,31 @@ $magic: 1.5rem;
         line-height: 1.5rem;
     }
 
-/* assessment table */
+//## assessment table 
     .marks {
         width: 100%;
         table-layout: fixed;
-    }
-    .marks th {
-        text-align: left;
-    }
-    .marks td:last-child,
-    .marks thead th:last-child,
-    .marks tbody tr:last-child th:last-child  {
-        width:4em;
-        text-align: center;
-        text-indent: 0;
-    }
-    .marks tr:last-child td:last-child { /* total grade */
-        background-color: #ccf;
-        font-weight: bold;
-    }
-    .marks td,.marks th {
-        text-indent: 1em;
+
+        th {
+            text-align: left;
+        }
+        td:last-child,
+        thead th:last-child,
+        tbody tr:last-child th:last-child  {
+            width: 4em;
+            text-align: center;
+            text-indent: 0;
+        }
+        tr:last-child td:last-child { // total grade 
+            background-color: #ccf;
+            font-weight: bold;
+        }
+        td, th {
+            text-indent: 1em;
+        }
     }
 
+//## adjustments for larger screens
 @media (min-width: 400px) {
     aside {
         box-sizing: border-box;
@@ -280,17 +293,11 @@ $magic: 1.5rem;
     }
 }
 @media (min-width: 26 * $magic) {
-    details>figure {
-        margin: 0;
-        margin-bottom: $magic;
-    }
     html {
         font-size: 1.125rem;
     }
     summary {
         padding: $magic/2 $magic;
-    }
-    aside {
     }
 }
 @media (min-width: 900px) {
