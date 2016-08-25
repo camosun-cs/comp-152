@@ -120,6 +120,7 @@ $content: 24;
         line-height: 1.5;
         font-weight: lighter;
         font-family: sans-serif;
+        clear: both;
     }
     h1 {
         font-weight: normal;
@@ -301,6 +302,7 @@ $content: 24;
         padding: $magic/2 $magic;
         background: $code;
         overflow: auto;
+        clear: both;
     }
     pre > code , pre > code[class*="language-"] {
         padding: 0;
