@@ -6,7 +6,7 @@
 (function() {
 	'use strict';
 
-	var BREAKPOINT = "(min-width: 400px)";
+	var BREAKPOINT = "(min-width: "+(/*$content*/24 * /*factor*/0.7 * /*$magic*/1.5)+"em)";
 	var AFFECTS = "aside, .right, li > figure";
 
 	// Element.matches polyfill
