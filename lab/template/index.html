@@ -43,15 +43,15 @@
 		<ol class="instructions">
 			<!-- each step should be a short, concrete action -->
 			<li>
+				<p>Write an example task step. Always wrap text in <code>&lt;p></code> if there are other elements nearby.</p>
 				<!-- Use aside to create pull-out warnings, notes, etc -->
-				<!-- Note, always put them at the top of the relevant list item -->
+				<!-- These should appear _after_ the text they should float next to. -->
 				<aside>
 					<strong>Warning:</strong> Always make links use
 					<code>target="_blank"</code>, otherwise they will behave
 					badly when used inside of D2L.
 					Eg. <a href="../" target="_blank">COMP 152 materials</a>
 				</aside>
-				Write an example task step.
 				<!-- Use details for additional contextual help or further reading -->
 				<details>
 					<!-- always include a short summary of what this is about -->
@@ -64,11 +64,11 @@
 					</figure>
 					<ul>
 						<li>
-							<code>abbr</code> titles will be automatically exapnded,
-							eg. <abbr title="Hyper Text Markup Language">HTML</abbr>.
+							<p><code>abbr</code> titles will be automatically exapnded,
+							eg. <abbr title="Hyper Text Markup Language">HTML</abbr>.</p>
 							<figure>
 								<img src="http://dummyimage.com/96&amp;text=Figure" alt="an example figure"/>
-								<figCaption>figures in a li, p, or with a <code>right</code> class will float right, unless width is limited.</figCaption>
+								<figCaption>figures inside an li or with class "right" will float right, unless width is limited.</figCaption>
 							</figure>
 						</li>
 						<li>

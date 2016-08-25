@@ -7,7 +7,6 @@ $code: rgba(0,0,0,0.05);
 $link: #0080ff;
 
 //dimensions
-$column: 100% / 8;
 $em: 16;
 $magic: 1.5rem;
 
@@ -39,27 +38,63 @@ $magic: 1.5rem;
         font-size: #{16/$em}rem;
     }
 
-//## section layout 
+//## section layout
     h1, h2, h3, h4, h5, h6, hgroup,
     ul, ol, .instructions > li, dl,
-    p, figure, table{
-        margin-bottom:1.5rem;
+    p, figure, table {
+        margin-top: $magic;
+        margin-bottom: $magic;
+
+        // fix interactions with half margins
+        & + aside,
+        & + details,
+        & + pre,
+        & > aside:first-child,
+        & > details:first-child,
+        & > pre:first-child {
+            margin-top: -$magic/2;
+        }
+        aside + &,
+        details + &,
+        summary + &,
+        pre + & {
+            margin-top: $magic/2;
+        }
+        & > aside:last-child,
+        & > details:last-child,
+        & > pre:last-child {
+            margin-bottom: -$magic/2;
+        }
+        aside > &:first-child {
+            margin-top: $magic/2;
+        }
+        aside > &:last-child {
+            margin-bottom: $magic/2;
+        }
     }
 
-    header,section {
+    header, section {
         display: block;
         max-width: 24 * $magic;
         padding: 0 $magic;
         margin: auto;
-        margin-bottom: 2*$magic;
+        margin-bottom: 2 * $magic;
         box-sizing: border-box;
+
         @include containFloats;
+        // fix interactions with half margins
+        & > aside:last-child,
+        & > details:last-child,
+        & > pre:last-child {
+            margin-bottom: -$magic/2;
+        }
     }
 
     section {
         margin-top: -1px;
         border-top: 1px solid;
         border-color: inherit;
+        clear: both;
     }
 
     ul {
@@ -75,7 +110,7 @@ $magic: 1.5rem;
         margin-left: $magic;
     }
 
- //## text
+//## text
     a {
         color: $link;
         text-decoration: none;
@@ -88,13 +123,11 @@ $magic: 1.5rem;
     h1 {
         font-weight: normal;
         font-size: #{32/$em}rem;
-        padding-top: $magic;
         line-height: 2*$magic;
     }
     h2 {
         font-size: #{24/$em}rem;
         line-height: $magic;
-        padding-top: $magic;
     }
     h3 {
         font-size: #{18/$em}rem;
@@ -132,17 +165,17 @@ $magic: 1.5rem;
         background-color: #eef;
     }
 
+
 //## call-outs
     aside {
         padding: $magic/2 $magic;
         width: 100%;
-        margin: $magic/2 0;
-        margin-left: -$magic;
+        margin: 0 #{-$magic} $magic/2;
         background-color: $alert;
         overflow: auto;
     }
 
-//## disclosures 
+//## disclosures
     details {
         padding: 0 $magic;
         width: 100%;
@@ -150,17 +183,21 @@ $magic: 1.5rem;
         margin-left: -$magic;
         background-color: #eef;
         display: block;
+        clear: both;
 
         @include containFloats;
 
-        *:not([open]) > * {
+        &[open] {
+             padding-bottom: $magic/2
+        }
+        &:not([open]) > * {
             display: none;
         }
         &:not([open]) > summary {
             display: block;
         }
 
-        & > ul {
+        ul {
             list-style: disc;
         }
     }
@@ -168,9 +205,13 @@ $magic: 1.5rem;
     summary {
         cursor: pointer;
         display: block;
-        padding: $magic;
-        box-sizing: content-box;
         margin: 0 #{-$magic};
+        padding: $magic/2 $magic;
+        position: relative;
+
+        details[open] > & {
+            margin-bottom: $magic/2;
+        }
 
         &:hover {
             background: rgba(255,255,255,.5);
@@ -182,8 +223,8 @@ $magic: 1.5rem;
         &::before {
             content: "▶";
             position: absolute;
+            left: 0;
             line-height: $magic;
-            margin-left: -$magic;
             width: $magic;
             font-family: monospace;
             text-align: center;
@@ -198,7 +239,7 @@ $magic: 1.5rem;
         }
     }
 
-//## figures 
+//## figures
     figure {
         text-align: center;
         overflow: auto;
@@ -208,15 +249,22 @@ $magic: 1.5rem;
             margin: auto;
             max-width: 100%;
         }
+        
+        &:not(.right) {
+            section > &,
+            details > &,
+            li > & {
+                margin-left: -$magic;
+                margin-right: -$magic;
 
-        section > &,
-        details > & {
-            margin-left: -$magic;
-            margin-right: -$magic;
+                & > figcaption {
+                    margin: 0 $magic;
+                }
+            }
         }
     }
 
-//## inline definition lists 
+//## inline definition lists
     dl.inline dt {
         float: left;
         margin-right: $magic/2;
@@ -226,31 +274,30 @@ $magic: 1.5rem;
         }
     }
 
-//## code 
+//## code
     code,
-    code[class*="language-"] {
+    code[class*="language-"],
+    :not(pre) > code[class*="language-"] {
         @include monospace;
         background: $code;
-        padding: 2px 5px;
+        padding: 2px .4em;
+        border-radius: .3rem;
+        text-shadow: 0 1px white;
     }
-    pre[class*="language-"] {
-        background: transparent;
-        margin: 0;
-        padding: 0;
-        overflow: initial;
+    pre, pre[class*="language-"] {
+        margin: $magic/2 (-$magic);
+        padding: $magic/2 $magic;
+        background: $code;
+        overflow: auto;
     }
     pre > code , pre > code[class*="language-"] {
-        padding: $magic/2 $magic;
-        margin: $magic/2 0;
-        margin-left: -$magic;
+        padding: 0;
+        background: transparent;
         display: block;
-        max-width: 80ch;
-        width: 100%;
-        overflow: auto;
         line-height: 1.5rem;
     }
 
-//## assessment table 
+//## assessment table
     .marks {
         width: 100%;
         table-layout: fixed;
@@ -265,7 +312,7 @@ $magic: 1.5rem;
             text-align: center;
             text-indent: 0;
         }
-        tr:last-child td:last-child { // total grade 
+        tr:last-child td:last-child { // total grade
             background-color: #ccf;
             font-weight: bold;
         }
@@ -279,25 +326,23 @@ $magic: 1.5rem;
     aside {
         box-sizing: border-box;
         float: right;
-        max-width: calc(#{$magic} + #{$column * 4});
-        margin-left: $magic;
-        margin-right: -$magic;
-        margin-bottom: $magic/2;
+        max-width: calc(#{$magic} + 50%);
+        margin: $magic/2 (-$magic) $magic/2 $magic;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        .instructions > li > &:first-child {
+            // avoid touching details from previous li
+            margin-top: $magic/2;
+        }
     }
     .right, li > figure {
-        max-width: $column * 4;
+        max-width: 50%;
         float: right;
-        margin-left: $magic;
-        margin-bottom: $magic/2;
+        margin: $magic/2 0 $magic/2 $magic;
     }
 }
 @media (min-width: 26 * $magic) {
     html {
         font-size: 1.125rem;
-    }
-    summary {
-        padding: $magic/2 $magic;
     }
 }
 @media (min-width: 900px) {
