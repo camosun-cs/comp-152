@@ -50,6 +50,7 @@ $content: 24;
         & + aside,
         & + details,
         & + pre,
+        & + pre[class*="language-"],
         & > aside:first-child,
         & > details:first-child,
         & > pre:first-child {
@@ -67,10 +68,10 @@ $content: 24;
             margin-bottom: -$magic/2;
         }
         aside > &:first-child {
-            margin-top: $magic/2;
+            margin-top: 0;
         }
         aside > &:last-child {
-            margin-bottom: $magic/2;
+            margin-bottom: 0;
         }
     }
 
@@ -178,7 +179,7 @@ $content: 24;
     aside {
         padding: $magic/2 $magic;
         width: 100%;
-        margin: 0 #{-$magic} $magic/2;
+        margin: $magic/2 #{-$magic};
         background-color: $alert;
         overflow: auto;
     }
@@ -343,8 +344,12 @@ $content: 24;
         max-width: calc(#{$magic} + 50%);
         margin: $magic/2 (-$magic) $magic/2 $magic;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+
+        // margin doesn't collapse with non-floats, so don't need special handling anymore
+        .instructions > li > &:last-child {
+            margin-bottom: $magic/2;
+        }
         .instructions > li > &:first-child {
-            // avoid touching details from previous li
             margin-top: $magic/2;
         }
     }
