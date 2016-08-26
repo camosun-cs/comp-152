@@ -30,6 +30,7 @@ $content: 24;
         margin: 0;
         padding: 0;
         border: 0;
+        line-height: 1.5rem;
     }
 
     html {
@@ -42,38 +43,9 @@ $content: 24;
 //## section layout
     h1, h2, h3, h4, h5, h6, hgroup,
     ul, ol, .instructions > li, dl,
-    p, figure {
+    p, figure, aside, details, pre {
         margin-top: $magic;
         margin-bottom: $magic;
-
-        // fix interactions with half margins
-        & + aside,
-        details & + aside,
-        & + details,
-        & + pre,
-        & + pre[class*="language-"],
-        & > aside:first-child,
-        & > details:first-child,
-        & > pre:first-child {
-            margin-top: -$magic/2;
-        }
-        aside + &,
-        details + &,
-        summary + &,
-        pre + & {
-            margin-top: $magic/2;
-        }
-        & > aside:last-child,
-        & > details:last-child,
-        & > pre:last-child {
-            margin-bottom: -$magic/2;
-        }
-        aside > &:first-child {
-            margin-top: 0;
-        }
-        aside > &:last-child {
-            margin-bottom: 0;
-        }
     }
 
     header, section {
@@ -85,12 +57,6 @@ $content: 24;
         box-sizing: border-box;
 
         @include containFloats;
-        // fix interactions with half margins
-        & > aside:last-child,
-        & > details:last-child,
-        & > pre:last-child {
-            margin-bottom: -$magic/2;
-        }
     }
 
     section {
@@ -119,7 +85,7 @@ $content: 24;
         text-decoration: none;
     }
     h1, h2, h3, h4, h5, h6 {
-        line-height: 1.5;
+        line-height: 1.5rem;
         font-weight: lighter;
         font-family: sans-serif;
         clear: both;
@@ -146,6 +112,10 @@ $content: 24;
     }
     dt {
         font-weight: bold;
+    }
+    sup, sup {
+        vertical-align: baseline;
+        position: relative;
     }
 
 //## tables
@@ -178,28 +148,18 @@ $content: 24;
 
 //## call-outs
     aside {
-        padding: $magic/2 $magic;
-        width: 100%;
-        margin: $magic/2 #{-$magic};
         background-color: $alert;
         overflow: auto;
     }
 
 //## disclosures
     details {
-        padding: 0 $magic;
-        width: 100%;
-        margin: $magic/2 0;
-        margin-left: -$magic;
         background-color: #eef;
         display: block;
         clear: both;
 
         @include containFloats;
 
-        &[open] {
-             padding-bottom: $magic/2
-        }
         &:not([open]) > * {
             display: none;
         }
@@ -215,12 +175,10 @@ $content: 24;
     summary {
         cursor: pointer;
         display: block;
-        margin: 0 #{-$magic};
-        padding: $magic/2 $magic;
         position: relative;
 
         details[open] > & {
-            margin-bottom: $magic/2;
+            //margin-bottom: $magic/2;
         }
 
         &:hover {
@@ -264,19 +222,6 @@ $content: 24;
             margin: auto;
             max-width: 100%;
         }
-        
-        &:not(.right) {
-            section > &,
-            details > &,
-            li > & {
-                margin-left: -$magic;
-                margin-right: -$magic;
-
-                & > figcaption {
-                    margin: 0 $magic;
-                }
-            }
-        }
     }
 
 //## inline definition lists
@@ -295,20 +240,14 @@ $content: 24;
     :not(pre) > code[class*="language-"] {
         @include monospace;
         background: $code;
-        padding: 2px .4em;
+        padding: 0; //2px .4em;
         border-radius: .3rem;
         text-shadow: 0 1px white;
     }
     pre, pre[class*="language-"] {
-        margin: $magic/2 (-$magic);
-        padding: $magic/2 $magic;
-        background: $code;
-        overflow: auto;
         clear: both;
     }
     pre > code , pre > code[class*="language-"] {
-        padding: 0;
-        background: transparent;
         display: block;
         line-height: 1.5rem;
     }
@@ -343,22 +282,12 @@ $content: 24;
         box-sizing: border-box;
         float: right;
         max-width: calc(#{$magic} + 50%);
-        margin: $magic/2 (-$magic) $magic/2 $magic;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
-        // margin doesn't collapse with non-floats, so don't need special handling anymore
-        .instructions > li > &:last-child {
-            margin-bottom: $magic/2;
-        }
-        .instructions > li > &:first-child {
-            margin-top: $magic/2;
-        }
-        
         // don't float when inside a details
         details & {
             float: none;
             max-width: initial;
-            margin: $magic/2 0;
             box-shadow: none;
         }
     }
@@ -369,19 +298,6 @@ $content: 24;
     }
     .right {
         @include right;
-    }
-    li > figure:not(.right) {
-        // note: overiding negative margins from base
-        @include right;
-        & > figcaption {
-            margin: 0;
-        }
-    }
-    h1, h2, h3, h4, h5, h6, hgroup,
-    ul, ol, dl, p {
-        summary + .right + & {
-            margin-top: .75em;
-        }
     }
 }
 @media (min-width: $content * 1.125 * $initialMagic) {
@@ -404,10 +320,7 @@ $content: 24;
     aside:not(.dont-pull) {
         position: absolute;
         max-width: ($content/2 + 2) * $magic;
+        margin: 0;
         margin-left: $content * $magic;
-        margin-top: -$magic/2;
-        .instructions > li > &:first-child {
-            margin-top: -$magic/2;
-        }
     }
 }
