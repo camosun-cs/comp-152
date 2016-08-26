@@ -244,21 +244,31 @@ $content: 24;
     }
 
 //## code
-    code,
-    code[class*="language-"],
-    :not(pre) > code[class*="language-"] {
+    code {
         @include monospace;
         background: $code;
         padding: 2px .4em;
         border-radius: .3rem;
         text-shadow: 0 1px white;
     }
-    pre, pre[class*="language-"] {
+    pre {
         clear: both;
+        overflow: auto;
     }
-    pre > code , pre > code[class*="language-"] {
+    pre > code {
         display: block;
         line-height: 1.5rem;
+        border-radius: 0;
+        padding: 0;
+    }
+    // prism overrides
+    pre[class*="language-"] {
+        @extend pre;
+        padding: 0;
+    }
+    code[class*="language-"],
+    :not(pre) code[class*="language-"] {
+        @extend code;
     }
 
 //## assessment table
