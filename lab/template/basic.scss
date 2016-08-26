@@ -194,11 +194,8 @@ $content: 24;
         @include bg-bleed($info);
         @include containFloats;
 
-        &:not([open]) > * {
+        &:not([open]) > *:not(summary) {
             display: none;
-        }
-        &:not([open]) > summary {
-            display: block;
         }
 
         ul {
@@ -208,11 +205,14 @@ $content: 24;
 
     summary {
         cursor: pointer;
-        display: block;
         position: relative;
+        display: inline-block;
+        width: 100%;
+        margin: (-$magic/2) (-$magic);
+        padding: $magic/2 $magic;
 
-        details[open] > & {
-            //margin-bottom: $magic/2;
+        #modernizr & {
+            margin: 0;
         }
 
         &:hover {
