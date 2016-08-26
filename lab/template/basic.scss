@@ -249,7 +249,7 @@ $content: 24;
     :not(pre) > code[class*="language-"] {
         @include monospace;
         background: $code;
-        padding: 0; //2px .4em;
+        padding: 2px .4em;
         border-radius: .3rem;
         text-shadow: 0 1px white;
     }
