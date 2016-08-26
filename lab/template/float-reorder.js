@@ -14,7 +14,7 @@
 		},
 		{
 			at: "(min-width: "+((1.5 * /*$content*/24 + /*padding-edges*/5) * /*factor*/1.25 * /*$magic*/1.5)+"em)",
-			reorder: "aside",
+			reorder: "details aside",
 			except: ".dont-pull"
 		}
 	];
