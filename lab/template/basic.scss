@@ -277,8 +277,9 @@ $content: 24;
         text-shadow: 0 1px white;
     }
     pre {
+        @include monospace;
         clear: both;
-        overflow: auto;
+        display: flex; // contain margins
         background: $code;
         @include bg-bleed($code);
         details & {
@@ -289,12 +290,15 @@ $content: 24;
         display: block;
         line-height: 1.5rem;
         border-radius: 0;
-        padding: 0;
+        margin: (-$magic/2) (-$magic);
+        padding: $magic/2 $magic;
+        overflow: auto;
         background: transparent;
     }
     // prism overrides
     pre[class*="language-"] {
         @extend pre;
+        overflow: visible;
         padding: 0;
     }
     code[class*="language-"],
