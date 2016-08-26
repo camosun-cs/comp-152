@@ -182,7 +182,6 @@ $content: 24;
 //## call-outs
     aside {
         background-color: $alert;
-        overflow: auto;
         @include bg-bleed($alert);
     }
 
@@ -332,14 +331,16 @@ $content: 24;
     aside {
         box-sizing: border-box;
         float: right;
-        max-width: calc(#{$magic} + 50%);
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        margin: $magic/2 0 $magic*3/2 $magic*3/2;
+        max-width: 50%;
+        filter: drop-shadow(0 1px 3px rgba(0,0,0,.3));
 
         // don't float when inside a details
         details & {
             float: none;
+            margin: $magic;
             max-width: initial;
-            box-shadow: none;
+            filter: none;
         }
     }
     @mixin right() {
@@ -370,8 +371,9 @@ $content: 24;
     }
     aside:not(.dont-pull) {
         position: absolute;
-        max-width: ($content/2 + 2) * $magic;
+        max-width: ($content/2) * $magic;
         margin: 0;
-        margin-left: $content * $magic;
+        margin-left: ($content + 1) * $magic;
+        filter: drop-shadow(0 1px 3px rgba(0,0,0,.3));
     }
 }
