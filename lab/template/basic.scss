@@ -4,6 +4,7 @@ $black: #444;
 $title: #000080;
 $alert: rgb(251,227,220);
 $code: rgba(0,0,0,0.05);
+$info: #eef;
 $link: #0080ff;
 
 //dimensions
@@ -11,6 +12,18 @@ $em: 16;
 $initialMagic: 1.5em;
 $magic: 1.5rem;
 $content: 24;
+
+@function blend($color1, $color2) {
+    $a1: alpha($color1);
+    $a2: alpha($color2);
+    $c1: (red($color1)*$a1, green($color1)*$a1, blue($color1)*$a1, $a1);
+    $c2: (red($color2)*$a2, green($color2)*$a2, blue($color2)*$a2, $a2);
+    $result: ();
+    @for $i from 1 through 4 {
+        $result: append($result, nth($c1,$i) + (nth($c2,$i) * (1 - $a1)), comma);
+    }
+    @return rgba($result...);
+}
 
 @mixin containFloats {
     &::after {
@@ -23,6 +36,17 @@ $content: 24;
 @mixin monospace {
     font-size: .8rem;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+@mixin bg-bleed($color, $blendOn:white, $otherShadows...) {
+    $shadowColor: blend($color, $blendOn);
+    box-shadow: join(
+        ($otherShadows),
+        (
+            -$magic/2 0 0 $magic/2 $shadowColor,
+            $magic/2 0 0 $magic/2 $shadowColor
+        ),
+        $separator: comma
+    );
 }
 
 //## reset
@@ -159,14 +183,16 @@ $content: 24;
     aside {
         background-color: $alert;
         overflow: auto;
+        @include bg-bleed($alert);
     }
 
 //## disclosures
     details {
-        background-color: #eef;
+        background-color: $info;
         display: block;
         clear: both;
 
+        @include bg-bleed($info);
         @include containFloats;
 
         &:not([open]) > * {
@@ -254,12 +280,18 @@ $content: 24;
     pre {
         clear: both;
         overflow: auto;
+        background: $code;
+        @include bg-bleed($code);
+        details & {
+            @include bg-bleed($code, $info);
+        }
     }
     pre > code {
         display: block;
         line-height: 1.5rem;
         border-radius: 0;
         padding: 0;
+        background: transparent;
     }
     // prism overrides
     pre[class*="language-"] {
