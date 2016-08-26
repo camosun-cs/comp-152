@@ -72,13 +72,16 @@ $breakpoints: (
 // extend background color without affecting positioning
 // note: uses box-shadow to do this in way that's probably not compatible
 // with other box-shadow uses...
-@mixin bg-bleed($color, $blendOn:white, $otherShadows...) {
-    $shadowColor: blend($color, $blendOn);
+@mixin bg-bleed($color, $otherShadows...) {
+    @if alpha($color) != 1 {
+        @warn "bg-bleed only works properly with fully opaque colours (got `#{$color}`)";
+    }
+    background-color: $color;
     box-shadow: join(
         ($otherShadows),
         (
-            -$magic/2 0 0 $magic/2 $shadowColor,
-            $magic/2 0 0 $magic/2 $shadowColor
+            -$magic/2 0 0 $magic/2 $color,
+            $magic/2 0 0 $magic/2 $color
         ),
         $separator: comma
     );
@@ -407,10 +410,9 @@ code {
 pre {
     @include monospace;
     clear: both;
-    background: $code;
-    @include bg-bleed($code);
+    @include bg-bleed(blend($code, white));
     details & {
-        @include bg-bleed($code, $info);
+        @include bg-bleed(blend($code, $info));
     }
     & > code {
         border-radius: 0;
