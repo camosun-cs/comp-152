@@ -54,7 +54,7 @@ $content: 24;
         margin: 0;
         padding: 0;
         border: 0;
-        line-height: 1.5rem;
+        line-height: $magic;
         vertical-align: top; // prevent line widening with some font-faces
     }
 
@@ -110,7 +110,6 @@ $content: 24;
         text-decoration: none;
     }
     h1, h2, h3, h4, h5, h6 {
-        line-height: 1.5rem;
         font-weight: lighter;
         font-family: sans-serif;
         clear: both;
@@ -122,11 +121,9 @@ $content: 24;
     }
     h2 {
         font-size: #{24/$em}rem;
-        line-height: $magic;
     }
     h3 {
         font-size: #{18/$em}rem;
-        line-height: $magic;
     }
     samp, kbd {
         @include monospace;
@@ -231,7 +228,6 @@ $content: 24;
             content: "▶";
             position: absolute;
             left: 0;
-            line-height: $magic;
             width: $magic;
             font-family: monospace;
             text-align: center;
@@ -288,7 +284,6 @@ $content: 24;
     }
     pre > code {
         display: block;
-        line-height: 1.5rem;
         border-radius: 0;
         margin: (-$magic/2) (-$magic);
         padding: $magic/2 $magic;
@@ -298,12 +293,14 @@ $content: 24;
     // prism overrides
     pre[class*="language-"] {
         @extend pre;
+        line-height: $magic;
         overflow: visible;
         padding: 0;
     }
     code[class*="language-"],
     :not(pre) code[class*="language-"] {
         @extend code;
+        line-height: $magic;
     }
 
 //## assessment table
