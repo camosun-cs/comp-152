@@ -114,8 +114,17 @@ $content: 24;
     dt {
         font-weight: bold;
     }
-    sup, sup {
+    sup {
         position: relative;
+        font-size: .6em;
+        top: -.3em;
+        & > & {
+            font-size: inherit;
+        }
+    }
+    sub {
+        @extend sup;
+        top: .35em;
     }
 
 //## tables
