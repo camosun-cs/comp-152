@@ -407,6 +407,7 @@ code {
     padding: 2px .4em;
     border-radius: .3rem;
     text-shadow: 0 1px white;
+    line-height: $magic !important;
 }
 
 pre {
@@ -434,9 +435,4 @@ pre[class*="language-"] {
     line-height: $magic;
     overflow: visible;
     padding: 0;
-}
-code[class*="language-"],
-:not(pre) code[class*="language-"] {
-    @extend code;
-    line-height: $magic;
 }
