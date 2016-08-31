@@ -381,6 +381,8 @@ summary {
 
 figure {
     text-align: center;
+    margin-left: -$magic;
+    margin-right: -$magic;
     img {
         display: block;
         margin: auto;
