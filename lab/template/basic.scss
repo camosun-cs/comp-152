@@ -1,17 +1,59 @@
 @charset "utf-8";
-//colors
+// colors
 $black: #444;
 $title: #000080;
 $alert: rgb(251,227,220);
 $code: rgba(0,0,0,0.05);
+$info: #eef;
 $link: #0080ff;
 
-//dimensions
+// dimensions
 $em: 16;
 $initialMagic: 1.5em;
 $magic: 1.5rem;
 $content: 24;
+$mediumFontFactor: 1.125;
+$largeFontFactor: 1.25;
 
+// breakpoints
+$breakpoints: (
+    // enough room to start floats
+    'small': ( min-width: $content * 0.7 * $initialMagic ),
+    // can lossen things up a bit
+    'medium': ( min-width: $content * $mediumFontFactor * $initialMagic ),
+    // room to move asides out of the main column
+    'large': ( min-width: ((1.5 * $content + 5) * $largeFontFactor) * $initialMagic )
+);
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                          FUNCTIONS AND MIXINS
+////////////////////////////////////////////////////////////////////////////////
+
+// respond to named breakpoints
+@mixin respond-to($pt) {
+    @if map-has-key($breakpoints, $pt) {
+        @media #{inspect(map-get($breakpoints, $pt))} {
+            @content;
+        }
+    }
+    @else { @warn "unknown breakpoint `#{$pt}`" }
+}
+
+// get resulting apparent color from alpha-blending $color1 over $color2
+@function blend($color1, $color2) {
+    $a1: alpha($color1);
+    $a2: alpha($color2);
+    $c1: (red($color1)*$a1, green($color1)*$a1, blue($color1)*$a1, $a1);
+    $c2: (red($color2)*$a2, green($color2)*$a2, blue($color2)*$a2, $a2);
+    $result: ();
+    @for $i from 1 through 4 {
+        $result: append($result, nth($c1,$i) + (nth($c2,$i) * (1 - $a1)), comma);
+    }
+    @return rgba($result...);
+}
+
+// keep descendant floats' bottom margins within bottom padding
 @mixin containFloats {
     &::after {
         content: " ";
@@ -20,394 +62,379 @@ $content: 24;
         height: 0;
     }
 }
+
+// fixed-width font-face
 @mixin monospace {
     font-size: .8rem;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 
-//## reset
-    * {
-        margin: 0;
-        padding: 0;
-        border: 0;
+// extend background color without affecting positioning
+// note: uses box-shadow to do this in way that's probably not compatible
+// with other box-shadow uses...
+@mixin bg-bleed($color, $otherShadows...) {
+    @if alpha($color) != 1 {
+        @warn "bg-bleed only works properly with fully opaque colours (got `#{$color}`)";
     }
+    background-color: $color;
+    box-shadow: join(
+        ($otherShadows),
+        (
+            -$magic/2 0 0 $magic/2 $color,
+            $magic/2 0 0 $magic/2 $color
+        ),
+        $separator: comma
+    );
+}
 
-    html {
-        font-family: serif;
-        color: $black;
-        line-height: 1.5;
-        font-size: #{16/$em}rem;
-    }
 
-//## section layout
-    h1, h2, h3, h4, h5, h6, hgroup,
-    ul, ol, .instructions > li, dl,
-    p, figure {
-        margin-top: $magic;
-        margin-bottom: $magic;
+////////////////////////////////////////////////////////////////////////////////
+//                          BASIC RESET AND RHYTHM
+////////////////////////////////////////////////////////////////////////////////
 
-        // fix interactions with half margins
-        & + aside,
-        details & + aside,
-        & + details,
-        & + pre,
-        & + pre[class*="language-"],
-        & > aside:first-child,
-        & > details:first-child,
-        & > pre:first-child {
-            margin-top: -$magic/2;
-        }
-        aside + &,
-        details + &,
-        summary + &,
-        pre + & {
-            margin-top: $magic/2;
-        }
-        & > aside:last-child,
-        & > details:last-child,
-        & > pre:last-child {
-            margin-bottom: -$magic/2;
-        }
-        aside > &:first-child {
-            margin-top: 0;
-        }
-        aside > &:last-child {
-            margin-bottom: 0;
-        }
-    }
+// reset
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    line-height: $magic;
+    vertical-align: top; // prevent line widening with some font-faces
+}
 
-    header, section {
-        display: block;
-        max-width: 24 * $magic;
-        padding: 0 $magic;
-        margin: auto;
-        margin-bottom: 2 * $magic;
-        box-sizing: border-box;
+// base font
+html {
+    font-family: serif;
+    font-size: #{16/$em}rem;
+    line-height: 1.5;
+    color: $black;
+    @include respond-to(medium) {
+        font-size: #{$mediumFontFactor}rem;
+    }
+    @include respond-to(large) {
+        font-size: #{$largeFontFactor}rem;
+    }
+}
 
-        @include containFloats;
-        // fix interactions with half margins
-        & > aside:last-child,
-        & > details:last-child,
-        & > pre:last-child {
-            margin-bottom: -$magic/2;
-        }
-    }
+// basic margins we actually want
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, .instructions > li, dl,
+p, figure, aside, details, pre {
+    margin-top: $magic;
+    margin-bottom: $magic;
+}
+ul, ol {
+    padding-left: $magic;
+}
+dd {
+    margin-left: $magic;
+}
 
-    section {
-        margin-top: -1px;
-        border-top: 1px solid;
-        border-color: inherit;
-        clear: both;
+// text styles
+a {
+    color: $link;
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: lighter;
+    font-family: sans-serif;
+    clear: both;
+}
+h1 {
+    font-weight: normal;
+    font-size: #{32/$em}rem;
+    line-height: 2*$magic;
+}
+h2 {
+    font-size: #{24/$em}rem;
+}
+h3 {
+    font-size: #{18/$em}rem;
+}
+samp, kbd, tt {
+    @include monospace;
+}
+abbr[title]::after {
+    content: " ("attr(title)")";
+    opacity: .5;
+}
+dt {
+    font-weight: bold;
+}
+sup {
+    // don't use vertical-align, since it messes up line heights
+    position: relative;
+    font-size: .6em;
+    top: -.3em;
+    & > & {
+        font-size: inherit;
     }
+}
+sub {
+    @extend sup;
+    top: .35em;
+}
 
-    ul, ol {
-        padding-left: $magic;
-    }
-    .instructions {
-        padding-left: 0;
-        & > li > ul {
-            list-style: disc;
-        }
-    }
-    dd {
-        margin-left: $magic;
-    }
+////////////////////////////////////////////////////////////////////////////////
+//                                MAIN LAYOUT
+////////////////////////////////////////////////////////////////////////////////
 
-//## text
-    a {
-        color: $link;
-        text-decoration: none;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        line-height: 1.5;
-        font-weight: lighter;
-        font-family: sans-serif;
-        clear: both;
-    }
-    h1 {
-        font-weight: normal;
-        font-size: #{32/$em}rem;
-        line-height: 2*$magic;
-    }
-    h2 {
-        font-size: #{24/$em}rem;
-        line-height: $magic;
-    }
-    h3 {
-        font-size: #{18/$em}rem;
-        line-height: $magic;
-    }
-    samp, kbd {
-        @include monospace;
-    }
-    abbr[title]::after {
-        content: " ("attr(title)")";
-        opacity: .5;
-    }
-    dt {
-        font-weight: bold;
-    }
-
-//## tables
-    table {
-        border-collapse: collapse;
-        border: 2px solid;
-        border-color: inherit;
-        display: table; // block level
-        // note: table margins don't collapse
-        margin: $magic auto;
-        &.inline {
-            display: inline-table;
-            margin: $magic/2;
+header, section {
+    display: block;
+    max-width: 24 * $magic;
+    padding: 0 $magic;
+    margin: auto;
+    margin-bottom: 2 * $magic;
+    box-sizing: border-box;
+    @include containFloats;
+    @include respond-to(large) {
+        // center using the body instead
+        margin-left: 0;
+        margin-right: 0;
+        @at-root {
+            body {
+                max-width: (1.5 * $content + 3) * $magic;
+                margin: auto;
+            }
         }
     }
-    td, th {
-        border: 1px solid;
-        border-color: inherit;
-        padding: 2px 4px;
+}
+
+section {
+    margin-top: -1px;
+    border-top: 1px solid;
+    border-color: inherit;
+    clear: both;
+}
+
+.instructions {
+    padding-left: 0;
+    & > li > ul {
+        list-style: disc;
+    }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+//                                  COMPONENTS
+////////////////////////////////////////////////////////////////////////////////
+
+table {
+    border-collapse: collapse;
+    border: 2px solid;
+    border-color: inherit;
+    display: table; // block level
+    // note: table margins don't collapse
+    margin: $magic auto;
+    &.inline {
+        display: inline-table;
+        margin: $magic/2;
+    }
+}
+td, th {
+    border: 1px solid;
+    border-color: inherit;
+    padding: 2px 4px;
+    text-align: left;
+}
+thead th {
+    background-color: darken($info, 8%);
+    text-align: center;
+}
+th {
+    background-color: $info;
+}
+
+// assessment table
+.marks {
+    width: 100%;
+    table-layout: fixed;
+
+    th {
         text-align: left;
     }
-    thead th {
-        background-color: #ccf;
+    td:last-child,
+    thead th:last-child,
+    tbody tr:last-child th:last-child  {
+        width: 4em;
         text-align: center;
+        text-indent: 0;
     }
-    th {
-        background-color: #eef;
+    tr:last-child td:last-child { // total grade
+        background-color: darken($info, 8%);
+        font-weight: bold;
     }
-
-
-//## call-outs
-    aside {
-        padding: $magic/2 $magic;
-        width: 100%;
-        margin: $magic/2 #{-$magic};
-        background-color: $alert;
-        overflow: auto;
+    td, th {
+        text-indent: 1em;
     }
+}
 
-//## disclosures
-    details {
-        padding: 0 $magic;
-        width: 100%;
-        margin: $magic/2 0;
-        margin-left: -$magic;
-        background-color: #eef;
-        display: block;
-        clear: both;
-
-        @include containFloats;
-
-        &[open] {
-             padding-bottom: $magic/2
-        }
-        &:not([open]) > * {
-            display: none;
-        }
-        &:not([open]) > summary {
-            display: block;
-        }
-
-        ul {
-            list-style: disc;
-        }
+// inline definition lists
+dl.inline dt {
+    float: left;
+    margin-right: $magic/2;
+    clear: left;
+    &::after {
+        content: ":";
     }
+}
 
-    summary {
-        cursor: pointer;
-        display: block;
-        margin: 0 #{-$magic};
-        padding: $magic/2 $magic;
-        position: relative;
+//~~~~~~~~~~~~~
+//  call-outs
+//~~~~~~~~~~~~~
 
-        details[open] > & {
-            margin-bottom: $magic/2;
-        }
-
-        &:hover {
-            background: rgba(255,255,255,.5);
-        }
-        &:focus {
-            outline: none;
-            &::after {
-                content: "●";
-                float: right;
-                color: #aad;
-            }
-        }
-
-        &::before {
-            content: "▶";
-            position: absolute;
-            left: 0;
-            line-height: $magic;
-            width: $magic;
-            font-family: monospace;
-            text-align: center;
-            details[open] > & {
-                transform: rotate(90deg);
-            }
-        }
-
-        // remove webkit's non-spec implementation
-        &::-webkit-details-marker {
-            display: none;
-        }
-    }
-
-//## figures
-    figure {
-        text-align: center;
-        overflow: auto;
-
-        img {
-            display: block;
-            margin: auto;
-            max-width: 100%;
-        }
-        
-        &:not(.right) {
-            section > &,
-            details > &,
-            li > & {
-                margin-left: -$magic;
-                margin-right: -$magic;
-
-                & > figcaption {
-                    margin: 0 $magic;
-                }
-            }
-        }
-    }
-
-//## inline definition lists
-    dl.inline dt {
-        float: left;
-        margin-right: $magic/2;
-        clear: left;
-        &::after {
-            content: ":";
-        }
-    }
-
-//## code
-    code,
-    code[class*="language-"],
-    :not(pre) > code[class*="language-"] {
-        @include monospace;
-        background: $code;
-        padding: 2px .4em;
-        border-radius: .3rem;
-        text-shadow: 0 1px white;
-    }
-    pre, pre[class*="language-"] {
-        margin: $magic/2 (-$magic);
-        padding: $magic/2 $magic;
-        background: $code;
-        overflow: auto;
-        clear: both;
-    }
-    pre > code , pre > code[class*="language-"] {
-        padding: 0;
-        background: transparent;
-        display: block;
-        line-height: 1.5rem;
-    }
-
-//## assessment table
-    .marks {
-        width: 100%;
-        table-layout: fixed;
-
-        th {
-            text-align: left;
-        }
-        td:last-child,
-        thead th:last-child,
-        tbody tr:last-child th:last-child  {
-            width: 4em;
-            text-align: center;
-            text-indent: 0;
-        }
-        tr:last-child td:last-child { // total grade
-            background-color: #ccf;
-            font-weight: bold;
-        }
-        td, th {
-            text-indent: 1em;
-        }
-    }
-
-//## adjustments for larger screens
-@media (min-width: $content * 0.7 * $initialMagic) {
-    aside {
+aside {
+    background-color: $alert;
+    @include bg-bleed($alert);
+    @include respond-to(small) {
         box-sizing: border-box;
         float: right;
-        max-width: calc(#{$magic} + 50%);
-        margin: $magic/2 (-$magic) $magic/2 $magic;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        margin: $magic/2 0 $magic*3/2 $magic*3/2;
+        max-width: 50%;
+        filter: drop-shadow(0 1px 3px rgba(0,0,0,.3));
 
-        // margin doesn't collapse with non-floats, so don't need special handling anymore
-        .instructions > li > &:last-child {
-            margin-bottom: $magic/2;
-        }
-        .instructions > li > &:first-child {
-            margin-top: $magic/2;
-        }
-        
         // don't float when inside a details
         details & {
             float: none;
+            margin: $magic;
             max-width: initial;
-            margin: $magic/2 0;
-            box-shadow: none;
+            filter: none;
         }
     }
-    @mixin right() {
-        max-width: 50%;
-        float: right;
-        margin: $magic 0 $magic $magic;
-    }
-    .right {
-        @include right;
-    }
-    li > figure:not(.right) {
-        // note: overiding negative margins from base
-        @include right;
-        & > figcaption {
+    @include respond-to(large) {
+        &:not(.dont-pull) {
+            position: absolute;
+            max-width: ($content/2) * $magic;
             margin: 0;
-        }
-    }
-    h1, h2, h3, h4, h5, h6, hgroup,
-    ul, ol, dl, p {
-        summary + .right + & {
-            margin-top: .75em;
+            margin-left: ($content + 1) * $magic;
+            filter: drop-shadow(0 1px 3px rgba(0,0,0,.3));
         }
     }
 }
-@media (min-width: $content * 1.125 * $initialMagic) {
-    html {
-        font-size: 1.125rem;
+
+//~~~~~~~~~~~~~~~~~~~
+//  further reading
+//~~~~~~~~~~~~~~~~~~~
+
+details {
+    background-color: $info;
+    display: block;
+    clear: both;
+
+    @include bg-bleed($info);
+    @include containFloats;
+
+    &:not([open]) > *:not(summary) {
+        display: none;
+    }
+    ul {
+        list-style: disc;
     }
 }
-@media (min-width: ((1.5 * $content + 5) * 1.25) * $initialMagic) {
-    html {
-        font-size: 1.25rem;
+
+summary {
+    cursor: pointer;
+    position: relative;
+    // fill bg-bleed area of details
+    display: inline-block; // don't collapse margins
+    width: 100%;
+    margin: (-$magic/2) (-$magic);
+    padding: $magic/2 $magic;
+
+    // modernizr gets confused by our negative margins :)
+    #modernizr & {
+        margin: 0;
     }
-    header, section {
-        margin-left: 0;
-        margin-right: 0;
+
+    &:hover {
+        background: rgba(255,255,255,.5);
     }
-    body {
-        max-width: (1.5 * $content + 3) * $magic;
-        margin: auto;
+    &:focus {
+        outline: none;
+        &::after {
+            content: "●";
+            float: right;
+            color: #aad;
+        }
     }
-    aside:not(.dont-pull) {
+
+    // need to manually create disclosure icon, since this isn't a list-item
+    &::before {
+        content: "▶";
         position: absolute;
-        max-width: ($content/2 + 2) * $magic;
-        margin-left: $content * $magic;
-        margin-top: -$magic/2;
-        .instructions > li > &:first-child {
-            margin-top: -$magic/2;
+        left: 0;
+        width: $magic;
+        font-family: monospace;
+        text-align: center;
+        details[open] > & {
+            transform: rotate(90deg);
         }
     }
+    // remove webkit's non-spec implementation
+    &::-webkit-details-marker {
+        display: none;
+    }
+}
+
+//~~~~~~~~~~~
+//  figures
+//~~~~~~~~~~~
+
+figure {
+    text-align: center;
+    img {
+        display: block;
+        margin: auto;
+        max-width: 100%;
+    }
+    @include respond-to(small) {
+        &.right {
+            max-width: 50%;
+            float: right;
+            margin: $magic 0 $magic $magic;
+        }
+    }
+}
+
+//~~~~~~~~~~~~~~~~
+//  code samples
+//~~~~~~~~~~~~~~~~
+
+code {
+    @include monospace;
+    background: $code;
+    padding: 2px .4em;
+    border-radius: .3rem;
+    text-shadow: 0 1px white;
+}
+
+pre {
+    @include monospace;
+    clear: both;
+    @include bg-bleed(blend($code, white));
+    details & {
+        @include bg-bleed(blend($code, $info));
+    }
+    & > code {
+        border-radius: 0;
+        background: transparent;
+        overflow: auto;
+        // cover full bg-bleed area of pre so scrolling looks normal
+        display: inline-block; // don't collapse margins
+        width: 100%;
+        margin: (-$magic/2) (-$magic);
+        padding: $magic/2 $magic;
+    }
+}
+
+// prism overrides
+pre[class*="language-"] {
+    @extend pre;
+    line-height: $magic;
+    overflow: visible;
+    padding: 0;
+}
+code[class*="language-"],
+:not(pre) code[class*="language-"] {
+    @extend code;
+    line-height: $magic;
 }

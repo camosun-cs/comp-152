@@ -9,7 +9,7 @@
 	var breakpoints = [
 		{
 			at: "(min-width: "+(/*$content*/24 * /*factor*/0.7 * /*$magic*/1.5)+"em)",
-			reorder: "aside",
+			reorder: "aside, .pull-up",
 			except: "details aside, .dont-pull"
 		},
 		{
