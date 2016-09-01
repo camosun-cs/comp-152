@@ -1,0 +1,40 @@
+==Team members:== 
+* Max Terpstra
+* Jonas Bambi
+
+==Notation conventions== 
+* (**O**) Points prefixed with **O** are opinions.
+* (**F**) Points prefixed with **F** are facts
+
+==Question 1: Why are kittens so dang cute?== 
+
+**Website**:
+* URL: http://hellogiggles.com/10-reasons-why-kittens-are-fantastic/
+* Date accessed: May 20, 2016
+* Date written: Dec 8, 2013
+* Author: Karen Belz
+* Information from: original research
+* Author's agenda: hype cats, get traffic for advertisers
+* Possible biases: author is a cat owner
+* Extracted information:
+** (**O**) everyone likes cats
+** (**F**) owning kitten decreases stress
+** (**F**) sleep 2/3 of day
+*** cats dream!
+**** (**O**) probably about tuna
+***** or you!
+*** important for growth
+**** hormone only active when asleep
+** (**O**) meows are cute
+*** (**F**) mostly used to talk to humans
+** (**F**) respond to talking
+*** meow more if spoken to
+*** 95% of owners talk to cats
+** (**O**) eyes are beautiful
+*** (**F**) most born blue
+*** (**F**) largest of any mammal proportionally
+** (**O**) English words are cute
+*** (**F**) kindle = group of kittens
+** (**O**) amusing preferences in toys
+
+(other sources follow...)
