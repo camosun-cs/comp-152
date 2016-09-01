@@ -1,0 +1,29 @@
+=Welcome to the Sandbox= 
+
+Feel free to experiment with editing on this page! To get started, press the "Edit" button.
+
+All the usual WYSIWYG features are available, including:
+
+* lists like this one!
+** including sub-points (by pressing tab)
+## and lists
+## with numbers
+* **bold**, //italics//, and __underlining__
+* [[Sandbox|links]]
+* images [[image:https://telic.github.io/comp152/lab/project/kitten.jpg width="184" height="116"]]
+
+||~ tables ||~ with headers ||
+|| or regular || data cells ||
+|||| and even merged cells! ||
+
+* horizontal rules
+----
+* and embedded content from other places, like youtube
+[[media type="youtube" key="0Bmhjf0rKe8" width="420"]]
+
+
+
+
+All changes made to a page are remembered. Click the button with the clock icon at the top of the page to see the full history of changes.
+
+Every page also has a discussion area at the bottom. Use it to organize work on a page with other editors, ask for help, or make suggestions for improvements! For questions or suggestions that are directed at ‍specific parts‍ on the page, you can also attach "comments" in edit mode that will appear in the margins of the page itself.
