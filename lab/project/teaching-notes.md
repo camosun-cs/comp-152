@@ -15,4 +15,7 @@
    - use lab time mainly for [demonstrating the wiki](wiki-demo.html)
    - students will work asynchronously online, allow several days
 1. Assign [Term Project](term-project.pdf) (allow at least 3 weeks)
+1. Post peer-evaluation forms on D2L:
+   - [for groups to evaluate themselves](peereval-group.docx)
+   - [for students to evaluate each others presentations](peereval-presentation.docx)
 1. If time permits, share exemplary projects with the class
