@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Spreadsheets: Generating and Charting Information</title>
+    <meta name="viewport" content="width=device-width"/>
+    <!-- <base href="https://telic.github.io/comp152/lab/spreadsheets - importing data/" target="_blank"/> -->
+    <link rel="stylesheet" href="../template/bundle.css"/>
+</head>
+<body>
+
+<header>
+    <h1>Spreadsheets: Generating and Charting Information</h1>
+    <nav>
+        <ol>
+            <li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+            <li><a href="#task1"><strong>Task 1</strong>: Powers of 2, Powers of 10</a></li>
+            <li><a href="#task2"><strong>Task 2</strong>: Importing and Sorting Data</a></li>
+            <li><a href="#review">Review</a></li>
+            <li><a href="#submission">Submission</a></li>
+        </ol>
+    </nav>
+</header>
+
+<section id="outcomes">
+    <h2>Learning Outcomes and Introduction</h2>
+    <p>In this lab you will learn the basics of using a computer spreadsheet program, specifically Microsoft Excel. You will learn:</p>
+    <ul>
+        <li>how to layout and format a spreadsheet</li>
+        <li>when and how to use relative or absolute references</li>
+        <li>how to get the software to do calculations for you</li>
+        <li>how to generate charts to visualize your data</li>
+    </ul>
+</section>
+
+<section id="tasks">
+    <h2 id="task1">Task 1: Powers of 2, Powers of 10</h2>
+    <h3>Introduction</h3>
+
+    <p>Computer memory is measured in <b>bytes</b>, which is the amount of memory
+    historically used to store a single character.  Because computers use a
+    <em>binary</em> number system (with only two digits: 1 and 0),
+    larger amounts of memory are often measured internally by power-of-2 multiples
+    of bytes. For example, the <a href="http://en.wikipedia.org/wiki/NTFS">NTFS</a>
+    filesystem usually stores data in chunks of
+    4 "kilobytes" (4 &times; 2<sup>10</sup> bytes), and modern
+    <a href="http://en.wikipedia.org/wiki/Random-access_memory">RAM</a> modules
+    are usually measured in multiples of 2<sup>30</sup> ("giga") bytes.</p>
+    <p>On the other hand, people usually measure things in the real world using 
+    <a href="http://en.wikipedia.org/wiki/Metric_prefix">SI prefixes</a>,
+    which are based on powers of 10. For example, we measure distance using
+    kilometers (10<sup>3</sup> meters) and power using gigawatts (10<sup>9</sup>
+    watts).</p>
+    <p>Confusingly, the prefix system for powers of 2 used in
+    computing uses the same names as those in SI, even though they refer
+    to slightly different numbers! As you can see in the figure below, the
+    base-2 and base-10 prefixes are fairly close approximations of one another,
+    but they diverge more and more as the prefixes get larger.</p>
+    <figure>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Prefix</th>
+                    <th colspan="2">Computing</th>
+                    <th colspan="2">SI</th>
+                    <th rowspan="2">Ratio</th>
+                </tr>
+                <tr>
+                    <th>power</th>
+                    <th>amount</th>
+                    <th>power</th>
+                    <th>amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>kilo</td>
+                    <td>2<sup>10</sup></td>
+                    <td>1024</td>
+                    <td>10<sup>3</sup></td>
+                    <td>1000</td>
+                    <td>1.024</td>
+                </tr>
+                <tr>
+                    <td>mega</td>
+                    <td>2<sup>20</sup></td>
+                    <td>1048576</td>
+                    <td>10<sup>6</sup></td>
+                    <td>1000000</td>
+                    <td>1.049</td>
+                </tr>
+                <tr>
+                    <td>giga</td>
+                    <td>2<sup>30</sup></td>
+                    <td>1073741824</td>
+                    <td>10<sup>9</sup></td>
+                    <td>1000000000</td>
+                    <td>1.074</td>
+                </tr>
+            </tbody>
+        </table>
+        <figcaption>Comparison of prefixes in computing and SI</figcaption>
+    </figure>
+
+    <aside class="note">
+        Conventions exist that help to distinguish base-2 from base-10
+        prefixes (eg. KiB vs. KB, or kB vs. KB), but they are rarely used in
+        practice.
+    </aside>
+
+    <p>If that weren't confusing enough, CPU speeds and hard-drive sizes are
+    usually measured and marketed using SI prefixes, while other computer
+    components continue to be marketed using base-2 prefixes!</p>
+
+    <p>In this task, you will be using Excel to compute powers of 2 and 10 up
+    to the 40<sup>th</sup> prefix value and create a graph of their divergence.</p>
+    <ol class="instructions">
+        <li>Start a new document in Microsoft Excel and save it as Lab3_First_Lastname.xlsx. Do not forget to save early and often as you complete this assignment.</li>
+        <li>
+            Fill column <samp>A</samp> with the numbers <samp>0</samp> to <samp>40</samp>. 
+            <details class="info">
+                <summary>Using the Fill Handle</summary>
+                <figure class="right">
+                    <img src="img/fillhandle.png" alt="fill handle">
+                </figure>
+                <p>Selected cells will have a small box in the bottom-right corner of the selection area. If you click and drag this into adjacent cells, Excel will intelligently generate data based on the selected content into the new cells.</p>
+                <p>For example, if the selected cells contain the first few numbers of a simple pattern (such as three cells with 0, 1, and 2), Excel will generate more numbers that follow the sequence.</p>
+                <p>If the selected cell contains a formula, that formula will be filled into the new cells, and any relative references will be automatically updated (more on references below).</p>
+            </details>
+        </li>
+        <li>
+            Insert a formula into the first row of column <samp>B</samp> that computes 2 raised to the power of 10 times the adjacent value in column <samp>A</samp> (<samp>2<sup>10A</sup></samp>), then fill it down to the remaining 39 rows.
+            <details class="info">
+                <summary>References</summary>
+                <figure>
+                    <img src="img/references.png" alt="references">
+                </figure>
+                <p>To use the value of a cell inside another cells formula, you must use a <strong>reference</strong>. To create one, type the cell's index into the formula (ex: A1), or just click on the cell to automatically insert it.</p>
+                <p>By default, this will be a <strong>relative reference</strong>. This means that when filling this formula down into other cells using the fill handle, the references will automatically change themselves <strong>relative</strong> to each cell being filled. For example, if a formula in cell A1 is referencing cell C1, filling that formula down the column will update each cell's reference to target the cell in its own row, A2 will reference C2, and A3 will reference C3.</p>
+                <p>If this behaviour is undesired, an <strong>absolute reference</strong> is required. In the previous example, if the reference in the formula was changed to C$1, each newly filled cell (A2,A3,etc) will still reference cell C1. The <samp>$</samp> symbol before the row index tells Excel to always reference a cell in row 1. It can also be added before the column index ($C1) to only reference that column, or added to both ($C$1) to only ever reference that specific cell.</p>
+                <figure>
+                    <img src="img/relative_vs_absolute.png" alt="relative vs absolute references">
+                    <figcaption>The formulas <kbd><samp>=C2, =H$2, =$M$2</samp></kbd> were applied to each of the blue cells, then filled to the grey cells. Take note that the first two examples are still able to reference the negative columns, whereas the third always references M2.</figcaption>
+                </figure>
+            </details>
+        </li>
+        <li>
+            Insert a formula in column <samp>C</samp> that computes 10 raised to a power of 3 times the value in column A (<samp>10<sup>3A</sup></samp>).
+        </li>
+        <li>
+            Insert a formula in column <samp>D</samp> that computes the ratio of each value in column <samp>B</samp> to the value in column <samp>C</samp> (<samp>2<sup>10A</sup><strong>:</strong>10<sup>3A</sup></samp>).
+        </li>
+        <li>
+            Create a bar chart that shows the growth of the ratio (column <samp>D</samp>). Title it .
+            <details class="info">
+                <summary>Generating Charts</summary>
+                <figure>
+                    <img src="img/chart_ribbon.png" alt="chart ribbon">
+                </figure>
+                <ul>
+                    <li>Select the data you wish to generate a into a chart. Column headings can be selected too, and Excel will automatically add them as labels to the chart.</li>
+                    <li>Pick a chart type in the <kbd><samp>Charts</samp></kbd> section of the <kbd><samp>Insert</samp></kbd> ribbon. Clicking <kbd>Recommended Charts</kbd> will open a window with a list of charts Excel thinks will be useful, as well as a tab to view all possible charts.</li>
+                    <li>After the chart has been generated, you can double-click elements to modify them.</li>
+            </details>
+        </li>
+        <li>
+            Rename this sheet <kbd>Power2</kbd>
+            <details class="info">
+                <summary>Worksheets</summary>
+                <figure>
+                    <img src="img/worksheets.png" alt="worksheet tabs">
+                </figure>
+                <p>Each Excel file, known as a <strong>Workbook</strong>, can contain multiple <strong>Worksheets</strong>. A worksheet is simply an organization tool for separating your data into different sections. Worksheets are accessed using the tabs at the very bottom of the Excel window. Click the plus button to create a new sheet, and right-click the sheet's name to rename or delete it.</p>
+            </details>
+        </li>
+    </ol>
+    <h2 id="task2">Task 2: Importing and Sorting Data</h2>
+    <h3>Introduction</h3>
+    <p>It's all well and good to create synthetic data to play with, but in the
+    real world, one usually works with real numbers. In this section, you will
+    experiment with data from <a  href="http://finance.yahoo.com/">Yahoo Finance</a>,
+    which provides a wealth of financial information in convenient formats.</p>
+    <p>Your task is to generate a table that displays prices and
+    relative performance for two stocks for the past two or three months.
+    You can choose any two stocks you like; interesting pairs might be selected
+    from among Amazon, EBay, Google, Yahoo, IBM, Oracle, Ford, GM, etc.</p>
+    <ol class="instructions">
+        <li>Go <a href ="http://finance.yahoo.com/">http://finance.yahoo.com</a></li>
+        <li>Search for a stock by entering a company name in the large text field
+        at the top of the page and choosing the result you want from the
+        results drop-down.</li>
+        <li>Select <samp>Historical prices</samp> in the left-hand navigation bar.</li>
+        <li>Choose a range of dates that you want, covering 2 to 3 months, and click the <samp>Get Prices</samp> button to regenerate the data table.</li>
+        <li>Go to the bottom of the page and select <samp>Download To Spreadsheet</samp>.</li>
+        <li>Repeat steps 2-5 for a second stock, using the same range of dates.</li>
+        <li>Open both downloaded files in new Excel files.</li>
+        <li>In each downloaded stock file, delete all columns except <samp>Date</samp> and <samp>Adj. Close</samp></li>
+        <li>Create a new a worksheet in your Excel file from <a href="#task1">Task 1</a>
+            and rename it <kbd>Stock prices</kbd>.</li>
+        <li>
+            Copy and paste the two stock data sequences side-by-side into the <samp>Stock prices</samp> worksheet.
+            <aside class="note">
+                Make sure you do not paste the two sets of data into the same two columns. In order
+                to compare them, data from the same date in each data set should be on the same row.
+            </aside>
+        </li>
+        <li>Remove the extra date column (which should have duplicate information). Your worksheet should now have three columns. The left column should contain a date, and the following two columns should contain the stock prices on each day for each company.</li>
+        <li>Change the headings of the <samp>Adj. Close</samp> columns to the corresponding names of your stock companies.</li>
+        <li>
+            Change the date format to something more readable (e.g. <samp>December 31, 1999</samp>)
+            <details class="info">
+                <summary>Cell Formatting</summary>
+                <p>Right-clicking one or more cells and selecting <samp>Format Cells</samp> opens the Format Cells window. This window contains various options for changing the look of the cell and its contents. The <samp>Number</samp> tab allows you to choose what type of data the cell contains and how it should be displayed. For example, selecting <samp>Currency</samp> will preface numbers with a $ symbol, add commas and limit decimal places.
+            </details>
+        </li>
+        <li>Format the numbers in columns <samp>B</samp> and <samp>C</samp> to use comma separators.</li>
+        <li>Resize columns if needed so that all the information is visible.</li>
+        <li>Double-check that all rows in your stocks worksheet contain prices for both companies,
+        fill in any missing values with the price from the following day.</li>
+        <li>
+            Sort the data by date from oldest to newest.
+            <details class="info">
+                <summary>Sorting spreadsheets</summary>
+                <figure>
+                    <img src="img/sort_ribbon.png" alt="sort ribbon">
+                </figure>
+                <ol>
+                    <li>Select all columns in your dataset, including any headers. You can do this quickly by dragging over the column index letters.</li>
+                    <li>Click <samp>Sort</samp> in the <samp>Data</samp> ribbon.</li>
+                    <li>A window will appear with dropdowns populated from your data.</li>
+                    <li>Select the column to <samp>Sort by</samp>, then the <samp>Order</samp> (ignore <samp>Sort On</samp>).</li>
+                </ol>
+            </details>
+        </li>
+        <li>
+            For each stock, create a column with a formula that divides each day's value by the starting value (<samp>B<sub>current</sub> &divide; B<sub>first</sub></samp>). This column shows change in value for each stock.</li>
+            <details class="info">
+                <summary>Reminder: Absolute References</summary>
+                <p>Absolute references are made by adding a <kbd><samp>$</samp></kbd> symbol in front of the letter and/or number. For example, to absolutely reference the first row in column A, use $A$1 as your reference key.</p>
+            </details>    
+        </li>
+        <li>
+            Use the chart wizard to create a graph comparing the two stock's change in value over time (the two new columns you generated in the last step). Make it look approximately like the one below but with a meaningful title and proper labels.
+            <figure>
+                <img src="img/foobarchart.jpg"/>
+                <figcaption>Example chart</figcaption>
+            </figure>
+        </li>
+    </ol>
+</section>
+<section id="review">
+    <h2>Review</h2>
+    <p>Create a new worksheet called Review and write some notes describing what new things you have learned in this lab. Also mention any steps or concepts you are still finding difficult to understand and would like to receive feedback on.</p>
+</section>
+<section id="submission">
+    <h2>Deliverables</h2>
+        <ul>
+            <li>A single Excel document containing three worksheets (<kbd>Power2</kbd>, <kbd>Stock prices</kbd> and <kbd>Review</kbd>).</li>
+            <li>
+                Power2 Worksheet:
+                <ul>
+                    <li>powers of 2 from 20 to 2400, in steps of 10</li>
+                    <li>powers of 10 from 100 to 10120, in steps of 3</li>
+                    <li>the ratio of each "equivalent" power of 2 and 10</li>
+                    <li>a chart of the ratios</li>
+                </ul>
+            </li>
+            <li>
+                Stock prices Worksheet:
+                <ul>
+                    <li>a date column</li>
+                    <li>two stock value columns</li>
+                    <li>two columns computing the ratio of each row's stock value to the initial value for that stock</li>
+                    <li>a graph comparing the change in stock for both companies.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>Here are some extra steps to consider to help your <kbd>Overall Assessment</kbd></p>
+        <ul>
+            <li>Use an Excel function to calculate the formulas in task 1.</li>
+            <li>Customize the style of your graphs.</li>
+            <li>Use fill colors, borders, and font sizes to pretty up your tables of data.</li>
+        </ul>
+    <p>Save your document as Lab3_First_Lastname.xlsx and submit it to the Lab 3 dropbox on D2L.</p>   
+    <p>
+        <b>NOTE</b>: This assignment is to be done <em>individually</em>. You can
+        help one another with problems and questions, but in the end everyone must
+        do their own assignment.
+    </p>
+
+    <table class="marks">
+        <thead>
+            <tr><th>Criteria</th><th>Marks</th></tr>
+        </thead>
+        <tbody>
+            <tr><th colspan="2">Overall Assessment</th></tr>
+            <tr><td>Assignment Completion</td><td>5</td></tr>
+            <tr><td>Wow Factor</td><td>5</td></tr>
+            <tr><th colspan="2">Power2 Worksheet</th></tr>
+            <tr><td>Data</td><td>15</td></tr>
+            <tr><td>Chart</td><td>5</td></tr>
+            <tr><th colspan="2">Stock Prices Worksheet</th></tr>
+            <tr><td>Data</td><td>20</td></tr>
+            <tr><td>Chart</td><td>10</td></tr>
+            <tr><th>Total</th><td>60</td></tr>
+        </tbody>
+    </table>        
+</section>
+
+<script src="../template/bundle.js" async defer></script>
+</body>
+</html>
