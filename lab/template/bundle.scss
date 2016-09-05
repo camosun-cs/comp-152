@@ -1,5 +1,5 @@
 ---
 # concatenate and process SCSS
 ---
-{% include_relative prism.css %}
+@import "prism.css";
 {% include_relative basic.scss %}
