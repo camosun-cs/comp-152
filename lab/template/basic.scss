@@ -401,23 +401,27 @@ figure {
 //  code samples
 //~~~~~~~~~~~~~~~~
 
-code {
+code,
+code[class*="language-"],
+:not(pre) > code[class*="language-"] {
     @include monospace;
     background: $code;
     padding: 2px .4em;
     border-radius: .3rem;
     text-shadow: 0 1px white;
-    line-height: $magic !important;
+    line-height: $magic;
 }
 
-pre {
+pre,
+pre[class*="language-"] {
     @include monospace;
-    clear: both;
     @include bg-bleed(blend($code, white));
+    clear: both;
     details & {
         @include bg-bleed(blend($code, $info));
     }
-    & > code {
+    & > code,
+    & > code[class*="language-"] {
         border-radius: 0;
         background: transparent;
         overflow: auto;
@@ -427,11 +431,7 @@ pre {
         margin: (-$magic/2) (-$magic);
         padding: $magic/2 $magic;
     }
-}
-
-// prism overrides
-pre[class*="language-"] {
-    @extend pre;
+    // override prism
     line-height: $magic;
     overflow: visible;
     padding: 0;
