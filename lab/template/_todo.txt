@@ -1,3 +1,4 @@
-create full-width aside
-asides still need more alignment work - okay now?
-	maybe use an outline instead of padding to reduce its flow footprint
+create full-width aside option
+.right figures shouldn't have a top margin so they align with their instructions. (this is why one-direction margins are cool, you don't need to account for the million different ways margin collapsing screws you over :P)
+figcaptions need left-right padding to offset the figure's negative margins. Maybe left-align them as well?
+Multiple asides close together can overlap in extra-wide view due to abs positioning
