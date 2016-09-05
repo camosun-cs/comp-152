@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <title>Spreadsheets and Excel - COMP 156</title>
     <meta name="viewport" content="width=device-width"/>
-    <base href="https://telic.github.io/comp152/lab/spreadsheets-intro/"/>
+    <base href="https://telic.github.io/comp152/lab/spreadsheets-intro/" target="_blank"/>
     <link rel="stylesheet" href="../template/bundle.css"/>
 </head>
 <body>
     <header>
-        <h1>COMP 156 - <!-- TITLE -->Spreadsheets and Excel<!-- / --></h1>
+        <h1>COMP 156 - Spreadsheets and Excel</h1>
         <nav><ol>
             <!-- every lab should start with this -->
             <li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
             <!-- repeat one for each task, adjusting @href for each -->
-            <li><a href="#task1"><strong>Task <!-- TASK_NUM -->1<!-- / --></strong>: <!-- TASK_TITLE -->Manipulating Data in Excel<!-- / --></a></li>
-            <li><a href="#task2"><strong>Task <!-- TASK_NUM -->2<!-- / --></strong>: <!-- TASK_TITLE -->Creating a Table<!-- / --></a></li>
+            <li><a href="#task1"><strong>Task 1</strong>: Manipulating Data in Excel</a></li>
+            <li><a href="#task2"><strong>Task 2</strong>: Creating a Table</a></li>
             <!-- every lab should end with this -->
             <li><a href="#submission">Submission</a></li>
         </ol></nav>
@@ -26,13 +26,14 @@
         <p>In this lab assignment you will learn about:</p>
         <ul>
             <!-- list learning outcomes here -->
-            <li><!-- OUTCOME_ITEM -->Spreadsheets and their uses<!-- / --></li>
-            <li><!-- OUTCOME_ITEM -->Using Microsoft Excel<!-- / --></li>
-            <li><!-- OUTCOME_ITEM -->Saving time with Autofill<!-- / --></li>
-            <li><!-- OUTCOME_ITEM -->Absolute and relative cell references<!-- / --></li>
+            <li>Spreadsheets and their uses</li>
+            <li>Using Microsoft Excel</li>
+            <li>Saving time with Autofill</li>
+            <li>Absolute and relative cell references</li>
+            <li>Creating charts</li>
         </ul>
         <!-- optional additional contextual introduction -->
-        <h3>What is a Spreadsheet?</h3>
+        <!-- <h3>What is a Spreadsheet?</h3>
 
         <p>Spreadsheets could be called number processing software as opposed to
         Word, which is word processing software.  All spreadsheet software 
@@ -72,209 +73,159 @@
                 results in a lab; and</li>
             <li>Performing statistical analysis (such as calculating the 
                 standard deviation) of a large number of data points.</li>
-        </ul>
+        </ul> -->
+        <figure><img src="img/excel1.png" alt="excel overview" /></figure>
     </section>
-<section id="tasks">
-    <h2 id="task1">Task 1: Powers of 2, Powers of 10</h2>
-    <figure><img src="img/excel1.png" alt="excel overview" /></figure>
-    <h3>Introduction</h3>
-
-    <p>Computer memory is measured in <b>bytes</b>, which is the amount of memory
-    historically used to store a single character.  Because computers use a
-    <em>binary</em> number system (with only two digits: 1 and 0),
-    larger amounts of memory are often measured internally by power-of-2 multiples
-    of bytes. For example, the <a href="http://en.wikipedia.org/wiki/NTFS">NTFS</a>
-    filesystem usually stores data in chunks of
-    4 "kilobytes" (4 &times; 2<sup>10</sup> bytes), and modern
-    <a href="http://en.wikipedia.org/wiki/Random-access_memory">RAM</a> modules
-    are usually measured in multiples of 2<sup>30</sup> ("giga") bytes.</p>
-    <p>On the other hand, people usually measure things in the real world using 
-    <a href="http://en.wikipedia.org/wiki/Metric_prefix">SI prefixes</a>,
-    which are based on powers of 10. For example, we measure distance using
-    kilometers (10<sup>3</sup> meters) and power using gigawatts (10<sup>9</sup>
-    watts).</p>
-    <p>Confusingly, the prefix system for powers of 2 used in
-    computing uses the same names as those in SI, even though they refer
-    to slightly different numbers! As you can see in the figure below, the
-    base-2 and base-10 prefixes are fairly close approximations of one another,
-    but they diverge more and more as the prefixes get larger.</p>
-    <figure>
-        <table>
-            <thead>
-                <tr>
-                    <th rowspan="2">Prefix</th>
-                    <th colspan="2">Computing</th>
-                    <th colspan="2">SI</th>
-                    <th rowspan="2">Ratio</th>
-                </tr>
-                <tr>
-                    <th>power</th>
-                    <th>amount</th>
-                    <th>power</th>
-                    <th>amount</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>kilo</td>
-                    <td>2<sup>10</sup></td>
-                    <td>1024</td>
-                    <td>10<sup>3</sup></td>
-                    <td>1000</td>
-                    <td>1.024</td>
-                </tr>
-                <tr>
-                    <td>mega</td>
-                    <td>2<sup>20</sup></td>
-                    <td>1048576</td>
-                    <td>10<sup>6</sup></td>
-                    <td>1000000</td>
-                    <td>1.049</td>
-                </tr>
-                <tr>
-                    <td>giga</td>
-                    <td>2<sup>30</sup></td>
-                    <td>1073741824</td>
-                    <td>10<sup>9</sup></td>
-                    <td>1000000000</td>
-                    <td>1.074</td>
-                </tr>
-            </tbody>
-        </table>
-        <figcaption>Comparison of prefixes in computing and SI</figcaption>
-    </figure>
-
-    <aside class="note">
-        Conventions exist that help to distinguish base-2 from base-10
-        prefixes (eg. KiB vs. KB, or kB vs. KB), but they are rarely used in
-        practice.
-    </aside>
-
-    <p>If that weren't confusing enough, CPU speeds and hard-drive sizes are
-    usually measured and marketed using SI prefixes, while other computer
-    components continue to be marketed using base-2 prefixes!</p>
-
-    <p>In this task, you will be using Excel to compute powers of 2 and 10 up
-    to the 40<sup>th</sup> prefix value and create a graph of their divergence.</p>
-    <ol class="instructions">
-        <aside>Do not forget to save early and often as you complete this assignment!</aside>
-        <li>Start a new Workbook in Microsoft Excel and save it as <samp>Lab3_First_Lastname.xlsx</samp>. Name the first worksheet <samp>Power2</samp>
-            <details>
-                <summary>Worksheets</summary>
-                <figure>
-                    <img src="img/worksheets.png" alt="worksheet tabs">
-                </figure>
-                <p>A Worksheet is a single table within a Workbook. Using several Worksheets makes it easier to organize different types of data. A Workbook is saved as a single .xlsx file and all Worksheets within the Workbook are opened when you open the file.</p>
-                <p>Worksheets are separated by tabs visible at the bottom of the screen. A new Workbook may already have three sheets called Sheet1, Sheet2, and Sheet3, but you can rename them by double clicking on the tab. You can add more sheets by clicking the plus to the right of the existing tabs, or remove them by right-clicking a tab and selecting Delete.</p>
-            </details>
-        </li>
-        <li>
-            Enter a title into cell <code>A1</code>, then your name and lab section into cells <code>F1</code> and <code>F2</code>.
-            <details>
-                <summary>Cell Addresses</summary>
-                <p>Columns are labeled with letters; Rows are labeled with numbers; Cells are identified by their column and row, for example: <code class="language-excel">A1</code>, <code class="language-excel">B265</code>, <code class="language-excel">G4</code>, <code class="language-excel">AB12</code>, all the way to <code class="language-excel">XFD1048576</code>. These notations are called the cell’s <strong>address</strong>. This address can be extended further by including the name of the worksheet the cell resides in. For example: <code class="language-excel">worksheet_name!A1</code>.</p>
-            </details>
-            
-        </li>
-        <li>
-            <!-- <aside>When using a computer, if at any time you feel like you're doing something repetitive, that's a good sign that there is a better and faster way.</aside> -->
-            Fill column <samp>A</samp> starting at <code>A3</code> with the numbers <samp>0</samp> to <samp>40</samp>. 
-            <details class="info">
-                <summary>Using Autofill</summary>
-                <figure class="right">
-                    <img src="img/fillhandle.png" alt="fill handle">
-                </figure>
-                <p>Autofill is an action performed in Excel to intelligently fill cells with new data based on the data in other selected cells.  For example, if the selected cells contain the first few numbers of a simple pattern (such as three cells with 0, 1, and 2), Excel will generate more numbers that follow the sequence.</p>
-                <p>To use autofill, select the cell or cells from which to you want to generate generate the patter. A small box will appear in the bottom-right corner of the selection. Click and drag from this box into one or more adjacent cells to fill into them.</p>
-                <p>If the selected cell contains a formula, that formula will be filled into the new cells, and any relative references will be automatically updated (more on references below).</p>
-            </details>
-        </li>
-        <li>
-            Insert a formula into <code>B3</code> that computes 2 raised to the power of 10 times the adjacent value in column <samp>A</samp> (<samp>2<sup>10A</sup></samp>), then fill it down to the remaining 39 rows.
-            <details class="info">
-                <summary>References</summary>
-                <figure>
-                    <img src="img/references.png" alt="references">
-                </figure>
-                <p>To use the value of a cell inside another cells formula, you must use a <strong>reference</strong>. To create one, type the cell's index into the formula (ex: A1), or just click on the cell to automatically insert it.</p>
-                <p>By default, this will be a <strong>relative reference</strong>. This means that when autofilling this formula down into other cells using the fill handle, the references will automatically change themselves <strong>relative</strong> to each cell being filled. For example, if a formula in cell A1 is referencing cell C1, filling that formula down the column will update each cell's reference to target the cell in its own row, A2 will reference C2, and A3 will reference C3.</p>
-                
-            </details>
-        </li>
-        <li>
-            Insert a formula in column <samp>C</samp> that computes 10 raised to a power of 3 times the value in column A (<samp>10<sup>3A</sup></samp>).
-        </li>
-        <li>
-            Insert a formula in column <samp>D</samp> that computes the ratio of each value in column <samp>B</samp> to the value in column <samp>C</samp> (<samp>2<sup>10A</sup><strong>:</strong>10<sup>3A</sup></samp>).
-        </li>
-        <li>
-            Create a bar chart that shows the growth of the ratio (column <samp>D</samp>). Title it.
-            <details class="info">
-                <summary>Generating Charts</summary>
-                <figure>
-                    <img src="img/chart_ribbon.png" alt="chart ribbon">
-                </figure>
-                <ul>
-                    <li>Select the data you wish to generate a into a chart. Column headings can be selected too, and Excel will automatically add them as labels to the chart.</li>
-                    <li>Pick a chart type in the <kbd><samp>Charts</samp></kbd> section of the <kbd><samp>Insert</samp></kbd> ribbon. Clicking <kbd>Recommended Charts</kbd> will open a window with a list of charts Excel thinks will be useful, as well as a tab to view all possible charts.</li>
-                    <li>After the chart has been generated, you can double-click elements to modify them.</li>
-            </details>
-        </li>
-        <li>
-            Rename this sheet <kbd>Power2</kbd>
-            <details class="info">
-                <summary>Worksheets</summary>
-                
-                <p>Each Excel file, known as a <strong>Workbook</strong>, can contain multiple <strong>Worksheets</strong>. A worksheet is simply an organization tool for separating your data into different sections. Worksheets are accessed using the tabs at the very bottom of the Excel window. Click the plus button to create a new sheet, and right-click the sheet's name to rename or delete it.</p>
-            </details>
-        </li>
-    </ol>
-    </section>
-
-    <section id="task2">
-        <h2>Task 2: Creating a Table</h2>
-        <figure><img src="img/tank-template.png" alt="tank table example"></figure>
+    <section id="task1">
+        <h2>Task 1: Formulas and Functions</h2>
+        <figure>
+            <img src="img/budget_start.png" alt="budget template">
+        </figure>
+        <p>Click <a href="resources/budget.xlsx">here</a> to download <samp>budget.xlsx</samp>. Move it to your Personal directory, and rename it <samp>Budget-FirstnameLastname</samp>.</p>
+        <p>Double-click the file to open it in Microsoft Excel.</p>
+        <p>This <strong>Workbook</strong> contains the start of a budgeting template. Your task is to complete it and fill it with sample data.</p>
+        <p>The first step is to fill in the functions and formulas for the first month. This will save time when the later months are added with autofill.</p>
         <ol class="instructions">
+            <li>Click <a href="resources/budget.xlsx">here</a> to download <samp>budtget.xlsx</samp>, then open it in Microsoft Excel.</li>
             <li>
-                Create a new <strong>worksheet</strong> titled <samp>Tank Volume</samp> and replicate the above table.
+                <p>Fill in the <samp>Food,</samp> <samp>Tuition</samp>, <samp>Luxary</samp>, <samp>Rent</samp>, and <samp>Income</samp> fields with reasonable-looking values. They do not need to be real.</p>
+                <aside>After typing in the desired value into a cell, pressing the <samp>Enter</samp> key will confirm the value, then automatically move the selection to the next cell below, ready for more input. This lets you enter data quickly without needing the mouse.</aside>
+            </li>
+            <li>In the <samp>Total Expenses</samp> field, use the <code>SUM()</code> function to add up the values in the four cells above: B2 to B5.</li>
+            <details>
+                <summary>Using the Function Builder</summary>
+                <p>The <code>SUM</code> function returns the sum total of one or more cell values. One way to enter this function is using Excel's <samp>Insert Function</samp> utility. This utility can be useful when trying to find and/or use a function you are unfamiliar with.</p>
+                <p>First make sure the cell to receive the function is selected. B6 in this case.</p>
+                <figure>
+                    <img src="img/func_wizard_1.png" alt="f(x) button">
+                    <figcaption>Click the <samp>Insert Function</samp> (<i>fx</i>) button to the left of the formula bar.</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/func_wizard_2.png" alt="insert function">
+                    <figcaption>Use either the search field or the category drop-down to find <code>SUM</code> in the list of functions, then click <samp>OK</samp></figcaption>
+                </figure>
+                <figure>
+                    <img src="img/func_wizard_3.png" alt="function arguments">
+                    <figcaption>The <samp>Number1,2,etc</samp> fields accept static numbers or a reference to one or more cells. In this scenario, Excel may have already filled in the appropriate references for you. Click the button next to the <samp>Number1</samp> field to verify Excel's guess anyway.</figcaption>
+                </figure>
+                <figure>
+                    <img src="img/func_wizard_4.png" alt="function reference selection">
+                    <figcaption>The window will collapse to give you more view of your spreadsheet. Clicking a cell will enter its address into the field. Click and drag over multiple cells to select a range of cells. Hit <samp>enter</samp> when finished, then <samp>OK</samp> to complete the function.</figcaption>
+                </figure>
+            </details>
+            <li>
+                <p>Enter a formula into the <samp>Net Income</samp> field to display the difference between <samp>Income</samp> and <samp>Total Expenses</samp>.</p>
                 <details>
-                    <summary>Superscripts</summary>
-                    <figure><img src="img/format-cells.png"></figure>
-                    <ul>
-                        <li>Type the full desired text including the characters to be superscripted. ex: <code>m3/sec</code></li>
-                        <li>Select the characters you want to modify, either directly in the cell or in the formula bar.</li>
-                        <li>The superscript option is in the <samp>Format Cells</samp> window, accesible in the cell's Right-Click context menu, or in the <samp>Font</samp> section's expanded options in the Home ribbon.</li>
-                    </ul>
+                    <summary>Creating formulas</summary>
+                    <p>Along with text, cells can execute and display mathematical formulas. All formulas in Excel must start with an <code>=</code> sign, and, like text, can be entered directly into the cell or into the <strong>formula bar</strong> below the ribbon.</p>
+                    <aside>
+                        <h4>Excel operators</h4>
+                        <dl class="inline">
+                            <dt><code>=</code></dt><dd>equals.</dd>
+                            <dt><code>+</code> (shift + <code>=</code>)</dt><dd>addition.</dd>
+                            <dt><code>-</code></dt><dd>subtraction.</dd>
+                            <dt><code>*</code> (shift + <code>8</code>)</dt><dd>multiplication.</dd>
+                            <dt><code>/</code></dt><dd>division.</dd>
+                            <p>Formulas follow the <a href="http://en.wikipedia.org/wiki/Order_of_operations">BEDMAS</a> order of operations</p>
+                        </dl>
+                    </aside>
+                    <figure class="right">
+                        <img src="img/references2.png" alt="cell reference examples">
+                    </figure>
+                    <p>A cell address can be used in any part of a formula to use that cell's displayed value instead, even if that cell is in itself another formula. To insert an address, select the desired cell or cell range with the mouse while the formula is still being edited. The address will be added at the text pointer's position. The address can also be typed in manually.</p>
+                    <aside><p>A cell address consists of a Column letter(s) and a Row number. For example: <code>A1</code>, <code>F28</code>, <code>GB102</code>.</p><p>For a group of cells, use the address of the two cells in opposing corners of the box selection, with a <code>:</code> in between. Example: <code>A1:F2</code>, <code>X50:B2</code></aside>
+                    <p>The act of fetching the values of other cells is known as a <strong>reference</strong>. References will automatically update their values if the cell they're referring to changes, which will then update the result of your formula. You can see this in action by changing one of the individual expense fields.</p>
                 </details>
             </li>
-            <li>Using autofill, enter the numbers 0 to 30 under the <samp>Time</samp> column, starting in cell A10.</li>
-            <li>We know that, for time 0, the volume is still equal to the initial volume found in cell B4. The formula to calculate the volume at any point in time is: <pre><code>Initial Volume + Elapsed Time * Fill Rate</code></pre> Enter this formula into cell B10, the Volume column, substituting the cell references <code>B4</code> and <code>B5</code> in place of <samp>Initial Volume</samp> and <samp>Fill Rate</samp>, and the adjacent cell <code>A10</code> for the <samp>Elapsed Time</samp>. At Time = 0, this equation should return 20, the value of Initial Volume.</li>
-            <li>Autofill the formula in B10 down for all the time intervals. Unless you've been keeping one step ahead, you'll very likely see that the results are not as expected, with most of the cells failing to evaluate. Checking the formula on one of the broken cells should show an idea of what went wrong. Like the previous task, the interval part of the formula is updating correctly for each cell, but the other two references are not. In fact, they shouldn't be updating at all. To make a reference that doesn't change during autofill, an <strong>absolute reference</strong> must be used.
-            <details>
-                <summary>Absolute References</summary>
-                <p>As mentioned earlier, using a plain cell address in a formula creates a relative reference, which is dynamically updated when using autofill. If, instead, the reference needs to always target the same cell, as is the case when referencing a single constant number, make it an absolute reference by prefixing the row <strong>and/or</strong> column character in the address with a <code>$</code>, for example, <code>$B$5</code>. If either the row or column address is left un-prefixed, the reference will still be relative in that direction only.</p>
-                <figure>
-                    <img src="img/relative_vs_absolute.png" alt="relative vs absolute references">
-                    <figcaption>The formulas <kbd><samp>=C2, =H$2, =$M$2</samp></kbd> were applied to each of the blue cells, then filled to the grey cells. Take note that the first two examples are still able to reference the negative columns, whereas the third always references M2.</figcaption>
-                </figure>
-            </details>
+            <li>
+                <p>Make the lone <samp>Budget</samp> field at the bottom a tally of the entire <samp>Net Income</samp> row.</p>
+                <aside>Try to do this without using the Function Builder.</aside>
+                <details>
+                    <summary>Hints</summary>
+                    <figure><img src="img/reference_row.png" alt="reference row"></figure>
+                    <p>The address to one or more rows looks like <code>startRow#:endRow#</code>. If only a single row is needed, <code>startRow#</code> and <code>endRow#</code> are the same. Ex: 2:2, 4:8. When building a formula, you can click the row's heading number with the mouse to quickly select and reference it. The same applies for selecting columns.</p>
+                    <p>There's nothing special required to use a functions. Simply typing its name followed by parentheses <code>()</code> into the formula bar (that begins with <code>=</code>) is enough to call it. The cell references you want to feed it go between the parentheses. Look at the code you created with the function builder in cell B6's formula bar for an example.</p>
+                </details>
+
             </li>
-            <li>Correct the formula in cell B10 to use absolute references for B4 and B5, then autofill it down again. It's OK to fill over previously filled cells; they will just be replaced with the new formula.</li>
-            <li>Using the principles above, calculate the height of the water vs time and auto fill the appropriate column.</li>
+            <li>
+                <figure><img src="img/ribbon_format_number.png"></figure>
+                <p>Apply the <samp>Accounting</samp> number format to all of the monetary value cells, including the currently empty Balance. Be sure to apply the format only to the cells that need it.</p>
+                <details>
+                    <summary>More on cell formatting</summary>
+                    <figure class="right"><img src="img/context_format_cell.png"></figure>
+                    <p>A chosen cell format is applied to the currently selected cell or cells. To select a group of cells, click and drag the mouse over them.</p>
+                    <p>Along with its place in the home ribbon, shown in the figure above, the Accounting format option can be found in the quick settings box that appears above a cell selection's <strong>context menu</strong>. A context menu is a list of context-sensitive actions that appears when the right mouse button is clicked on something.</p>
+                    <p>For a complete list of cell formatting options, including the Accounting option, select <samp>Format Cells</samp> in the context menu. We will visit these options in further detail later, but feel free to play around with them.</p>
+                </details>
+            </li>
+            <li>
+                <figure class="right"><img src="img/auto_column_width.png"></figure>
+                <p>At this point, you will probably notice that some of your cells are displaying <code>#######</code>. This happens when the content is too wide to fit in the cell. To resize columns or rows, move the mouse cursor between two headers until the cursor changes to the icon shown right, then either click-drag to manually resize, or double-click to automatically resize to fit (highly recommended). Resize multiple rows/columns by selecting them (click/click-drag on their heading letter/digit), then resizing one of them as normal.</p>
+            </li>
         </ol>
     </section>
-
+    <section id="task2">
+        <h2>All About Autofill</h2>
+        <figure><img src="img/autofill_date.png"></figure>
+        <p>Now that the required formulas and styles are working for one month, it's time to fill out the remaining months. This budget table will only cover September to December, but these principles will work on any table of any length.</p>
+        <ol class="instructions">
+            <li>
+                <p>Begin by using <strong>autofill</strong> to fill out the remaining 3 months. Keep an eye on the helpful tooltip that displays the last result of the fill (Dec here).</p>
+                <details>
+                    <summary>Autofill basics</summary>
+                    <figure class="right"><img src="img/autofill.png"></figure>
+                    <p>Selected cells will have a small box in the bottom-right corner of the selection area. If you click and drag this into adjacent cells, Excel will intelligently generate data based on the selected content into the new cells.</p>
+                    <p>For example, if the selected cells contain the first few numbers of a simple pattern (such as three cells with 0, 1, and 2), Excel will generate more numbers that follow the sequence.</p>
+                    <p>If the selected cell contains a formula, that formula will be filled into the new cells, and any relative references will be automatically updated to point to the next cell in the direction being filled in.</p>
+                    <p>Any formatting or styles applied to the source cell will also fill over by default.</p>
+                </details>
+            </li>
+            <li>
+                <p>The next three rows will likely be changing each month, so they don't need their results copied over, only the way they're formatted. Fill them to the right as well, and set them to <samp>Fill Formatting Only</samp>.</p>
+                <aside>You can autofill these three rows at the same time. Just box-select the desired source cells first. Remember: the source cell must be the data, not its header.</aside>
+                <details>
+                    <summary>Autofill Options</summary>
+                    <figure class="right"><img src="img/autofill_options.png"></figure>
+                    <p>After every fill operation, a small button will pop up in the bottom right corner of the selection. Clicking this reveals options to apply to the previous fill.</p>
+                </details>
+            </li>
+            <li>
+                <p>The remaining four rows (<samp>Rent, Total Expenses, Income, Net Income</samp>) don't need to follow a pattern like the month headers, nor remain empty like the expenses. Rent and Income are (hopefully) consistent each month, and the formulas need to apply to each column. Use the <samp>Copy Cells</samp> autofill on these remaining rows to satisfy these requirements.</p>
+                <aside>The default action, <samp>Fill Series</samp>, would still work as expected with formulas and functions. It copies them over to the new cells and updates the references accordingly. Using <samp>Copy Cells</samp> just lets us to fill all these rows at once. Don't worry about including the blank row in the initial selection; a copy of nothing is still nothing.</aside>
+            </li>
+            <li>
+                <p>All that remains is to add the rest of your expenses to the budget table. If everything has been done correctly, the <samp>Balance</samp> field should slowly deplete as you input more expenses. Did you stay within your budget?</p>
+                <aside>As mentioned earlier, the <samp>Enter</samp> key advances to the cell below the current cell. Similarly, the <samp>Tab</samp> key advances to the next cell to the right. A trick involving both of these shortcuts is that, after using <samp>Tab</samp> to fill in multiple cells in a line, pressing <samp>Enter</samp> will advance to the beginning of the next line, right below the first cell you started on. See if you can quickly fill in all the empty expense fields, starting with C2, without touching the mouse.</aside>
+            </li>
+            <figure><img src="img/budget_finish.png" alt="the finished budget table"></figure>
+        </ol>
+    </section>
+    
+    
     <!-- additional task sections here as required -->
 
     <!-- this section should always be last -->
     <section id="submission">
         <h2>Submission</h2>
         <!-- optional paragraph about adding a "what you've learned" blurb -->
-        <p>
-             ZIP your lab folder, rename it as <samp>ExampleLab-FirstnameLastname.zip</samp>,
-             <!-- Update to match current lab name   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-             and submit it to the dropbox on D2L.
-        </p>
+        <details>
+                <summary>Worksheets and Workbooks</summary>
+                <figure>
+                    <img src="img/worksheets.png" alt="worksheet tabs">
+                </figure>
+                <p>A Worksheet is a single table within a Workbook. Using several Worksheets makes it easier to organize different types of data. A Workbook is saved as a single .xlsx file and all Worksheets within the Workbook are opened when you open the file.</p>
+                <p>Worksheets are separated by tabs visible at the bottom of the screen. A new Workbook may already have three sheets called Sheet1, Sheet2, and Sheet3, but you can rename them by double clicking on the tab. You can add more sheets by clicking the plus to the right of the existing tabs, or remove them by right-clicking a tab and selecting Delete.</p>
+            </details>
+        <ol>
+            <li>Name the <strong>Worksheet</strong> <samp>Budget</samp>.</li>
+
+            <li>
+                 Make sure your file is named <samp>Budget-FirstnameLastname.xlsx</samp>,
+                 <!-- Update to match current lab name   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+                 and submit it to the dropbox on D2L.
+            </li>
+        </ol>
         <p>
              <b>NOTE</b>: This assignment is to be done <em>individually</em>.
              You can help one another with problems and questions, but in the end
@@ -290,17 +241,25 @@
                 -->
                 <!-- itemize marking deliverables -->
                 <tr>
-                    <td>Deliverable</td>
-                    <td>10</td>
+                    <td>Data Entry and Formatting</td>
+                    <td>3</td>
                 </tr>
                 <tr>
-                    <td>Deliverable</td>
-                    <td>10</td>
+                    <td>Functions and Formulas</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Efficient and Correct Autofilling.</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>Named Worksheet and Workbook</td>
+                    <td>1</td>
                 </tr>
                 <!-- Total marks at end -->
                 <tr>
                     <th>Total</th>
-                    <td>20</td> <!-- UPDATE THIS! -->
+                    <td>10</td> <!-- UPDATE THIS! -->
                 </tr>
             </tbody>
         </table>
