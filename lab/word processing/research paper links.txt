@@ -1,0 +1,6 @@
+http://www.icsd.aegean.gr/publication_files/conference/771678170.pdf
+https://people.csail.mit.edu/rivest/Rivest-ElectronicVoting.pdf
+https://www.cs.rice.edu/~dwallach/pub/hackavote2004.pdf
+https://www.usenix.org/system/files/conference/foci13/foci13-aryan.pdf
+https://www.hpe.com/h20195/V2/GetPDF.aspx/4AA5-4759ENW.pdf
+http://arxiv.org/pdf/1510.07861v1.pdf
