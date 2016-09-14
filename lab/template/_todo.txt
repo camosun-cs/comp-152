@@ -1,3 +1,4 @@
+marking tables need adjusting to cater to new marking format
 create full-width aside option
 .right figures shouldn't have a top margin so they align with their instructions. (this is why one-direction margins are cool, you don't need to account for the million different ways margin collapsing screws you over :P)
 figcaptions need left-right padding to offset the figure's negative margins. Maybe left-align them as well?
