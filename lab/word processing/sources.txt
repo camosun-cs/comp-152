@@ -1,0 +1,23 @@
+1. B. Harris and D. Allen, Black Box Voting: Vote Tampering in the 21st Century, Plan Nine Publishing, 2003.
+
+2. T. Kohno et al., Analysis of an Electronic Voting System, tech. report TR-2003-19, Johns Hopkins Information Security Inst., 2003.
+
+3. R. Anderson, “How to Cheat at the Lottery (or, Massively Parallel Requirements Engineering),” Ann. Computer Security App. Conf. Proc., IEEE CS Press, 1999, pp. 1–2.
+
+4. A.D. Gordon and A. Jeffrey, “Authenticity by Typing for Security Protocols,” 14th IEEE Computer Security Foundations Workshop, IEEE CS Press, 2001, pp. 145–159.
+
+5. M. Dresser, “Legislators Are Warned by Voting System Critic: Expert Who Found Flaws Fears They Weren’t Fixed,” The Baltimore Sun, 14 Nov. 2003.
+
+6. D. Dean et al., “Java Security: Web Browsers and Beyond,” Internet Besieged: Countering Cyberspace Scofflaws, D.E. Denning and P.J. Denning, eds., ACM Press, 1997, pp. 241–269.
+
+7. California Secretary of State, “Secretary of State Kevin Shelley Launches Independent Audit of California Voting Systems,” news release KS03:100, 12 Nov. 2003, www.ss.ca.gov/executive/press_releases/2003/03_100.pdf.
+
+8. G.C. Necula and P. Lee, “Safe Kernel Extensions without Run-Time Checking,” 2nd Symp. Operating Systems Design and Implementation (OSDI), Usenix Assoc., 1996, pp. 229–243.
+
+9. D. Engler et al., “Bugs as Deviant Behavior: A General Approach to Inferring Errors in Systems Code,” Proc. 18th ACM Symp. Operating System Principles, ACM Press, 2001, pp. 57–72.
+
+10. L. McVoy, “BK2CVS Problem,” Linux Kernel Mailing List, 5 Nov. 2003, www.ussg.iu.edu/hypermail/linux/kernel/0311.0/0621.html.
+
+11. R. Mercuri, Electronic Vote Tabulation: Checks and Balances, PhD thesis, Dept. of Computer and Information Systems, Univ. of Pennsylvania, Philadelphia, Oct. 2000.
+
+12. D.L. Dill et al., “Frequently Asked Questions about DRE Voting Systems,” Feb. 2003, www.verifiedvoting.org/drefaq.asp.
