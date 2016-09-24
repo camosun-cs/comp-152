@@ -1,0 +1,4 @@
+- use definitions and prose from partially completed 156 spreadsheet-intro in dropbox
+- create xlsx with exercises to solve using instructions in Wk04.2_Excel.html example document
+- structure such that each definition directly refers to a step in the worksheet
+- simple mark /3 based on completion
