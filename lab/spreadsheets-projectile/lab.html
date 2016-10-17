@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Spreadsheets: Generating and Charting Information</title>
+	<meta name="viewport" content="width=device-width"/>
+	<!-- <base href="https://telic.github.io/comp152/lab/spreadsheets-import/" target="_blank"/> -->
+	<link rel="stylesheet" href="../template/bundle.css"/>
+	<style type="text/css">
+		.image-inline {
+			float: left;
+			width: calc(50% - .76em);
+			margin: 0;
+		}
+		.image-inline.first{
+			margin-right: 1.5em;
+		}
+	</style>
+</head>
+<body>
+
+<header>
+	<h1>Spreadsheets: Generating and Charting Information</h1>
+	<nav>
+		<ol>
+			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+			<li><a href="#task1"><strong>Task 1</strong>: Preparing Constants</a></li>
+			<li><a href="#task2"><strong>Task 2</strong>: Calculating and Generating Data</a></li>
+			<li><a href="#review">Review</a></li>
+			<li><a href="#submission">Submission</a></li>
+		</ol>
+	</nav>
+</header>
+
+<section id="outcomes">
+	<h2>Learning Outcomes and Introduction</h2>
+	<p>In this lab you will be using Excel to calculate and graph the trajectory of a projectile in a magical Earth-sized world with no friction. You will learn:</p>
+	<ul>
+		<li>how to layout and format a spreadsheet</li>
+		<li>when and how to use relative or absolute references</li>
+		<li>how to get the software to do calculations for you</li>
+		<li>how to generate charts to visualize your data</li>
+	</ul>
+</section>
+
+<section id="task1">
+		
+	<h2>Task 1: Preparing Constants</h2>
+	<p>There are several unchanging numbers (constants) that will be needed to calculate the trajectory later on. Instead of entering them manually whenever they're needed, they will be stored in their own section of the spreadsheet, and then referenced. After the calculations and graphs are done, these values can be modified and the results will automatically update to reflect them.</p>
+	<ol class="instructions">
+		<figure><img src="img/projectile_diagram.png" alt="projectile diagram"></figure>
+		<li>
+			<p>Create a new spreadsheet and record the constants shown in the above diagram. Give it a <samp>Constants</samp> title. Put the labels, values, and units each into their own column. <strong>Insert</strong> the theta: &Theta; and degree: &deg; characters where needed.</p>
+			<details>
+				<summary>Inserting Special Characters</summary>
+				<figure><img src="img/symbols_ribbon.png"></figure>
+				<p>A collection of available characters is available in the <samp>Symbols</samp> window found in the <samp>Insert</samp> ribbon. Use the <samp>Subset</samp> drop-down to help find the symbols you need. The degree symbol is found in <samp>Latin-1 Supplement</samp> and theta is found in <samp>Greek and Coptic</samp>.</p>
+				<p>
+					<figure class="image-inline first">
+						<img src="img/symbol_degree.png" alt="degree symbol location">
+						<figcaption>Where to find degrees</figcaption>
+					</figure>
+					<figure class="image-inline">
+						<img src="img/symbol_theta.png" alt="theta symbol location">
+						<figcaption>Where to find theta</figcaption>
+					</figure>
+				</p>
+			</details>
+		</li>
+		<li>
+			<p>Format the superscript in m/s<sup>2</sup> and all the constants to 3 significant figures (as in the diagram). Excel unfortunately does not have a way to set the number of significant figures automatically without using several math functions, so add the appropriate decimal places to each using cell formatting.</p>
+			<details>
+				<summary>Reminder: Cell formatting</summary>
+				<figure class="right"><img src="img/cell_formatting_context.png" alt="cell context menu"></figure>
+				<p>Along with their place in the home ribbon, cell formatting options can be found in the quick settings box that appears above a cell selection's <strong>context menu</strong>. A context menu is a list of context-sensitive actions that appears when the right mouse button is clicked on something.</p>
+				<p>For a complete list of cell formatting options, select <samp>Format Cells</samp> in the context menu.</p>
+			</details>
+		</li>
+		<li>
+			<p>Use the alignment options in the home ribbon to make the constants section well-spaced and easy to read. Don't bother resizing the columns yet, you will probably want to do that later, after the data has been recorded.</p>
+		</li>
+	</ol>
+</section>
+<section id="task2">
+	<h2>Task 2: Calculating and Generating Data</h2>
+	<p>The end goal is to chart the path of motion of the projectile over a time interval, so the next step is to create formulas that calculate the projectile's x and y position at a given time. This requires knowing the speed in each direction, and since we only know the angled launch velocity, some basic trigonometry will be needed. Excel includes all the trig functions you will need: <code>SIN()</code>, <code>COS()</code>, and <code>PI()</code> (the sin and cos functions use radians).</p>
+	<ol class="instructions">
+		<li>Below the constants, create headers for three columns to contain <strong>Time(s)</strong>, <strong>x(t)</strong>, and <strong>x(y)</strong></li>
+		<li>
+			<p>Use autofill to extend time from 0 to 1.4 at 0.1 second increments. Format this column to use 3 significant figures.</p>
+			<details class="info">
+				<summary>Reminder: Using Auto Fill</summary>
+				<figure class="right">
+					<img src="img/fillhandle.png" alt="fill handle">
+				</figure>
+				<p>Selected cells will have a small box in the bottom-right corner of the selection area. If you click and drag this into adjacent cells, Excel will intelligently generate data based on the selected content into the new cells.</p>
+				<p>For example, if the selected cells contain the first few numbers of a simple pattern (such as three cells with 0, 1, and 2), Excel will generate more numbers that follow the sequence.</p>
+			</details>
+		</li>
+		<li>
+			<p>Create formulas in the first row of the x(t) and y(t) to calculate the position at the given time. Be sure to use absolute references to your constants where needed. The basic distance traveled formula is: <code><i>d</i> = <i>d</i><sub>0</sub> + <i>v</i><sub>0</sub><i>t</i> + &frac12;<i>at</i><sup>2</sup></code>. Hint: Gravity is negative acceleration in the y direction.</p>
+			<aside><strong>Remember,</strong> the velocity given in the diagram has a direction, and its angle is in degrees. You will need to use COS and SIN to get the velocity in the x and y directions respectively. These functions use radians, so the angle must be converted by multiplying it by pi/180. Use <code>PI()</code> wherever you need pi.</aside>
+			<details>
+				<summary>Reminder: Absolute References</summary>
+				<p>A reference is created by typing the cell's address into the formula bar. By default, this is a <strong>relative</strong> reference, which will be different for each cell in an autofill. This is usually the desired result. In this assignment, for example, each row must reference the time interval directly left of it.</p>
+				<p>However, this is not wanted when referencing constant values. We want to always point to the same cell no matter what autofill is doing. To create an <strong>absolute</strong> reference, place a <samp>$</samp> symbol in front of the direction you want to lock in the cell reference.</p>
+				<p>For example, if you are autofilling into new rows, you only need to stop the reference from updating the row part of the cell address, for example: <code>B$2</code> will not change to <code>B$3</code> in the next autofilled row. If this same reference was autofilled into new columns, the address would change to C$2 in the next cell.</p>
+				<figure><img src="img/relative_vs_absolute.png"></figure>
+			</details>
+			<details>
+				<summary>Reminder: Using Functions</summary>
+				<p>There are two main ways to use functions in Excel. If you are already familiar with the function you need, just directly type it into the formula. If, however, you need to look up a function, use the function wizard.</p>
+				<section>
+					
+				<figure>
+					<img src="img/func_wizard_1.png" alt="f(x) button">
+					<figcaption>Click the <samp>Insert Function</samp> (<i>fx</i>) button to the left of the formula bar.</figcaption>
+				</figure>
+				<figure>
+					<img src="img/func_wizard_2.png" alt="insert function">
+					<figcaption>Use either the search field or the category drop-down to find the desired function in the list, then click <samp>OK.</samp></figcaption>
+				</figure>
+				<figure>
+					<img src="img/func_wizard_3.png" alt="function arguments">
+					<figcaption>The <samp>Number</samp> field accepts static numbers and/or references to one or more cells. The result of this field will be what is passed to the function. While typing in the field, click a cell to automatically insert its address. You will need to add <samp>$</samp> symbols yourself if you need absolute references. Press OK to finish and insert the function into the formula bar.</figcaption>
+				</figure>
+				</section>
+			</details>
+		</li>
+		<li>
+			<p>Autofill the x(t) and y(t) columns to match the time column. You can do both of them with a single selection and fill operation. If you get <code>#VALUE!</code> errors, double check that all references to your constants are absolute in the vertical direction. If the value does not increase with time, make sure your reference to the time column is relative.</p>
+			<aside>Formulas and functions will be copied when autofilling. If the initially selected cell contains references, they will re-target <strong>relative</strong> to each newly filled cell (unless they are marked as <strong>absolute</strong>).</aside>
+		</li>
+
+	</ol>
+</section>
+<section id="task3">
+	<img src="img/chart_ribbon.png" alt="chart ribbon">
+	<h2>Charting the Results</h2>
+	<ol class="instructions">
+		<details>
+			<summary>Generating Charts</summary>
+			<figure>
+			</figure>
+			<ul>
+				<li>Select the data you wish to generate a into a chart. Column headings can be selected too; Excel will automatically add them as labels to the chart.</li>
+				<li>Pick a chart type in the <kbd><samp>Charts</samp></kbd> section of the <kbd><samp>Insert</samp></kbd> ribbon. Clicking <kbd>Recommended Charts</kbd> will open a window with a list of charts Excel thinks will be useful, as well as a tab to view all possible charts. In this</li>
+				<li>After the chart has been generated, double-click elements to modify them.</li>
+			</ul>
+		</details>
+		<li>
+			<p>Select the data you wish to generate a into a chart. Column headings can be selected too; Excel will automatically add them as labels to the chart.</p>
+		</li>
+		<li>
+			
+		</li>
+	</ol>
+</section>
+<section id="review">
+	<h2>Review</h2>
+	<p>Create a new worksheet called Review and write some notes describing what new things you have learned in this lab. Also mention any steps or concepts you are still finding difficult to understand and would like to receive feedback on.</p>
+</section>
+<section id="submission">
+	<h2>Deliverables</h2>
+		<ul>
+			<li>A single Excel document containing three worksheets (<kbd>Power2</kbd>, <kbd>Stock prices</kbd> and <kbd>Review</kbd>).</li>
+			<li>
+				Power2 Worksheet:
+				<ul>
+					<li>powers of 2 from 20 to 2400, in steps of 10</li>
+					<li>powers of 10 from 100 to 10120, in steps of 3</li>
+					<li>the ratio of each "equivalent" power of 2 and 10</li>
+					<li>a chart of the ratios</li>
+				</ul>
+			</li>
+			<li>
+				Stock prices Worksheet:
+				<ul>
+					<li>a date column</li>
+					<li>two stock value columns</li>
+					<li>two columns computing the ratio of each row's stock value to the initial value for that stock</li>
+					<li>a graph comparing the change in stock for both companies.</li>
+				</ul>
+			</li>
+		</ul>
+		<p>Here are some extra steps to consider to help your <kbd>Overall Assessment</kbd></p>
+		<ul>
+			<li>Use an Excel function to calculate the formulas in task 1.</li>
+			<li>Customize the style of your graphs.</li>
+			<li>Use fill colors, borders, and font sizes to pretty up your tables of data.</li>
+		</ul>
+	<p>Save your document as Stocks_Firstname_Lastname.xlsx and submit it to the dropbox on D2L.</p>   
+	<p>
+		<b>NOTE</b>: This assignment is to be done <em>individually</em>. You can
+		help one another with problems and questions, but in the end everyone must
+		do their own assignment.
+	</p>
+
+	<table class="marks">
+		<thead>
+			<tr><th>Criteria</th><th>Marks</th></tr>
+		</thead>
+		<tbody>
+			<tr><th colspan="2">Power2 Worksheet</th></tr>
+			<tr><td>Data</td><td>2</td></tr>
+			<tr><td>Chart</td><td>1</td></tr>
+			<tr><th colspan="2">Stock Prices Worksheet</th></tr>
+			<tr><td>Data</td><td>3</td></tr>
+			<tr><td>Chart</td><td>2</td></tr>
+			<tr><th colspan="2">Overall Assessment</th></tr>
+			<tr><td>Demonstrates a solid understanding of the material</td><td>2</td></tr>
+
+			<tr><th>Total</th><td>10</td></tr>
+		</tbody>
+	</table>
+</section>
+
+<script src="../template/bundle.js" async defer></script>
+</body>
+</html>
