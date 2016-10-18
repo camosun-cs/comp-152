@@ -26,7 +26,9 @@
 			<li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
 			<li><a href="#task1"><strong>Task 1</strong>: Preparing Constants</a></li>
 			<li><a href="#task2"><strong>Task 2</strong>: Calculating and Generating Data</a></li>
-			<li><a href="#review">Review</a></li>
+			<li><a href="#task3"><strong>Task 3</strong>: Charting the Results</a></li>
+			<li><a href="#task4"><strong>Task 4</strong>: Presentation</a></li>
+			<li><a href="#review"><strong>Task 5</strong>: Review</a></li>
 			<li><a href="#submission">Submission</a></li>
 		</ol>
 	</nav>
@@ -34,12 +36,13 @@
 
 <section id="outcomes">
 	<h2>Learning Outcomes and Introduction</h2>
-	<p>In this lab you will be using Excel to calculate and graph the trajectory of a projectile in a magical Earth-sized world with no friction. You will learn:</p>
+	<figure><img src="img/finished_example.png"></figure>
+	<p>In this lab you will be using Excel to calculate and chart the trajectory of a projectile in a magical Earth-sized world with no friction. You will learn:</p>
 	<ul>
-		<li>how to layout and format a spreadsheet</li>
-		<li>when and how to use relative or absolute references</li>
-		<li>how to get the software to do calculations for you</li>
-		<li>how to generate charts to visualize your data</li>
+		<li>The use and importance of constants</li>
+		<li>More detail on relative and absolute references</li>
+		<li>How to create and deeply customize different types of charts</li>
+		<li>The benefits of well-constructed functions and good reference use</li>
 	</ul>
 </section>
 
@@ -68,7 +71,7 @@
 			</details>
 		</li>
 		<li>
-			<p>Format the superscript in m/s<sup>2</sup> and all the constants to 3 significant figures (as in the diagram). Excel unfortunately does not have a way to set the number of significant figures automatically without using several math functions, so add the appropriate decimal places to each using cell formatting.</p>
+			<p>Format the superscript in m/s<sup>2</sup> and all the constants to 3 significant figures (as shown in the diagram). Excel unfortunately does not have a way to set the number of significant figures automatically without using several math functions, so add the appropriate decimal places to each using cell formatting.</p>
 			<details>
 				<summary>Reminder: Cell formatting</summary>
 				<figure class="right"><img src="img/cell_formatting_context.png" alt="cell context menu"></figure>
@@ -77,7 +80,7 @@
 			</details>
 		</li>
 		<li>
-			<p>Use the alignment options in the home ribbon to make the constants section well-spaced and easy to read. Don't bother resizing the columns yet, you will probably want to do that later, after the data has been recorded.</p>
+			<p>Use the alignment options in the home ribbon to make the constants section well-spaced and easy to read. Don't bother resizing the columns yet, you will probably want to do that after the data and charts have been finalized.</p>
 		</li>
 	</ol>
 </section>
@@ -131,54 +134,119 @@
 			<p>Autofill the x(t) and y(t) columns to match the time column. You can do both of them with a single selection and fill operation. If you get <code>#VALUE!</code> errors, double check that all references to your constants are absolute in the vertical direction. If the value does not increase with time, make sure your reference to the time column is relative.</p>
 			<aside>Formulas and functions will be copied when autofilling. If the initially selected cell contains references, they will re-target <strong>relative</strong> to each newly filled cell (unless they are marked as <strong>absolute</strong>).</aside>
 		</li>
+		<li>
+			<p>Set the decimal places of the x(t) and y(t) columns to 5 to make them look nicely aligned.</p>
+			<aside>Remember, changing the decimal places, or any number formatting, does not actually change the underlying value, just how it is displayed. No precision is lost if you want to mess with them a bit to make them look nice.</aside>
+		</li>
 
 	</ol>
 </section>
 <section id="task3">
-	<h2>Charting the Results</h2>
+	<h2>Task 3: Charting the Results</h2>
 	<figure>
-		<img src="img/chart_ribbon.png" alt="chart ribbon">
+		<img src="img/design_ribbon.png" alt="chart design ribbon">
 	</figure>
+	<p>You will be creating two charts.</p>
+	<figure class="right">
+		<img src="img/chart_ribbon.png">
+		<figcaption>The 2 charts you'll be using.</figcaption>
+	</figure>
+	<ul>
+		<li>The first will compare both the x and the y distance over time. This will require a line chart, with a line for each data set.</li>
+		<li>The second will plot (x,y) coordinates on a Cartesian plane to represent the shape of the trajectory.</li>
+	</ul>
+	<h3>3.1: Line Graph</h3>
+	<figure><img src="img/line_chart.png"></figure>
 	<ol class="instructions">
-		<li>Select the data you wish to generate a into a chart. Column headings can be selected too; Excel will automatically add them as labels to the chart.</li>
-		<li>Pick a chart type in the <kbd><samp>Charts</samp></kbd> section of the <kbd><samp>Insert</samp></kbd> ribbon. Clicking <kbd>Recommended Charts</kbd> will open a window with a list of charts Excel thinks will be useful, as well as a tab to view all possible charts. In this</li>
-		<li>After the chart has been generated, double-click elements to modify them.</li>
+		<li>
+			<p>Insert an empty dotted line chart (don't have any cells selected when clicking the appropriate chart button).</p>
+		</li>
+		<li>
+			<p>Add the x(t) and y(t) columns as data sets, and set time as the horizontal axis.</p>
+			<details>
+				<summary>Selecting Data Sets</summary>
+				<figure>
+					<img src="img/data_select_full.png">
+					<figcaption>The <samp>Select Data</samp> button in the <samp>Design</samp> ribbon opens the <samp>Select Data Source</samp> window.</figcaption>
+				</figure>
+				<p>This window contains two sections:</p>
+				<ol>
+					<li>The left section is for one or more data sets. Entries usually have a reference to a range of cells containing their plot point values, although the series can be entered manually as well. They also have a title which will be used in the legend. The bounds and increment steps of the vertical axis can be adjusted to match these values.</li>
+					<li>The right section is a list of labels to put along the horizontal axis. After adding data sets to the left section, it will automatically create basic numerical labels to match the number of values to be plotted. Usually a reference to another range of cells is entered to create these labels. Note that unlike the vertical axis, you cannot adjust the range or number increments of the horizontal axis. You can, however, apply the usual text and number formatting to them, as well as set an interval to show fewer, more spaced out labels.</li>
+				</ol>
+				<p>If the task is fairly simple, use the <samp>Chart data range</samp> selection field at the top to reference your whole data set, headers included. Excel will then attempt to fill in everything automatically. You may have to correct some errors, such as removing extra data series, and entering new horizontal labels.</p>
+				<p>To set it up from scratch, click the <samp>Add</samp> button in the <samp>Legend Entries</samp> section to bring up another window for adding data sets.  Input the series name (or a cell address, such as a column header) in the first field, and the cell range containing the data points for the second field. Multiple entries can be added, and they can also be edited at any time by opening this window again. The horizontal labels can be set using the <samp>Edit</samp> button in the <samp>Horizontal Axis Labels</samp> section.</p>
+			</details>
+		</li>
+		<li>
+			<p>Customize the chart to your liking, but make sure to add at least a title, a legend, and axis labels. Format the numbers in the vertical axis have one or two decimal places. The option for this is found in the <samp>Number</samp> section of the <samp>Format Axis</samp> sidebar, which appears upon clicking the axis element.</p>
+			<details>
+				<summary>Adding Chart Elements</summary>
+				<p>The <samp>Quick Layout</samp> button contains several presets to common chart layouts. It's located in the <samp>Design</samp> ribbon that appears when a chart is selected.</p>
+				<p>For this task, none of the presets contain everything you need, or contain elements that you don't need. Elements can be added with the plus button to the right of the chart, or the <samp>Add Chart Element</samp> button in the ribbon, and deleted with the  right-click context menu.</p>
+			</details>
+		</li>
+		</li>
+	</ol>
+	<h3>3.2: Cartesian Grid</h3>
+	<figure><img src="img/scatter_chart.png"></figure>
+	<p>Unlike the previous chart, scatter charts </p>
+	<ol class="instructions">
+		<li>
+			<p>Box-select both the x(t) and y(t) data sets and insert a Scatter (X, Y) chart with smooth lines. Do not select the column headers, as we are now treating both columns as a single series of coordinates.</p>
+		</li>
+		<li>
+			<p>Format the axis numbers to be single-incrementing integers, and add vertical and horizontal grid lines.</p>
+			<details>
+				<summary>Axis Options</summary>
+				<figure class="right"><img src="img/chart_format.png"></figure>
+				<p>After selecting a chart, click on any element to open its section in the Format Chart sidebar. Double click the element if the sidebar was closed to bring it back. You can also select elements using the drop down at the top of this sidebar. The 4 icons near the top are tabs containing different options. Axis elements have a particularly useful section shown to the right.</p>
+				<ul>
+					<li>The minimum and maximum <samp>Bounds</samp> fields set the range displayed by the axis. Leaving them set to auto is usually preferred, but they can be manually overridden if they're being too generous.</li>
+					<li>The <samp>Units</samp> fields set how much each axis number increments. Minor units can be shown by adding <samp>Tick Marks</samp>, but you won't need them for this simple grid.</li>
+				</ul>
+			</details>
+		</li>
+		<li>Rename the data series <samp>F(x)</samp> and add a legend for it.</li>
+		<li>Add a <samp>Polynomial</samp> trendline (Add > Trendline > More Trendline Options) that matches the trajectory, and check <samp>Display Equation on chart</samp> in the formatting sidebar. Don't worry about making the trendline itself visible, since it should be the exact same as the trajectory. Set its <samp>Intercept</samp> to 0.0 if it's messing with the vertical axis bounds.</li>
 	</ol>
 </section>
+<section id="task4">
+	<h2>Task 4: Presentation</h2>
+	<p>Position the various sections and charts you have created to fit nicely with even spacing on a single page. You may also want to apply formatting to your data and charts to make them visually distinct.</p>
+	<p>Here are some formatting tips:</p>
+	<ul>
+		<li>Save your work first.</li>
+		<li>You can move groups of cells together by first box selecting them, then dragging them by the border that appears. Your cursor will change into an arrowed cross if its in the right spot. Excel should automatically fix any references to moved cells, so don't worry about making drastic layout changes.</li>
+		<li>The Chart Design ribbon contains several preset styles and color schemes ready to be played with. However, keep your document visually consistent with itself.</li>
+		<li>If your line chart's horizontal axis labels are too crowded, the interval field in the <samp>Format Axis</samp> sidebar can be set to display fewer, more spaced out labels.</li>
+		<li>Click a chart once to display its resize handles. Click-dragging these will resize the chart in that direction. Click-drag inside the chart to move it around. Again, watch how the cursor changes.</li>
+		<li>When resizing or dragging charts, holding the <samp>Alt</samp> keyboard key will align it to the cell grid. A chart will automatically follow any cell its aligned to if you resize rows or columns.</li>
+		<li>You can hide the cell grid in the <samp>View</samp> ribbon. If you do this, be sure to add borders to the headings of your data.</li>
+	</ul>
+</section>
 <section id="review">
-	<h2>Review</h2>
-	<p>Create a new worksheet called Review and write some notes describing what new things you have learned in this lab. Also mention any steps or concepts you are still finding difficult to understand and would like to receive feedback on.</p>
+	<h2>Task 5: Review</h2>
+	<p>By following the methods outlined in this lab, your data visualization will be extremely flexible. Change the values of the constants, and the charts will update to show the newly calculated results. Set the time to different values, and your formulas will determine the projectile's position at that new point in time.</p>
+	<p>The only current limitation is that the charts only reference the first 15 data points. To quickly change this, select a chart and resize the colored selections that appear over your data using the bottom-right resize handle.</p>
+	<p><strong>Your final task</strong> is to slightly change each of your constants, then add just one more row to your data sets (so as not to mess up your formatting too much). If everything did not update correctly, you've made a mistake in your formulas.</p>
 </section>
 <section id="submission">
 	<h2>Deliverables</h2>
+		<p>A nicely formatted Excel spreadsheet containing:</p>
 		<ul>
-			<li>A single Excel document containing three worksheets (<kbd>Power2</kbd>, <kbd>Stock prices</kbd> and <kbd>Review</kbd>).</li>
+			<li>A <strong>Constants</strong> table with labels and units.</li>
+			<li>The x and y position of a projectile projected over 16 time intervals, displayed in a 3 column table.</li>
 			<li>
-				Power2 Worksheet:
+				<p>A dotted-line chart showing the x and y position over time. This chart must have:</p>
 				<ul>
-					<li>powers of 2 from 20 to 2400, in steps of 10</li>
-					<li>powers of 10 from 100 to 10120, in steps of 3</li>
-					<li>the ratio of each "equivalent" power of 2 and 10</li>
-					<li>a chart of the ratios</li>
-				</ul>
-			</li>
-			<li>
-				Stock prices Worksheet:
-				<ul>
-					<li>a date column</li>
-					<li>two stock value columns</li>
-					<li>two columns computing the ratio of each row's stock value to the initial value for that stock</li>
-					<li>a graph comparing the change in stock for both companies.</li>
+					<li>A Title</li>
+					<li>Axis Labels</li>
+					<li></li>
 				</ul>
 			</li>
 		</ul>
-		<p>Here are some extra steps to consider to help your <kbd>Overall Assessment</kbd></p>
-		<ul>
-			<li>Use an Excel function to calculate the formulas in task 1.</li>
-			<li>Customize the style of your graphs.</li>
-			<li>Use fill colors, borders, and font sizes to pretty up your tables of data.</li>
-		</ul>
-	<p>Save your document as Stocks_Firstname_Lastname.xlsx and submit it to the dropbox on D2L.</p>   
+	<p>Save your document as Projectile_Firstname_Lastname.xlsx and submit it to the dropbox on D2L.</p>   
 	<p>
 		<b>NOTE</b>: This assignment is to be done <em>individually</em>. You can
 		help one another with problems and questions, but in the end everyone must
@@ -190,14 +258,14 @@
 			<tr><th>Criteria</th><th>Marks</th></tr>
 		</thead>
 		<tbody>
-			<tr><th colspan="2">Power2 Worksheet</th></tr>
-			<tr><td>Data</td><td>2</td></tr>
-			<tr><td>Chart</td><td>1</td></tr>
-			<tr><th colspan="2">Stock Prices Worksheet</th></tr>
-			<tr><td>Data</td><td>3</td></tr>
-			<tr><td>Chart</td><td>2</td></tr>
-			<tr><th colspan="2">Overall Assessment</th></tr>
-			<tr><td>Demonstrates a solid understanding of the material</td><td>2</td></tr>
+			<tr><th>Constants</th><td>3</td></tr>
+			<tr><td>Use of symbols and superscripts</td><td></td></tr>
+			<tr><td>Readable formatting</td><td></td></tr>
+			<tr><th>Generated Trajectory Data</th><td>3</td></tr>
+			<tr><td>Correct Formulas</td><td></td></tr>
+			<tr><td></td><td></td></tr>
+			<tr><th>Charts</th><td>3</td></tr>
+			<tr><th>Overall Assessment</th><td>1</td></tr>
 
 			<tr><th>Total</th><td>10</td></tr>
 		</tbody>
