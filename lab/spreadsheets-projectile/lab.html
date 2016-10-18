@@ -15,6 +15,9 @@
 		.image-inline.first{
 			margin-right: 1.5em;
 		}
+		li > ul {
+			margin: 0;
+		}
 	</style>
 </head>
 <body>
@@ -203,7 +206,7 @@
 				<summary>Axis Options</summary>
 				<figure class="right"><img src="img/chart_format.png"></figure>
 				<p>After selecting a chart, click on any element to open its section in the Format Chart sidebar. Double click the element if the sidebar was closed to bring it back. You can also switch elements using the drop down at the top of this sidebar. The 4 icons below that are tabs containing different formatting options, mostly relating to color and effects. Axis elements have an additional, particularly useful section, shown to the right.</p>
-				<ul>
+				<ul class="instructions">
 					<li>The minimum and maximum <samp>Bounds</samp> fields set the range displayed by the axis. Leaving them set to auto is usually preferred, but they can be manually overridden if they're being too generous.</li>
 					<li>The <samp>Units</samp> fields set how much each axis number increments. Minor units can be shown by adding <samp>Tick Marks</samp>, but you won't need them for this simple grid.</li>
 					<li>The number section contains similar settings to the <samp>Format Cell</samp> window you're familiar with.</li>
@@ -218,7 +221,7 @@
 	<h2>Task 4: Presentation</h2>
 	<p>Position the various sections and charts you have created to fit nicely and evenly spaced on a single page. You may also want to apply formatting to your data and charts to make them visually distinct.</p>
 	<p>Here are some formatting tips:</p>
-	<ul>
+	<ul class="instructions">
 		<li>Save your work first!</li>
 		<li>You can move groups of cells together by first box-selecting them, then dragging them by the border that appears. Your cursor will change into an arrowed cross if its in the right spot. Excel should automatically fix any references to moved cells, so don't worry about making drastic layout changes.</li>
 		<li>The Chart Design ribbon contains several preset styles and color schemes ready to be played with. However, keep your document visually consistent with itself.</li>
@@ -236,16 +239,28 @@
 </section>
 <section id="submission">
 	<h2>Deliverables</h2>
-		<p>A nicely formatted Excel spreadsheet containing:</p>
+		<p>An Excel spreadsheet well laid out in a single page containing:</p>
 		<ul>
 			<li>A <strong>Constants</strong> table with labels and units.</li>
 			<li>The x and y position of a projectile projected over 16 time intervals, displayed in a 3 column table.</li>
 			<li>
-				<p>A dotted-line chart showing the x and y position over time. This chart must have:</p>
+				<span>A dotted-line chart showing the x and y position over time. This chart must have:</span>
 				<ul>
-					<li>A Title</li>
-					<li>Axis Labels</li>
-					<li></li>
+					<li>Two data series (x and y)</li>
+					<li>A title</li>
+					<li>Axis labels</li>
+					<li>A legend</li>
+					<li>Correct units</li>
+				</ul>
+			</li>
+			<li>
+				<span>A scatter chart visualizing the trajectory. This chart must have:</span>
+				<ul>
+					<li>One data series of (x,y) coordinates</li>
+					<li>A title</li>
+					<li>A legend</li>
+					<li>Cartesian grid-like layout and units</li>
+					<li>An equation derived from a trendline</li>
 				</ul>
 			</li>
 		</ul>
@@ -264,12 +279,16 @@
 			<tr><th>Constants</th><td>3</td></tr>
 			<tr><td>Use of symbols and superscripts</td><td></td></tr>
 			<tr><td>Readable formatting</td><td></td></tr>
-			<tr><th>Generated Trajectory Data</th><td>3</td></tr>
-			<tr><td>Correct Formulas</td><td></td></tr>
-			<tr><td></td><td></td></tr>
+			<tr><th>Generated trajectory Data</th><td>3</td></tr>
+			<tr><td>Correct formulas</td><td></td></tr>
+			<tr><td>Absolute and relative references.</td><td></td></tr>
+			<tr><td>Readable formatting</td><td></td></tr>
 			<tr><th>Charts</th><td>3</td></tr>
+			<tr><td>Dotted-line chart</td><td></td></tr>
+			<tr><td>Scatter plot chart</td><td></td></tr>
 			<tr><th>Overall Assessment</th><td>1</td></tr>
-
+			<tr><td>Pleasing page layout</td><td></td></tr>
+			<tr><td>Adjusted values</td><td></td></tr>
 			<tr><th>Total</th><td>10</td></tr>
 		</tbody>
 	</table>
