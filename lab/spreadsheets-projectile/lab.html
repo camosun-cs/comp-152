@@ -101,14 +101,17 @@
 			</details>
 		</li>
 		<li>
-			<p>Create formulas in the first row of the x(t) and y(t) to calculate the position at the given time. Be sure to use absolute references to your constants where needed. The basic distance traveled formula is: <code><i>d</i> = <i>d</i><sub>0</sub> + <i>v</i><sub>0</sub><i>t</i> + &frac12;<i>at</i><sup>2</sup></code>. Hint: Gravity is negative acceleration in the y direction.</p>
-			<aside><strong>Remember,</strong> the velocity given in the diagram has a direction, and its angle is in degrees. You will need to use COS and SIN to get the velocity in the x and y directions respectively. These functions use radians, so the angle must be converted by multiplying it by pi/180. Use <code>PI()</code> wherever you need pi.</aside>
+			<p>Create formulas in the first row of the x(t) and y(t) columns to calculate the position at the given time. Be sure to use absolute references to your constants where needed. The basic distance traveled formula is: <code><i>d</i> = <i>d</i><sub>0</sub> + <i>v</i><sub>0</sub><i>t</i> + &frac12;<i>at</i><sup>2</sup></code>. Hint: Gravity is negative acceleration in the y direction.</p>
+			<aside><strong>Remember,</strong> the velocity given in the diagram has a direction, and its angle is in degrees. You will need to use COS and SIN to get the x and y velocities respectively. These functions use radians, so the angle must be converted by multiplying it by <code>PI()/180</code>.</aside>
 			<details>
 				<summary>Reminder: Absolute References</summary>
 				<p>A reference is created by typing the cell's address into the formula bar. By default, this is a <strong>relative</strong> reference, which will be different for each cell in an autofill. This is usually the desired result. In this assignment, for example, each row must reference the time interval directly left of it.</p>
 				<p>However, this is not wanted when referencing constant values. We want to always point to the same cell no matter what autofill is doing. To create an <strong>absolute</strong> reference, place a <samp>$</samp> symbol in front of the direction you want to lock in the cell reference.</p>
 				<p>For example, if you are autofilling into new rows, you only need to stop the reference from updating the row part of the cell address, for example: <code>B$2</code> will not change to <code>B$3</code> in the next autofilled row. If this same reference was autofilled into new columns, the address would change to C$2 in the next cell.</p>
-				<figure><img src="img/relative_vs_absolute.png"></figure>
+				<figure>
+					<img src="img/relative_vs_absolute.png">
+					<figcaption>Each blue cell was given the reference shown above it. It was then autofilled to the adjacent gray cells.</figcaption>
+				</figure>
 			</details>
 			<details>
 				<summary>Reminder: Using Functions</summary>
@@ -131,12 +134,12 @@
 			</details>
 		</li>
 		<li>
-			<p>Autofill the x(t) and y(t) columns to match the time column. You can do both of them with a single selection and fill operation. If you get <code>#VALUE!</code> errors, double check that all references to your constants are absolute in the vertical direction. If the value does not increase with time, make sure your reference to the time column is relative.</p>
+			<p>Autofill the x(t) and y(t) columns to match the time column. You can do both of them at once with a single selection and fill operation. If you get <code>#VALUE!</code> errors, double check that all references to your constants are absolute in the vertical direction. If the value does not increase with time, make sure your reference to the time column is relative.</p>
 			<aside>Formulas and functions will be copied when autofilling. If the initially selected cell contains references, they will re-target <strong>relative</strong> to each newly filled cell (unless they are marked as <strong>absolute</strong>).</aside>
 		</li>
 		<li>
 			<p>Set the decimal places of the x(t) and y(t) columns to 5 to make them look nicely aligned.</p>
-			<aside>Remember, changing the decimal places, or any number formatting, does not actually change the underlying value, just how it is displayed. No precision is lost if you want to mess with them a bit to make them look nice.</aside>
+			<aside>Changing the decimal places, or any number formatting, does not actually change the underlying value, just how it is displayed. No precision is lost if you want to mess with them a bit to make them look nice.</aside>
 		</li>
 
 	</ol>
@@ -179,57 +182,57 @@
 			</details>
 		</li>
 		<li>
-			<p>Customize the chart to your liking, but make sure to add at least a title, a legend, and axis labels. Format the numbers in the vertical axis have one or two decimal places. The option for this is found in the <samp>Number</samp> section of the <samp>Format Axis</samp> sidebar, which appears upon clicking the axis element.</p>
+			<p>Customize the chart to your liking, but make sure to add at least a title, a legend, and axis labels. Format the numbers in the vertical axis have one or two decimal places. The option for this is found in the <samp>Number</samp> section of the <samp>Format Axis</samp> sidebar, which appears upon clicking the axis element. See <samp>Axis Options</samp> in section 3.2 for more details.</p>
 			<details>
 				<summary>Adding Chart Elements</summary>
 				<p>The <samp>Quick Layout</samp> button contains several presets to common chart layouts. It's located in the <samp>Design</samp> ribbon that appears when a chart is selected.</p>
-				<p>For this task, none of the presets contain everything you need, or contain elements that you don't need. Elements can be added with the plus button to the right of the chart, or the <samp>Add Chart Element</samp> button in the ribbon, and deleted with the  right-click context menu.</p>
+				<p>For this task, none of the presets contain everything you need, or contain elements that you don't need. Elements can be added with the plus button to the right of the chart, or the <samp>Add Chart Element</samp> button in the ribbon, and deleted with the right-click context menu.</p>
 			</details>
 		</li>
 		</li>
 	</ol>
 	<h3>3.2: Cartesian Grid</h3>
 	<figure><img src="img/scatter_chart.png"></figure>
-	<p>Unlike the previous chart, scatter charts </p>
 	<ol class="instructions">
 		<li>
-			<p>Box-select both the x(t) and y(t) data sets and insert a Scatter (X, Y) chart with smooth lines. Do not select the column headers, as we are now treating both columns as a single series of coordinates.</p>
+			<p>Box-select both the x(t) and y(t) data sets and insert a <samp>Scatter (X, Y)</samp> chart with smooth lines. Do not select the column headers, as we are now treating both columns as a single series of coordinates.</p>
 		</li>
 		<li>
-			<p>Format the axis numbers to be single-incrementing integers, and add vertical and horizontal grid lines.</p>
+			<p>Format the axis numbers to be integers incrementing by 1 (no decimal places), and add vertical and horizontal grid lines if they are not already there.</p>
 			<details>
 				<summary>Axis Options</summary>
 				<figure class="right"><img src="img/chart_format.png"></figure>
-				<p>After selecting a chart, click on any element to open its section in the Format Chart sidebar. Double click the element if the sidebar was closed to bring it back. You can also select elements using the drop down at the top of this sidebar. The 4 icons near the top are tabs containing different options. Axis elements have a particularly useful section shown to the right.</p>
+				<p>After selecting a chart, click on any element to open its section in the Format Chart sidebar. Double click the element if the sidebar was closed to bring it back. You can also switch elements using the drop down at the top of this sidebar. The 4 icons below that are tabs containing different formatting options, mostly relating to color and effects. Axis elements have an additional, particularly useful section, shown to the right.</p>
 				<ul>
 					<li>The minimum and maximum <samp>Bounds</samp> fields set the range displayed by the axis. Leaving them set to auto is usually preferred, but they can be manually overridden if they're being too generous.</li>
 					<li>The <samp>Units</samp> fields set how much each axis number increments. Minor units can be shown by adding <samp>Tick Marks</samp>, but you won't need them for this simple grid.</li>
+					<li>The number section contains similar settings to the <samp>Format Cell</samp> window you're familiar with.</li>
 				</ul>
 			</details>
 		</li>
 		<li>Rename the data series <samp>F(x)</samp> and add a legend for it.</li>
-		<li>Add a <samp>Polynomial</samp> trendline (Add > Trendline > More Trendline Options) that matches the trajectory, and check <samp>Display Equation on chart</samp> in the formatting sidebar. Don't worry about making the trendline itself visible, since it should be the exact same as the trajectory. Set its <samp>Intercept</samp> to 0.0 if it's messing with the vertical axis bounds.</li>
+		<li>Add a <samp>Polynomial</samp> trendline (Add Element > Trendline > More Trendline Options) that matches the trajectory, and check <samp>Display Equation on chart</samp> in its format sidebar. Don't worry about making the trendline itself visible, since it should be the exact same shape as the trajectory. Set its <samp>Intercept</samp> to 0.0 if it's messing with the vertical axis bounds.</li>
 	</ol>
 </section>
 <section id="task4">
 	<h2>Task 4: Presentation</h2>
-	<p>Position the various sections and charts you have created to fit nicely with even spacing on a single page. You may also want to apply formatting to your data and charts to make them visually distinct.</p>
+	<p>Position the various sections and charts you have created to fit nicely and evenly spaced on a single page. You may also want to apply formatting to your data and charts to make them visually distinct.</p>
 	<p>Here are some formatting tips:</p>
 	<ul>
-		<li>Save your work first.</li>
-		<li>You can move groups of cells together by first box selecting them, then dragging them by the border that appears. Your cursor will change into an arrowed cross if its in the right spot. Excel should automatically fix any references to moved cells, so don't worry about making drastic layout changes.</li>
+		<li>Save your work first!</li>
+		<li>You can move groups of cells together by first box-selecting them, then dragging them by the border that appears. Your cursor will change into an arrowed cross if its in the right spot. Excel should automatically fix any references to moved cells, so don't worry about making drastic layout changes.</li>
 		<li>The Chart Design ribbon contains several preset styles and color schemes ready to be played with. However, keep your document visually consistent with itself.</li>
 		<li>If your line chart's horizontal axis labels are too crowded, the interval field in the <samp>Format Axis</samp> sidebar can be set to display fewer, more spaced out labels.</li>
 		<li>Click a chart once to display its resize handles. Click-dragging these will resize the chart in that direction. Click-drag inside the chart to move it around. Again, watch how the cursor changes.</li>
-		<li>When resizing or dragging charts, holding the <samp>Alt</samp> keyboard key will align it to the cell grid. A chart will automatically follow any cell its aligned to if you resize rows or columns.</li>
-		<li>You can hide the cell grid in the <samp>View</samp> ribbon. If you do this, be sure to add borders to the headings of your data.</li>
+		<li>When resizing or dragging charts, holding the <samp>Alt</samp> keyboard key will align it to the cell grid. A chart will automatically follow any cell its aligned to when resizing rows or columns.</li>
+		<li>You can hide the cell grid in the <samp>View</samp> ribbon. If you do this, be sure to add borders to your data tables.</li>
 	</ul>
 </section>
 <section id="review">
 	<h2>Task 5: Review</h2>
 	<p>By following the methods outlined in this lab, your data visualization will be extremely flexible. Change the values of the constants, and the charts will update to show the newly calculated results. Set the time to different values, and your formulas will determine the projectile's position at that new point in time.</p>
-	<p>The only current limitation is that the charts only reference the first 15 data points. To quickly change this, select a chart and resize the colored selections that appear over your data using the bottom-right resize handle.</p>
-	<p><strong>Your final task</strong> is to slightly change each of your constants, then add just one more row to your data sets (so as not to mess up your formatting too much). If everything did not update correctly, you've made a mistake in your formulas.</p>
+	<p>The only current limitation is that the charts only reference the first 15 data points. To quickly change this, select a chart and resize the colored selections that appear over your data using its bottom-right resize handle.</p>
+	<p><strong>Your final task</strong> is to slightly change each of your constants, then add just one more row (using autofill of course) to your data set. If everything did not update correctly, you've made a mistake in your formulas.</p>
 </section>
 <section id="submission">
 	<h2>Deliverables</h2>
