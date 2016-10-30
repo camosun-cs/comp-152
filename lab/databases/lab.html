@@ -4,11 +4,20 @@
     <meta charset="utf-8">
     <title>Databases - COMP 152</title>
     <meta name="viewport" content="width=device-width"/>
-    <base href="https://telic.github.io/comp152/lab/databases/"/>
+    <!-- <base href="https://telic.github.io/comp152/lab/databases/"/> -->
     <link rel="stylesheet" href="../template/bundle.css"/>
     <style type="text/css">
         table.inline tbody th {
             font-weight: normal;
+        }
+        .db-structure table {
+            width: calc(33% - 1.5rem);
+            margin: 0;
+            margin-right: 1.5rem;
+            font-size: .75em;
+        }
+        .db-structure table:last-of-type {
+            margin-right: 0;
         }
     </style>
 </head>
@@ -29,7 +38,7 @@
 
 <section id="outcomes">
     <h2>Learning Outcomes and Introduction</h2>
-    <p>In this lab assignment you will learn about:</p>
+    <p>In this lab assignment you will learn to:</p>
     <ul>
         <li>Create a simple relational database using a Database Management System</li>
         <li>Design and create data tables based on an ER diagram</li>
@@ -42,18 +51,8 @@
 
 <section id="task1">
     <h2>Task 1: Creating the Database</h2>
-    <details>
-        <figure>
-            <img src="access-overview.png" alt="Access overview"/>
-        </figure>
-        <summary>Microsoft Access Overview</summary>
-        <p>The Navigation Pane shows all objects used in the database file. By the end of this assignment, this will include Tables, Queries, Forms, and Reports.</p>
-        <p>Right-click an object in the pane to view a context menu of options for it, including Open, Rename, and Delete. Selecting Open will open it in the main view. You can also simply double-click it.</p>
-        <p>All objects you currently have open are shown as tabs in the main view. Closing a tab (using the x to the far right) <strong>does not</strong> remove the object from the database. To delete an object, you must select <samp>Delete</samp> in its context menu.</p>
-    </details>
-    <ol class="instructions">
-        <p>In this task, you will be adding 3 tables to your database. They will follow the structure shown below:</p>
-        <figure>
+        <p>In this task, you will be creating a music database. The tables will follow the structure shown below:</p>
+        <figure class="db-structure">
             <table class="inline">
                 <thead>
                     <tr>
@@ -131,6 +130,16 @@
             </table>
             <figcaption>The field in <strong>bold</strong> is the Primary Key. Also, in newer versions of Access, Short Text may be used instead of Text.</figcaption>
         </figure>
+    <figure>
+        <img src="img/access_overview.png" alt="Access overview"/>
+    </figure>
+    <details>
+        <summary>Microsoft Access Overview</summary>
+        <p>The Navigation Pane shows all objects used in the database file. By the end of this assignment, this will include Tables, Queries, Forms, and Reports.</p>
+        <p>Right-click an object in the pane to view a context menu of options for it, including Open, Rename, and Delete. Selecting Open will open it in the main view. You can also simply double-click it.</p>
+        <p>All objects you currently have open are shown as tabs in the main view. Closing a tab (using the x to the far right) <strong>does not</strong> remove the object from the database. To delete an object, you must select <samp>Delete</samp> in its context menu.</p>
+    </details>
+    <ol class="instructions">
         <li>
             Create a new <samp>Blank desktop database</samp> and save it in a Lab 6 folder in your COMP152 directory.
         </li>
@@ -138,7 +147,7 @@
             Ensure that Table1 (the default table created in new database files) is currently open and in view. If it does not exist, create it using the Table button found in the Create tab.
         </li>
         <li>
-            <p>Switch to the Design View. The dropdown for this is found in the <samp>Home</samp> tab.</p>
+            <p>Switch to the Design View.</p>
             <details>
                 <summary>Information on Views</summary>
                 <!--
@@ -146,13 +155,15 @@
                     <img src="" alt="a right-aligned image"/>
                 </figure>
                 -->
-                <p>Views are a big part of Microsoft Access. Every object has multiple views which will always be accessible in the Home tab, or with the icons in the bottom-right corner of the screen.</p>
-                <h3>Tables</h3>
+                <p>Views are a big part of Microsoft Access. Every object has multiple views which will always be accessible in the Home or Fields tabs, or with the icons in the bottom-right corner of the screen.</p>
+                <p>Some of the more important views:</p>
                 <ul>
-                    <li><strong>Datasheet View:</strong> Shows a list of all records in the table. This list can be sorted and filtered, and new records can be added but filling in the empty fields at the bottom.</li>
-                    <li><strong>Design View:</strong> Use this view to edit the structure of the table.</li>
+                    <li><strong>Datasheet View:</strong> Shows a list of all records in the table or query. This list can be sorted and filtered, and new records can be added by filling in the empty fields at the bottom.</li>
+                    <li><strong>Design View:</strong> Use this view to edit the structure of the object.</li>
+                    <li><strong>Form View:</strong> Used for entering data into forms. Other data entries can be displayed and edited in the form using the <samp>Record</samp> navigation arrows at the bottom.</li>
+                    <li><strong>Layout View:</strong> Similar to the design view. Use this to arrange and resize the fields in a form.</li>
                 </ul>
-                <h3>Queries</h3>
+<!--                 <h3>Queries</h3>
                 <ul>
                     <li><strong>Datasheet View:</strong></li>
                     <li><strong>SQL View:</strong></li>
@@ -170,24 +181,28 @@
                     <li><strong>Print View:</strong></li>
                     <li><strong>Layout View:</strong></li>
                     <li><strong>Design View:</strong></li>
-                </ul>
+                </ul> -->
             </details>
         </li>
-        <li>Enter the table's name into the window that pops up.</li>
+        <li>Enter the table's name (Albums) into the window that pops up to save it.</li>
         <li>
             <p>Rename the <samp>ID</samp> field to <samp>Album_ID</samp>. This should already be set as the primary key.</p>
             <details>
                 <summary>Primary Keys</summary>
                 <p>A Primary Key is a unique, automatically incremented number for the entry. This makes it possible for multiple records to have the same name but still be uniquely identifiable.</p>
+                <p>To set a field as a primary key in Access, set the Data Type to <samp>AutoNumber</samp>, then click <samp>Primary Key</samp> in the Design tab.</p>
             </details>
         </li>
         <li>
             <p>Input the field names and data types into the cells. Set the Field Size of Rating to Integer</p>
             <details>
                 <summary>Creating Fields</summary>
+                <figure class="right">
+                    <img src="img/field_properties.png">
+                </figure>
                 <p>In the table's Design View, each row represents a field in the table.</p>
                 <p>Each field must have a <samp>Data Type</samp> specified. You can either choose it with the dropdown, or simply start typing it, and Access will autocomplete the type for you.</p>
-                <p>When a Data Type is chosen, <samp>Field Properties</samp> will appear at the bottom of the screen. Here you can change the size of the </p>
+                <p>When a Data Type is chosen, <samp>Field Properties</samp> will appear at the bottom of the screen. Here you can add or change limitations to field input, such as setting the maximum size, or setting the field as required (must be filled to successfully add an entry).</p>
             </details>
         </li>
         <li>
@@ -197,9 +212,10 @@
             </aside>
         </li>
         <li>
-            <p>Create the Artist and Song tables. Set their Rating fields to Integer as well.</p>
+            <p>Create the Artist and Song tables. Their Rating fields should also be set to size integer.</p>
             <details>
                 <summary>Creating New Tables</summary>
+                <figure><img src="img/ribbon_create_table.png"></figure>
                 <p>The Create tab has two options for creating new tables.</p>
                 <p>The 'Table' button will create a complete table with a single 'ID' field, similar to the default one included in new files.</p>
                 <p>The 'Table Design' button will open the Design view of an empty table, and only create the table after being saved.</p>
@@ -224,7 +240,8 @@
             </details>
         </li>
         <li>
-            <p>Create the Table Relationships to reflect the diagram shown below. Save it when you are done.</p>
+            <figure><img src="img/table_relationships.png"></figure>
+            <p>Create the Table Relationships to reflect the above diagram. Save it when you are done.</p>
             <details>
                 <summary>Table Relationships</summary>
                 <p>It is often necessary to link data from one table to another. For example, each album in your database will need an artist. This is done using a <strong>Foreign Key</strong>. Each record in the Albums table has an <samp>Artist_ID</samp> field. If the value in this field matches the Unique ID of an entry in the Artists table (the Artist_ID Primary Key), we want it to mean that the artist made that album. We will be using the Relationships Manager to build these connections.</p>
@@ -241,21 +258,16 @@
 </section>
 <section id="task2">
     <h2>Task 2: Data Entry</h2>
-    <!--
-    <figure>
-        <img src="" alt="a task heading screenshot showing things used in the task">
-    </figure>
-    -->
     <ol class="instructions">
         <li>
             <p>Create a form for the Artists table.</p>
             <details>
                 <summary>Creating forms</summary>
-                <!--
                 <figure>
-                    <img src="form-wizard.png" alt="Form Wizard Location">
+                    <img src="img/form_wizard.png" alt="Form Wizard">
                 </figure>
-                -->
+                
+                
                 <ul>
                     <li>Make sure all tables are in Datasheet view. Access will not let you use the forms later if you don't.</li>
                     <li>Open the <samp>Form Wizard</samp>, found in the <samp>Create</samp> tab.</li>
@@ -292,6 +304,10 @@
             </details>
         </li>
     </ol>
+                <figure>
+                    <img src="img/form_albums.png">
+                    <figcaption>A fully filled-in album form</figcaption>
+                </figure>
 </section>
 <section id="task3">
     <h2>Task 3: Retrieving and Presenting Data</h2>
@@ -356,7 +372,7 @@
 </section>
 <section id="bonus">
     <h2>Presentation</h2>
-        <p>Here are some additional things to look into to improve your presentation and max out the Overall Assessment mark.</p>
+        <p>Here are some additional things to look into to improve your presentation.</p>
         <ol>
             <li>Add new fields to the tables.</li>
             <li>Add Validation Text to the fields with Validation rules to provide friendlier looking error messages.</li>
@@ -379,12 +395,21 @@
             <tr><th>Criteria</th><th>Marks</th></tr>
         </thead>
         <tbody>
-            <tr><th>Overall Assessment/Wow factor</th><td>10</td></tr>
             <!-- <tr><td>Wow Factor</td><td>10</td></tr> -->
-            <tr><th>Task 1</th><td>20</td></tr>
-            <tr><th>Task 2</th><td>20</td></tr>
-            <tr><th>Task 3</th><td>20</td></tr>
-            <tr><th>Total</th><td>70</td></tr>
+            <tr><th>Task 1</th><td>3</td></tr>
+            <tr><td>Table structure</td><td></td></tr>
+            <tr><td>Validation rules</td><td></td></tr>
+            <tr><td>Table relationships</td><td></td></tr>
+            <tr><th>Task 2</th><td>3</td></tr>
+            <tr><td>Artist form</td><td></td></tr>
+            <tr><td>Album form</td><td></td></tr>
+            <tr><td>Entered data</td><td></td></tr>
+            <tr><th>Task 3</th><td>3</td></tr>
+            <tr><td>Three queries</td><td></td></tr>
+            <tr><td>Multi-table query</td><td></td></tr>
+            <tr><td>Report</td><td></td></tr>
+            <tr><th>Overall Assessment/Wow factor</th><td>1</td></tr>
+            <tr><th>Total</th><td>10</td></tr>
         </tbody>
     </table>        
 </section>

@@ -1,8 +1,8 @@
-database structure example needs some love (flex)
-move Access Overview image out of details
-information on views details is incomplete
-primary keys details needs image of applicable fields to edit
-creating fields details incomplete
-creating new tables details needs imagery
-table relationships details need image of the Relationships view
-task 2 needs header image of form wizard
+//database structure example needs some love (flex)
+//move Access Overview image out of details
+//information on views details is incomplete
+//primary keys details needs image of applicable fields to edit
+//creating fields details incomplete
+//creating new tables details needs imagery
+//table relationships details need image of the Relationships view
+//task 2 needs header image of form wizard
