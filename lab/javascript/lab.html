@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width"/>
     <base href="https://telic.github.io/comp152/lab/javascript/" target="_blank"/>
     <link rel="stylesheet" href="../template/bundle.css"/>
-    <link rel="stylesheet" href="puzzle.css">
 </head>
 <body>
 
@@ -182,97 +181,6 @@
             </aside>
         </li>
     </ol>
-
-    <h3>Algorithm Puzzle</h3>
-    <div style="margin: .5em;">
-        <label>
-            Show my solution as code:
-            <input id="puzzle-toggle" type="checkbox">
-        </label>
-    </div>
-   <dl class="puzzle">
-        <dt><span class="codeonly">// </span>Define a function to compute the next step in the Game Of Life simulation</dt>
-        <dd><code class="language-javascript">function updateCells(oldCells) {</code></dd>
-        <dd class="sort-area sort-main">
-            <dl>
-                <dt><span class="codeonly">// </span>Create an new grid with the same dimensions as <samp>oldCells</samp></dt>
-                <dd><code class="language-javascript">var newCells = GameOfLife.createGrid(oldCells.length);</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>Declare variables to keep track of our position in the grid and the number of alive neighbours</dt>
-                <dd><code class="language-javascript">var row, col, neighbours;</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>For each row of the grid...</dt>
-                <dd><code class="language-javascript">for (row=1; row &lt; oldCells.length-1; row++) {</code></dd>
-                <dd class="sort-area sort-inline"></dd>
-                <dd><code class="language-javascript closebrace">}</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>For each column in the current row...</dt>
-                <dd><code class="language-javascript">for (col=1; col &lt; oldCells[row].length-1; col++) {</code></dd>
-                <dd class="sort-area sort-inline"></dd>
-                <dd><code class="language-javascript closebrace">}</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>Count the number of alive cells neighbouring the current cell</dt>
-                <dd><code class="language-javascript">neighbours = oldCells[row-1][col-1] + oldCells[row-1][col] + oldCells[row-1][col+1]; // above</code>
-                <code class="language-javascript">neighbours += (oldCells[row][col-1] + oldCells[row][col+1]); // left and right</code>
-                <code class="language-javascript">neighbours += (oldCells[row+1][col-1] + oldCells[row+1][col] + oldCells[row+1][col+1]); // and below</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>If there are less than 2 or more than 3 alive neighbours...</dt>
-                <dd><code class="language-javascript">if (neighbours &lt; 2 || neighbours > 3) {</code></dd>
-                <dd class="sort-area sort-inline"></dd>
-                <dd><code class="language-javascript closebrace">}</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>The current cell dies</dt>
-                <dd><code class="language-javascript">newCells[row][col] = 0;</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>If there are exactly 2 alive neighbours…</dt>
-                <dd><code class="language-javascript">if (neighbours == 2){</code></dd>
-                <dd class="sort-area sort-inline"></dd>
-                <dd><code class="language-javascript closebrace">}</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>The current cell stays in its previous state</dt>
-                <dd><code class="language-javascript">newCells[row][col] = oldCells[row][col];</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>If there are exactly 3 alive neighbours…</dt>
-                <dd><code class="language-javascript">if (neighbours == 3) {</code></dd>
-                <dd class="sort-area sort-inline"></dd>
-                <dd><code class="language-javascript closebrace">}</code></dd>
-            </dl>
-            <dl>
-                <dt><span class="codeonly">// </span>The current cell becomes (or stays) alive</dt>
-                <dd><code class="language-javascript">newCells[row][col] = 1;</code></dd>
-            </dl>
-
-            <dl>
-                <dt><span class="codeonly">// </span>Return the new grid of cells</dt>
-                <dd><code class="language-javascript">return newCells;</code></dd>
-            </dl>
-        </dd>
-        <dd><code class="language-javascript closebrace">}</code></dd>
-    </dl>
-
-    <h3>Deliverables</h3>
-    <ul>
-        <li>
-            <p>updated <samp>life.js</samp> script with</p>
-            <ul>
-                <li>a function named <samp>updateCells</samp> which takes an
-                    existing grid of cells as a parameter, applies a single
-                    iteration of the game rules, and returns the result</li>
-                <li>a call to the <samp>GameOfLife</samp> function,
-                    providing your <samp>updateCells</samp> function
-                    as a parameter</li>
-            </ul>
-        </li>
-    </ul>
 </section>
 
 <section id="task3">
@@ -354,8 +262,5 @@
 </section>
 
 <script src="../template/bundle.js" async defer></script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
-<script src="puzzle.js"></script>
 </body>
 </html>
