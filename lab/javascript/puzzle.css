@@ -1,26 +1,45 @@
-.puzzle,
-.puzzle .ui-sortable-handle {
-	background-color: white;
-	border-top: 4px solid #90ABFF;
-	box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
-	margin: 0 0 0.5em;
-    padding-bottom: .5em;
+body {
+    margin: 0;
 }
-.puzzle:not(.raw) dd {
-    background-color: #f6f6f6;
-    margin: 0 .5em 0 40px;
+.puzzle {
+    background-color: #f5eedc;
+    font-family: Consolas, Monaco, 'Andale Mono', monospace;
+}
+.puzzle:not(.raw) dl{
+    /*border-top: 4px solid #90ABFF;*/
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+    margin: 0 0 .5em;
+    /*padding-bottom: .5em;*/
+    position: relative;
+}
+.puzzle:not(.raw) dt, .puzzle:not(.raw) dd {
+    padding: .5em 0 .5em 1.5em;
+    margin: 0;
+}
+.puzzle:not(.raw) dl:last-of-type {
+    margin-bottom: 0;
 }
 .puzzle:not(.raw) .sort-area {
-    padding: .5em 2em;
-    min-height: 3em;
+    min-height: 2em;
+    padding: 0;
+    padding-left: 1.5em;
 }
 .puzzle:not(.raw) .ui-sortable-handle {
-	cursor: move;
+    cursor: move;
 }
-
+.puzzle:not(.raw) .ui-sortable-helper {
+    background-color: rgba(255,255,255,.3);
+}
+.puzzle:not(.raw) .ui-placeholder {
+    display: block;
+    height: 1em;
+    background-color: rgba(144, 171, 255, .5);
+}
 .puzzle dt {
-	font-size: larger;
-	margin: .5em 1em;
+    background-color: #90ABFF;
+    color: white;
+    font-family: sans-serif;
+	/*margin: .5em 1em;*/
 }
 .puzzle .language-javascript {
     display: block;
@@ -42,10 +61,9 @@
 .puzzle.raw dt {
     color: slategray;
     font-size: .7em;
-    font-family: Consolas, Monaco, 'Andale Mono', monospace;
     white-space: pre-wrap;
     tab-size: 4;
-    background-color: #f6f6f6;
+    background-color: transparent;
 }
 .puzzle.raw dt,
 .puzzle.raw dd {
