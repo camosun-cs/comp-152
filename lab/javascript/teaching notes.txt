@@ -1,13 +1,5 @@
 SETUP
 =====
-The files in external/ are expected to be hosted somewhere on the internet so
-that the students can link to them easily without having to download copies.
-I've hosted them on my server at comp152.dynu.com for this session.
-
-The lab instructions themselves (lab.html) make use of the files in rsrc/.
-
-The demos are self-contained (except for requiring the external/ hosted files).
-
 
 PRE-LAB DEMOS
 =============
@@ -32,7 +24,7 @@ To run the demo:
  - open the page in a browser
  - move the <script> to a different part of the document and refresh
  - create a copy of the <script> in a different part of the document and refresh
- - point of the effects of document order
+ - point out the effects of document order
 
 
 Demo 2 = demo/game-of-life.html
@@ -65,13 +57,3 @@ To run the demo:
     -- can access a single cell like data[2][5]
  - In the last disclosure
    - discuss code structure, what calls what
-
-
-
-DURING THE LAB
-==============
-
-Task 1, step 4 is *optional*: it is a recap of demo 1.
-
-I expect writing the answers to the questions in step 8 of Task 1 may take too
-long, so discuss the answers and encourage the students to skip, if necessary.
