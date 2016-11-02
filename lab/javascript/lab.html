@@ -48,81 +48,83 @@
     <h2>Task 1: Adding Javascript to a web page</h2>
 
     <ol class="instructions">
-        <li>Create a <samp>Javascript</samp> folder to contain all of your work for this lab</li>
-        <li>Make a new text file named <kbd>index.html</kbd> and add the basic
-            structural elements required for HTML (eg. html, head, title, body).
-        </li>
-        <li><p>Add a main heading, your name, lab section, and a picture of your
-            favourite form of microbial life (I'm rather partial to
-            <a href="http://www.ppdictionary.com/parasites/gondii.htm">this one</a>).</p>
-
+        <li>
+            <p>Create a basic HTML page called <samp><kbd>index.html</kbd></samp>
+            (or <a href="index.html" download="index.html">download this template</a>
+            and adjust it as appropriate).</p>
             <details>
-            <summary>If you haven't seen the "element counter" lab demo, try it yourself...</summary>
-
+                <summary>Basic components of a web page</summary>
+                <p>Make sure that your HTML has at least:</p>
+                <ul>
+                    <li>a doctype (eg. <code class="language-markup">&lt;!DOCTYPE html></code>)</li>
+                    <li>an <code class="language-markup">&lt;html></code> root element</li>
+                    <li>a <code class="language-markup">&lt;head></code> with a <code class="language-markup">&lt;title></code></li>
+                    <li>a <code class="language-markup">&lt;body></code></li>
+                    <li>a heading identifying the lab (in this case, Javascript)</li>
+                    <li>your name</li>
+                    <li>your lab section</li>
+                </ul>
+            </details>
+        </li>
+        <li>Open your <samp>index.html</samp> in a browser, and reload frequently
+            as you continue the lab to see how it changes.</li>
+        <li>
+            <p>Add a paragraph or two to describing why the "element counter" script from the demo shows a different number when added in different places in the HTML.</p>
+            <details>
+            <summary>If you haven't seen the lab demo, try it yourself...</summary>
             <ol class="instructions optional">
                 <li><p>Add the following code in the <samp>head</samp> of your page:</p>
                     <pre><code class="language-markup">&lt;script src="https://telic.github.io/comp152/lab/javascript/orderIsImportant.js">&lt;/script></code></pre>
-                    <aside>
-                        <p><samp>script</samp> links a Javascript file to your document,
-                        similarly to what <samp>link</samp> does for CSS.
-                        When you open your web page in a browser, the linked script
-                        will run immediately and show an alert
-                        box telling you how many elements are on your page.</p>
-                        <p>
-                        While you're here, why not <a href="orderIsImportant.js">take
-                        a look at the code</a>? Can you figure out how it works?</p>
-                    </aside>
                 </li>
-                <li><p>Remove the script from the <samp>head</samp> of your document and
-                    put it somewhere in the middle of your <samp>body</samp> instead.
-                    Save and refresh your browser and notice the differences. Try moving
-                    the script element and creating duplicates in different places in your
-                    document, saving and refreshing each time you make a change.</p>
-                    <aside class="dont-pull">
-                        You should notice two differences depending on where you put the
-                        script tags. The most obvious difference is that the reported
-                        number of elements changes.
-                        Secondly, look underneath the alert
-                        box while it is still open: pieces of your content that occur
-                        after the script <em>will not appear</em> until after the alert
-                        box is closed and the script has finished running!
-                    </aside>
-                </li>
+                <li>Move the script out of the <code>head</code> of your document and
+                    put it somewhere in the middle of your <code>body</code> instead.
+                    Save and refresh your browser and notice the differences.</li>
+                <li>Try creating duplicates of the script in different places in your
+                    document, saving and refreshing each time you make a change.</li>
+                <li>While you're here, why not <a href="orderIsImportant.js">take
+                    a look at the Javascript code</a>? Can you figure out how it works?</li>
                 <li>Remove the element counting script when you're done so that
                     it doesn't interfere with the rest of the lab.</li>
             </ol></details>
         </li>
-        <li><p>Add a script element to link <samp>https://telic.github.io/comp152/lab/javascript/GameOfLife.js</samp>
-            to your document.</p>
-            <aside>
-                Don't worry, nothing is supposed to happen! This script
-                is a <dfn>library</dfn>: it defines functions for you to use
+        <li><p>Add the following element near the bottom of your document
+            to add the GameOfLife library:</p>
+            <pre><code class="language-markup">&lt;script src="https://telic.github.io/comp152/lab/javascript/GameOfLife.js">&lt;/script></code></pre>
+            <details>
+                <summary>About the <code>script</code> tag</summary>
+                <p><code>script</code> elements attach runnable code to your document,
+                similarly to what <code>link</code> does for CSS.
+                The script to run can either be defined in a separate
+                file and referenced using the <code>src</code> attribute, or can
+                be provided directly between the opening and closing tags.
+                Most browsers only understand how to run Javascript code, so
+                that's what we'll be using for this course.</p>
+            </details>
+            <details>
+                <summary>Libraries versus programs</summary>
+                <p>The <samp>GameOfLife.js</samp> script added in this step is
+                a <dfn>library</dfn>: it defines functions for you to use
                 in another script, but doesn't do anything directly on its own.
-            </aside>
+                In the next step you'll create will create a <dfn>program</dfn>
+                in a separate file that does some actual work by <em>calling</em>
+                the functions in the library.</p>
+            </details>
         </li>
-        <li><p>Create a a new text file called <samp><kbd>life.js</kbd></samp> with this
-            one small piece of Javascript code:</p>
+        <li><p>Create a a new text file called <samp><kbd>life.js</kbd></samp>
+            containing this single line of Javascript code:</p>
             <pre><code class="language-javascript">GameOfLife();</code></pre>
-            <aside>
-                This code runs the <samp>GameOfLife</samp> function which
-                was provided by the library you linked in step 5. You'll learn
-                more about this function in <a href="#task2">Task 2</a>.
-            </aside>
+            <details>
+                <summary>What does this code mean?</summary>
+                <p>The <samp>GameOfLife.js</samp> library added earlier defines
+                a function named <code class="language-javascript">GameOfLife</code>.
+                This new line of code simply runs that function.</p>
+            </details>
         </li>
-        <li>Add a script tag in your <samp>life.html</samp> file to link your
+        <li>Add another script tag in your HTML to link your
             new <samp>life.js</samp> script to your document, then refresh
             your browser. Make sure you add your script <em>later in the
             document</em> than the library script.  A blank Game of Life board
             will appear on your page if you've done everything correctly!</li>
-        <li>
-            <p>Write an answer to each of the following two questions on your webpage:</p>
-            <ul>
-                <li>Why does the "element counter" script show a different number
-                    when added in different places in your document?</li>
-                <li>Why does your script need to be added <em>after</em> the
-                    library script?</li>
-            </ul>
-        </li>
     </ol>
 </section>
 
