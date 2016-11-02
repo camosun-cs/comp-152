@@ -125,6 +125,10 @@ p, figure, aside, details, pre {
 ul, ol {
     padding-left: $magic;
 }
+li > ul, li > ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 dd {
     margin-left: $magic;
 }
@@ -210,6 +214,11 @@ section {
     padding-left: 0;
     & > li > ul {
         list-style: disc;
+    }
+    & > li > ul,
+    & > li > ol {
+        margin-top: $magic;
+        margin-bottom: $magic;
     }
 }
 
