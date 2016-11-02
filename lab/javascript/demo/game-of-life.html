@@ -11,7 +11,7 @@
     <h1>Conway's Game Of Life</h1>
     <p>For more information, <a href="http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">go read Wikipedia</a>.</p>
 
-    <details id="example1">
+    <details id="example1" open>
         <summary>It's really a simulation, not a game</summary>
         
         <script>
@@ -159,7 +159,8 @@ details { clear:both; overflow:auto; margin: 1em 0; }
 #example2 .gameoflife { width: 300px; }
 #example3 .gameoflife { width: 200px; }
 #example3 .gameoflife .controls { display: none; }
-summary { cursor: pointer; }
+summary { cursor: pointer; font-size: larger; background-color: #ddd; padding: 10px; }
+body { margin-bottom: 20em; }
 </style>
 </body>
 </html>
