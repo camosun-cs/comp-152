@@ -1,0 +1,23 @@
+workflow
+	open csv and xlsx in notepad++
+	refer to this for question on the differences (encourage no google)
+	when they open hexedit, first open the csv and modify it to see the ascii change
+
+database
+	import first table (artists probably) from excel file to solidify how table structure works
+	advanced course project series
+		make web sql database using something like phpmyadmin
+		create html form for it
+		we can make it web accessible and have them survey people
+		import queries of results into excel and create report
+word
+	explain differences between breaks
+	clarify programming snippet formatting task (it doesn't have to do with actually programming, just applying styles to the code snippets)
+	make example finished document
+	combine 4 images into two images
+	instructions for image layout and how to anchor
+	show more bibliography styles
+
+feedback
+	create web form for this, link to it in each lab
+	put it in database
