@@ -142,6 +142,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: lighter;
     font-family: sans-serif;
     clear: both;
+    margin-top: 1.5*$magic;
 }
 h1 {
     font-weight: normal;
@@ -211,7 +212,7 @@ section {
 }
 
 .instructions {
-    padding-left: 0;
+    // padding-left: 0;
     & > li > ul {
         list-style: disc;
     }
@@ -297,6 +298,8 @@ aside {
     @include respond-to(small) {
         box-sizing: border-box;
         float: right;
+        //needed to avoid collisions with right-aligned images
+        clear: right;
         margin: $magic/2 0 $magic*3/2 $magic*3/2;
         max-width: 50%;
         filter: drop-shadow(0 1px 3px rgba(0,0,0,.3));
@@ -334,9 +337,13 @@ details {
 
     &:not([open]) > *:not(summary) {
         display: none;
-    }
+    }   
     ul {
         list-style: disc;
+    }
+    .instructions & {
+        box-shadow: -$magic*1.5 0 0 $magic/2 $info,
+                    $magic/2 0 0 $magic/2 $info;  
     }
 }
 
@@ -356,6 +363,9 @@ summary {
 
     &:hover {
         background: rgba(255,255,255,.5);
+        .instructions & {
+            box-shadow: -$magic 0 0 rgba(255,255,255,.5);
+        }
     }
     &:focus {
         outline: none;
@@ -401,7 +411,9 @@ figure {
         &.right {
             max-width: 50%;
             float: right;
-            margin: 0 0 $magic $magic;
+            // margin: 0 -$magic $magic $magic;
+            margin-top: 0;
+            margin-left: $magic;
         }
     }
 }
