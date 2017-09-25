@@ -157,6 +157,7 @@ h3 {
 }
 samp, kbd, tt {
     @include monospace;
+    vertical-align: baseline;
 }
 abbr[title]::after {
     content: " ("attr(title)")";
