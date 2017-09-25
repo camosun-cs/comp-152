@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Spreadsheets: Importing and Charting Information</title>
+    <meta name="viewport" content="width=device-width"/>
+    <!-- <base href="https://telic.github.io/comp152/lab/spreadsheets-import/" target="_blank"/> -->
+    <link rel="stylesheet" href="../template/bundle.css"/>
+</head>
+<body>
+
+<header>
+    <h1>Spreadsheets: Generating and Charting Information</h1>
+    <nav>
+        <ol>
+            <li><a href="#outcomes">Learning Outcomes and Introduction</a></li>
+            <li><a href="#task1"><strong>Task 1</strong>: Powers of 2, Powers of 10</a></li>
+            <li><a href="#task2"><strong>Task 2</strong>: Importing and Displaying Data</a></li>
+            <li><a href="#review">Review</a></li>
+            <li><a href="#submission">Submission</a></li>
+        </ol>
+    </nav>
+</header>
+
+<section id="outcomes">
+    <h2>Learning Outcomes and Introduction</h2>
+    <p>In this lab you will learn the basics of using a computer spreadsheet program, specifically Microsoft Excel. You will learn:</p>
+    <ul>
+        <li>how to layout and format a spreadsheet</li>
+        <li>when and how to use relative or absolute references</li>
+        <li>how to get the software to do calculations for you</li>
+        <li>how to generate charts to visualize your data</li>
+    </ul>
+</section>
+
+<section id="task1">
+    <h2>Task 1: Powers of 2, Powers of 10</h2>
+    <h3>Introduction</h3>
+
+    <p>Computer memory is measured in <b>bytes</b>, which is the amount of memory
+    historically used to store a single character.  Because computers use a
+    <em>binary</em> number system (with only two digits: 1 and 0),
+    larger amounts of memory are often measured internally by power-of-2 multiples
+    of bytes. For example, the <a href="http://en.wikipedia.org/wiki/NTFS">NTFS</a>
+    filesystem usually stores data in chunks of
+    4 "kilobytes" (4 &times; 2<sup>10</sup> bytes), and modern
+    <a href="http://en.wikipedia.org/wiki/Random-access_memory">RAM</a> modules
+    are usually measured in multiples of 2<sup>30</sup> ("giga") bytes.</p>
+    <p>On the other hand, people usually measure things in the real world using 
+    <a href="http://en.wikipedia.org/wiki/Metric_prefix">SI prefixes</a>,
+    which are based on powers of 10. For example, we measure distance using
+    kilometers (10<sup>3</sup> meters) and power using gigawatts (10<sup>9</sup>
+    watts).</p>
+    <p>Confusingly, the prefix system for powers of 2 used in
+    computing uses the same names as those in SI, even though they refer
+    to slightly different numbers! As you can see in the figure below, the
+    base-2 and base-10 prefixes are fairly close approximations of one another,
+    but they diverge more and more as the prefixes get larger.</p>
+    <aside class="note">
+        Conventions exist that help to distinguish base-2 from base-10
+        prefixes (eg. KiB vs. KB, or kB vs. KB), but they are rarely used in
+        practice.
+    </aside>
+    <figure>
+        <table>
+            <thead>
+                <tr>
+                    <th rowspan="2">Prefix</th>
+                    <th colspan="2">Computing</th>
+                    <th colspan="2">SI</th>
+                    <th rowspan="2">Ratio</th>
+                </tr>
+                <tr>
+                    <th>power</th>
+                    <th>amount</th>
+                    <th>power</th>
+                    <th>amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>kilo</td>
+                    <td>2<sup>10</sup></td>
+                    <td>1024</td>
+                    <td>10<sup>3</sup></td>
+                    <td>1000</td>
+                    <td>1.024</td>
+                </tr>
+                <tr>
+                    <td>mega</td>
+                    <td>2<sup>20</sup></td>
+                    <td>1048576</td>
+                    <td>10<sup>6</sup></td>
+                    <td>1000000</td>
+                    <td>1.049</td>
+                </tr>
+                <tr>
+                    <td>giga</td>
+                    <td>2<sup>30</sup></td>
+                    <td>1073741824</td>
+                    <td>10<sup>9</sup></td>
+                    <td>1000000000</td>
+                    <td>1.074</td>
+                </tr>
+            </tbody>
+        </table>
+        <figcaption>Comparison of prefixes in computing and SI</figcaption>
+    </figure>
+
+    <p>If that weren't confusing enough, CPU speeds and hard-drive sizes are
+    usually measured and marketed using SI prefixes, while other computer
+    components continue to be marketed using base-2 prefixes!</p>
+
+    <p>In this task, you will be using Excel to compute powers of 2 and 10 up
+    to the 40<sup>th</sup> prefix value and create a graph of their divergence.</p>
+    <figure>
+        <img src="img/power2_chart.png">
+    </figure>
+    <ol class="instructions">
+        <li>Create a new spreadsheet in Excel, then save it as ImportingData_Firstname_Lastname</li>
+        <li>Fill column <samp>A</samp> with the numbers <samp>0</samp> to <samp>40</samp>. 
+            <details class="info">
+                <summary>Using the Fill Handle</summary>
+                <figure class="right">
+                    <img src="img/fillhandle.png" alt="fill handle">
+                </figure>
+                <p>Selected cells will have a small box in the bottom-right corner of the selection area. If you click and drag this into adjacent cells, Excel will intelligently generate data based on the selected content into the new cells.</p>
+                <p>For example, if the selected cells contain the first few numbers of a simple pattern (such as three cells with 0, 1, and 2), Excel will generate more numbers that follow the sequence.</p>
+                <p>If the selected cell contains a formula, that formula will be filled into the new cells, and any relative references will be automatically updated (more on references below).</p>
+            </details>
+        </li>
+        <li>
+            Insert a formula into the first row of column <samp>B</samp> that computes 2 raised to the power of 10 times the adjacent value in column <samp>A</samp> (<samp>2<sup>10A</sup></samp>), then fill it down to the remaining 39 rows.
+            <details class="info">
+                <summary>References</summary>
+                <figure>
+                    <img src="img/references.png" alt="references">
+                </figure>
+                <p>To use the value of a cell inside another cells formula, you must use a <strong>reference</strong>. To create one, type the cell's index into the formula (ex: A1), or just click on the cell to automatically insert it.</p>
+                <p>By default, this will be a <strong>relative reference</strong>. This means that when filling this formula down into other cells using the fill handle, the references will automatically change themselves <strong>relative</strong> to each cell being filled. For example, if a formula in cell A1 is referencing cell C1, filling that formula down the column will update each cell's reference to target the cell in its own row, A2 will reference C2, and A3 will reference C3.</p>
+                <p>If this behaviour is undesired, an <strong>absolute reference</strong> is required. In the previous example, if the reference in the formula was changed to C$1, each newly filled cell (A2,A3,etc) will still reference cell C1. The <samp>$</samp> symbol before the row index tells Excel to always reference a cell in row 1. It can also be added before the column index ($C1) to only reference that column, or added to both ($C$1) to only ever reference that specific cell.</p>
+                <figure>
+                    <img src="img/relative_vs_absolute.png" alt="relative vs absolute references">
+                    <figcaption>The formulas <kbd><samp>=C2, =H$2, =$M$2</samp></kbd> were applied to each of the blue cells, then filled to the grey cells. Take note that the first two examples are still able to reference the negative columns, whereas the third always references M2.</figcaption>
+                </figure>
+            </details>
+        </li>
+        <li>
+            Insert a formula in column <samp>C</samp> that computes 10 raised to a power of 3 times the value in column A (<samp>10<sup>3A</sup></samp>).
+        </li>
+        <li>
+            Insert a formula in column <samp>D</samp> that computes the ratio of each value in column <samp>B</samp> to the value in column <samp>C</samp> (<samp>2<sup>10A</sup><strong>:</strong>10<sup>3A</sup></samp>).
+        </li>
+        <li>
+            Create a bar chart that shows the growth of the ratio (column <samp>D</samp>) as column <samp>A</samp> increases.
+            <details class="info">
+                <summary>Generating Charts</summary>
+                <figure>
+                    <img src="img/chart_ribbon.png" alt="chart ribbon">
+                </figure>
+                <ul>
+                    <li>Select the data you wish to generate a into a chart. Column headings can be selected too, and Excel will automatically add them as labels to the chart. Hold the control key (or the Command key on Mac) while clicking to make multiple selections.</li>
+                    <li>Pick a chart type in the <kbd><samp>Charts</samp></kbd> section of the <kbd><samp>Insert</samp></kbd> ribbon. Clicking <kbd>Recommended Charts</kbd> will open a window with a list of charts Excel thinks will be useful, as well as a tab to view all possible charts.</li>
+                    <li>After the chart has been generated, you can double-click elements to modify them.</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            Rename this sheet <kbd>Power2</kbd>
+            <details class="info">
+                <summary>Worksheets</summary>
+                <figure>
+                    <img src="img/worksheets.png" alt="worksheet tabs">
+                </figure>
+                <p>Each Excel file, known as a <strong>Workbook</strong>, can contain multiple <strong>Worksheets</strong>. A worksheet is simply an organization tool for separating your data into different sections. Worksheets are accessed using the tabs at the very bottom of the Excel window. Click the plus button to create a new sheet, and right-click the sheet's name to rename or delete it.</p>
+            </details>
+        </li>
+    </ol>
+</section>
+<section id="task2">
+    <h2>Task 2: Importing and Displaying Data</h2>
+    <h3>Introduction</h3>
+    <p>In this section, you will be comparing and displaying historical climate data from <a  href="http://climate.weather.gc.ca/">http://climate.weather.gc.ca/</a>.</p>
+    <p>Your task is to import daily climate data collected by a Victoria weather station for the years 2016 and 1973, then create a chart that clearly compares the two years.</p>  
+    <h3>2.1: Downloading data</h3>   
+    <figure>
+        <img src="img/climate_report_web.png"/>
+        <figcaption>Victoria Gonzales weather station data report</figcaption>
+    </figure></li>
+    <ol class="instructions">
+        <li>Go to <a href ="http://climate.weather.gc.ca/climate_data/daily_data_e.html?StationID=114">http://climate.weather.gc.ca/climate_data/daily_data_e.html?StationID=114</a>. This page contains the data records for the Gonzales weather station in Victoria, BC.
+        <li>In the date field (shown in the figure above), set the year to 1973 and click Go (you can ignore the month field).</li>
+        <li>Download CSV files of the years 1973 and 2016. To do this, first set the year in the date field (you can ignore the month) and click <samp>Go</samp> to load that year's climate data. Then make sure <samp>CSV</samp> is selected in the download area and click <samp>Download Data</samp>
+        <details>
+            <summary>What is CSV?</summary>
+            <p>
+                <abbr title="Comma-separated values">CSV</abbr>
+                is a <strong>plain-text</strong>
+                format for storing tabular data. Each row of the table is stored
+                on a single line in the file, and each column within a row is
+                delimited using commas. Because of this file type's simple structure,
+                individual cells may not contain multiple lines of text and may not
+                contain commas.
+            </p>
+        </details></li>
+    </ol>
+    <h3>2.2: Preparing data</h3>
+    <figure class="right">
+        <img src="img/climate_data.png">
+    </figure>
+    <p>The two datasets you downloaded contain a lot of unneeded information. They will need some cleanup to be made usable and easily comparable.</p>
+    <ol class="instructions">
+        <li>Open each csv file in a Excel and delete the first 25 rows of header information in both of them. A quick way to do this is to click and drag along the row label numbers on the left, then click <samp>Delete</samp> in the right-click context menu.</li>
+        <li>Copy the <samp>Date/Time</samp> column (column <samp>A</samp>) from either of the datasets, then switch back to your Excel file from <a href="#task1">Task 1</a> and paste it into Column <samp>A</samp> of a new worksheet. Name this new worksheet <kbd>Climate data</kbd></li>
+        <li>Copy/paste the <samp>Mean Temp (°C)</samp> columns (column <samp>J</samp>) from the 1973 and 2016 data sets into Columns <samp>B</samp> and <samp>C</samp> of the <samp>Climate data</samp> worksheet. Rename their headers <kbd>1973</kbd> and <kbd>2016</kbd>.</li>
+        <li>
+            <p>Change the date format of the <samp>Date/Time</samp> column to remove the year.</p>
+            <details class="info">
+                <summary>Cell Formatting</summary>
+                <p>Right-clicking one or more cells and selecting <samp>Format Cells</samp> opens the Format Cells window. This window contains various options for changing the look of the cell and its contents. The <samp>Number</samp> tab allows you to choose what type of data the cell contains and how it should be displayed. For example, selecting <samp>Currency</samp> will preface numbers with a $ symbol, add commas and limit decimal places.</p>
+                <p>To create custom formatting rules (which you will need here), select the <samp>Custom</samp> category. This view allows you to manually edit the <strong>number format code</strong>. Select one of the supplied codes to use it as a starting point, then modify it in the <samp>Type:</samp> field.</p>
+            </details>
+        </li>
+        <li>Confirm that your climate data looks similar to the figure above.</li>
+    </ol>
+    <h3>2.3: Charting data</h3>
+    <figure>
+        <img src="img/climate_chart.png"/>
+    </figure>
+    <ol class="instructions">
+        <li>Select the three columns containing your climate data and insert a line chart.</li>
+        <li>
+            <aside class="note"><strong>Note!</strong> If one of the series lines in the chart is selected, adding a trend line element will use that series' dataset. Otherwise, adding a trend line element will display a dialog to select the desired dataset. Keep this in mind to avoid adding duplicate trend lines.</aside>
+            <p>Add two <samp>Moving Average Trend Line</samp> chart elements to represent the two series. Set the <samp>Period</samp> of the two trend lines to 30. This results in a line for each year plotting the average monthly temperature.</p>
+            <details class="info">
+                <summary>Adding and customizing chart elements</summary>
+                <figure class="right">
+                    <img src="img/chart_element_format.png">
+                </figure>
+                <p>To add elements to a chart, first select the chart, then use the <samp>Add Chart Element</samp> button in the <samp>Design</samp> ribbon. You can also use the plus icon that appears in the top-right of the selected chart, but its options are fairly limited. You can delete an element by selecting <samp>Delete</samp> in its right-click context menu.</p>
+                <p>Clicking any element in the chart will select it and bring up its options in a sidebar.</p>
+                <ul>
+                    <li>The paint bucket icon (shown to the right outlined in blue) displays options for how the element <strong>looks</strong>.</li>
+                    <li>The icon with bars (shown to the right outlined in green) displays options for how the element <strong>behaves</strong>.</li>
+                    <li>Use the dropdown arrow (shown to the right outlined in red) to show a list of all elements in the chart.</li>
+                </ul>
+            </details>
+        </li>
+        <li>
+            Change the visual formatting of the four lines on the chart to put emphasis on the monthly trend lines. In the example chart shown above, the trend lines were given a <samp>Width</samp> of <kbd>3 pts</kbd> and a <samp>Dash type</samp> set to <kbd>Solid</kbd>. The series lines have a <samp>Transparency</samp> of <kbd>60%</kbd> and a <samp>Width</samp> of <kbd>1 pt</kbd>.
+        </li>
+        <li>Adjust the <samp>Bounds</samp> of the vertical axis to better fit the data. The example chart uses a minimum of <kbd>-5.0</kbd> and a maximum of <kbd>30.0</kbd></li>
+        <li>
+            <p>Use additional formatting options to improve the readability of the chart as you see fit. Some examples:</p>
+            <ul>
+                <li>A descriptive title.</li>
+                <li>A y-axis title that specifies the units.</li>
+                <li>Simplify and reduce the unit labels on the x-axis.</li>
+            </ul>
+        </li>
+        <li>Move the chart to a new sheet using the <samp>Move Chart</samp> button in the chart's <samp>Design</samp> ribbon. Name this new sheet <kbd>Climate chart</kbd></li>
+    </ol>
+</section>
+<section id="review">
+    <h2>Review</h2>
+    <p>Create a new worksheet called Review and write some notes describing what new things you have learned in this lab. Also mention any steps or concepts you are still finding difficult to understand and would like to receive feedback on.</p>
+</section>
+<section id="submission">
+    <h2>Deliverables</h2>
+        <ul>
+            <li>A single Excel document containing four worksheets: <kbd>Power2</kbd>, <kbd>Climate data</kbd>, <kbd>Climate chart</kbd> and <kbd>Review</kbd>.</li>
+            <li>
+                Power2 worksheet:
+                <ul>
+                    <li>powers of 2 from 20 to 2400, in steps of 10</li>
+                    <li>powers of 10 from 100 to 10120, in steps of 3</li>
+                    <li>the ratio of each "equivalent" power of 2 and 10</li>
+                    <li>a chart of the ratios</li>
+                </ul>
+            </li>
+            <li>
+                Climate data worksheet:
+                <ul>
+                    <li>a date column formatted to show dd/mm</li>
+                    <li>two columns with temperature data for 1973 and 2016</li>
+                </ul>
+            </li>
+            <li>
+                Climate chart:
+                <ul>
+                    <li>Lines plotting daily temperatures for the years 1973 and 2016</li>
+                    <li>Monthly average trend lines for 1973 and 2016</li>
+                    <li>Clear formatting</li>
+                </ul>
+            </li>
+        </ul>
+        <p>Here are some extra steps to consider to help your <kbd>Overall Assessment</kbd></p>
+        <ul>
+            <li>Use an Excel function to calculate the formulas in task 1.</li>
+            <li>Adjust the formatting of your chart in task 1 to improve clarity and minimize empty space.</li>
+            <li>Use fill colors, borders, and font sizes to pretty up your tables of data.</li>
+        </ul>
+    <p>Save your .xlsx document as ImportingData_Firstname_Lastname and submit it to the dropbox on D2L.</p>   
+    <p>
+        <b>NOTE</b>: This assignment is to be done <em>individually</em>. You can
+        help one another with problems and questions, but in the end everyone must
+        do their own assignment.
+    </p>
+
+    <table class="marks">
+        <thead>
+            <tr><th>Criteria</th><th>Marks</th></tr>
+        </thead>
+        <tbody>
+            <tr><th colspan="2">Power2 Worksheet</th></tr>
+            <tr><td>Data</td><td>2</td></tr>
+            <tr><td>Chart</td><td>1</td></tr>
+            <tr><th colspan="2">Climate Worksheets</th></tr>
+            <tr><td>Data</td><td>2</td></tr>
+            <tr><td>Chart</td><td>3</td></tr>
+            <tr><th colspan="2">Overall Assessment</th></tr>
+            <tr><td>Demonstrates a solid understanding of the material</td><td>2</td></tr>
+
+            <tr><th>Total</th><td>10</td></tr>
+        </tbody>
+    </table>        
+</section>
+
+<script src="../template/bundle.js" async defer></script>
+</body>
+</html>
