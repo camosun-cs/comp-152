@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Javascript lab: Demo 2</title>
-    <base href="https://telic.github.io/comp152/lab/"/>
+    <base href="https://camosun-cs.github.io/comp152/lab/"/>
     <script src="javascript/GameOfLife.js"></script>
     <script src="javascript/solution/life.js"></script>
 </head>
@@ -13,7 +13,7 @@
 
     <details id="example1" open>
         <summary>It's really a simulation, not a game</summary>
-        
+
         <script>
 var gliders = [
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -79,12 +79,12 @@ var pulsar = [
 ];
 
 GameOfLife(
-    updateCellsImproved, 
+    updateCellsImproved,
     gliders,
     document.querySelector("#example1")
 );
 GameOfLife(
-    updateCellsImproved, 
+    updateCellsImproved,
     pulsar,
     document.querySelector("#example1")
 );
@@ -105,7 +105,7 @@ GameOfLife(
         <p>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</p>
         <script>GameOfLife(updateCells, [[0,0,0,0,0],[0,1,0,0,0],[0,1,0,0,0],[0,0,0,1,0],[0,0,0,0,0]], document.querySelector("#example2"));</script>
     </details>
-    
+
     <details id="example3">
         <summary>Our implementation will use 2-dimensional arrays</summary>
         <pre class="array-example"><code>

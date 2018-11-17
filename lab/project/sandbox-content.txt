@@ -1,4 +1,4 @@
-=Welcome to the Sandbox= 
+=Welcome to the Sandbox=
 
 Feel free to experiment with editing on this page! To get started, press the "Edit" button.
 
@@ -10,7 +10,7 @@ All the usual WYSIWYG features are available, including:
 ## with numbers
 * **bold**, //italics//, and __underlining__
 * [[Sandbox|links]]
-* images [[image:https://telic.github.io/comp152/lab/project/kitten.jpg width="184" height="116"]]
+* images [[image:https://camosun-cs.github.io/comp152/lab/project/kitten.jpg width="184" height="116"]]
 
 ||~ tables ||~ with headers ||
 || or regular || data cells ||

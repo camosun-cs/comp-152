@@ -1,8 +1,8 @@
-==Team members:== 
+==Team members:==
 * Max Terpstra
 * Jonas Bambi
 
-==Question 1: Why are kittens so dang cute?== 
+==Question 1: Why are kittens so dang cute?==
 
 **Website**:
 * URL: http://hellogiggles.com/10-reasons-why-kittens-are-fantastic/
@@ -21,7 +21,7 @@
 * Possible biases: tenure depends on notable publication, has spent many years on this particular approach
 
 **Graphic**:
-* [[image:https://telic.github.io/comp152/lab/project/camo-cat.jpg]]
+* [[image:https://camosun-cs.github.io/comp152/lab/project/camo-cat.jpg]]
 * from URL: http://www.freedigitalphotos.net/images/Cats_g129-Camouflage_Kitten_p12698.html
 * Date accessed: May 20, 2016
 * Date created: Feb 20, 2010
@@ -30,5 +30,5 @@
 * Author's agenda: sell photos
 * Possible biases: author obviously likes cats
 
-==Question 2: ...== 
+==Question 2: ...==
 (as above)
